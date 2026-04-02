@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizKids — Stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #1e1b4b;
+      --primary: #4f46e5;
+      --accent: #fb923c;
+      --text: #f8fafc;
+      --text-muted: #a5b4fc;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.1);
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 28px;
+    }
+
+    .header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .header h1 { font-size: 1.6rem; font-weight: 900; }
+    .header p  { color: var(--text-muted); font-size: 0.95rem; font-weight: 600; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .card-icon  { font-size: 1.8rem; }
+    .card-value { font-size: 2rem; font-weight: 900; color: var(--text); }
+    .card-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .chart-section {
+      width: 100%;
+      max-width: 560px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .chart-section h2 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+    .bar-date  { width: 72px; color: var(--text-muted); font-weight: 600; flex-shrink: 0; font-size: 0.78rem; }
+    .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.07); border-radius: 99px; overflow: hidden; }
+    .bar-fill  { height: 100%; border-radius: 99px; background: var(--primary); transition: width 0.5s ease; }
+    .bar-count { width: 28px; text-align: right; font-weight: 800; font-size: 0.82rem; }
+
+    .btn-dashboard {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      transition: filter 0.15s;
+    }
+    .btn-dashboard:hover { filter: brightness(1.1); }
+
+    .btn-back {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .btn-back:hover { color: var(--text); }
+
+    .loading { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; }
+    .error   { color: #fca5a5; font-size: 0.85rem; font-weight: 600; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🧠 QuizKids — Stats</h1>
+    <p>Tableau de bord des visites</p>
+  </div>
+
+  <div class="cards" id="cards">
+    <div class="card">
+      <span class="card-icon">👁️</span>
+      <span class="card-value" id="val-total">—</span>
+      <span class="card-label">Visites totales</span>
+    </div>
+    <div class="card">
+      <span class="card-icon">📅</span>
+      <span class="card-value" id="val-today">—</span>
+      <span class="card-label">Aujourd'hui</span>
+    </div>
+    <div class="card">
+      <span class="card-icon">📆</span>
+      <span class="card-value" id="val-week">—</span>
+      <span class="card-label">Cette semaine</span>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <h2>📈 Visites des 14 derniers jours</h2>
+    <div id="chart"><span class="loading">Chargement…</span></div>
+  </div>
+
+  <a href="https://ajneb.goatcounter.com" target="_blank" rel="noopener" class="btn-dashboard">
+    📊 Dashboard complet GoatCounter ↗
+  </a>
+
+  <a href="/" class="btn-back">← Retour au quiz</a>
+
+  <script data-goatcounter="https://ajneb.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script>
+    const GC_BASE = 'https://ajneb.goatcounter.com/api/v0';
+
+    async function fetchStats() {
+      try {
+        const today = new Date();
+        const start = new Date(today);
+        start.setDate(start.getDate() - 13);
+
+        const fmt = d => d.toISOString().slice(0, 10);
+        const params = new URLSearchParams({
+          start: fmt(start),
+          end:   fmt(today),
+          daily: 'true',
+          limit: 14,
+        });
+
+        const res = await fetch(`${GC_BASE}/stats/hits?${params}`, {
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderChart(data.hits ?? []);
+        renderCards(data.hits ?? []);
+
+      } catch (err) {
+        document.getElementById('chart').innerHTML =
+          `<p class="error">Impossible de charger les stats.<br>
+           <a href="https://ajneb.goatcounter.com" target="_blank" style="color:#a5b4fc">
+           Ouvre le dashboard GoatCounter ↗</a></p>`;
+        console.error(err);
+      }
+    }
+
+    function renderCards(hits) {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const weekAgo  = new Date(); weekAgo.setDate(weekAgo.getDate() - 7);
+
+      let total = 0, todayCount = 0, weekCount = 0;
+
+      hits.forEach(h => {
+        const count = h.count ?? 0;
+        total += count;
+        if (h.day === todayStr) todayCount = count;
+        if (new Date(h.day) >= weekAgo) weekCount += count;
+      });
+
+      document.getElementById('val-total').textContent = total.toLocaleString('fr-FR');
+      document.getElementById('val-today').textContent = todayCount.toLocaleString('fr-FR');
+      document.getElementById('val-week').textContent  = weekCount.toLocaleString('fr-FR');
+    }
+
+    function renderChart(hits) {
+      const chart = document.getElementById('chart');
+      if (!hits.length) {
+        chart.innerHTML = '<p class="loading">Pas encore de données.</p>';
+        return;
+      }
+
+      const max = Math.max(...hits.map(h => h.count ?? 0), 1);
+      const fmt = d => {
+        const dt = new Date(d + 'T00:00:00');
+        return dt.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' });
+      };
+
+      chart.innerHTML = hits.map(h => {
+        const pct = Math.round(((h.count ?? 0) / max) * 100);
+        return `
+          <div class="bar-row">
+            <span class="bar-date">${fmt(h.day)}</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:${pct}%"></div>
+            </div>
+            <span class="bar-count">${h.count ?? 0}</span>
+          </div>`;
+      }).join('');
+    }
+
+    fetchStats();
+  </script>
+</body>
+</html>
