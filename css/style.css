@@ -90,6 +90,13 @@ html, body {
 }
 .btn-accent:hover { filter: brightness(1.1); }
 
+.btn-share-top {
+  width: 100%;
+  max-width: 320px;
+  font-size: 1.05rem;
+  padding: 16px 24px;
+}
+
 .btn-large {
   width: 100%;
   max-width: 320px;
