@@ -1,0 +1,678 @@
+{
+  "version": "1.0",
+  "generated": "2026-04-02",
+  "categories": {
+    "drapeaux": [
+      {
+        "id": "dra_001",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇧🇷" },
+        "choix": ["Brésil", "Argentine", "Portugal", "Espagne"],
+        "reponse": "Brésil",
+        "explication": "Le drapeau du Brésil est vert et jaune avec une sphère bleue et la devise « Ordem e Progresso ».",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_002",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇯🇵" },
+        "choix": ["Chine", "Japon", "Corée du Sud", "Vietnam"],
+        "reponse": "Japon",
+        "explication": "Le drapeau du Japon est blanc avec un disque rouge au centre, symbolisant le soleil levant.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_003",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇨🇦" },
+        "choix": ["États-Unis", "Canada", "Australie", "Nouvelle-Zélande"],
+        "reponse": "Canada",
+        "explication": "Le drapeau du Canada arbore une feuille d'érable rouge sur fond blanc entre deux bandes rouges.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_004",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇩🇪" },
+        "choix": ["Belgique", "Allemagne", "Autriche", "Pays-Bas"],
+        "reponse": "Allemagne",
+        "explication": "Le drapeau allemand est composé de trois bandes horizontales : noir, rouge et or.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_005",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇮🇹" },
+        "choix": ["France", "Italie", "Roumanie", "Côte d'Ivoire"],
+        "reponse": "Italie",
+        "explication": "Le drapeau italien est un tricolore vertical vert, blanc et rouge, inspiré du drapeau français.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_006",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇬🇧" },
+        "choix": ["Australie", "Irlande", "Royaume-Uni", "Nouvelle-Zélande"],
+        "reponse": "Royaume-Uni",
+        "explication": "L'Union Jack est la combinaison des croix de Saint-Georges, Saint-André et Saint-Patrick.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_007",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇸🇪" },
+        "choix": ["Norvège", "Suède", "Finlande", "Danemark"],
+        "reponse": "Suède",
+        "explication": "Le drapeau suédois est bleu avec une croix jaune nordique.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_008",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇲🇽" },
+        "choix": ["Mexique", "Argentine", "Italie", "Bolivie"],
+        "reponse": "Mexique",
+        "explication": "Le drapeau mexicain est vert, blanc et rouge avec un aigle dévorant un serpent au centre.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_009",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇿🇦" },
+        "choix": ["Nigeria", "Afrique du Sud", "Kenya", "Ghana"],
+        "reponse": "Afrique du Sud",
+        "explication": "Le drapeau sud-africain est unique avec son Y horizontal qui réunit six couleurs symbolisant l'unité.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_010",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": { "type": "emoji", "valeur": "🇬🇷" },
+        "choix": ["Chypre", "Grèce", "Croatie", "Slovaquie"],
+        "reponse": "Grèce",
+        "explication": "Le drapeau grec est composé de neuf bandes bleues et blanches avec une croix blanche dans le coin.",
+        "difficulte": 2
+      }
+    ],
+    "sport": [
+      {
+        "id": "spo_001",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs composent une équipe de football sur le terrain ?",
+        "media": { "type": "emoji", "valeur": "⚽" },
+        "choix": ["9", "10", "11", "12"],
+        "reponse": "11",
+        "explication": "Une équipe de football est composée de 11 joueurs, dont un gardien de but.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_002",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport utilise-t-on un volant (shuttlecock) ?",
+        "media": { "type": "emoji", "valeur": "🏸" },
+        "choix": ["Tennis", "Squash", "Badminton", "Ping-pong"],
+        "reponse": "Badminton",
+        "explication": "Le badminton se joue avec un volant, une pièce d'équipement légère munie de plumes.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_003",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle ville a accueilli les Jeux Olympiques d'été de 2024 ?",
+        "media": { "type": "emoji", "valeur": "🏅" },
+        "choix": ["Tokyo", "Los Angeles", "Paris", "Londres"],
+        "reponse": "Paris",
+        "explication": "Paris a accueilli les Jeux Olympiques d'été en 2024, cent ans après les avoir organisés pour la dernière fois.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_004",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de sets faut-il gagner pour remporter un match de tennis en Grand Chelem (hommes) ?",
+        "media": { "type": "emoji", "valeur": "🎾" },
+        "choix": ["2", "3", "4", "5"],
+        "reponse": "3",
+        "explication": "En Grand Chelem masculin, les matchs se jouent au meilleur des cinq sets, donc il faut en gagner 3.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_005",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle course cycliste est surnommée « la Grande Boucle » ?",
+        "media": { "type": "emoji", "valeur": "🚴" },
+        "choix": ["Giro d'Italia", "Vuelta a España", "Tour de France", "Paris-Roubaix"],
+        "reponse": "Tour de France",
+        "explication": "Le Tour de France est surnommé « la Grande Boucle » car il fait le tour de la France.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_006",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs composent une équipe de basketball sur le terrain ?",
+        "media": { "type": "emoji", "valeur": "🏀" },
+        "choix": ["4", "5", "6", "7"],
+        "reponse": "5",
+        "explication": "Une équipe de basketball place 5 joueurs sur le terrain en même temps.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_007",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport marque-t-on un « essai » ?",
+        "media": { "type": "emoji", "valeur": "🏉" },
+        "choix": ["Football américain", "Rugby", "Handball", "Hockey"],
+        "reponse": "Rugby",
+        "explication": "En rugby, un essai est marqué en aplatissant le ballon derrière la ligne de but adverse et vaut 5 points.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_008",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle distance court-on lors d'un marathon ?",
+        "media": { "type": "emoji", "valeur": "🏃" },
+        "choix": ["21 km", "30 km", "42,195 km", "50 km"],
+        "reponse": "42,195 km",
+        "explication": "Le marathon mesure exactement 42,195 km, distance fixée aux Jeux Olympiques de 1908 à Londres.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_009",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs composent une équipe de handball sur le terrain ?",
+        "media": { "type": "emoji", "valeur": "🤾" },
+        "choix": ["5", "6", "7", "8"],
+        "reponse": "7",
+        "explication": "Le handball se joue à 7 contre 7, dont un gardien de but dans chaque équipe.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_010",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel sport se pratique avec une batte et une balle sur un terrain en losange ?",
+        "media": { "type": "emoji", "valeur": "⚾" },
+        "choix": ["Cricket", "Baseball", "Softball", "Rounders"],
+        "reponse": "Baseball",
+        "explication": "Le baseball se joue sur un terrain en forme de losange appelé « diamond », avec 4 bases.",
+        "difficulte": 2
+      }
+    ],
+    "histoire": [
+      {
+        "id": "his_001",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année a débuté la Révolution française ?",
+        "media": { "type": "emoji", "valeur": "⚔️" },
+        "choix": ["1776", "1789", "1804", "1815"],
+        "reponse": "1789",
+        "explication": "La Révolution française a commencé en 1789 avec la prise de la Bastille le 14 juillet.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_002",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Napoléon Bonaparte ?",
+        "media": { "type": "emoji", "valeur": "👑" },
+        "choix": ["Un roi de France", "Un pape", "Un empereur français", "Un général anglais"],
+        "reponse": "Un empereur français",
+        "explication": "Napoléon Bonaparte fut empereur des Français de 1804 à 1814, puis brièvement en 1815.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_003",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année s'est terminée la Seconde Guerre mondiale ?",
+        "media": { "type": "emoji", "valeur": "🕊️" },
+        "choix": ["1943", "1944", "1945", "1946"],
+        "reponse": "1945",
+        "explication": "La Seconde Guerre mondiale s'est terminée en 1945 avec la capitulation de l'Allemagne (mai) puis du Japon (août).",
+        "difficulte": 1
+      },
+      {
+        "id": "his_004",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Christophe Colomb a découvert l'Amérique en…",
+        "media": { "type": "emoji", "valeur": "🚢" },
+        "choix": ["1388", "1492", "1512", "1620"],
+        "reponse": "1492",
+        "explication": "Christophe Colomb a atteint les Amériques le 12 octobre 1492, croyant arriver aux Indes.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_005",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel surnom portait Louis XIV ?",
+        "media": { "type": "emoji", "valeur": "☀️" },
+        "choix": ["Le Bon Roi", "Le Roi-Soleil", "Le Grand Monarque", "Le Roi de Fer"],
+        "reponse": "Le Roi-Soleil",
+        "explication": "Louis XIV était surnommé « le Roi-Soleil » car il se comparait au soleil, astre autour duquel tout tourne.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_006",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui a conquis la Gaule au Ier siècle avant J.-C. ?",
+        "media": { "type": "emoji", "valeur": "🏛️" },
+        "choix": ["Auguste", "Jules César", "Vercingétorix", "Brutus"],
+        "reponse": "Jules César",
+        "explication": "Jules César a conquis la Gaule lors de la Guerre des Gaules (58-52 av. J.-C.), dont il a relaté les batailles.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_007",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année a débuté la Première Guerre mondiale ?",
+        "media": { "type": "emoji", "valeur": "🪖" },
+        "choix": ["1910", "1912", "1914", "1916"],
+        "reponse": "1914",
+        "explication": "La Première Guerre mondiale a débuté en 1914 après l'assassinat de l'archiduc François-Ferdinand à Sarajevo.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_008",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Charlemagne fut couronné empereur en quelle année ?",
+        "media": { "type": "emoji", "valeur": "⚜️" },
+        "choix": ["768", "800", "814", "843"],
+        "reponse": "800",
+        "explication": "Charlemagne fut couronné empereur d'Occident le 25 décembre 800 par le pape Léon III à Rome.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_009",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Jeanne d'Arc a libéré quelle ville en 1429 ?",
+        "media": { "type": "emoji", "valeur": "⚜️" },
+        "choix": ["Paris", "Reims", "Orléans", "Bordeaux"],
+        "reponse": "Orléans",
+        "explication": "Jeanne d'Arc a levé le siège d'Orléans en mai 1429, ce qui lui a valu le surnom de « Pucelle d'Orléans ».",
+        "difficulte": 2
+      },
+      {
+        "id": "his_010",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Combien de temps a duré la Guerre de Cent Ans entre la France et l'Angleterre ?",
+        "media": { "type": "emoji", "valeur": "🏰" },
+        "choix": ["50 ans", "100 ans", "116 ans", "150 ans"],
+        "reponse": "116 ans",
+        "explication": "La Guerre de Cent Ans a duré de 1337 à 1453, soit 116 ans. Son nom est approximatif.",
+        "difficulte": 3
+      }
+    ],
+    "sciences": [
+      {
+        "id": "sci_001",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quelle est la formule chimique de l'eau ?",
+        "media": { "type": "emoji", "valeur": "💧" },
+        "choix": ["CO2", "H2O", "O2", "NaCl"],
+        "reponse": "H2O",
+        "explication": "L'eau est composée de deux atomes d'hydrogène (H) et d'un atome d'oxygène (O), d'où H2O.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_002",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de planètes composent notre système solaire ?",
+        "media": { "type": "emoji", "valeur": "🪐" },
+        "choix": ["7", "8", "9", "10"],
+        "reponse": "8",
+        "explication": "Depuis 2006 et l'exclusion de Pluton, notre système solaire compte 8 planètes officielles.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_003",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quelle est la planète la plus proche du Soleil ?",
+        "media": { "type": "emoji", "valeur": "☀️" },
+        "choix": ["Vénus", "Terre", "Mercure", "Mars"],
+        "reponse": "Mercure",
+        "explication": "Mercure est la planète la plus proche du Soleil. Elle complète une orbite en seulement 88 jours terrestres.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_004",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel processus permet aux plantes de fabriquer leur nourriture grâce à la lumière ?",
+        "media": { "type": "emoji", "valeur": "🌿" },
+        "choix": ["Respiration", "Digestion", "Photosynthèse", "Fermentation"],
+        "reponse": "Photosynthèse",
+        "explication": "La photosynthèse permet aux plantes de transformer la lumière, le CO2 et l'eau en glucose et en oxygène.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_005",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quelle est la vitesse de la lumière (approximativement) ?",
+        "media": { "type": "emoji", "valeur": "💡" },
+        "choix": ["300 km/s", "3 000 km/s", "300 000 km/s", "3 000 000 km/s"],
+        "reponse": "300 000 km/s",
+        "explication": "La lumière se déplace à environ 300 000 km par seconde dans le vide, soit environ 1 milliard de km/h.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_006",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel organe pompe le sang dans le corps humain ?",
+        "media": { "type": "emoji", "valeur": "❤️" },
+        "choix": ["Le poumon", "Le foie", "Le rein", "Le cœur"],
+        "reponse": "Le cœur",
+        "explication": "Le cœur est un muscle creux qui pompe le sang dans tout le corps. Il bat environ 70 fois par minute au repos.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_007",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Les dinosaures ont-ils coexisté avec les humains ?",
+        "media": { "type": "emoji", "valeur": "🦕" },
+        "choix": ["Oui, ils vivaient ensemble", "Non, les dinosaures ont disparu bien avant", "Oui, mais seulement en Asie", "On ne sait pas"],
+        "reponse": "Non, les dinosaures ont disparu bien avant",
+        "explication": "Les dinosaures ont disparu il y a environ 66 millions d'années. L'espèce humaine est apparue il y a seulement 300 000 ans.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_008",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel gaz les plantes absorbent-elles lors de la photosynthèse ?",
+        "media": { "type": "emoji", "valeur": "🌱" },
+        "choix": ["Oxygène (O2)", "Azote (N2)", "Dioxyde de carbone (CO2)", "Hydrogène (H2)"],
+        "reponse": "Dioxyde de carbone (CO2)",
+        "explication": "Les plantes absorbent le CO2 et rejettent de l'oxygène lors de la photosynthèse — c'est l'inverse de la respiration animale.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_009",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien d'os compte le corps humain adulte ?",
+        "media": { "type": "emoji", "valeur": "🦴" },
+        "choix": ["106", "206", "306", "406"],
+        "reponse": "206",
+        "explication": "Le corps humain adulte possède 206 os. Un nourrisson en a environ 270, certains fusionnant au fil de la croissance.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_010",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quelle invention est attribuée à Isaac Newton à la suite de la chute d'une pomme ?",
+        "media": { "type": "emoji", "valeur": "🍎" },
+        "choix": ["La relativité", "La loi de la gravitation", "Le calcul infinitésimal", "Le spectre lumineux"],
+        "reponse": "La loi de la gravitation",
+        "explication": "La légende dit qu'une pomme tombant d'un arbre a inspiré Newton pour formuler sa loi de la gravitation universelle.",
+        "difficulte": 1
+      }
+    ],
+    "culture": [
+      {
+        "id": "cul_001",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quelle école magique Harry Potter est-il inscrit ?",
+        "media": { "type": "emoji", "valeur": "🧙" },
+        "choix": ["Beauxbâtons", "Durmstrang", "Poudlard", "Castelobruxo"],
+        "reponse": "Poudlard",
+        "explication": "Harry Potter fréquente l'école de sorcellerie de Poudlard (Hogwarts en anglais), dirigée par Dumbledore.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_002",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est le personnage principal de la saga Star Wars du côté des Jedi ?",
+        "media": { "type": "emoji", "valeur": "⚡" },
+        "choix": ["Dark Vador", "Han Solo", "Luke Skywalker", "Yoda"],
+        "reponse": "Luke Skywalker",
+        "explication": "Luke Skywalker est le héros principal de la trilogie originale Star Wars, fils de Dark Vador.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_003",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel compositeur a écrit la Lettre à Élise et la Symphonie n°5 ?",
+        "media": { "type": "emoji", "valeur": "🎹" },
+        "choix": ["Mozart", "Bach", "Beethoven", "Chopin"],
+        "reponse": "Beethoven",
+        "explication": "Ludwig van Beethoven a composé la Lettre à Élise et la célèbre Symphonie n°5 en do mineur.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_004",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel artiste a peint la Joconde ?",
+        "media": { "type": "emoji", "valeur": "🖼️" },
+        "choix": ["Picasso", "Michel-Ange", "Léonard de Vinci", "Raphaël"],
+        "reponse": "Léonard de Vinci",
+        "explication": "La Joconde (Mona Lisa) a été peinte par Léonard de Vinci entre 1503 et 1519. Elle est exposée au Louvre.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_005",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel pays le jeu vidéo Minecraft a-t-il été créé ?",
+        "media": { "type": "emoji", "valeur": "🎮" },
+        "choix": ["États-Unis", "Suède", "Finlande", "Japon"],
+        "reponse": "Suède",
+        "explication": "Minecraft a été créé par Markus « Notch » Persson, un développeur suédois, et publié en 2011.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_006",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel héros gaulois combat les Romains avec son ami Obélix ?",
+        "media": { "type": "emoji", "valeur": "🐗" },
+        "choix": ["Tintin", "Astérix", "Spirou", "Gaston"],
+        "reponse": "Astérix",
+        "explication": "Astérix est le héros gaulois créé par Goscinny et Uderzo qui résiste à l'envahisseur romain grâce à sa potion magique.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_007",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quelle ville vit Tintin avec son chien Milou ?",
+        "media": { "type": "emoji", "valeur": "🐕" },
+        "choix": ["Paris", "Amsterdam", "Bruxelles", "Genève"],
+        "reponse": "Bruxelles",
+        "explication": "Tintin est un reporter belge qui vit à Bruxelles. Il a été créé par le dessinateur belge Hergé.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_008",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quelle famille habite au 742 Evergreen Terrace dans une série animée américaine ?",
+        "media": { "type": "emoji", "valeur": "📺" },
+        "choix": ["Les Griffin", "Les Simpsons", "Les Pierrafeu", "Les Jetson"],
+        "reponse": "Les Simpsons",
+        "explication": "La famille Simpson — Homer, Marge, Bart, Lisa et Maggie — vit au 742 Evergreen Terrace à Springfield.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_009",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel est le vrai prénom du chanteur Michael Jackson ?",
+        "media": { "type": "emoji", "valeur": "🎤" },
+        "choix": ["James", "Michael", "Joseph", "Robert"],
+        "reponse": "Michael",
+        "explication": "Michael Joseph Jackson est bien son vrai prénom. Il est né le 29 août 1958 à Gary, Indiana.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_010",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel film d'animation Disney raconte l'histoire d'un lion nommé Simba ?",
+        "media": { "type": "emoji", "valeur": "🦁" },
+        "choix": ["Bambi", "Tarzan", "Le Roi Lion", "La Belle et la Bête"],
+        "reponse": "Le Roi Lion",
+        "explication": "Le Roi Lion (1994) suit Simba, un lionceau qui doit reprendre sa place de roi après la mort de son père Mufasa.",
+        "difficulte": 1
+      }
+    ],
+    "geographie": [
+      {
+        "id": "geo_001",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus long fleuve du monde ?",
+        "media": { "type": "emoji", "valeur": "🌊" },
+        "choix": ["L'Amazone", "Le Nil", "Le Mississippi", "Le Yangtsé"],
+        "reponse": "Le Nil",
+        "explication": "Le Nil mesure environ 6 650 km, ce qui en fait le plus long fleuve du monde. Il traverse l'Afrique du nord.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_002",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l'Australie ?",
+        "media": { "type": "emoji", "valeur": "🦘" },
+        "choix": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+        "reponse": "Canberra",
+        "explication": "Canberra est la capitale de l'Australie, et non Sydney ou Melbourne, les deux plus grandes villes du pays.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_003",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Sur quel continent se trouve le mont Everest ?",
+        "media": { "type": "emoji", "valeur": "🏔️" },
+        "choix": ["Afrique", "Amérique du Sud", "Asie", "Europe"],
+        "reponse": "Asie",
+        "explication": "Le mont Everest est situé dans l'Himalaya, à la frontière entre le Népal et la Chine, en Asie.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_004",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Le Sahara est le plus grand désert du monde. Sur quel continent se trouve-t-il ?",
+        "media": { "type": "emoji", "valeur": "🏜️" },
+        "choix": ["Asie", "Australie", "Amérique du Sud", "Afrique"],
+        "reponse": "Afrique",
+        "explication": "Le Sahara couvre environ 9 millions de km² dans le nord de l'Afrique. C'est le plus grand désert chaud du monde.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_005",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus grand continent du monde ?",
+        "media": { "type": "emoji", "valeur": "🌍" },
+        "choix": ["Afrique", "Amérique", "Asie", "Europe"],
+        "reponse": "Asie",
+        "explication": "L'Asie est le plus grand continent avec environ 44 millions de km², soit 30 % des terres émergées.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_006",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus grand océan du monde ?",
+        "media": { "type": "emoji", "valeur": "🌊" },
+        "choix": ["Atlantique", "Indien", "Arctique", "Pacifique"],
+        "reponse": "Pacifique",
+        "explication": "L'océan Pacifique est le plus grand et le plus profond des océans, couvrant environ 165 millions de km².",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_007",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale du Brésil ?",
+        "media": { "type": "emoji", "valeur": "🇧🇷" },
+        "choix": ["São Paulo", "Rio de Janeiro", "Salvador", "Brasília"],
+        "reponse": "Brasília",
+        "explication": "Brasília est la capitale du Brésil depuis 1960, construite ex nihilo pour remplacer Rio de Janeiro.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_008",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel pays est le plus peuplé du monde ?",
+        "media": { "type": "emoji", "valeur": "👥" },
+        "choix": ["Chine", "Inde", "États-Unis", "Indonésie"],
+        "reponse": "Inde",
+        "explication": "En 2023, l'Inde a dépassé la Chine pour devenir le pays le plus peuplé du monde avec plus de 1,4 milliard d'habitants.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_009",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus petit pays du monde ?",
+        "media": { "type": "emoji", "valeur": "🏳️" },
+        "choix": ["Monaco", "Saint-Marin", "Vatican", "Liechtenstein"],
+        "reponse": "Vatican",
+        "explication": "Le Vatican (Cité du Vatican) est le plus petit État du monde avec seulement 0,44 km² au cœur de Rome.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_010",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel fleuve traverse Paris ?",
+        "media": { "type": "emoji", "valeur": "🗼" },
+        "choix": ["La Loire", "Le Rhône", "La Seine", "La Garonne"],
+        "reponse": "La Seine",
+        "explication": "La Seine traverse Paris sur environ 13 km. Elle est célèbre pour ses ponts et ses rives classées à l'UNESCO.",
+        "difficulte": 1
+      }
+    ]
+  }
+}

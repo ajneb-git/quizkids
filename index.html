@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizKids</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="QuizKids" />
+
+  <meta name="description" content="Quiz éducatif du jour pour les collégiens. 60 questions, 6 catégories, 15 secondes par question !" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════ SCREEN: HOME ══════════════════ -->
+  <div id="screen-home" class="screen active">
+    <div class="screen-content">
+      <div class="logo">
+        <div class="logo-icon">🧠</div>
+        <h1>QuizKids</h1>
+        <p class="subtitle">Le quiz du jour pour les collégiens</p>
+      </div>
+
+      <!-- Best score banner -->
+      <div id="best-score-banner" class="best-score-banner" style="display:none"></div>
+
+      <button id="btn-play" class="btn btn-primary btn-large">
+        🎮 Jouer
+      </button>
+
+      <p class="muted">60 questions · 6 catégories · 15 sec par question</p>
+
+      <!-- Notification reminder button -->
+      <button id="btn-notif" class="btn btn-notif">
+        🔕 Me rappeler chaque matin
+      </button>
+
+      <!-- PWA install button (hidden until browser fires beforeinstallprompt) -->
+      <button id="btn-install" class="btn btn-install" style="display:none">
+        📲 Installer l'application
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: QUIZ ══════════════════ -->
+  <div id="screen-quiz" class="screen">
+    <div class="quiz-header">
+      <div class="timer-track">
+        <div id="timer-bar" class="timer-bar"></div>
+      </div>
+      <div class="quiz-meta">
+        <span id="q-number">Question 1 / 60</span>
+        <span id="q-category">🌍 Drapeaux</span>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div id="q-media" class="q-media" style="display:none"></div>
+      <p id="q-text" class="q-text">Chargement…</p>
+    </div>
+
+    <div id="q-choices" class="choices-grid"></div>
+    <div id="q-feedback" class="feedback hidden"></div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: RESULTS ══════════════════ -->
+  <div id="screen-results" class="screen">
+    <div class="screen-content results-content">
+      <h2>Résultats du jour ✨</h2>
+
+      <div class="total-score">
+        <span id="total-score">—</span>
+      </div>
+
+      <!-- Encouraging message -->
+      <div id="encouraging-msg" class="encouraging-msg"></div>
+
+      <canvas id="radar-canvas"></canvas>
+
+      <div id="score-breakdown" class="score-breakdown"></div>
+
+      <!-- Wrong answers recap -->
+      <div id="wrong-answers" class="wrong-answers-section"></div>
+
+      <!-- Come back tomorrow -->
+      <div id="come-back-msg" class="come-back-msg"></div>
+
+      <div class="results-actions">
+        <button id="btn-share" class="btn btn-primary">🎯 Défie un ami</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: COMPARE ══════════════════ -->
+  <div id="screen-compare" class="screen">
+    <div class="screen-content results-content">
+      <h2 id="compare-title">Comparaison 🆚</h2>
+
+      <canvas id="radar-canvas-compare"></canvas>
+
+      <div id="score-breakdown-compare" class="score-breakdown"></div>
+
+      <div class="results-actions">
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: ALREADY PLAYED ══════════════════ -->
+  <div id="screen-already-played" class="screen">
+    <div class="screen-content results-content">
+      <h2>Déjà joué aujourd'hui 👀</h2>
+
+      <div class="total-score">
+        <span id="total-score-ap">—</span>
+      </div>
+
+      <div id="encouraging-msg-ap" class="encouraging-msg"></div>
+
+      <canvas id="radar-canvas-ap"></canvas>
+
+      <div id="score-breakdown-ap" class="score-breakdown"></div>
+
+      <div id="wrong-answers-ap" class="wrong-answers-section"></div>
+
+      <div id="come-back-msg-ap" class="come-back-msg"></div>
+
+      <div class="share-box">
+        <p>Copie le lien pour défier un ami :</p>
+        <div class="share-input-row">
+          <input type="text" id="already-played-share" readonly placeholder="Génération du lien…" />
+          <button id="btn-copy-share" class="btn btn-primary">Copier</button>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button id="btn-share-ap" class="btn btn-primary">🎯 Partager</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
