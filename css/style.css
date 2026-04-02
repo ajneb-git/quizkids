@@ -83,6 +83,13 @@ html, body {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.15); }
 
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #f97316);
+  color: #fff;
+  border: none;
+}
+.btn-accent:hover { filter: brightness(1.1); }
+
 .btn-large {
   width: 100%;
   max-width: 320px;
@@ -526,48 +533,63 @@ html, body {
   border-radius: var(--radius);
 }
 
-.wrong-list {
+/* ── Wrong answers carousel ─────────────────────────────────────────────────── */
+.wrong-carousel {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-counter {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.07);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.carousel-slide {
+  width: 100%;
+  min-height: 120px;
 }
 
 .wrong-item {
   display: flex;
-  gap: 12px;
-  background: rgba(239,68,68,0.07);
-  border: 1px solid rgba(239,68,68,0.2);
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.22);
   border-radius: var(--radius);
-  padding: 12px 14px;
-  align-items: flex-start;
+  padding: 16px;
 }
 
 .wrong-media {
-  font-size: 28px;
+  font-size: 36px;
   line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.wrong-body {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex: 1;
-  min-width: 0;
+  text-align: center;
 }
 
 .wrong-question {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
-  line-height: 1.3;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .wrong-user {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: #fca5a5;
   font-weight: 600;
+  text-align: center;
 }
 
 .wrong-answer-text {
@@ -576,17 +598,71 @@ html, body {
 }
 
 .wrong-correct {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: #bbf7d0;
-  font-weight: 600;
+  font-weight: 700;
+  text-align: center;
 }
 
 .wrong-explication {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: rgba(255,255,255,0.55);
   font-weight: 400;
-  line-height: 1.4;
-  margin-top: 2px;
+  line-height: 1.45;
+  text-align: center;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Carousel nav */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.carousel-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1.5rem;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.3);
 }
 
 /* ── Come back tomorrow ─────────────────────────────────────────────────────── */

@@ -149,22 +149,67 @@ export function renderWrongAnswers(wrongAnswers, elId = 'wrong-answers') {
     return;
   }
 
+  const total = wrongAnswers.length;
+
+  function slideHTML(w) {
+    return `
+      <div class="wrong-item">
+        ${w.media?.type === 'emoji' ? `<span class="wrong-media">${w.media.valeur}</span>` : ''}
+        <p class="wrong-question">${w.question}</p>
+        <p class="wrong-user">${w.userAnswer === null
+          ? '⏱ Temps écoulé'
+          : `Tu as répondu : <span class="wrong-answer-text">${w.userAnswer}</span>`}</p>
+        <p class="wrong-correct">✅ Bonne réponse : <strong>${w.correctAnswer}</strong></p>
+        ${w.explication ? `<p class="wrong-explication">${w.explication}</p>` : ''}
+      </div>
+    `;
+  }
+
   el.innerHTML = `
-    <h3 class="section-title">Tes erreurs (${wrongAnswers.length})</h3>
-    <div class="wrong-list">
-      ${wrongAnswers.map(w => `
-        <div class="wrong-item">
-          ${w.media?.type === 'emoji' ? `<span class="wrong-media">${w.media.valeur}</span>` : ''}
-          <div class="wrong-body">
-            <p class="wrong-question">${w.question}</p>
-            <p class="wrong-user">${w.userAnswer === null ? '⏱ Temps écoulé' : `Tu as répondu : <span class="wrong-answer-text">${w.userAnswer}</span>`}</p>
-            <p class="wrong-correct">✓ Bonne réponse : <strong>${w.correctAnswer}</strong></p>
-            ${w.explication ? `<p class="wrong-explication">${w.explication}</p>` : ''}
-          </div>
+    <div class="wrong-carousel">
+      <div class="carousel-header">
+        <h3 class="section-title">Tes erreurs</h3>
+        <span class="carousel-counter">${total === 1 ? '1 erreur' : `1 / ${total}`}</span>
+      </div>
+      <div class="carousel-slide">${slideHTML(wrongAnswers[0])}</div>
+      ${total > 1 ? `
+      <div class="carousel-nav">
+        <button class="carousel-btn carousel-prev" aria-label="Précédent">‹</button>
+        <div class="carousel-dots">
+          ${wrongAnswers.map((_, i) => `<span class="dot${i === 0 ? ' active' : ''}"></span>`).join('')}
         </div>
-      `).join('')}
+        <button class="carousel-btn carousel-next" aria-label="Suivant">›</button>
+      </div>` : ''}
     </div>
   `;
+
+  if (total <= 1) return;
+
+  let currentIdx = 0;
+  const slideEl  = el.querySelector('.carousel-slide');
+  const counter  = el.querySelector('.carousel-counter');
+  const dots     = el.querySelectorAll('.dot');
+  const prevBtn  = el.querySelector('.carousel-prev');
+  const nextBtn  = el.querySelector('.carousel-next');
+
+  function goTo(idx) {
+    currentIdx = (idx + total) % total;
+    slideEl.innerHTML = slideHTML(wrongAnswers[currentIdx]);
+    counter.textContent = `${currentIdx + 1} / ${total}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(currentIdx - 1));
+  nextBtn.addEventListener('click', () => goTo(currentIdx + 1));
+
+  // Swipe support
+  let touchStartX = 0;
+  const carousel = el.querySelector('.wrong-carousel');
+  carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  carousel.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 48) goTo(currentIdx + (dx < 0 ? 1 : -1));
+  });
 }
 
 export function renderComeBackTomorrow(elId = 'come-back-msg') {
@@ -187,7 +232,7 @@ export function setupShareButton(scores, btnId = 'btn-share') {
   if (!btn) return;
 
   const url = getShareUrl(scores);
-  btn.addEventListener('click', async () => {
+  btn.onclick = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
@@ -208,5 +253,5 @@ export function setupShareButton(scores, btnId = 'btn-share') {
         prompt('Copie ce lien pour défier un ami :', url);
       }
     }
-  });
+  };
 }

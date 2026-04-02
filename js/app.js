@@ -103,6 +103,18 @@ function renderHome() {
 
   // Sync notification button state
   updateNotifButton(isNotifEnabled());
+
+  // Show "Défie un ami" on home if already played today
+  const btnShareHome = document.getElementById('btn-share-home');
+  if (btnShareHome) {
+    if (hasPlayedToday()) {
+      const scores = getTodayScores();
+      btnShareHome.style.display = 'flex';
+      if (scores) setupShareButton(scores, 'btn-share-home');
+    } else {
+      btnShareHome.style.display = 'none';
+    }
+  }
 }
 
 // ─── Quiz UI ──────────────────────────────────────────────────────────────────
