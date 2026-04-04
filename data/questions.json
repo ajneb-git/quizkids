@@ -8,8 +8,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇧🇷" },
-        "choix": ["Brésil", "Argentine", "Portugal", "Espagne"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇷"
+        },
+        "choix": [
+          "Brésil",
+          "Argentine",
+          "Portugal",
+          "Espagne"
+        ],
         "reponse": "Brésil",
         "explication": "Le drapeau du Brésil est vert et jaune avec une sphère bleue et la devise « Ordem e Progresso ».",
         "difficulte": 1
@@ -19,8 +27,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇯🇵" },
-        "choix": ["Chine", "Japon", "Corée du Sud", "Vietnam"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇯🇵"
+        },
+        "choix": [
+          "Chine",
+          "Japon",
+          "Corée du Sud",
+          "Vietnam"
+        ],
         "reponse": "Japon",
         "explication": "Le drapeau du Japon est blanc avec un disque rouge au centre, symbolisant le soleil levant.",
         "difficulte": 1
@@ -30,8 +46,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇨🇦" },
-        "choix": ["États-Unis", "Canada", "Australie", "Nouvelle-Zélande"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇦"
+        },
+        "choix": [
+          "États-Unis",
+          "Canada",
+          "Australie",
+          "Nouvelle-Zélande"
+        ],
         "reponse": "Canada",
         "explication": "Le drapeau du Canada arbore une feuille d'érable rouge sur fond blanc entre deux bandes rouges.",
         "difficulte": 1
@@ -41,8 +65,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇩🇪" },
-        "choix": ["Belgique", "Allemagne", "Autriche", "Pays-Bas"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇩🇪"
+        },
+        "choix": [
+          "Belgique",
+          "Allemagne",
+          "Autriche",
+          "Pays-Bas"
+        ],
         "reponse": "Allemagne",
         "explication": "Le drapeau allemand est composé de trois bandes horizontales : noir, rouge et or.",
         "difficulte": 2
@@ -52,8 +84,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇮🇹" },
-        "choix": ["France", "Italie", "Roumanie", "Côte d'Ivoire"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇮🇹"
+        },
+        "choix": [
+          "France",
+          "Italie",
+          "Roumanie",
+          "Côte d'Ivoire"
+        ],
         "reponse": "Italie",
         "explication": "Le drapeau italien est un tricolore vertical vert, blanc et rouge, inspiré du drapeau français.",
         "difficulte": 1
@@ -63,8 +103,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇬🇧" },
-        "choix": ["Australie", "Irlande", "Royaume-Uni", "Nouvelle-Zélande"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇬🇧"
+        },
+        "choix": [
+          "Australie",
+          "Irlande",
+          "Royaume-Uni",
+          "Nouvelle-Zélande"
+        ],
         "reponse": "Royaume-Uni",
         "explication": "L'Union Jack est la combinaison des croix de Saint-Georges, Saint-André et Saint-Patrick.",
         "difficulte": 1
@@ -74,8 +122,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇸🇪" },
-        "choix": ["Norvège", "Suède", "Finlande", "Danemark"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇸🇪"
+        },
+        "choix": [
+          "Norvège",
+          "Suède",
+          "Finlande",
+          "Danemark"
+        ],
         "reponse": "Suède",
         "explication": "Le drapeau suédois est bleu avec une croix jaune nordique.",
         "difficulte": 2
@@ -85,8 +141,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇲🇽" },
-        "choix": ["Mexique", "Argentine", "Italie", "Bolivie"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇲🇽"
+        },
+        "choix": [
+          "Mexique",
+          "Argentine",
+          "Italie",
+          "Bolivie"
+        ],
         "reponse": "Mexique",
         "explication": "Le drapeau mexicain est vert, blanc et rouge avec un aigle dévorant un serpent au centre.",
         "difficulte": 2
@@ -96,8 +160,16 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇿🇦" },
-        "choix": ["Nigeria", "Afrique du Sud", "Kenya", "Ghana"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇿🇦"
+        },
+        "choix": [
+          "Nigeria",
+          "Afrique du Sud",
+          "Kenya",
+          "Ghana"
+        ],
         "reponse": "Afrique du Sud",
         "explication": "Le drapeau sud-africain est unique avec son Y horizontal qui réunit six couleurs symbolisant l'unité.",
         "difficulte": 3
@@ -107,11 +179,779 @@
         "categorie": "drapeaux",
         "type": "qcm",
         "question": "À quel pays appartient ce drapeau ?",
-        "media": { "type": "emoji", "valeur": "🇬🇷" },
-        "choix": ["Chypre", "Grèce", "Croatie", "Slovaquie"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇬🇷"
+        },
+        "choix": [
+          "Chypre",
+          "Grèce",
+          "Croatie",
+          "Slovaquie"
+        ],
         "reponse": "Grèce",
         "explication": "Le drapeau grec est composé de neuf bandes bleues et blanches avec une croix blanche dans le coin.",
         "difficulte": 2
+      },
+      {
+        "id": "dra_011",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇫🇷"
+        },
+        "choix": [
+          "Belgique",
+          "France",
+          "Luxembourg",
+          "Côte d'Ivoire"
+        ],
+        "reponse": "France",
+        "explication": "Le drapeau français est le tricolore bleu, blanc, rouge adopté lors de la Révolution de 1789.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_012",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇳"
+        },
+        "choix": [
+          "Chine",
+          "Vietnam",
+          "Corée du Nord",
+          "URSS"
+        ],
+        "reponse": "Chine",
+        "explication": "Le drapeau chinois est rouge avec une grande étoile et quatre petites étoiles dorées.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_013",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇷🇺"
+        },
+        "choix": [
+          "Russie",
+          "Serbie",
+          "Slovénie",
+          "Pays-Bas"
+        ],
+        "reponse": "Russie",
+        "explication": "Le drapeau russe est composé de trois bandes horizontales : blanc, bleu et rouge.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_014",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇪🇸"
+        },
+        "choix": [
+          "Mexique",
+          "Italie",
+          "Espagne",
+          "Portugal"
+        ],
+        "reponse": "Espagne",
+        "explication": "Le drapeau espagnol est rouge et jaune avec les armoiries royales au centre.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_015",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇹"
+        },
+        "choix": [
+          "Brésil",
+          "Portugal",
+          "Espagne",
+          "Italie"
+        ],
+        "reponse": "Portugal",
+        "explication": "Le drapeau portugais est vert et rouge avec les armoiries nationales sur la frontière.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_016",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇪"
+        },
+        "choix": [
+          "Allemagne",
+          "Belgique",
+          "Roumanie",
+          "Niger"
+        ],
+        "reponse": "Belgique",
+        "explication": "Le drapeau belge est composé de trois bandes verticales noir, jaune et rouge.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_017",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇱"
+        },
+        "choix": [
+          "Luxembourg",
+          "France",
+          "Pays-Bas",
+          "Russie"
+        ],
+        "reponse": "Pays-Bas",
+        "explication": "Le drapeau des Pays-Bas est rouge, blanc et bleu — l'un des plus anciens tricolores du monde.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_018",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇭"
+        },
+        "choix": [
+          "Croix-Rouge",
+          "Autriche",
+          "Danemark",
+          "Suisse"
+        ],
+        "reponse": "Suisse",
+        "explication": "Le drapeau suisse est rouge avec une croix blanche. C'est l'un des rares drapeaux carrés.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_019",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇦🇹"
+        },
+        "choix": [
+          "Lettonie",
+          "Pologne",
+          "Autriche",
+          "Hongrie"
+        ],
+        "reponse": "Autriche",
+        "explication": "Le drapeau autrichien est rouge-blanc-rouge. Il est l'un des plus anciens d'Europe.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_020",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇱"
+        },
+        "choix": [
+          "Pologne",
+          "Indonésie",
+          "Singapour",
+          "Monaco"
+        ],
+        "reponse": "Pologne",
+        "explication": "Le drapeau polonais est blanc (en haut) et rouge (en bas). Simple mais élégant.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_021",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇺🇦"
+        },
+        "choix": [
+          "Kazakhstan",
+          "Suède",
+          "Ukraine",
+          "Finlande"
+        ],
+        "reponse": "Ukraine",
+        "explication": "Le drapeau ukrainien est bleu (ciel) sur jaune (champs de blé), symbole de la nature du pays.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_022",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇮🇪"
+        },
+        "choix": [
+          "Italie",
+          "Côte d'Ivoire",
+          "Irlande",
+          "Niger"
+        ],
+        "reponse": "Irlande",
+        "explication": "Le drapeau irlandais est vert, blanc et orange. Le vert représente les catholiques, l'orange les protestants.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_023",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇴"
+        },
+        "choix": [
+          "Danemark",
+          "Finlande",
+          "Islande",
+          "Norvège"
+        ],
+        "reponse": "Norvège",
+        "explication": "Le drapeau norvégien est rouge avec une croix nordique bleue bordée de blanc.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_024",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇩🇰"
+        },
+        "choix": [
+          "Suisse",
+          "Danemark",
+          "Norvège",
+          "Autriche"
+        ],
+        "reponse": "Danemark",
+        "explication": "Le Dannebrog est rouge avec une croix blanche. C'est le plus vieux drapeau national encore utilisé.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_025",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇫🇮"
+        },
+        "choix": [
+          "Grèce",
+          "Estonie",
+          "Finlande",
+          "Suède"
+        ],
+        "reponse": "Finlande",
+        "explication": "Le drapeau finlandais est blanc avec une croix nordique bleue, couleurs du ciel et des lacs du pays.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_026",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇹🇷"
+        },
+        "choix": [
+          "Pakistan",
+          "Algérie",
+          "Turquie",
+          "Tunisie"
+        ],
+        "reponse": "Turquie",
+        "explication": "Le drapeau turc est rouge avec un croissant blanc et une étoile blanche, symboles de l'islam.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_027",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇲🇦"
+        },
+        "choix": [
+          "Libye",
+          "Maroc",
+          "Mauritanie",
+          "Jordanie"
+        ],
+        "reponse": "Maroc",
+        "explication": "Le drapeau marocain est rouge avec une étoile verte à cinq branches au centre.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_028",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇩🇿"
+        },
+        "choix": [
+          "Pakistan",
+          "Arabie Saoudite",
+          "Algérie",
+          "Irak"
+        ],
+        "reponse": "Algérie",
+        "explication": "Le drapeau algérien est vert et blanc avec un croissant rouge et une étoile rouge.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_029",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇸🇳"
+        },
+        "choix": [
+          "Mali",
+          "Guinée",
+          "Sénégal",
+          "Cameroun"
+        ],
+        "reponse": "Sénégal",
+        "explication": "Le drapeau sénégalais est vert, jaune et rouge avec une étoile verte au centre.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_030",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇮"
+        },
+        "choix": [
+          "Irlande",
+          "Niger",
+          "Inde",
+          "Côte d'Ivoire"
+        ],
+        "reponse": "Côte d'Ivoire",
+        "explication": "Le drapeau ivoirien est orange, blanc et vert — l'inverse du drapeau irlandais.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_031",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇬"
+        },
+        "choix": [
+          "Nigeria",
+          "Jamaïque",
+          "Cameroun",
+          "Gabon"
+        ],
+        "reponse": "Nigeria",
+        "explication": "Le drapeau nigérian est vert-blanc-vert, représentant les forêts et la paix.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_032",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇪🇬"
+        },
+        "choix": [
+          "Irak",
+          "Syrie",
+          "Égypte",
+          "Yémen"
+        ],
+        "reponse": "Égypte",
+        "explication": "Le drapeau égyptien est rouge, blanc et noir avec l'aigle de Saladin doré au centre.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_033",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇦🇷"
+        },
+        "choix": [
+          "Uruguay",
+          "Argentine",
+          "Guatemala",
+          "Honduras"
+        ],
+        "reponse": "Argentine",
+        "explication": "Le drapeau argentin est bleu et blanc avec le soleil de mai au centre.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_034",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇱"
+        },
+        "choix": [
+          "Cuba",
+          "Chili",
+          "Texas",
+          "Porto Rico"
+        ],
+        "reponse": "Chili",
+        "explication": "Le drapeau chilien est rouge et blanc avec un carré bleu et une étoile blanche.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_035",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇰🇷"
+        },
+        "choix": [
+          "Japon",
+          "Taïwan",
+          "Corée du Sud",
+          "Mongolie"
+        ],
+        "reponse": "Corée du Sud",
+        "explication": "Le drapeau sud-coréen est blanc avec le symbole taegeuk rouge et bleu et quatre trigrammes noirs.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_036",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇮🇳"
+        },
+        "choix": [
+          "Niger",
+          "Inde",
+          "Irlande",
+          "Côte d'Ivoire"
+        ],
+        "reponse": "Inde",
+        "explication": "Le drapeau indien est orange, blanc et vert avec la roue d'Ashoka bleue au centre.",
+        "difficulte": 1
+      },
+      {
+        "id": "dra_037",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇿"
+        },
+        "choix": [
+          "Australie",
+          "Fidji",
+          "Nouvelle-Zélande",
+          "Royaume-Uni"
+        ],
+        "reponse": "Nouvelle-Zélande",
+        "explication": "Le drapeau néo-zélandais est bleu avec l'Union Jack et quatre étoiles rouges de la Croix du Sud.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_038",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇭🇺"
+        },
+        "choix": [
+          "Bulgarie",
+          "Hongrie",
+          "Italie",
+          "Lituanie"
+        ],
+        "reponse": "Hongrie",
+        "explication": "Le drapeau hongrois est rouge, blanc et vert — couleurs nationales depuis le Moyen Âge.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_039",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇴"
+        },
+        "choix": [
+          "Équateur",
+          "Venezuela",
+          "Colombie",
+          "Bolivie"
+        ],
+        "reponse": "Colombie",
+        "explication": "Le drapeau colombien est jaune (la moitié), bleu et rouge, inspiré du drapeau de la Grande Colombie.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_040",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇯🇲"
+        },
+        "choix": [
+          "Jamaïque",
+          "Trinidad",
+          "Barbade",
+          "Bahamas"
+        ],
+        "reponse": "Jamaïque",
+        "explication": "Le drapeau jamaïcain est noir, or et vert avec une croix en X. C'est le seul drapeau sans rouge, blanc ou bleu.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_041",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇻🇳"
+        },
+        "choix": [
+          "Chine",
+          "Vietnam",
+          "Laos",
+          "Thaïlande"
+        ],
+        "reponse": "Vietnam",
+        "explication": "Le drapeau vietnamien est rouge avec une étoile jaune à cinq branches au centre.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_042",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇸🇦"
+        },
+        "choix": [
+          "Irak",
+          "Iran",
+          "Pakistan",
+          "Arabie Saoudite"
+        ],
+        "reponse": "Arabie Saoudite",
+        "explication": "Le drapeau saoudien est vert avec une inscription en arabe et un sabre. Le vert est la couleur de l islam.",
+        "difficulte": 2
+      },
+      {
+        "id": "dra_043",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇪"
+        },
+        "choix": [
+          "Canada",
+          "Pérou",
+          "Autriche",
+          "Lettonie"
+        ],
+        "reponse": "Pérou",
+        "explication": "Le drapeau péruvien est rouge-blanc-rouge, couleurs choisies par le général San Martin en 1820.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_044",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇷🇴"
+        },
+        "choix": [
+          "Tchad",
+          "Roumanie",
+          "Moldavie",
+          "Andorre"
+        ],
+        "reponse": "Roumanie",
+        "explication": "Le drapeau roumain est bleu, jaune et rouge vertical — très similaire au drapeau du Tchad.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_045",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇭🇷"
+        },
+        "choix": [
+          "Slovaquie",
+          "Serbie",
+          "Croatie",
+          "Slovénie"
+        ],
+        "reponse": "Croatie",
+        "explication": "Le drapeau croate est rouge, blanc et bleu avec un échiquier rouge et blanc au centre.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_046",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇬🇭"
+        },
+        "choix": [
+          "Sénégal",
+          "Mali",
+          "Ghana",
+          "Guinée"
+        ],
+        "reponse": "Ghana",
+        "explication": "Le drapeau ghanéen est rouge, or et vert avec une étoile noire au centre, symbole panafricain.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_047",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇰"
+        },
+        "choix": [
+          "Bangladesh",
+          "Pakistan",
+          "Algérie",
+          "Malaisie"
+        ],
+        "reponse": "Pakistan",
+        "explication": "Le drapeau pakistanais est vert avec un croissant et une étoile blancs, plus une bande blanche.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_048",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇿"
+        },
+        "choix": [
+          "Slovaquie",
+          "Yougoslavie",
+          "Pologne",
+          "République tchèque"
+        ],
+        "reponse": "République tchèque",
+        "explication": "Le drapeau tchèque est blanc et rouge avec un triangle bleu sur le côté gauche.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_049",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇹🇳"
+        },
+        "choix": [
+          "Turquie",
+          "Maroc",
+          "Tunisie",
+          "Libye"
+        ],
+        "reponse": "Tunisie",
+        "explication": "Le drapeau tunisien est rouge avec un cercle blanc contenant un croissant rouge et une étoile rouge.",
+        "difficulte": 3
+      },
+      {
+        "id": "dra_050",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇬"
+        },
+        "choix": [
+          "Hongrie",
+          "Bulgarie",
+          "Slovénie",
+          "Biélorussie"
+        ],
+        "reponse": "Bulgarie",
+        "explication": "Le drapeau bulgare est blanc, vert et rouge. Le vert rappelle la richesse agricole du pays.",
+        "difficulte": 3
       }
     ],
     "sport": [
@@ -120,8 +960,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Combien de joueurs composent une équipe de football sur le terrain ?",
-        "media": { "type": "emoji", "valeur": "⚽" },
-        "choix": ["9", "10", "11", "12"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
         "reponse": "11",
         "explication": "Une équipe de football est composée de 11 joueurs, dont un gardien de but.",
         "difficulte": 1
@@ -131,8 +979,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Dans quel sport utilise-t-on un volant (shuttlecock) ?",
-        "media": { "type": "emoji", "valeur": "🏸" },
-        "choix": ["Tennis", "Squash", "Badminton", "Ping-pong"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏸"
+        },
+        "choix": [
+          "Tennis",
+          "Squash",
+          "Badminton",
+          "Ping-pong"
+        ],
         "reponse": "Badminton",
         "explication": "Le badminton se joue avec un volant, une pièce d'équipement légère munie de plumes.",
         "difficulte": 1
@@ -142,8 +998,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Quelle ville a accueilli les Jeux Olympiques d'été de 2024 ?",
-        "media": { "type": "emoji", "valeur": "🏅" },
-        "choix": ["Tokyo", "Los Angeles", "Paris", "Londres"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏅"
+        },
+        "choix": [
+          "Tokyo",
+          "Los Angeles",
+          "Paris",
+          "Londres"
+        ],
         "reponse": "Paris",
         "explication": "Paris a accueilli les Jeux Olympiques d'été en 2024, cent ans après les avoir organisés pour la dernière fois.",
         "difficulte": 1
@@ -153,8 +1017,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Combien de sets faut-il gagner pour remporter un match de tennis en Grand Chelem (hommes) ?",
-        "media": { "type": "emoji", "valeur": "🎾" },
-        "choix": ["2", "3", "4", "5"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
         "reponse": "3",
         "explication": "En Grand Chelem masculin, les matchs se jouent au meilleur des cinq sets, donc il faut en gagner 3.",
         "difficulte": 2
@@ -164,8 +1036,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Quelle course cycliste est surnommée « la Grande Boucle » ?",
-        "media": { "type": "emoji", "valeur": "🚴" },
-        "choix": ["Giro d'Italia", "Vuelta a España", "Tour de France", "Paris-Roubaix"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🚴"
+        },
+        "choix": [
+          "Giro d'Italia",
+          "Vuelta a España",
+          "Tour de France",
+          "Paris-Roubaix"
+        ],
         "reponse": "Tour de France",
         "explication": "Le Tour de France est surnommé « la Grande Boucle » car il fait le tour de la France.",
         "difficulte": 1
@@ -175,8 +1055,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Combien de joueurs composent une équipe de basketball sur le terrain ?",
-        "media": { "type": "emoji", "valeur": "🏀" },
-        "choix": ["4", "5", "6", "7"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏀"
+        },
+        "choix": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "reponse": "5",
         "explication": "Une équipe de basketball place 5 joueurs sur le terrain en même temps.",
         "difficulte": 1
@@ -186,8 +1074,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Dans quel sport marque-t-on un « essai » ?",
-        "media": { "type": "emoji", "valeur": "🏉" },
-        "choix": ["Football américain", "Rugby", "Handball", "Hockey"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏉"
+        },
+        "choix": [
+          "Football américain",
+          "Rugby",
+          "Handball",
+          "Hockey"
+        ],
         "reponse": "Rugby",
         "explication": "En rugby, un essai est marqué en aplatissant le ballon derrière la ligne de but adverse et vaut 5 points.",
         "difficulte": 1
@@ -197,8 +1093,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Quelle distance court-on lors d'un marathon ?",
-        "media": { "type": "emoji", "valeur": "🏃" },
-        "choix": ["21 km", "30 km", "42,195 km", "50 km"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏃"
+        },
+        "choix": [
+          "21 km",
+          "30 km",
+          "42,195 km",
+          "50 km"
+        ],
         "reponse": "42,195 km",
         "explication": "Le marathon mesure exactement 42,195 km, distance fixée aux Jeux Olympiques de 1908 à Londres.",
         "difficulte": 2
@@ -208,8 +1112,16 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Combien de joueurs composent une équipe de handball sur le terrain ?",
-        "media": { "type": "emoji", "valeur": "🤾" },
-        "choix": ["5", "6", "7", "8"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🤾"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
         "reponse": "7",
         "explication": "Le handball se joue à 7 contre 7, dont un gardien de but dans chaque équipe.",
         "difficulte": 2
@@ -219,11 +1131,779 @@
         "categorie": "sport",
         "type": "qcm",
         "question": "Quel sport se pratique avec une batte et une balle sur un terrain en losange ?",
-        "media": { "type": "emoji", "valeur": "⚾" },
-        "choix": ["Cricket", "Baseball", "Softball", "Rounders"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚾"
+        },
+        "choix": [
+          "Cricket",
+          "Baseball",
+          "Softball",
+          "Rounders"
+        ],
         "reponse": "Baseball",
         "explication": "Le baseball se joue sur un terrain en forme de losange appelé « diamond », avec 4 bases.",
         "difficulte": 2
+      },
+      {
+        "id": "spo_011",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel pays a remporté la Coupe du Monde de football 2022 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏆"
+        },
+        "choix": [
+          "France",
+          "Brésil",
+          "Argentine",
+          "Croatie"
+        ],
+        "reponse": "Argentine",
+        "explication": "L Argentine a remporté la Coupe du Monde 2022 au Qatar en battant la France aux tirs au but en finale.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_012",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport Léon Marchand a-t-il remporté 4 médailles d or aux JO de Paris 2024 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏊"
+        },
+        "choix": [
+          "Aviron",
+          "Natation",
+          "Triathlon",
+          "Plongeon"
+        ],
+        "reponse": "Natation",
+        "explication": "Léon Marchand est nageur. Il a réalisé un exploit historique à Paris 2024 en gagnant 4 titres olympiques.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_013",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs composent une équipe de volleyball sur le terrain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏐"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "reponse": "6",
+        "explication": "Le volleyball se joue à 6 contre 6. Chaque équipe peut effectuer jusqu à 3 touches avant de renvoyer le ballon.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_014",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "De quelle forme est le ballon de rugby ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏉"
+        },
+        "choix": [
+          "Ronde",
+          "Carrée",
+          "Ovale",
+          "Hexagonale"
+        ],
+        "reponse": "Ovale",
+        "explication": "Le ballon de rugby est ovale, ce qui le rend plus difficile à attraper et rebondit de façon imprévisible.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_015",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel pays le judo a-t-il été inventé ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥋"
+        },
+        "choix": [
+          "Chine",
+          "Corée",
+          "Japon",
+          "Vietnam"
+        ],
+        "reponse": "Japon",
+        "explication": "Le judo a été créé au Japon par Jigoro Kano en 1882. Il est devenu sport olympique en 1964.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_016",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de mètres mesure un bassin de natation olympique ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏊"
+        },
+        "choix": [
+          "25 m",
+          "33 m",
+          "50 m",
+          "100 m"
+        ],
+        "reponse": "50 m",
+        "explication": "Un bassin olympique mesure 50 m de long, 25 m de large et comporte 8 couloirs.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_017",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel athlète détient le record du monde du 100 m ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚡"
+        },
+        "choix": [
+          "Carl Lewis",
+          "Usain Bolt",
+          "Tyson Gay",
+          "Justin Gatlin"
+        ],
+        "reponse": "Usain Bolt",
+        "explication": "Usain Bolt a couru le 100 m en 9 s 58 à Berlin en 2009. Ce record tient toujours.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_018",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Le Super Bowl est la finale de quel sport ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏈"
+        },
+        "choix": [
+          "Baseball",
+          "Basketball",
+          "Football américain",
+          "Rugby"
+        ],
+        "reponse": "Football américain",
+        "explication": "Le Super Bowl est le match de championnat de la NFL, la ligue professionnelle de football américain.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_019",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport Simone Biles est-elle championne olympique ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤸"
+        },
+        "choix": [
+          "Patinage artistique",
+          "Gymnastique artistique",
+          "Plongeon",
+          "Acrobatie"
+        ],
+        "reponse": "Gymnastique artistique",
+        "explication": "Simone Biles est la gymnaste la plus titrée de l histoire avec 7 médailles olympiques.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_020",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de disciplines composent un triathlon ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏅"
+        },
+        "choix": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "reponse": "3",
+        "explication": "Le triathlon combine la natation, le cyclisme et la course à pied, dans cet ordre.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_021",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Sur quelle surface se joue le tournoi de Roland-Garros ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "Gazon",
+          "Béton",
+          "Parquet",
+          "Terre battue"
+        ],
+        "reponse": "Terre battue",
+        "explication": "Roland-Garros se joue sur terre battue (ocre). C est l un des 4 tournois du Grand Chelem de tennis.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_022",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs par équipe en rugby à XV ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏉"
+        },
+        "choix": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "reponse": "15",
+        "explication": "Le rugby à XV se joue avec 15 joueurs de chaque côté, sur un terrain de 100 m.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_023",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel club de football a remporté le plus de Ligues des Champions ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⭐"
+        },
+        "choix": [
+          "FC Barcelone",
+          "Bayern Munich",
+          "Real Madrid",
+          "Juventus"
+        ],
+        "reponse": "Real Madrid",
+        "explication": "Le Real Madrid a remporté 15 Ligues des Champions, plus que tout autre club au monde.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_024",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Sur quelle surface se joue le tournoi de Wimbledon ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "Terre battue",
+          "Gazon",
+          "Béton",
+          "Moquette"
+        ],
+        "reponse": "Gazon",
+        "explication": "Wimbledon est le seul Grand Chelem encore joué sur gazon naturel. Il se tient à Londres chaque été.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_025",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel sport pratique Teddy Riner, multiple champion olympique français ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥇"
+        },
+        "choix": [
+          "Boxe",
+          "Lutte",
+          "Judo",
+          "Taekwondo"
+        ],
+        "reponse": "Judo",
+        "explication": "Teddy Riner est judoka. Il a remporté 3 médailles d or olympiques et est 11 fois champion du monde.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_026",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de points vaut un panier à 3 points au basketball ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏀"
+        },
+        "choix": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "reponse": "3",
+        "explication": "Un tir réussi derrière la ligne des 3 points vaut 3 points. Un tir normal en vaut 2, un lancer-franc 1.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_027",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de temps dure une mi-temps au football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "30 min",
+          "40 min",
+          "45 min",
+          "60 min"
+        ],
+        "reponse": "45 min",
+        "explication": "Un match de football dure 90 minutes, divisées en deux mi-temps de 45 minutes chacune.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_028",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle couleur de maillot porte le leader du Tour de France ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🚴"
+        },
+        "choix": [
+          "Blanc",
+          "Vert",
+          "Jaune",
+          "Rouge"
+        ],
+        "reponse": "Jaune",
+        "explication": "Le maillot jaune est porté par le leader au classement général du Tour de France depuis 1919.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_029",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel pays se déroulent les Jeux Olympiques d hiver de 2026 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛷️"
+        },
+        "choix": [
+          "France",
+          "Suisse",
+          "Italie",
+          "Autriche"
+        ],
+        "reponse": "Italie",
+        "explication": "Les JO d hiver 2026 ont lieu à Milan et Cortina d Ampezzo, en Italie.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_030",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel sport se joue dans une piscine avec deux équipes qui se lancent un ballon ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💦"
+        },
+        "choix": [
+          "Natation synchronisée",
+          "Polo",
+          "Water-polo",
+          "Nage en eau libre"
+        ],
+        "reponse": "Water-polo",
+        "explication": "Le water-polo oppose deux équipes de 7 joueurs dans une piscine. Il faut marquer dans le but adverse.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_031",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "En ski alpin, quelle est l épreuve la plus rapide ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎿"
+        },
+        "choix": [
+          "Slalom",
+          "Géant",
+          "Super-G",
+          "Descente"
+        ],
+        "reponse": "Descente",
+        "explication": "La descente est l épreuve la plus rapide du ski alpin. Les skieurs peuvent dépasser 130 km/h.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_032",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de sets faut-il gagner pour remporter un match de volleyball ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏐"
+        },
+        "choix": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "reponse": "3",
+        "explication": "Au volleyball, un match se gagne en remportant 3 sets. Chaque set se joue en 25 points.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_033",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport utilise-t-on une raquette et une balle de 40 mm ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏓"
+        },
+        "choix": [
+          "Badminton",
+          "Tennis",
+          "Tennis de table",
+          "Squash"
+        ],
+        "reponse": "Tennis de table",
+        "explication": "Le tennis de table (ping-pong) utilise une balle blanche ou orange de 40 mm de diamètre.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_034",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle nage est la plus rapide en natation ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏊"
+        },
+        "choix": [
+          "Brasse",
+          "Dos",
+          "Papillon",
+          "Crawl"
+        ],
+        "reponse": "Crawl",
+        "explication": "Le crawl (nage libre) est la nage la plus rapide. C est pourquoi il est toujours choisi en nage libre.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_035",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien d équipes participent à la phase finale d une Coupe du Monde de football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌍"
+        },
+        "choix": [
+          "16",
+          "24",
+          "32",
+          "48"
+        ],
+        "reponse": "32",
+        "explication": "Depuis 1998, la phase finale de la Coupe du Monde rassemble 32 équipes. Ce nombre passera à 48 en 2026.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_036",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel sport se pratique sur un tatami et vise à immobiliser ou projeter l adversaire ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥋"
+        },
+        "choix": [
+          "Karaté",
+          "Judo",
+          "Aïkido",
+          "Taekwondo"
+        ],
+        "reponse": "Judo",
+        "explication": "Le judo se pratique sur un tatami. L objectif est de projeter l adversaire ou de le maintenir au sol.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_037",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "En tennis, comment appelle-t-on le service qui touche le filet et retombe dans la bonne zone ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "Ace",
+          "Let",
+          "Faute",
+          "Filet"
+        ],
+        "reponse": "Let",
+        "explication": "Un let est un service qui touche le filet et retombe dans le carré de service. Il doit être rejoué.",
+        "difficulte": 3
+      },
+      {
+        "id": "spo_038",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de rounds maximum dure un combat de boxe professionnelle ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥊"
+        },
+        "choix": [
+          "8",
+          "10",
+          "12",
+          "15"
+        ],
+        "reponse": "12",
+        "explication": "Un combat de boxe professionnelle dure au maximum 12 rounds de 3 minutes depuis 1988.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_039",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport marque-t-on des points appelés strikes et spares ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎳"
+        },
+        "choix": [
+          "Baseball",
+          "Cricket",
+          "Bowling",
+          "Golf"
+        ],
+        "reponse": "Bowling",
+        "explication": "Au bowling, un strike c est renverser toutes les quilles en un lancer, un spare en deux lancers.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_040",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel joueur de tennis a remporté le plus de tournois du Grand Chelem ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "Rafael Nadal",
+          "Roger Federer",
+          "Novak Djokovic",
+          "Pete Sampras"
+        ],
+        "reponse": "Novak Djokovic",
+        "explication": "Novak Djokovic a remporté 24 tournois du Grand Chelem, record absolu en tennis masculin.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_041",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de ballons touchent le poteau pour que ce soit hors-jeu au football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "0",
+          "1",
+          "2",
+          "Ça dépend"
+        ],
+        "reponse": "Ça dépend",
+        "explication": "Le hors-jeu ne dépend pas du ballon mais de la position du joueur par rapport aux défenseurs au moment de la passe.",
+        "difficulte": 3
+      },
+      {
+        "id": "spo_042",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel footballeur est surnommé CR7 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "Neymar",
+          "Kylian Mbappé",
+          "Cristiano Ronaldo",
+          "Karim Benzema"
+        ],
+        "reponse": "Cristiano Ronaldo",
+        "explication": "CR7 désigne Cristiano Ronaldo, le C et R de son nom et le 7, son numéro de maillot emblématique.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_043",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de cartons jaunes mènent à une expulsion au football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🟨"
+        },
+        "choix": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "reponse": "2",
+        "explication": "Au football, deux cartons jaunes dans le même match entraînent un carton rouge et l expulsion du joueur.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_044",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel pays se déroulera la Coupe du Monde de football 2030 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌍"
+        },
+        "choix": [
+          "Maroc uniquement",
+          "Espagne-Portugal-Maroc",
+          "Brésil",
+          "USA-Canada-Mexique"
+        ],
+        "reponse": "Espagne-Portugal-Maroc",
+        "explication": "Le Mondial 2030 est organisé par l Espagne, le Portugal et le Maroc, avec des matchs aussi en Argentine, Uruguay et Paraguay.",
+        "difficulte": 3
+      },
+      {
+        "id": "spo_045",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel pays a remporté le plus de Coupes du Monde de football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏆"
+        },
+        "choix": [
+          "Allemagne",
+          "Argentine",
+          "Brésil",
+          "Italie"
+        ],
+        "reponse": "Brésil",
+        "explication": "Le Brésil a remporté 5 Coupes du Monde (1958, 1962, 1970, 1994, 2002), plus que tout autre pays.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_046",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Kylian Mbappé joue dans quel club depuis 2024 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "FC Barcelone",
+          "Manchester City",
+          "Real Madrid",
+          "Bayern Munich"
+        ],
+        "reponse": "Real Madrid",
+        "explication": "Kylian Mbappé a rejoint le Real Madrid en 2024 après avoir quitté le Paris Saint-Germain.",
+        "difficulte": 1
+      },
+      {
+        "id": "spo_047",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle surface mesure un terrain de football officiel en longueur ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "90 à 100 m",
+          "100 à 110 m",
+          "90 à 120 m",
+          "110 à 130 m"
+        ],
+        "reponse": "90 à 120 m",
+        "explication": "Les règles du football autorisent des terrains de 90 à 120 m de long et 45 à 90 m de large.",
+        "difficulte": 3
+      },
+      {
+        "id": "spo_048",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel joueur français a marqué lors de la finale de la Coupe du Monde 2022 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇫🇷"
+        },
+        "choix": [
+          "Antoine Griezmann",
+          "Olivier Giroud",
+          "Kylian Mbappé",
+          "Marcus Thuram"
+        ],
+        "reponse": "Kylian Mbappé",
+        "explication": "Mbappé a inscrit un triplé en finale contre l Argentine (3 buts), malgré la défaite de la France.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_049",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs composent une équipe de football à 7 (football à 7) ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚽"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "reponse": "7",
+        "explication": "Le football à 7 est une version réduite du football classique, très pratiquée chez les jeunes.",
+        "difficulte": 2
+      },
+      {
+        "id": "spo_050",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quel est le trophée remis au meilleur joueur de la Ligue des Champions ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏆"
+        },
+        "choix": [
+          "Ballon d Or",
+          "Soulier d Or",
+          "Trophée Yashin",
+          "Trophée du meilleur joueur UEFA"
+        ],
+        "reponse": "Trophée du meilleur joueur UEFA",
+        "explication": "Le trophée du meilleur joueur de l UEFA est remis en fin de saison au meilleur joueur de la Ligue des Champions.",
+        "difficulte": 3
       }
     ],
     "histoire": [
@@ -232,8 +1912,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "En quelle année a débuté la Révolution française ?",
-        "media": { "type": "emoji", "valeur": "⚔️" },
-        "choix": ["1776", "1789", "1804", "1815"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "1776",
+          "1789",
+          "1804",
+          "1815"
+        ],
         "reponse": "1789",
         "explication": "La Révolution française a commencé en 1789 avec la prise de la Bastille le 14 juillet.",
         "difficulte": 1
@@ -243,8 +1931,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Qui était Napoléon Bonaparte ?",
-        "media": { "type": "emoji", "valeur": "👑" },
-        "choix": ["Un roi de France", "Un pape", "Un empereur français", "Un général anglais"],
+        "media": {
+          "type": "emoji",
+          "valeur": "👑"
+        },
+        "choix": [
+          "Un roi de France",
+          "Un pape",
+          "Un empereur français",
+          "Un général anglais"
+        ],
         "reponse": "Un empereur français",
         "explication": "Napoléon Bonaparte fut empereur des Français de 1804 à 1814, puis brièvement en 1815.",
         "difficulte": 1
@@ -254,8 +1950,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "En quelle année s'est terminée la Seconde Guerre mondiale ?",
-        "media": { "type": "emoji", "valeur": "🕊️" },
-        "choix": ["1943", "1944", "1945", "1946"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🕊️"
+        },
+        "choix": [
+          "1943",
+          "1944",
+          "1945",
+          "1946"
+        ],
         "reponse": "1945",
         "explication": "La Seconde Guerre mondiale s'est terminée en 1945 avec la capitulation de l'Allemagne (mai) puis du Japon (août).",
         "difficulte": 1
@@ -265,8 +1969,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Christophe Colomb a découvert l'Amérique en…",
-        "media": { "type": "emoji", "valeur": "🚢" },
-        "choix": ["1388", "1492", "1512", "1620"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🚢"
+        },
+        "choix": [
+          "1388",
+          "1492",
+          "1512",
+          "1620"
+        ],
         "reponse": "1492",
         "explication": "Christophe Colomb a atteint les Amériques le 12 octobre 1492, croyant arriver aux Indes.",
         "difficulte": 1
@@ -276,8 +1988,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Quel surnom portait Louis XIV ?",
-        "media": { "type": "emoji", "valeur": "☀️" },
-        "choix": ["Le Bon Roi", "Le Roi-Soleil", "Le Grand Monarque", "Le Roi de Fer"],
+        "media": {
+          "type": "emoji",
+          "valeur": "☀️"
+        },
+        "choix": [
+          "Le Bon Roi",
+          "Le Roi-Soleil",
+          "Le Grand Monarque",
+          "Le Roi de Fer"
+        ],
         "reponse": "Le Roi-Soleil",
         "explication": "Louis XIV était surnommé « le Roi-Soleil » car il se comparait au soleil, astre autour duquel tout tourne.",
         "difficulte": 1
@@ -287,8 +2007,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Qui a conquis la Gaule au Ier siècle avant J.-C. ?",
-        "media": { "type": "emoji", "valeur": "🏛️" },
-        "choix": ["Auguste", "Jules César", "Vercingétorix", "Brutus"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Auguste",
+          "Jules César",
+          "Vercingétorix",
+          "Brutus"
+        ],
         "reponse": "Jules César",
         "explication": "Jules César a conquis la Gaule lors de la Guerre des Gaules (58-52 av. J.-C.), dont il a relaté les batailles.",
         "difficulte": 2
@@ -298,8 +2026,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "En quelle année a débuté la Première Guerre mondiale ?",
-        "media": { "type": "emoji", "valeur": "🪖" },
-        "choix": ["1910", "1912", "1914", "1916"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🪖"
+        },
+        "choix": [
+          "1910",
+          "1912",
+          "1914",
+          "1916"
+        ],
         "reponse": "1914",
         "explication": "La Première Guerre mondiale a débuté en 1914 après l'assassinat de l'archiduc François-Ferdinand à Sarajevo.",
         "difficulte": 1
@@ -309,8 +2045,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Charlemagne fut couronné empereur en quelle année ?",
-        "media": { "type": "emoji", "valeur": "⚜️" },
-        "choix": ["768", "800", "814", "843"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚜️"
+        },
+        "choix": [
+          "768",
+          "800",
+          "814",
+          "843"
+        ],
         "reponse": "800",
         "explication": "Charlemagne fut couronné empereur d'Occident le 25 décembre 800 par le pape Léon III à Rome.",
         "difficulte": 2
@@ -320,8 +2064,16 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Jeanne d'Arc a libéré quelle ville en 1429 ?",
-        "media": { "type": "emoji", "valeur": "⚜️" },
-        "choix": ["Paris", "Reims", "Orléans", "Bordeaux"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚜️"
+        },
+        "choix": [
+          "Paris",
+          "Reims",
+          "Orléans",
+          "Bordeaux"
+        ],
         "reponse": "Orléans",
         "explication": "Jeanne d'Arc a levé le siège d'Orléans en mai 1429, ce qui lui a valu le surnom de « Pucelle d'Orléans ».",
         "difficulte": 2
@@ -331,11 +2083,779 @@
         "categorie": "histoire",
         "type": "qcm",
         "question": "Combien de temps a duré la Guerre de Cent Ans entre la France et l'Angleterre ?",
-        "media": { "type": "emoji", "valeur": "🏰" },
-        "choix": ["50 ans", "100 ans", "116 ans", "150 ans"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏰"
+        },
+        "choix": [
+          "50 ans",
+          "100 ans",
+          "116 ans",
+          "150 ans"
+        ],
         "reponse": "116 ans",
         "explication": "La Guerre de Cent Ans a duré de 1337 à 1453, soit 116 ans. Son nom est approximatif.",
         "difficulte": 3
+      },
+      {
+        "id": "his_011",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle ville romaine a été ensevelie par l éruption du Vésuve en 79 ap. J.-C. ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌋"
+        },
+        "choix": [
+          "Rome",
+          "Naples",
+          "Pompéi",
+          "Herculanum"
+        ],
+        "reponse": "Pompéi",
+        "explication": "Pompéi a été ensevelie sous les cendres du Vésuve en 79 ap. J.-C. Les fouilles ont permis de retrouver la ville intacte.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_012",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année la France a-t-elle définitivement aboli l esclavage ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "✊"
+        },
+        "choix": [
+          "1789",
+          "1815",
+          "1848",
+          "1905"
+        ],
+        "reponse": "1848",
+        "explication": "L esclavage a été définitivement aboli en France en 1848, sous la IIe République, grâce à Victor Schoelcher.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_013",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel pharaon a fait construire la Grande Pyramide de Gizeh ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Ramsès II",
+          "Toutânkhamon",
+          "Khéops",
+          "Cléopâtre"
+        ],
+        "reponse": "Khéops",
+        "explication": "La Grande Pyramide a été construite pour le pharaon Khéops vers 2560 av. J.-C. Elle est la seule des 7 Merveilles encore debout.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_014",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui a été le premier homme à marcher sur la Lune ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌕"
+        },
+        "choix": [
+          "Buzz Aldrin",
+          "Youri Gagarine",
+          "Neil Armstrong",
+          "John Glenn"
+        ],
+        "reponse": "Neil Armstrong",
+        "explication": "Neil Armstrong a posé le pied sur la Lune le 21 juillet 1969 lors de la mission Apollo 11.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_015",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année le mur de Berlin est-il tombé ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧱"
+        },
+        "choix": [
+          "1979",
+          "1985",
+          "1989",
+          "1991"
+        ],
+        "reponse": "1989",
+        "explication": "Le mur de Berlin est tombé le 9 novembre 1989, marquant la fin de la guerre froide et la réunification allemande.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_016",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Gandhi ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "☮️"
+        },
+        "choix": [
+          "Un président américain",
+          "Un général indien",
+          "Un leader de l indépendance indienne",
+          "Un philosophe grec"
+        ],
+        "reponse": "Un leader de l indépendance indienne",
+        "explication": "Gandhi a mené l Inde à l indépendance face à la Grande-Bretagne par la résistance non-violente.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_017",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année la Tour Eiffel a-t-elle été construite ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🗼"
+        },
+        "choix": [
+          "1879",
+          "1889",
+          "1899",
+          "1900"
+        ],
+        "reponse": "1889",
+        "explication": "La Tour Eiffel a été construite par Gustave Eiffel pour l Exposition universelle de Paris de 1889.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_018",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle nation a envoyé le premier homme dans l espace ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🚀"
+        },
+        "choix": [
+          "États-Unis",
+          "Chine",
+          "France",
+          "URSS"
+        ],
+        "reponse": "URSS",
+        "explication": "Youri Gagarine, soviétique, a été le premier homme dans l espace le 12 avril 1961 à bord de Vostok 1.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_019",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Martin Luther King ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "✊"
+        },
+        "choix": [
+          "Un président américain",
+          "Un militant des droits civiques",
+          "Un pasteur canadien",
+          "Un général américain"
+        ],
+        "reponse": "Un militant des droits civiques",
+        "explication": "Martin Luther King a mené le mouvement des droits civiques aux États-Unis. Il a été assassiné en 1968.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_020",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel roi de France a été guillotiné pendant la Révolution ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👑"
+        },
+        "choix": [
+          "Louis XIII",
+          "Louis XIV",
+          "Louis XV",
+          "Louis XVI"
+        ],
+        "reponse": "Louis XVI",
+        "explication": "Louis XVI a été guillotiné le 21 janvier 1793 pendant la Révolution française.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_021",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle bataille a marqué la défaite définitive de Napoléon en 1815 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "Austerlitz",
+          "Trafalgar",
+          "Waterloo",
+          "Leipzig"
+        ],
+        "reponse": "Waterloo",
+        "explication": "La bataille de Waterloo (18 juin 1815) a marqué la défaite de Napoléon face à Wellington et Blücher.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_022",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Où a eu lieu le Débarquement allié en juin 1944 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🪖"
+        },
+        "choix": [
+          "Bretagne",
+          "Normandie",
+          "Provence",
+          "Pas-de-Calais"
+        ],
+        "reponse": "Normandie",
+        "explication": "Le Débarquement du 6 juin 1944 (D-Day) s est déroulé sur les plages de Normandie : Utah, Omaha, Gold, Juno, Sword.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_023",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Nelson Mandela ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "✊"
+        },
+        "choix": [
+          "Un roi zoulou",
+          "Premier président noir d Afrique du Sud",
+          "Un général américain",
+          "Un leader kenyan"
+        ],
+        "reponse": "Premier président noir d Afrique du Sud",
+        "explication": "Nelson Mandela a lutté contre l apartheid. Emprisonné 27 ans, il est devenu président de l Afrique du Sud en 1994.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_024",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle était la monnaie française avant l euro ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💶"
+        },
+        "choix": [
+          "Le sou",
+          "La livre",
+          "Le franc",
+          "L écu"
+        ],
+        "reponse": "Le franc",
+        "explication": "Le franc français a été remplacé par l euro en 2002. Les pièces et billets en francs ont alors cessé d avoir cours légal.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_025",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année la France a-t-elle remporté sa première Coupe du Monde de football ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏆"
+        },
+        "choix": [
+          "1984",
+          "1992",
+          "1998",
+          "2006"
+        ],
+        "reponse": "1998",
+        "explication": "La France a remporté la Coupe du Monde 1998 à domicile, en battant le Brésil 3-0 en finale.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_026",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui a inventé l imprimerie en Europe vers 1450 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📖"
+        },
+        "choix": [
+          "Léonard de Vinci",
+          "Copernic",
+          "Gutenberg",
+          "Luther"
+        ],
+        "reponse": "Gutenberg",
+        "explication": "Johannes Gutenberg a inventé l imprimerie à caractères mobiles vers 1450, révolutionnant la diffusion du savoir.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_027",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année la Déclaration d indépendance américaine a-t-elle été signée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦅"
+        },
+        "choix": [
+          "1763",
+          "1776",
+          "1789",
+          "1804"
+        ],
+        "reponse": "1776",
+        "explication": "La Déclaration d indépendance des États-Unis a été signée le 4 juillet 1776, fête nationale américaine.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_028",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel président américain a aboli l esclavage ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇺🇸"
+        },
+        "choix": [
+          "George Washington",
+          "Thomas Jefferson",
+          "Abraham Lincoln",
+          "Theodore Roosevelt"
+        ],
+        "reponse": "Abraham Lincoln",
+        "explication": "Abraham Lincoln a aboli l esclavage par la Proclamation d émancipation de 1863, pendant la guerre de Sécession.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_029",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle révolution a eu lieu en Russie en 1917 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔴"
+        },
+        "choix": [
+          "La révolution bourgeoise",
+          "La révolution bolchevique",
+          "La révolution démocratique",
+          "La révolution paysanne"
+        ],
+        "reponse": "La révolution bolchevique",
+        "explication": "La révolution bolchevique d octobre 1917 a renversé le gouvernement provisoire et installé les communistes au pouvoir.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_030",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel était le nom du chef gaulois vaincu par César à Alésia ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🛡️"
+        },
+        "choix": [
+          "Abraracourcix",
+          "Vercingetorix",
+          "Dumnorix",
+          "Ambiorix"
+        ],
+        "reponse": "Vercingetorix",
+        "explication": "Vercingétorix a été vaincu par Jules César à la bataille d Alésia en 52 av. J.-C. et fait prisonnier.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_031",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle est la première des Sept Merveilles du monde encore debout aujourd hui ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Les jardins de Babylone",
+          "Le phare d Alexandrie",
+          "La Grande Pyramide de Gizeh",
+          "Le Colosse de Rhodes"
+        ],
+        "reponse": "La Grande Pyramide de Gizeh",
+        "explication": "La Grande Pyramide est la seule des Sept Merveilles de l Antiquité encore debout, après 4 500 ans.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_032",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Cléopâtre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👸"
+        },
+        "choix": [
+          "Une impératrice romaine",
+          "La dernière reine d Égypte",
+          "Une reine de Grèce",
+          "Une princesse perse"
+        ],
+        "reponse": "La dernière reine d Égypte",
+        "explication": "Cléopâtre VII fut la dernière souveraine de l Égypte ancienne. Elle entretint des relations avec César et Marc Antoine.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_033",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année a été signé le traité de Versailles qui a mis fin à la 1ère Guerre mondiale ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📜"
+        },
+        "choix": [
+          "1917",
+          "1918",
+          "1919",
+          "1920"
+        ],
+        "reponse": "1919",
+        "explication": "Le traité de Versailles a été signé le 28 juin 1919. Il imposait de lourdes réparations à l Allemagne vaincue.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_034",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui a fondé Rome selon la légende ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐺"
+        },
+        "choix": [
+          "Énée",
+          "Romulus",
+          "Rémus",
+          "César"
+        ],
+        "reponse": "Romulus",
+        "explication": "Selon la légende, Rome a été fondée par Romulus en 753 av. J.-C., après qu il eut tué son frère jumeau Rémus.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_035",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quel empire avait Constantinople pour capitale ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕌"
+        },
+        "choix": [
+          "Empire romain",
+          "Empire persan",
+          "Empire byzantin",
+          "Empire ottoman"
+        ],
+        "reponse": "Empire byzantin",
+        "explication": "Constantinople (actuelle Istanbul) fut la capitale de l Empire byzantin jusqu à sa chute en 1453.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_036",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "En quelle année la France est-elle passée à la Ve République ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇫🇷"
+        },
+        "choix": [
+          "1945",
+          "1952",
+          "1958",
+          "1962"
+        ],
+        "reponse": "1958",
+        "explication": "La Ve République a été fondée en 1958 par le général de Gaulle, qui en est devenu le premier président.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_037",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Louis Pasteur ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔬"
+        },
+        "choix": [
+          "Un philosophe",
+          "Un général",
+          "Un scientifique inventeur des vaccins",
+          "Un peintre"
+        ],
+        "reponse": "Un scientifique inventeur des vaccins",
+        "explication": "Louis Pasteur a inventé la pasteurisation et développé des vaccins contre la rage et le choléra des poules.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_038",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle ville était la capitale de l Empire de Napoléon ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👑"
+        },
+        "choix": [
+          "Versailles",
+          "Lyon",
+          "Strasbourg",
+          "Paris"
+        ],
+        "reponse": "Paris",
+        "explication": "Paris était la capitale de l Empire napoléonien. Napoléon a transformé la ville avec de nombreux monuments.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_039",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Alexandre le Grand ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "Un roi romain",
+          "Un roi de Macédoine qui a conquis un vaste empire",
+          "Un pharaon égyptien",
+          "Un général carthaginois"
+        ],
+        "reponse": "Un roi de Macédoine qui a conquis un vaste empire",
+        "explication": "Alexandre le Grand a conquis un empire allant de la Grèce à l Inde en seulement 13 ans.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_040",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle guerre opposait le Nord et le Sud des États-Unis au XIXe siècle ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇺🇸"
+        },
+        "choix": [
+          "La guerre d indépendance",
+          "La guerre de Sécession",
+          "La guerre hispano-américaine",
+          "La guerre mexicaine"
+        ],
+        "reponse": "La guerre de Sécession",
+        "explication": "La guerre de Sécession (1861-1865) opposait les États nordistes aux États sudistes qui voulaient maintenir l esclavage.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_041",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Comment appelle-t-on les premiers hommes qui taillaient des outils en pierre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🪨"
+        },
+        "choix": [
+          "Homo sapiens",
+          "Hommes préhistoriques",
+          "Néandertaliens",
+          "Cro-Magnon"
+        ],
+        "reponse": "Hommes préhistoriques",
+        "explication": "Les hommes préhistoriques du Paléolithique fabriquaient des outils en pierre taillée pour chasser et couper.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_042",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Dans quelle grotte française trouve-t-on des peintures préhistoriques célèbres ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦬"
+        },
+        "choix": [
+          "Grotte de Lascaux",
+          "Grotte de Versailles",
+          "Grotte de Chaumont",
+          "Grotte de Bordeaux"
+        ],
+        "reponse": "Grotte de Lascaux",
+        "explication": "La grotte de Lascaux en Dordogne contient des peintures rupestres vieilles de 17 000 ans représentant des animaux.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_043",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qu est-ce que la préhistoire ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏺"
+        },
+        "choix": [
+          "L étude des dinosaures",
+          "La période avant l écriture",
+          "La période de la Rome antique",
+          "L époque des pharaons"
+        ],
+        "reponse": "La période avant l écriture",
+        "explication": "La préhistoire est la période qui précède l invention de l écriture, il y a environ 5 000 ans.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_044",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Comment s appelle le temple dédié à Athéna, situé à Athènes ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Le Colisée",
+          "Le Parthénon",
+          "L Acropole",
+          "L Agora"
+        ],
+        "reponse": "Le Parthénon",
+        "explication": "Le Parthénon est un temple grec construit au Ve siècle av. J.-C. sur l Acropole d Athènes, dédié à la déesse Athéna.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_045",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui était Zeus dans la mythologie grecque ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚡"
+        },
+        "choix": [
+          "Dieu de la mer",
+          "Dieu du soleil",
+          "Dieu des dieux et du tonnerre",
+          "Dieu de la guerre"
+        ],
+        "reponse": "Dieu des dieux et du tonnerre",
+        "explication": "Zeus était le roi des dieux de l Olympe dans la mythologie grecque. Son attribut est la foudre.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_046",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Les Jeux Olympiques de l Antiquité se déroulaient dans quelle ville grecque ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏟️"
+        },
+        "choix": [
+          "Athènes",
+          "Sparte",
+          "Corinthe",
+          "Olympie"
+        ],
+        "reponse": "Olympie",
+        "explication": "Les Jeux Olympiques anciens avaient lieu à Olympie tous les 4 ans en l honneur de Zeus, depuis 776 av. J.-C.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_047",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qu est-ce qu un menhir ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🪨"
+        },
+        "choix": [
+          "Un temple grec",
+          "Une pierre levée verticalement par les hommes préhistoriques",
+          "Une tombe égyptienne",
+          "Un outil préhistorique"
+        ],
+        "reponse": "Une pierre levée verticalement par les hommes préhistoriques",
+        "explication": "Un menhir est une grande pierre plantée verticalement dans le sol, érigée par des hommes du Néolithique.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_048",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Quelle cité grecque était rivale d Athènes et célèbre pour ses guerriers ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "Corinthe",
+          "Thèbes",
+          "Sparte",
+          "Rhodes"
+        ],
+        "reponse": "Sparte",
+        "explication": "Sparte était une cité militaire dont les enfants étaient entraînés à la guerre dès l âge de 7 ans.",
+        "difficulte": 1
+      },
+      {
+        "id": "his_049",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "À quel âge de la préhistoire a-t-on commencé à utiliser des outils en métal ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔧"
+        },
+        "choix": [
+          "Paléolithique",
+          "Mésolithique",
+          "Néolithique",
+          "Âge des métaux"
+        ],
+        "reponse": "Âge des métaux",
+        "explication": "L Âge des métaux (Bronze puis Fer) a suivi le Néolithique. Les hommes ont appris à fondre et travailler les métaux.",
+        "difficulte": 2
+      },
+      {
+        "id": "his_050",
+        "categorie": "histoire",
+        "type": "qcm",
+        "question": "Qui a écrit L Iliade et L Odyssée, les épopées de la Grèce antique ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📜"
+        },
+        "choix": [
+          "Socrate",
+          "Aristote",
+          "Homère",
+          "Platon"
+        ],
+        "reponse": "Homère",
+        "explication": "Homère est l auteur légendaire de L Iliade (guerre de Troie) et L Odyssée (voyage d Ulysse), vers le VIIIe siècle av. J.-C.",
+        "difficulte": 2
       }
     ],
     "sciences": [
@@ -344,8 +2864,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quelle est la formule chimique de l'eau ?",
-        "media": { "type": "emoji", "valeur": "💧" },
-        "choix": ["CO2", "H2O", "O2", "NaCl"],
+        "media": {
+          "type": "emoji",
+          "valeur": "💧"
+        },
+        "choix": [
+          "CO2",
+          "H2O",
+          "O2",
+          "NaCl"
+        ],
         "reponse": "H2O",
         "explication": "L'eau est composée de deux atomes d'hydrogène (H) et d'un atome d'oxygène (O), d'où H2O.",
         "difficulte": 1
@@ -355,8 +2883,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Combien de planètes composent notre système solaire ?",
-        "media": { "type": "emoji", "valeur": "🪐" },
-        "choix": ["7", "8", "9", "10"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🪐"
+        },
+        "choix": [
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
         "reponse": "8",
         "explication": "Depuis 2006 et l'exclusion de Pluton, notre système solaire compte 8 planètes officielles.",
         "difficulte": 1
@@ -366,8 +2902,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quelle est la planète la plus proche du Soleil ?",
-        "media": { "type": "emoji", "valeur": "☀️" },
-        "choix": ["Vénus", "Terre", "Mercure", "Mars"],
+        "media": {
+          "type": "emoji",
+          "valeur": "☀️"
+        },
+        "choix": [
+          "Vénus",
+          "Terre",
+          "Mercure",
+          "Mars"
+        ],
         "reponse": "Mercure",
         "explication": "Mercure est la planète la plus proche du Soleil. Elle complète une orbite en seulement 88 jours terrestres.",
         "difficulte": 1
@@ -377,8 +2921,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quel processus permet aux plantes de fabriquer leur nourriture grâce à la lumière ?",
-        "media": { "type": "emoji", "valeur": "🌿" },
-        "choix": ["Respiration", "Digestion", "Photosynthèse", "Fermentation"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🌿"
+        },
+        "choix": [
+          "Respiration",
+          "Digestion",
+          "Photosynthèse",
+          "Fermentation"
+        ],
         "reponse": "Photosynthèse",
         "explication": "La photosynthèse permet aux plantes de transformer la lumière, le CO2 et l'eau en glucose et en oxygène.",
         "difficulte": 1
@@ -388,8 +2940,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quelle est la vitesse de la lumière (approximativement) ?",
-        "media": { "type": "emoji", "valeur": "💡" },
-        "choix": ["300 km/s", "3 000 km/s", "300 000 km/s", "3 000 000 km/s"],
+        "media": {
+          "type": "emoji",
+          "valeur": "💡"
+        },
+        "choix": [
+          "300 km/s",
+          "3 000 km/s",
+          "300 000 km/s",
+          "3 000 000 km/s"
+        ],
         "reponse": "300 000 km/s",
         "explication": "La lumière se déplace à environ 300 000 km par seconde dans le vide, soit environ 1 milliard de km/h.",
         "difficulte": 2
@@ -399,8 +2959,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quel organe pompe le sang dans le corps humain ?",
-        "media": { "type": "emoji", "valeur": "❤️" },
-        "choix": ["Le poumon", "Le foie", "Le rein", "Le cœur"],
+        "media": {
+          "type": "emoji",
+          "valeur": "❤️"
+        },
+        "choix": [
+          "Le poumon",
+          "Le foie",
+          "Le rein",
+          "Le cœur"
+        ],
         "reponse": "Le cœur",
         "explication": "Le cœur est un muscle creux qui pompe le sang dans tout le corps. Il bat environ 70 fois par minute au repos.",
         "difficulte": 1
@@ -410,8 +2978,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Les dinosaures ont-ils coexisté avec les humains ?",
-        "media": { "type": "emoji", "valeur": "🦕" },
-        "choix": ["Oui, ils vivaient ensemble", "Non, les dinosaures ont disparu bien avant", "Oui, mais seulement en Asie", "On ne sait pas"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🦕"
+        },
+        "choix": [
+          "Oui, ils vivaient ensemble",
+          "Non, les dinosaures ont disparu bien avant",
+          "Oui, mais seulement en Asie",
+          "On ne sait pas"
+        ],
         "reponse": "Non, les dinosaures ont disparu bien avant",
         "explication": "Les dinosaures ont disparu il y a environ 66 millions d'années. L'espèce humaine est apparue il y a seulement 300 000 ans.",
         "difficulte": 1
@@ -421,8 +2997,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quel gaz les plantes absorbent-elles lors de la photosynthèse ?",
-        "media": { "type": "emoji", "valeur": "🌱" },
-        "choix": ["Oxygène (O2)", "Azote (N2)", "Dioxyde de carbone (CO2)", "Hydrogène (H2)"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🌱"
+        },
+        "choix": [
+          "Oxygène (O2)",
+          "Azote (N2)",
+          "Dioxyde de carbone (CO2)",
+          "Hydrogène (H2)"
+        ],
         "reponse": "Dioxyde de carbone (CO2)",
         "explication": "Les plantes absorbent le CO2 et rejettent de l'oxygène lors de la photosynthèse — c'est l'inverse de la respiration animale.",
         "difficulte": 2
@@ -432,8 +3016,16 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Combien d'os compte le corps humain adulte ?",
-        "media": { "type": "emoji", "valeur": "🦴" },
-        "choix": ["106", "206", "306", "406"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🦴"
+        },
+        "choix": [
+          "106",
+          "206",
+          "306",
+          "406"
+        ],
         "reponse": "206",
         "explication": "Le corps humain adulte possède 206 os. Un nourrisson en a environ 270, certains fusionnant au fil de la croissance.",
         "difficulte": 2
@@ -443,11 +3035,779 @@
         "categorie": "sciences",
         "type": "qcm",
         "question": "Quelle invention est attribuée à Isaac Newton à la suite de la chute d'une pomme ?",
-        "media": { "type": "emoji", "valeur": "🍎" },
-        "choix": ["La relativité", "La loi de la gravitation", "Le calcul infinitésimal", "Le spectre lumineux"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🍎"
+        },
+        "choix": [
+          "La relativité",
+          "La loi de la gravitation",
+          "Le calcul infinitésimal",
+          "Le spectre lumineux"
+        ],
         "reponse": "La loi de la gravitation",
         "explication": "La légende dit qu'une pomme tombant d'un arbre a inspiré Newton pour formuler sa loi de la gravitation universelle.",
         "difficulte": 1
+      },
+      {
+        "id": "sci_011",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est l organe le plus grand du corps humain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧍"
+        },
+        "choix": [
+          "Le foie",
+          "Les poumons",
+          "La peau",
+          "L intestin"
+        ],
+        "reponse": "La peau",
+        "explication": "La peau est l organe le plus grand du corps humain. Elle pèse environ 4 kg et couvre 1,5 à 2 m².",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_012",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qui a développé la théorie de l évolution des espèces ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐒"
+        },
+        "choix": [
+          "Isaac Newton",
+          "Albert Einstein",
+          "Charles Darwin",
+          "Louis Pasteur"
+        ],
+        "reponse": "Charles Darwin",
+        "explication": "Charles Darwin a publié sa théorie de l évolution par sélection naturelle en 1859 dans L Origine des espèces.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_013",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de secondes y a-t-il dans une heure ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⏱️"
+        },
+        "choix": [
+          "600",
+          "3 600",
+          "6 000",
+          "36 000"
+        ],
+        "reponse": "3 600",
+        "explication": "Une heure = 60 minutes × 60 secondes = 3 600 secondes.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_014",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "De quel gaz l air est-il principalement composé ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💨"
+        },
+        "choix": [
+          "Oxygène",
+          "Dioxyde de carbone",
+          "Azote",
+          "Hydrogène"
+        ],
+        "reponse": "Azote",
+        "explication": "L air est composé d environ 78 % d azote, 21 % d oxygène et 1 % d autres gaz.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_015",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est l animal terrestre le plus rapide ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐆"
+        },
+        "choix": [
+          "Lion",
+          "Guépard",
+          "Gazelle",
+          "Autruche"
+        ],
+        "reponse": "Guépard",
+        "explication": "Le guépard peut atteindre 110 km/h sur de courtes distances. C est le mammifère terrestre le plus rapide.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_016",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Comment appelle-t-on un animal qui ne mange que des végétaux ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐄"
+        },
+        "choix": [
+          "Carnivore",
+          "Omnivore",
+          "Herbivore",
+          "Insectivore"
+        ],
+        "reponse": "Herbivore",
+        "explication": "Un herbivore se nourrit exclusivement de végétaux. La vache, le cheval et le lapin en sont des exemples.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_017",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien y a-t-il de continents sur Terre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌍"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "reponse": "7",
+        "explication": "Les 7 continents sont : Afrique, Antarctique, Asie, Amérique du Nord, Amérique du Sud, Europe, Océanie.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_018",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "En combien de jours la Lune fait-elle le tour de la Terre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌙"
+        },
+        "choix": [
+          "7 jours",
+          "14 jours",
+          "29 jours",
+          "365 jours"
+        ],
+        "reponse": "29 jours",
+        "explication": "La Lune met environ 29,5 jours pour faire le tour de la Terre, ce qui correspond à un mois lunaire.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_019",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qui a découvert la pénicilline ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💊"
+        },
+        "choix": [
+          "Marie Curie",
+          "Louis Pasteur",
+          "Alexander Fleming",
+          "Albert Einstein"
+        ],
+        "reponse": "Alexander Fleming",
+        "explication": "Alexander Fleming a découvert la pénicilline en 1928 en observant qu une moisissure tuait des bactéries.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_020",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "À quelle température l eau bout-elle au niveau de la mer ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "♨️"
+        },
+        "choix": [
+          "50°C",
+          "80°C",
+          "100°C",
+          "120°C"
+        ],
+        "reponse": "100°C",
+        "explication": "L eau bout à 100°C au niveau de la mer. Cette température diminue en altitude (moins de pression).",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_021",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le symbole chimique de l or ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥇"
+        },
+        "choix": [
+          "Or",
+          "Go",
+          "Au",
+          "Ag"
+        ],
+        "reponse": "Au",
+        "explication": "L or a pour symbole chimique Au, du latin aurum. Son numéro atomique est 79.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_022",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quelle est la planète la plus grande du système solaire ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🪐"
+        },
+        "choix": [
+          "Saturne",
+          "Neptune",
+          "Jupiter",
+          "Uranus"
+        ],
+        "reponse": "Jupiter",
+        "explication": "Jupiter est la plus grande planète du système solaire. Elle est si grande que 1 300 Terres pourraient y rentrer.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_023",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qu est-ce qu un tsunami ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "Un vent violent",
+          "Une vague géante causée par un séisme",
+          "Une tempête tropicale",
+          "Une crue de rivière"
+        ],
+        "reponse": "Une vague géante causée par un séisme",
+        "explication": "Un tsunami est une série de vagues géantes provoquées par un séisme sous-marin ou une éruption volcanique.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_024",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le plus grand animal du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐋"
+        },
+        "choix": [
+          "Éléphant d Afrique",
+          "Grand requin blanc",
+          "Baleine bleue",
+          "Girafe"
+        ],
+        "reponse": "Baleine bleue",
+        "explication": "La baleine bleue est le plus grand animal ayant jamais existé. Elle peut mesurer 30 m et peser 180 tonnes.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_025",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "De quoi les étoiles sont-elles principalement composées ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⭐"
+        },
+        "choix": [
+          "Fer et nickel",
+          "Hélium et oxygène",
+          "Hydrogène et hélium",
+          "Carbone et azote"
+        ],
+        "reponse": "Hydrogène et hélium",
+        "explication": "Les étoiles sont des boules de gaz principalement constituées d hydrogène (74%) et d hélium (24%).",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_026",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qu est-ce que l ADN ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧬"
+        },
+        "choix": [
+          "Un organe du cerveau",
+          "Une molécule qui porte l information génétique",
+          "Un type de virus",
+          "Un pigment de la peau"
+        ],
+        "reponse": "Une molécule qui porte l information génétique",
+        "explication": "L ADN (acide désoxyribonucléique) est la molécule qui contient toutes les informations génétiques d un être vivant.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_027",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qui a formulé la célèbre équation E = mc² ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧪"
+        },
+        "choix": [
+          "Isaac Newton",
+          "Nikola Tesla",
+          "Albert Einstein",
+          "Stephen Hawking"
+        ],
+        "reponse": "Albert Einstein",
+        "explication": "Albert Einstein a formulé E=mc² dans sa théorie de la relativité restreinte en 1905. E = énergie, m = masse, c = vitesse de la lumière.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_028",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel organe filtre le sang pour fabriquer l urine ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🫀"
+        },
+        "choix": [
+          "Le foie",
+          "La rate",
+          "Le rein",
+          "La vésicule"
+        ],
+        "reponse": "Le rein",
+        "explication": "Les reins filtrent environ 180 litres de sang par jour pour produire environ 1,5 litre d urine.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_029",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de dents a un adulte avec toutes ses dents de sagesse ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦷"
+        },
+        "choix": [
+          "28",
+          "30",
+          "32",
+          "36"
+        ],
+        "reponse": "32",
+        "explication": "Un adulte possède 32 dents en comptant les 4 dents de sagesse. Sans elles, on en compte 28.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_030",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qu est-ce que la gravité ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍎"
+        },
+        "choix": [
+          "Une force électrique",
+          "Une force d attraction entre les corps massifs",
+          "Un champ magnétique",
+          "Une réaction chimique"
+        ],
+        "reponse": "Une force d attraction entre les corps massifs",
+        "explication": "La gravité est la force qui attire les objets entre eux. C est elle qui nous maintient sur Terre et fait tourner les planètes.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_031",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Comment appelle-t-on le phénomène par lequel l eau se transforme en vapeur ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💧"
+        },
+        "choix": [
+          "Condensation",
+          "Évaporation",
+          "Solidification",
+          "Précipitation"
+        ],
+        "reponse": "Évaporation",
+        "explication": "L évaporation est le passage de l eau liquide à l état gazeux (vapeur). Elle se produit par exemple dans les flaques.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_032",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le plus grand os du corps humain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦴"
+        },
+        "choix": [
+          "Le tibia",
+          "L humérus",
+          "Le fémur",
+          "La côte"
+        ],
+        "reponse": "Le fémur",
+        "explication": "Le fémur est l os de la cuisse. C est le plus long et le plus solide os du corps humain.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_033",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de litres de sang circulent environ dans le corps humain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🩸"
+        },
+        "choix": [
+          "2 litres",
+          "5 litres",
+          "10 litres",
+          "15 litres"
+        ],
+        "reponse": "5 litres",
+        "explication": "Le corps humain contient environ 5 litres de sang. Le cœur les fait circuler complètement en moins d une minute.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_034",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le rôle principal des globules rouges ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🩸"
+        },
+        "choix": [
+          "Combattre les infections",
+          "Coaguler le sang",
+          "Transporter l oxygène",
+          "Produire des hormones"
+        ],
+        "reponse": "Transporter l oxygène",
+        "explication": "Les globules rouges (hématies) transportent l oxygène des poumons vers les organes grâce à l hémoglobine.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_035",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qu est-ce qu une éclipse solaire ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌑"
+        },
+        "choix": [
+          "La Terre passe entre le Soleil et la Lune",
+          "La Lune passe entre la Terre et le Soleil",
+          "Le Soleil disparaît",
+          "Les étoiles cachent le Soleil"
+        ],
+        "reponse": "La Lune passe entre la Terre et le Soleil",
+        "explication": "Lors d une éclipse solaire, la Lune se place exactement entre la Terre et le Soleil, bloquant sa lumière.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_036",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Comment appelle-t-on un animal qui mange à la fois des végétaux et de la viande ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐻"
+        },
+        "choix": [
+          "Herbivore",
+          "Carnivore",
+          "Omnivore",
+          "Détritivore"
+        ],
+        "reponse": "Omnivore",
+        "explication": "Un omnivore mange aussi bien des végétaux que des animaux. L homme et l ours sont omnivores.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_037",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le symbole chimique de l oxygène ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💨"
+        },
+        "choix": [
+          "Ox",
+          "O",
+          "Og",
+          "Oz"
+        ],
+        "reponse": "O",
+        "explication": "L oxygène a pour symbole O. Il représente 21% de l air et est indispensable à la respiration.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_038",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "À quelle température l eau se transforme-t-elle en glace ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧊"
+        },
+        "choix": [
+          "-10°C",
+          "-5°C",
+          "0°C",
+          "5°C"
+        ],
+        "reponse": "0°C",
+        "explication": "L eau se transforme en glace (solidification) à 0°C sous pression atmosphérique normale.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_039",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de vertèbres compte la colonne vertébrale humaine ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦴"
+        },
+        "choix": [
+          "24",
+          "29",
+          "33",
+          "40"
+        ],
+        "reponse": "33",
+        "explication": "La colonne vertébrale est composée de 33 vertèbres regroupées en 5 régions : cervicale, dorsale, lombaire, sacrée et coccygienne.",
+        "difficulte": 3
+      },
+      {
+        "id": "sci_040",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est le plus petit os du corps humain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👂"
+        },
+        "choix": [
+          "Le sésamoïde",
+          "L étrier",
+          "Le métacarpe",
+          "La cheville"
+        ],
+        "reponse": "L étrier",
+        "explication": "L étrier est un petit os situé dans l oreille moyenne. Il mesure environ 3 mm et transmet les vibrations sonores.",
+        "difficulte": 3
+      },
+      {
+        "id": "sci_041",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de pattes a une araignée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕷️"
+        },
+        "choix": [
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
+        "reponse": "8",
+        "explication": "Les araignées sont des arachnides et ont 8 pattes, contrairement aux insectes qui en ont 6.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_042",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel animal est le plus grand prédateur terrestre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐻"
+        },
+        "choix": [
+          "Lion",
+          "Tigre",
+          "Ours polaire",
+          "Crocodile"
+        ],
+        "reponse": "Ours polaire",
+        "explication": "L ours polaire est le plus grand prédateur terrestre carnivore. Les mâles peuvent peser jusqu à 800 kg.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_043",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Comment les chauves-souris se repèrent-elles dans le noir ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦇"
+        },
+        "choix": [
+          "La vue",
+          "L odorat",
+          "L écholocation",
+          "Le toucher"
+        ],
+        "reponse": "L écholocation",
+        "explication": "Les chauves-souris émettent des ultrasons et analysent l écho pour détecter les obstacles et les proies.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_044",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel est l animal qui dort le plus longtemps en hiver ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐻"
+        },
+        "choix": [
+          "Le loup",
+          "L ours",
+          "Le renard",
+          "Le cerf"
+        ],
+        "reponse": "L ours",
+        "explication": "L ours hiberne en hiver pendant plusieurs mois. Son rythme cardiaque ralentit fortement pour économiser l énergie.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_045",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de temps vit environ une tortue géante ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐢"
+        },
+        "choix": [
+          "30 ans",
+          "50 ans",
+          "100 ans",
+          "Plus de 150 ans"
+        ],
+        "reponse": "Plus de 150 ans",
+        "explication": "Les tortues géantes des Galápagos peuvent vivre plus de 150 ans. Ce sont parmi les animaux les plus longévifs.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_046",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel animal est le seul à pouvoir voler parmi ces réponses ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐧"
+        },
+        "choix": [
+          "Le pingouin",
+          "L autruche",
+          "Le manchot",
+          "L aigle"
+        ],
+        "reponse": "L aigle",
+        "explication": "L aigle est un rapace qui vole. Le pingouin, l autruche et le manchot sont des oiseaux qui ne volent pas.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_047",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de cœurs a la pieuvre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐙"
+        },
+        "choix": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "reponse": "3",
+        "explication": "La pieuvre possède 3 cœurs : deux pompent le sang vers les branchies, un vers le reste du corps.",
+        "difficulte": 3
+      },
+      {
+        "id": "sci_048",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Quel mammifère pond des œufs ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦆"
+        },
+        "choix": [
+          "La chauve-souris",
+          "Le kangourou",
+          "L ornithorynque",
+          "Le koala"
+        ],
+        "reponse": "L ornithorynque",
+        "explication": "L ornithorynque est l un des rares mammifères qui pondent des œufs. Il vit en Australie et a un bec de canard.",
+        "difficulte": 2
+      },
+      {
+        "id": "sci_049",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Qu est-ce qu un animal vertébré ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐟"
+        },
+        "choix": [
+          "Un animal qui vit dans l eau",
+          "Un animal qui a une colonne vertébrale",
+          "Un animal sans membres",
+          "Un animal qui pond des œufs"
+        ],
+        "reponse": "Un animal qui a une colonne vertébrale",
+        "explication": "Les vertébrés ont une colonne vertébrale. On y trouve les poissons, amphibiens, reptiles, oiseaux et mammifères.",
+        "difficulte": 1
+      },
+      {
+        "id": "sci_050",
+        "categorie": "sciences",
+        "type": "qcm",
+        "question": "Combien de tentacules a un calmar géant ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦑"
+        },
+        "choix": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "reponse": "10",
+        "explication": "Le calmar a 10 tentacules : 8 bras courts et 2 tentacules plus longs pour attraper ses proies.",
+        "difficulte": 3
       }
     ],
     "culture": [
@@ -456,8 +3816,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Dans quelle école magique Harry Potter est-il inscrit ?",
-        "media": { "type": "emoji", "valeur": "🧙" },
-        "choix": ["Beauxbâtons", "Durmstrang", "Poudlard", "Castelobruxo"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🧙"
+        },
+        "choix": [
+          "Beauxbâtons",
+          "Durmstrang",
+          "Poudlard",
+          "Castelobruxo"
+        ],
         "reponse": "Poudlard",
         "explication": "Harry Potter fréquente l'école de sorcellerie de Poudlard (Hogwarts en anglais), dirigée par Dumbledore.",
         "difficulte": 1
@@ -467,8 +3835,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Qui est le personnage principal de la saga Star Wars du côté des Jedi ?",
-        "media": { "type": "emoji", "valeur": "⚡" },
-        "choix": ["Dark Vador", "Han Solo", "Luke Skywalker", "Yoda"],
+        "media": {
+          "type": "emoji",
+          "valeur": "⚡"
+        },
+        "choix": [
+          "Dark Vador",
+          "Han Solo",
+          "Luke Skywalker",
+          "Yoda"
+        ],
         "reponse": "Luke Skywalker",
         "explication": "Luke Skywalker est le héros principal de la trilogie originale Star Wars, fils de Dark Vador.",
         "difficulte": 1
@@ -478,8 +3854,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quel compositeur a écrit la Lettre à Élise et la Symphonie n°5 ?",
-        "media": { "type": "emoji", "valeur": "🎹" },
-        "choix": ["Mozart", "Bach", "Beethoven", "Chopin"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🎹"
+        },
+        "choix": [
+          "Mozart",
+          "Bach",
+          "Beethoven",
+          "Chopin"
+        ],
         "reponse": "Beethoven",
         "explication": "Ludwig van Beethoven a composé la Lettre à Élise et la célèbre Symphonie n°5 en do mineur.",
         "difficulte": 2
@@ -489,8 +3873,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quel artiste a peint la Joconde ?",
-        "media": { "type": "emoji", "valeur": "🖼️" },
-        "choix": ["Picasso", "Michel-Ange", "Léonard de Vinci", "Raphaël"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🖼️"
+        },
+        "choix": [
+          "Picasso",
+          "Michel-Ange",
+          "Léonard de Vinci",
+          "Raphaël"
+        ],
         "reponse": "Léonard de Vinci",
         "explication": "La Joconde (Mona Lisa) a été peinte par Léonard de Vinci entre 1503 et 1519. Elle est exposée au Louvre.",
         "difficulte": 1
@@ -500,8 +3892,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Dans quel pays le jeu vidéo Minecraft a-t-il été créé ?",
-        "media": { "type": "emoji", "valeur": "🎮" },
-        "choix": ["États-Unis", "Suède", "Finlande", "Japon"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🎮"
+        },
+        "choix": [
+          "États-Unis",
+          "Suède",
+          "Finlande",
+          "Japon"
+        ],
         "reponse": "Suède",
         "explication": "Minecraft a été créé par Markus « Notch » Persson, un développeur suédois, et publié en 2011.",
         "difficulte": 2
@@ -511,8 +3911,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quel héros gaulois combat les Romains avec son ami Obélix ?",
-        "media": { "type": "emoji", "valeur": "🐗" },
-        "choix": ["Tintin", "Astérix", "Spirou", "Gaston"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🐗"
+        },
+        "choix": [
+          "Tintin",
+          "Astérix",
+          "Spirou",
+          "Gaston"
+        ],
         "reponse": "Astérix",
         "explication": "Astérix est le héros gaulois créé par Goscinny et Uderzo qui résiste à l'envahisseur romain grâce à sa potion magique.",
         "difficulte": 1
@@ -522,8 +3930,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Dans quelle ville vit Tintin avec son chien Milou ?",
-        "media": { "type": "emoji", "valeur": "🐕" },
-        "choix": ["Paris", "Amsterdam", "Bruxelles", "Genève"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🐕"
+        },
+        "choix": [
+          "Paris",
+          "Amsterdam",
+          "Bruxelles",
+          "Genève"
+        ],
         "reponse": "Bruxelles",
         "explication": "Tintin est un reporter belge qui vit à Bruxelles. Il a été créé par le dessinateur belge Hergé.",
         "difficulte": 2
@@ -533,8 +3949,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quelle famille habite au 742 Evergreen Terrace dans une série animée américaine ?",
-        "media": { "type": "emoji", "valeur": "📺" },
-        "choix": ["Les Griffin", "Les Simpsons", "Les Pierrafeu", "Les Jetson"],
+        "media": {
+          "type": "emoji",
+          "valeur": "📺"
+        },
+        "choix": [
+          "Les Griffin",
+          "Les Simpsons",
+          "Les Pierrafeu",
+          "Les Jetson"
+        ],
         "reponse": "Les Simpsons",
         "explication": "La famille Simpson — Homer, Marge, Bart, Lisa et Maggie — vit au 742 Evergreen Terrace à Springfield.",
         "difficulte": 2
@@ -544,8 +3968,16 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quel est le vrai prénom du chanteur Michael Jackson ?",
-        "media": { "type": "emoji", "valeur": "🎤" },
-        "choix": ["James", "Michael", "Joseph", "Robert"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🎤"
+        },
+        "choix": [
+          "James",
+          "Michael",
+          "Joseph",
+          "Robert"
+        ],
         "reponse": "Michael",
         "explication": "Michael Joseph Jackson est bien son vrai prénom. Il est né le 29 août 1958 à Gary, Indiana.",
         "difficulte": 2
@@ -555,10 +3987,778 @@
         "categorie": "culture",
         "type": "qcm",
         "question": "Quel film d'animation Disney raconte l'histoire d'un lion nommé Simba ?",
-        "media": { "type": "emoji", "valeur": "🦁" },
-        "choix": ["Bambi", "Tarzan", "Le Roi Lion", "La Belle et la Bête"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🦁"
+        },
+        "choix": [
+          "Bambi",
+          "Tarzan",
+          "Le Roi Lion",
+          "La Belle et la Bête"
+        ],
         "reponse": "Le Roi Lion",
         "explication": "Le Roi Lion (1994) suit Simba, un lionceau qui doit reprendre sa place de roi après la mort de son père Mufasa.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_011",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a créé Harry Potter ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧙"
+        },
+        "choix": [
+          "Roald Dahl",
+          "Tolkien",
+          "J.K. Rowling",
+          "C.S. Lewis"
+        ],
+        "reponse": "J.K. Rowling",
+        "explication": "J.K. Rowling a écrit les 7 tomes de Harry Potter entre 1997 et 2007. La saga s est vendue à 500 millions d exemplaires.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_012",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel film Disney chante-t-on Hakuna Matata ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦁"
+        },
+        "choix": [
+          "Tarzan",
+          "Le Livre de la Jungle",
+          "Le Roi Lion",
+          "Bambi"
+        ],
+        "reponse": "Le Roi Lion",
+        "explication": "Hakuna Matata est une chanson du Roi Lion (1994), chantée par Timon et Pumbaa. Elle signifie pas de soucis en swahili.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_013",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel super-héros est aussi Peter Parker ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕷️"
+        },
+        "choix": [
+          "Batman",
+          "Superman",
+          "Spider-Man",
+          "Iron Man"
+        ],
+        "reponse": "Spider-Man",
+        "explication": "Peter Parker est un lycéen new-yorkais mordu par une araignée radioactive qui devient Spider-Man.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_014",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est l auteur du Petit Prince ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌹"
+        },
+        "choix": [
+          "Victor Hugo",
+          "Jules Verne",
+          "Antoine de Saint-Exupéry",
+          "Albert Camus"
+        ],
+        "reponse": "Antoine de Saint-Exupéry",
+        "explication": "Le Petit Prince a été écrit par Antoine de Saint-Exupéry et publié en 1943. C est le livre français le plus traduit.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_015",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel pays se déroule le film d animation Mulan ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐉"
+        },
+        "choix": [
+          "Japon",
+          "Corée",
+          "Vietnam",
+          "Chine"
+        ],
+        "reponse": "Chine",
+        "explication": "Mulan est basée sur une légende chinoise. Une jeune fille se déguise en homme pour combattre à la place de son père.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_016",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a peint La Nuit étoilée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌃"
+        },
+        "choix": [
+          "Monet",
+          "Picasso",
+          "Van Gogh",
+          "Gauguin"
+        ],
+        "reponse": "Van Gogh",
+        "explication": "La Nuit étoilée a été peinte par Vincent van Gogh en 1889 alors qu il était à l asile de Saint-Rémy-de-Provence.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_017",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a écrit Les Misérables ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📚"
+        },
+        "choix": [
+          "Zola",
+          "Balzac",
+          "Victor Hugo",
+          "Flaubert"
+        ],
+        "reponse": "Victor Hugo",
+        "explication": "Les Misérables ont été publiés par Victor Hugo en 1862. L histoire suit Jean Valjean, ancien forçat.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_018",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quelle ville se déroule le film d animation Ratatouille ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐀"
+        },
+        "choix": [
+          "Rome",
+          "Londres",
+          "Paris",
+          "New York"
+        ],
+        "reponse": "Paris",
+        "explication": "Ratatouille raconte l histoire de Rémy, un rat qui rêve de devenir chef cuisinier à Paris.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_019",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a inventé le cinéma ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎬"
+        },
+        "choix": [
+          "Thomas Edison",
+          "Georges Méliès",
+          "Les frères Lumière",
+          "Charlie Chaplin"
+        ],
+        "reponse": "Les frères Lumière",
+        "explication": "Auguste et Louis Lumière ont inventé le cinématographe et organisé la première projection publique en 1895 à Paris.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_020",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel film Disney entend-on la chanson Let It Go ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "❄️"
+        },
+        "choix": [
+          "Vaiana",
+          "Rebelle",
+          "La Reine des Neiges",
+          "Encanto"
+        ],
+        "reponse": "La Reine des Neiges",
+        "explication": "Let It Go est chantée par Elsa dans La Reine des Neiges (2013), film qui a remporté l Oscar du meilleur film d animation.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_021",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel chanteur est surnommé le Roi du rock ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎸"
+        },
+        "choix": [
+          "Chuck Berry",
+          "David Bowie",
+          "Elvis Presley",
+          "Freddie Mercury"
+        ],
+        "reponse": "Elvis Presley",
+        "explication": "Elvis Presley est surnommé le King (roi) du rock and roll. Il a révolutionné la musique dans les années 1950.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_022",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel film trouve-t-on les personnages Woody et Buzz l Éclair ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤠"
+        },
+        "choix": [
+          "Cars",
+          "Monsters Inc.",
+          "Toy Story",
+          "Rebelle"
+        ],
+        "reponse": "Toy Story",
+        "explication": "Toy Story (1995) est le premier film entièrement en images de synthèse. Woody est un cow-boy, Buzz un cosmonaute.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_023",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est l auteur de Roméo et Juliette ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💔"
+        },
+        "choix": [
+          "Molière",
+          "Victor Hugo",
+          "Shakespeare",
+          "Dante"
+        ],
+        "reponse": "Shakespeare",
+        "explication": "Roméo et Juliette est une pièce de William Shakespeare écrite vers 1597. C est une tragédie d amour.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_024",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel manga met en scène un ninja avec un renard à neuf queues en lui ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦊"
+        },
+        "choix": [
+          "Dragon Ball",
+          "One Piece",
+          "Naruto",
+          "Bleach"
+        ],
+        "reponse": "Naruto",
+        "explication": "Naruto raconte l histoire de Naruto Uzumaki, un jeune ninja qui porte en lui le démon renard Kyubi à neuf queues.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_025",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a peint Le Cri ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "😱"
+        },
+        "choix": [
+          "Dali",
+          "Kandinsky",
+          "Edvard Munch",
+          "Klimt"
+        ],
+        "reponse": "Edvard Munch",
+        "explication": "Le Cri a été peint par le Norvégien Edvard Munch en 1893. C est l une des œuvres les plus reproduites au monde.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_026",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel groupe britannique est connu pour les chansons Let It Be et Hey Jude ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎵"
+        },
+        "choix": [
+          "The Rolling Stones",
+          "The Who",
+          "Queen",
+          "The Beatles"
+        ],
+        "reponse": "The Beatles",
+        "explication": "Les Beatles sont un groupe de Liverpool formé en 1960. Lennon, McCartney, Harrison et Starr ont révolutionné la pop.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_027",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quelle ville se situe le musée du Louvre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🖼️"
+        },
+        "choix": [
+          "Lyon",
+          "Marseille",
+          "Paris",
+          "Bordeaux"
+        ],
+        "reponse": "Paris",
+        "explication": "Le Louvre est le plus grand musée du monde. Il est situé à Paris et accueille plus de 9 millions de visiteurs par an.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_028",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est l auteur de Vingt Mille Lieues sous les mers ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐬"
+        },
+        "choix": [
+          "Alexandre Dumas",
+          "Victor Hugo",
+          "Jules Verne",
+          "Gustave Flaubert"
+        ],
+        "reponse": "Jules Verne",
+        "explication": "Jules Verne a publié Vingt Mille Lieues sous les mers en 1870. Le capitaine Nemo commande le sous-marin Nautilus.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_029",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel est le super-héros qui vit à Gotham City ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦇"
+        },
+        "choix": [
+          "Superman",
+          "Batman",
+          "Spider-Man",
+          "Green Lantern"
+        ],
+        "reponse": "Batman",
+        "explication": "Batman, alias Bruce Wayne, est un super-héros sans superpouvoirs qui protège la ville de Gotham grâce à sa fortune et sa technologie.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_030",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a composé Les Quatre Saisons ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎻"
+        },
+        "choix": [
+          "Bach",
+          "Mozart",
+          "Vivaldi",
+          "Haendel"
+        ],
+        "reponse": "Vivaldi",
+        "explication": "Les Quatre Saisons est un ensemble de 4 concertos pour violon composé par Antonio Vivaldi vers 1723.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_031",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel dessin animé français met en scène Marinette et Adrien qui deviennent Ladybug et Chat Noir ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐞"
+        },
+        "choix": [
+          "Totally Spies",
+          "Winx Club",
+          "Miraculous",
+          "Code Lyoko"
+        ],
+        "reponse": "Miraculous",
+        "explication": "Miraculous est une série animée française créée par Thomas Astruc. Marinette et Adrien protègent Paris.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_032",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel pays est né Pablo Picasso ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎨"
+        },
+        "choix": [
+          "France",
+          "Italie",
+          "Espagne",
+          "Portugal"
+        ],
+        "reponse": "Espagne",
+        "explication": "Pablo Picasso est né à Malaga en Espagne en 1881. Il est le cofondateur du cubisme avec Georges Braque.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_033",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est l auteur du Compte de Monte-Cristo ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "Victor Hugo",
+          "Stendhal",
+          "Alexandre Dumas",
+          "Émile Zola"
+        ],
+        "reponse": "Alexandre Dumas",
+        "explication": "Le Comte de Monte-Cristo a été publié par Alexandre Dumas en 1844. C est un roman de vengeance et d aventure.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_034",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel film d animation Pixar met en scène une petite fille qui voyage dans le monde des morts ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "💀"
+        },
+        "choix": [
+          "Soul",
+          "Coco",
+          "Encanto",
+          "Brave"
+        ],
+        "reponse": "Coco",
+        "explication": "Coco (2017) est un film Pixar inspiré de la fête mexicaine du Día de Muertos. Miguel voyage dans le monde des morts.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_035",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel chanteur français est connu pour La Vie en Rose ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎤"
+        },
+        "choix": [
+          "Jacques Brel",
+          "Serge Gainsbourg",
+          "Charles Aznavour",
+          "Édith Piaf"
+        ],
+        "reponse": "Édith Piaf",
+        "explication": "La Vie en Rose est la chanson la plus célèbre d Édith Piaf, surnommée la Môme Piaf. Elle date de 1945.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_036",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quelle série Netflix des enfants combattent-ils le Monde à l envers ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👾"
+        },
+        "choix": [
+          "Dark",
+          "Dark Crystal",
+          "Stranger Things",
+          "Arcane"
+        ],
+        "reponse": "Stranger Things",
+        "explication": "Stranger Things suit Eleven et ses amis dans la ville de Hawkins face au Monde à l envers, une dimension parallèle.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_037",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel instrument a 88 touches noires et blanches ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎹"
+        },
+        "choix": [
+          "Accordéon",
+          "Orgue",
+          "Piano",
+          "Clavecin"
+        ],
+        "reponse": "Piano",
+        "explication": "Un piano standard possède 88 touches : 52 blanches et 36 noires, couvrant 7 octaves complètes.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_038",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel film d animation Pixar raconte l histoire d un robot seul sur Terre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤖"
+        },
+        "choix": [
+          "Terminator",
+          "WALL-E",
+          "Iron Giant",
+          "Big Hero 6"
+        ],
+        "reponse": "WALL-E",
+        "explication": "WALL-E (2008) est un robot nettoyeur abandonné sur Terre. Il tombe amoureux d un robot nommé EVE.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_039",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a créé le personnage de Mickey Mouse ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐭"
+        },
+        "choix": [
+          "Tex Avery",
+          "Chuck Jones",
+          "Walt Disney",
+          "Hanna-Barbera"
+        ],
+        "reponse": "Walt Disney",
+        "explication": "Mickey Mouse a été créé par Walt Disney en 1928. Il apparaît pour la première fois dans Steamboat Willie.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_040",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel manga met en scène des pirates à la recherche du One Piece ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "☠️"
+        },
+        "choix": [
+          "Naruto",
+          "Bleach",
+          "Dragon Ball",
+          "One Piece"
+        ],
+        "reponse": "One Piece",
+        "explication": "One Piece suit Monkey D. Luffy et son équipage de pirates à la recherche du légendaire trésor One Piece.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_041",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel pays est né le manga ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📖"
+        },
+        "choix": [
+          "Chine",
+          "Corée du Sud",
+          "Japon",
+          "Vietnam"
+        ],
+        "reponse": "Japon",
+        "explication": "Le manga est une bande dessinée japonaise. Le mot signifie image dérisoire en japonais. Osamu Tezuka en est le père fondateur.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_042",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui est le personnage principal de la saga Percy Jackson ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚡"
+        },
+        "choix": [
+          "Harry",
+          "Percy Jackson",
+          "Luke",
+          "Nico"
+        ],
+        "reponse": "Percy Jackson",
+        "explication": "Percy Jackson est un demi-dieu, fils de Poséidon. Rick Riordan a créé cette saga mêlant mythologie grecque et monde moderne.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_043",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel film anime de Miyazaki une jeune fille travaille dans des thermes pour esprits ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐉"
+        },
+        "choix": [
+          "Mon voisin Totoro",
+          "Princesse Mononoke",
+          "Le Voyage de Chihiro",
+          "Nausicaä"
+        ],
+        "reponse": "Le Voyage de Chihiro",
+        "explication": "Le Voyage de Chihiro (2001) de Miyazaki a remporté l Oscar du meilleur film d animation. Chihiro travaille dans des bains pour esprits.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_044",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel héros de jeu vidéo cherche à sauver la princesse Zelda ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎮"
+        },
+        "choix": [
+          "Mario",
+          "Link",
+          "Kirby",
+          "Samus"
+        ],
+        "reponse": "Link",
+        "explication": "Link est le héros de la saga The Legend of Zelda de Nintendo. Il part toujours sauver la princesse Zelda.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_045",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Qui a écrit Les Trois Mousquetaires ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⚔️"
+        },
+        "choix": [
+          "Victor Hugo",
+          "Jules Verne",
+          "Alexandre Dumas",
+          "Molière"
+        ],
+        "reponse": "Alexandre Dumas",
+        "explication": "Les Trois Mousquetaires ont été publiés en 1844 par Alexandre Dumas. Athos, Porthos, Aramis et D Artagnan.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_046",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel est le vrai nom de Voltaire ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📝"
+        },
+        "choix": [
+          "Jean-Baptiste Poquelin",
+          "François-Marie Arouet",
+          "Denis Diderot",
+          "Jean-Jacques Rousseau"
+        ],
+        "reponse": "François-Marie Arouet",
+        "explication": "Voltaire est le pseudonyme de François-Marie Arouet, philosophe et écrivain français des Lumières (1694-1778).",
+        "difficulte": 3
+      },
+      {
+        "id": "cul_047",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel film d animation Pixar une petite fille affronte un ours en Écosse ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏹"
+        },
+        "choix": [
+          "Coco",
+          "WALL-E",
+          "Rebelle",
+          "Soul"
+        ],
+        "reponse": "Rebelle",
+        "explication": "Rebelle (Brave) suit la princesse Mérida en Écosse. Elle tente de lever une malédiction qui a transformé sa mère en ours.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_048",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quelle artiste française a popularisé la chanson Que je t aime version rap ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎤"
+        },
+        "choix": [
+          "Aya Nakamura",
+          "Angèle",
+          "Camelia Jordana",
+          "Zaz"
+        ],
+        "reponse": "Aya Nakamura",
+        "explication": "Aya Nakamura est l artiste francophone la plus écoutée au monde. Elle mélange R&B et afrobeat.",
+        "difficulte": 2
+      },
+      {
+        "id": "cul_049",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Quel dessin animé met en scène Bob l éponge qui vit dans une ananas sous la mer ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧽"
+        },
+        "choix": [
+          "Les Razmoket",
+          "Dora l exploratrice",
+          "Bob l éponge",
+          "Fairly Odd Parents"
+        ],
+        "reponse": "Bob l éponge",
+        "explication": "Bob l éponge (SpongeBob) vit à Bikini Bottom avec son ami Patrick l étoile de mer. La série existe depuis 1999.",
+        "difficulte": 1
+      },
+      {
+        "id": "cul_050",
+        "categorie": "culture",
+        "type": "qcm",
+        "question": "Dans quel jeu vidéo construis-tu des maisons avec des blocs et tu survies face aux monstres la nuit ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛏️"
+        },
+        "choix": [
+          "Fortnite",
+          "Roblox",
+          "Minecraft",
+          "Terraria"
+        ],
+        "reponse": "Minecraft",
+        "explication": "Minecraft est un jeu de construction et de survie créé en 2009 par Mojang. C est le jeu le plus vendu de l histoire.",
         "difficulte": 1
       }
     ],
@@ -568,8 +4768,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel est le plus long fleuve du monde ?",
-        "media": { "type": "emoji", "valeur": "🌊" },
-        "choix": ["L'Amazone", "Le Nil", "Le Mississippi", "Le Yangtsé"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "L'Amazone",
+          "Le Nil",
+          "Le Mississippi",
+          "Le Yangtsé"
+        ],
         "reponse": "Le Nil",
         "explication": "Le Nil mesure environ 6 650 km, ce qui en fait le plus long fleuve du monde. Il traverse l'Afrique du nord.",
         "difficulte": 2
@@ -579,8 +4787,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quelle est la capitale de l'Australie ?",
-        "media": { "type": "emoji", "valeur": "🦘" },
-        "choix": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🦘"
+        },
+        "choix": [
+          "Sydney",
+          "Melbourne",
+          "Canberra",
+          "Brisbane"
+        ],
         "reponse": "Canberra",
         "explication": "Canberra est la capitale de l'Australie, et non Sydney ou Melbourne, les deux plus grandes villes du pays.",
         "difficulte": 2
@@ -590,8 +4806,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Sur quel continent se trouve le mont Everest ?",
-        "media": { "type": "emoji", "valeur": "🏔️" },
-        "choix": ["Afrique", "Amérique du Sud", "Asie", "Europe"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏔️"
+        },
+        "choix": [
+          "Afrique",
+          "Amérique du Sud",
+          "Asie",
+          "Europe"
+        ],
         "reponse": "Asie",
         "explication": "Le mont Everest est situé dans l'Himalaya, à la frontière entre le Népal et la Chine, en Asie.",
         "difficulte": 1
@@ -601,8 +4825,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Le Sahara est le plus grand désert du monde. Sur quel continent se trouve-t-il ?",
-        "media": { "type": "emoji", "valeur": "🏜️" },
-        "choix": ["Asie", "Australie", "Amérique du Sud", "Afrique"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏜️"
+        },
+        "choix": [
+          "Asie",
+          "Australie",
+          "Amérique du Sud",
+          "Afrique"
+        ],
         "reponse": "Afrique",
         "explication": "Le Sahara couvre environ 9 millions de km² dans le nord de l'Afrique. C'est le plus grand désert chaud du monde.",
         "difficulte": 1
@@ -612,8 +4844,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel est le plus grand continent du monde ?",
-        "media": { "type": "emoji", "valeur": "🌍" },
-        "choix": ["Afrique", "Amérique", "Asie", "Europe"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🌍"
+        },
+        "choix": [
+          "Afrique",
+          "Amérique",
+          "Asie",
+          "Europe"
+        ],
         "reponse": "Asie",
         "explication": "L'Asie est le plus grand continent avec environ 44 millions de km², soit 30 % des terres émergées.",
         "difficulte": 1
@@ -623,8 +4863,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel est le plus grand océan du monde ?",
-        "media": { "type": "emoji", "valeur": "🌊" },
-        "choix": ["Atlantique", "Indien", "Arctique", "Pacifique"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "Atlantique",
+          "Indien",
+          "Arctique",
+          "Pacifique"
+        ],
         "reponse": "Pacifique",
         "explication": "L'océan Pacifique est le plus grand et le plus profond des océans, couvrant environ 165 millions de km².",
         "difficulte": 1
@@ -634,8 +4882,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quelle est la capitale du Brésil ?",
-        "media": { "type": "emoji", "valeur": "🇧🇷" },
-        "choix": ["São Paulo", "Rio de Janeiro", "Salvador", "Brasília"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇷"
+        },
+        "choix": [
+          "São Paulo",
+          "Rio de Janeiro",
+          "Salvador",
+          "Brasília"
+        ],
         "reponse": "Brasília",
         "explication": "Brasília est la capitale du Brésil depuis 1960, construite ex nihilo pour remplacer Rio de Janeiro.",
         "difficulte": 2
@@ -645,8 +4901,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel pays est le plus peuplé du monde ?",
-        "media": { "type": "emoji", "valeur": "👥" },
-        "choix": ["Chine", "Inde", "États-Unis", "Indonésie"],
+        "media": {
+          "type": "emoji",
+          "valeur": "👥"
+        },
+        "choix": [
+          "Chine",
+          "Inde",
+          "États-Unis",
+          "Indonésie"
+        ],
         "reponse": "Inde",
         "explication": "En 2023, l'Inde a dépassé la Chine pour devenir le pays le plus peuplé du monde avec plus de 1,4 milliard d'habitants.",
         "difficulte": 2
@@ -656,8 +4920,16 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel est le plus petit pays du monde ?",
-        "media": { "type": "emoji", "valeur": "🏳️" },
-        "choix": ["Monaco", "Saint-Marin", "Vatican", "Liechtenstein"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🏳️"
+        },
+        "choix": [
+          "Monaco",
+          "Saint-Marin",
+          "Vatican",
+          "Liechtenstein"
+        ],
         "reponse": "Vatican",
         "explication": "Le Vatican (Cité du Vatican) est le plus petit État du monde avec seulement 0,44 km² au cœur de Rome.",
         "difficulte": 2
@@ -667,10 +4939,778 @@
         "categorie": "geographie",
         "type": "qcm",
         "question": "Quel fleuve traverse Paris ?",
-        "media": { "type": "emoji", "valeur": "🗼" },
-        "choix": ["La Loire", "Le Rhône", "La Seine", "La Garonne"],
+        "media": {
+          "type": "emoji",
+          "valeur": "🗼"
+        },
+        "choix": [
+          "La Loire",
+          "Le Rhône",
+          "La Seine",
+          "La Garonne"
+        ],
         "reponse": "La Seine",
         "explication": "La Seine traverse Paris sur environ 13 km. Elle est célèbre pour ses ponts et ses rives classées à l'UNESCO.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_011",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l Espagne ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇪🇸"
+        },
+        "choix": [
+          "Barcelone",
+          "Valence",
+          "Séville",
+          "Madrid"
+        ],
+        "reponse": "Madrid",
+        "explication": "Madrid est la capitale de l Espagne et sa plus grande ville, avec plus de 3 millions d habitants.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_012",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus grand pays du monde en superficie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🗺️"
+        },
+        "choix": [
+          "Canada",
+          "Chine",
+          "États-Unis",
+          "Russie"
+        ],
+        "reponse": "Russie",
+        "explication": "La Russie est le plus grand pays du monde avec 17 millions de km², soit presque deux fois la taille du Canada.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_013",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale du Brésil ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇷"
+        },
+        "choix": [
+          "Rio de Janeiro",
+          "São Paulo",
+          "Brasilia",
+          "Salvador"
+        ],
+        "reponse": "Brasilia",
+        "explication": "Brasilia est la capitale du Brésil depuis 1960. Elle a été construite de zéro en plein cœur du pays.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_014",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus petit pays du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Monaco",
+          "San Marin",
+          "Liechtenstein",
+          "Vatican"
+        ],
+        "reponse": "Vatican",
+        "explication": "Le Vatican mesure 0,44 km². C est le plus petit État du monde, enclavé dans Rome en Italie.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_015",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle chaîne de montagnes sépare l Europe de l Asie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛰️"
+        },
+        "choix": [
+          "Les Alpes",
+          "Les Pyrénées",
+          "L Himalaya",
+          "L Oural"
+        ],
+        "reponse": "L Oural",
+        "explication": "Les monts Oural en Russie séparent conventionnellement l Europe de l Asie. Ils s étendent sur 2 500 km.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_016",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de la Russie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇷🇺"
+        },
+        "choix": [
+          "Saint-Pétersbourg",
+          "Moscou",
+          "Sotchi",
+          "Vladivostok"
+        ],
+        "reponse": "Moscou",
+        "explication": "Moscou est la capitale et la plus grande ville de Russie avec 12 millions d habitants.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_017",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve le Machu Picchu ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏔️"
+        },
+        "choix": [
+          "Bolivie",
+          "Chili",
+          "Équateur",
+          "Pérou"
+        ],
+        "reponse": "Pérou",
+        "explication": "Le Machu Picchu est une cité inca perchée à 2 430 m d altitude dans les Andes péruviennes.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_018",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel fleuve traverse Paris ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "La Loire",
+          "Le Rhône",
+          "La Seine",
+          "La Garonne"
+        ],
+        "reponse": "La Seine",
+        "explication": "La Seine traverse Paris sur 13 km. Elle prend sa source en Bourgogne et se jette dans la Manche en Normandie.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_019",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la montagne la plus haute de France ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏔️"
+        },
+        "choix": [
+          "Le Vercors",
+          "Le Mont Ventoux",
+          "Le Massif Central",
+          "Le Mont-Blanc"
+        ],
+        "reponse": "Le Mont-Blanc",
+        "explication": "Le Mont-Blanc culmine à 4 808 m. C est le plus haut sommet des Alpes et de toute l Europe occidentale.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_020",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve la Grande Muraille ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧱"
+        },
+        "choix": [
+          "Mongolie",
+          "Corée",
+          "Japon",
+          "Chine"
+        ],
+        "reponse": "Chine",
+        "explication": "La Grande Muraille de Chine s étend sur plus de 21 000 km. Elle a été construite pour protéger la Chine des invasions.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_021",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale du Japon ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🗼"
+        },
+        "choix": [
+          "Osaka",
+          "Kyoto",
+          "Tokyo",
+          "Hiroshima"
+        ],
+        "reponse": "Tokyo",
+        "explication": "Tokyo est la capitale du Japon et la plus grande agglomération urbaine du monde avec 37 millions d habitants.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_022",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le pays le plus peuplé du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "👥"
+        },
+        "choix": [
+          "Chine",
+          "États-Unis",
+          "Inde",
+          "Indonésie"
+        ],
+        "reponse": "Inde",
+        "explication": "L Inde a dépassé la Chine en 2023 pour devenir le pays le plus peuplé du monde avec 1,4 milliard d habitants.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_023",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve le Taj Mahal ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕌"
+        },
+        "choix": [
+          "Pakistan",
+          "Bangladesh",
+          "Sri Lanka",
+          "Inde"
+        ],
+        "reponse": "Inde",
+        "explication": "Le Taj Mahal est un mausolée en marbre blanc construit à Agra en Inde au XVIIe siècle par l empereur Chah Djahan.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_024",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale du Canada ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍁"
+        },
+        "choix": [
+          "Toronto",
+          "Montréal",
+          "Vancouver",
+          "Ottawa"
+        ],
+        "reponse": "Ottawa",
+        "explication": "Ottawa est la capitale du Canada, et non Toronto qui est la plus grande ville.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_025",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel pays est surnommé le pays du Soleil Levant ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌅"
+        },
+        "choix": [
+          "Chine",
+          "Vietnam",
+          "Corée",
+          "Japon"
+        ],
+        "reponse": "Japon",
+        "explication": "Le Japon est surnommé le pays du Soleil Levant car son nom en japonais, Nihon, signifie origine du Soleil.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_026",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Combien de pays la France métropolitaine partage-t-elle sa frontière ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇫🇷"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "reponse": "8",
+        "explication": "La France partage ses frontières avec 8 pays : Espagne, Andorre, Monaco, Italie, Suisse, Allemagne, Luxembourg et Belgique.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_027",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la plus grande île du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏝️"
+        },
+        "choix": [
+          "Madagascar",
+          "Bornéo",
+          "Nouvelle-Guinée",
+          "Groenland"
+        ],
+        "reponse": "Groenland",
+        "explication": "Le Groenland est la plus grande île du monde avec 2,1 millions de km². Il appartient au Danemark.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_028",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus haut sommet d Afrique ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏔️"
+        },
+        "choix": [
+          "Mont Kenya",
+          "Mont Atlas",
+          "Kilimandjaro",
+          "Mont Cameroun"
+        ],
+        "reponse": "Kilimandjaro",
+        "explication": "Le Kilimandjaro en Tanzanie culmine à 5 895 m. C est un volcan éteint et le plus haut sommet d Afrique.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_029",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale du Maroc ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇲🇦"
+        },
+        "choix": [
+          "Casablanca",
+          "Marrakech",
+          "Fès",
+          "Rabat"
+        ],
+        "reponse": "Rabat",
+        "explication": "Rabat est la capitale du Maroc, et non Casablanca qui est la plus grande ville et capitale économique.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_030",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel fleuve traverse l Égypte du sud au nord ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "Le Congo",
+          "Le Nil",
+          "Le Niger",
+          "Le Zambèze"
+        ],
+        "reponse": "Le Nil",
+        "explication": "Le Nil traverse l Égypte sur 1 500 km avant de se jeter dans la Méditerranée. La civilisation égyptienne s est développée sur ses rives.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_031",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l Allemagne ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇩🇪"
+        },
+        "choix": [
+          "Munich",
+          "Hambourg",
+          "Francfort",
+          "Berlin"
+        ],
+        "reponse": "Berlin",
+        "explication": "Berlin est la capitale et la plus grande ville d Allemagne. Elle a été divisée par le Mur de 1961 à 1989.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_032",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve le Colisée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Grèce",
+          "Turquie",
+          "Espagne",
+          "Italie"
+        ],
+        "reponse": "Italie",
+        "explication": "Le Colisée se trouve à Rome en Italie. Il a été construit au Ier siècle apr. J.-C. et pouvait accueillir 50 000 personnes.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_033",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus grand océan du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "Atlantique",
+          "Arctique",
+          "Indien",
+          "Pacifique"
+        ],
+        "reponse": "Pacifique",
+        "explication": "L océan Pacifique couvre 165 millions de km², soit plus de la moitié de la surface océanique totale.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_034",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l Argentine ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇦🇷"
+        },
+        "choix": [
+          "Montevideo",
+          "São Paulo",
+          "Lima",
+          "Buenos Aires"
+        ],
+        "reponse": "Buenos Aires",
+        "explication": "Buenos Aires est la capitale de l Argentine. Son nom signifie bons vents en espagnol.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_035",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l Italie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇮🇹"
+        },
+        "choix": [
+          "Milan",
+          "Naples",
+          "Florence",
+          "Rome"
+        ],
+        "reponse": "Rome",
+        "explication": "Rome est la capitale de l Italie. Surnommée la Ville Éternelle, elle a plus de 2 700 ans d histoire.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_036",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le plus long fleuve d Europe ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌊"
+        },
+        "choix": [
+          "Le Danube",
+          "Le Rhin",
+          "La Volga",
+          "Le Rhône"
+        ],
+        "reponse": "La Volga",
+        "explication": "La Volga est le plus long fleuve d Europe avec 3 530 km. Elle coule en Russie et se jette dans la mer Caspienne.",
+        "difficulte": 3
+      },
+      {
+        "id": "geo_037",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve la Sagrada Familia ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛪"
+        },
+        "choix": [
+          "Portugal",
+          "France",
+          "Italie",
+          "Espagne"
+        ],
+        "reponse": "Espagne",
+        "explication": "La Sagrada Familia est une basilique inachevée à Barcelone, en Espagne, conçue par l architecte Gaudí.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_038",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de la Suisse ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇭"
+        },
+        "choix": [
+          "Zurich",
+          "Genève",
+          "Lausanne",
+          "Berne"
+        ],
+        "reponse": "Berne",
+        "explication": "Berne est la capitale de la Suisse, et non Zurich ou Genève qui sont plus connues mais ne sont pas la capitale.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_039",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel pays est entièrement entouré par la mer Méditerranée, la mer Noire et la mer Égée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Espagne",
+          "Italie",
+          "Grèce",
+          "Turquie"
+        ],
+        "reponse": "Grèce",
+        "explication": "La Grèce est bordée par la mer Méditerranée, la mer Égée et la mer Ionienne. Elle compte plus de 2 000 îles.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_040",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de la Chine ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇳"
+        },
+        "choix": [
+          "Shanghai",
+          "Hong Kong",
+          "Canton",
+          "Pékin"
+        ],
+        "reponse": "Pékin",
+        "explication": "Pékin (Beijing) est la capitale de la Chine depuis 1949. C est une ville de 22 millions d habitants.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_041",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle chaîne de montagnes se trouve aux frontières entre la France et l Espagne ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛰️"
+        },
+        "choix": [
+          "Les Alpes",
+          "Les Vosges",
+          "Le Massif Central",
+          "Les Pyrénées"
+        ],
+        "reponse": "Les Pyrénées",
+        "explication": "Les Pyrénées séparent la France de l Espagne sur 430 km. Le pic le plus haut côté français est le Vignemale (3 298 m).",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_042",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de l Australie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🦘"
+        },
+        "choix": [
+          "Sydney",
+          "Melbourne",
+          "Brisbane",
+          "Canberra"
+        ],
+        "reponse": "Canberra",
+        "explication": "Canberra est la capitale de l Australie depuis 1927. Elle a été choisie car Sydney et Melbourne ne voulaient pas céder le titre l une à l autre.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_043",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel pays se trouve le Mont Kilimandjaro ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌋"
+        },
+        "choix": [
+          "Kenya",
+          "Éthiopie",
+          "Ouganda",
+          "Tanzanie"
+        ],
+        "reponse": "Tanzanie",
+        "explication": "Le Kilimandjaro est un volcan éteint situé en Tanzanie, près de la frontière avec le Kenya.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_044",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le désert le plus grand du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏜️"
+        },
+        "choix": [
+          "Sahara",
+          "Gobi",
+          "Kalahari",
+          "Antarctique"
+        ],
+        "reponse": "Antarctique",
+        "explication": "L Antarctique est techniquement le plus grand désert du monde (14 millions de km²). Le Sahara est le plus grand désert chaud.",
+        "difficulte": 3
+      },
+      {
+        "id": "geo_045",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle mer sépare la France de l Angleterre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⛴️"
+        },
+        "choix": [
+          "Mer du Nord",
+          "Mer Baltique",
+          "Mer Méditerranée",
+          "Manche"
+        ],
+        "reponse": "Manche",
+        "explication": "La Manche sépare le nord de la France de l Angleterre. Le tunnel sous la Manche la traverse depuis 1994.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_046",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de la Turquie ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇹🇷"
+        },
+        "choix": [
+          "Istanbul",
+          "Izmir",
+          "Bursa",
+          "Ankara"
+        ],
+        "reponse": "Ankara",
+        "explication": "Ankara est la capitale de la Turquie depuis 1923, et non Istanbul qui est la plus grande ville.",
+        "difficulte": 2
+      },
+      {
+        "id": "geo_047",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel pays possède le plus grand nombre de volcans actifs ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌋"
+        },
+        "choix": [
+          "Italie",
+          "Mexique",
+          "Islande",
+          "Indonésie"
+        ],
+        "reponse": "Indonésie",
+        "explication": "L Indonésie possède plus de 130 volcans actifs, soit environ un tiers des volcans actifs du monde.",
+        "difficulte": 3
+      },
+      {
+        "id": "geo_048",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quelle est la capitale de la Grèce ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏛️"
+        },
+        "choix": [
+          "Thessalonique",
+          "Corinthe",
+          "Athènes",
+          "Sparte"
+        ],
+        "reponse": "Athènes",
+        "explication": "Athènes est la capitale de la Grèce. C est l une des plus vieilles villes du monde avec plus de 3 500 ans d histoire.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_049",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Dans quel continent se trouve le Brésil ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌎"
+        },
+        "choix": [
+          "Amérique centrale",
+          "Amérique du Nord",
+          "Afrique",
+          "Amérique du Sud"
+        ],
+        "reponse": "Amérique du Sud",
+        "explication": "Le Brésil est situé en Amérique du Sud. C est le plus grand pays du continent et le 5e plus grand du monde.",
+        "difficulte": 1
+      },
+      {
+        "id": "geo_050",
+        "categorie": "geographie",
+        "type": "qcm",
+        "question": "Quel est le nom de la plus haute montagne du monde ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏔️"
+        },
+        "choix": [
+          "Le K2",
+          "Le Kangchenjunga",
+          "L Everest",
+          "L Annapurna"
+        ],
+        "reponse": "L Everest",
+        "explication": "L Everest culmine à 8 849 m. Il se trouve dans l Himalaya à la frontière entre le Népal et la Chine (Tibet).",
         "difficulte": 1
       }
     ]
