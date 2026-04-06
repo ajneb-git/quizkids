@@ -14,7 +14,7 @@ class QuizTimer {
     this.interval = setInterval(() => {
       const elapsed = Date.now() - this.startTime;
       const remaining = Math.max(0, this.duration - elapsed);
-      this.onTick(remaining / this.duration); // 1.0 → 0.0
+      this.onTick(remaining / this.duration);
       if (remaining === 0) {
         clearInterval(this.interval);
         this.interval = null;
@@ -32,8 +32,9 @@ class QuizTimer {
 }
 
 export class QuizEngine {
-  constructor(questions, onEnd) {
+  constructor(questions, categories, onEnd) {
     this.questions = questions;
+    this.categories = categories;
     this.currentIndex = 0;
     this.onEnd = onEnd;
     this.timer = null;
@@ -41,22 +42,14 @@ export class QuizEngine {
     this.wrongAnswers = [];
 
     this.scores = {};
-    CONFIG.CATEGORIES.forEach(cat => {
+    categories.forEach(cat => {
       this.scores[cat] = { correct: 0, total: CONFIG.QUESTIONS_PER_CATEGORY };
     });
   }
 
-  getCurrentQuestion() {
-    return this.questions[this.currentIndex];
-  }
-
-  getTotalQuestions() {
-    return this.questions.length;
-  }
-
-  getCurrentIndex() {
-    return this.currentIndex;
-  }
+  getCurrentQuestion()  { return this.questions[this.currentIndex]; }
+  getTotalQuestions()   { return this.questions.length; }
+  getCurrentIndex()     { return this.currentIndex; }
 
   startTimer(onTick, onExpire) {
     this.timer = new QuizTimer(CONFIG.TIMER_DURATION_MS, onTick, onExpire);
@@ -77,15 +70,8 @@ export class QuizEngine {
     if (isCorrect) {
       this.scores[q.categorie].correct++;
     } else {
-      this.wrongAnswers.push({
-        question: q.question,
-        media: q.media ?? null,
-        userAnswer: choice,
-        correctAnswer: q.reponse,
-        explication: q.explication
-      });
+      this.wrongAnswers.push({ question: q.question, media: q.media ?? null, userAnswer: choice, correctAnswer: q.reponse, explication: q.explication });
     }
-
     return { isCorrect, correctAnswer: q.reponse, explication: q.explication };
   }
 
@@ -93,13 +79,7 @@ export class QuizEngine {
     if (this.answered) return null;
     this.answered = true;
     const q = this.getCurrentQuestion();
-    this.wrongAnswers.push({
-      question: q.question,
-      media: q.media ?? null,
-      userAnswer: null, // time expired
-      correctAnswer: q.reponse,
-      explication: q.explication
-    });
+    this.wrongAnswers.push({ question: q.question, media: q.media ?? null, userAnswer: null, correctAnswer: q.reponse, explication: q.explication });
     return { isCorrect: false, correctAnswer: q.reponse, explication: q.explication };
   }
 
@@ -109,7 +89,7 @@ export class QuizEngine {
 
     if (this.currentIndex >= this.questions.length) {
       markPlayedToday(this.scores, this.wrongAnswers);
-      CONFIG.CATEGORIES.forEach(cat => {
+      this.categories.forEach(cat => {
         const ids = this.questions.filter(q => q.categorie === cat).map(q => q.id);
         markQuestionsAsSeen(cat, ids);
       });
@@ -119,27 +99,21 @@ export class QuizEngine {
     return true;
   }
 
-  getScores() {
-    return this.scores;
-  }
+  getScores() { return this.scores; }
 }
 
-export async function loadQuestions() {
-  const response = await fetch('./data/questions.json');
+export async function loadQuestions(questionsFile) {
+  const response = await fetch(questionsFile);
   if (!response.ok) throw new Error('Failed to load questions');
   const data = await response.json();
   return data.categories;
 }
 
-export function prepareQuestions(allQuestions) {
-  // Get daily selection per category then interleave (one per category at a time)
-  const byCategory = CONFIG.CATEGORIES.map(cat =>
-    getDailyQuestions(allQuestions, cat)
-  );
-
+export function prepareQuestions(allQuestions, categories) {
+  const byCategory = categories.map(cat => getDailyQuestions(allQuestions, cat));
   const result = [];
   for (let i = 0; i < CONFIG.QUESTIONS_PER_CATEGORY; i++) {
-    for (let c = 0; c < CONFIG.CATEGORIES.length; c++) {
+    for (let c = 0; c < categories.length; c++) {
       if (byCategory[c][i]) result.push(byCategory[c][i]);
     }
   }

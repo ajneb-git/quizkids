@@ -33,7 +33,21 @@
       <div class="logo">
         <div class="logo-icon">🧠</div>
         <h1>QuizKids</h1>
-        <p class="subtitle">Le quiz du jour pour les collégiens</p>
+        <p class="subtitle">Le quiz du jour</p>
+      </div>
+
+      <!-- Level selector -->
+      <div class="level-selector">
+        <button class="level-btn active" data-level="college">
+          <span class="level-emoji">📚</span>
+          <span class="level-label">Collège</span>
+          <span class="level-sub">6e / 5e</span>
+        </button>
+        <button class="level-btn" data-level="primaire">
+          <span class="level-emoji">🎒</span>
+          <span class="level-label">Primaire</span>
+          <span class="level-sub">CM1 / CM2</span>
+        </button>
       </div>
 
       <!-- Best score banner -->
@@ -48,7 +62,7 @@
         🎯 Défie un ami
       </button>
 
-      <p class="muted">60 questions · 6 catégories · 15 sec par question</p>
+      <p id="play-status" class="muted">60 questions · 6 catégories · 15 sec par question</p>
 
       <!-- Notification reminder button -->
       <button id="btn-notif" class="btn btn-notif">

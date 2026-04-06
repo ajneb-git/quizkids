@@ -3,14 +3,16 @@ import { getShareUrl } from './share.js';
 
 const chartInstances = {};
 
-export async function renderResults(scores, compareScores = null, canvasId = 'radar-canvas', breakdownId = 'score-breakdown') {
-  renderScoreSummary(scores, breakdownId);
-  await renderRadar(scores, compareScores, canvasId);
+export async function renderResults(scores, compareScores = null, canvasId = 'radar-canvas', breakdownId = 'score-breakdown', levelConf = null) {
+  renderScoreSummary(scores, breakdownId, levelConf);
+  await renderRadar(scores, compareScores, canvasId, levelConf);
 }
 
-function renderScoreSummary(scores, breakdownId) {
-  const total = CONFIG.CATEGORIES.reduce((sum, cat) => sum + (scores[cat]?.correct ?? 0), 0);
-  const maxTotal = CONFIG.CATEGORIES.length * CONFIG.QUESTIONS_PER_CATEGORY;
+function renderScoreSummary(scores, breakdownId, levelConf) {
+  const categories = levelConf?.categories ?? Object.keys(scores);
+  const categoryLabels = levelConf?.categoryLabels ?? {};
+  const total = categories.reduce((sum, cat) => sum + (scores[cat]?.correct ?? 0), 0);
+  const maxTotal = categories.length * CONFIG.QUESTIONS_PER_CATEGORY;
 
   const totalEl = document.getElementById('total-score');
   if (totalEl) totalEl.textContent = `${total} / ${maxTotal}`;
@@ -18,10 +20,10 @@ function renderScoreSummary(scores, breakdownId) {
   const breakdown = document.getElementById(breakdownId);
   if (!breakdown) return;
 
-  breakdown.innerHTML = CONFIG.CATEGORIES.map(cat => {
+  breakdown.innerHTML = categories.map(cat => {
     const s = scores[cat] ?? { correct: 0, total: 10 };
     const pct = Math.round((s.correct / s.total) * 100);
-    const label = CONFIG.CATEGORY_LABELS[cat];
+    const label = categoryLabels[cat] ?? cat;
     return `
       <div class="score-row">
         <span class="score-label">${label}</span>
@@ -34,7 +36,9 @@ function renderScoreSummary(scores, breakdownId) {
   }).join('');
 }
 
-async function renderRadar(scores, compareScores, canvasId) {
+async function renderRadar(scores, compareScores, canvasId, levelConf) {
+  const categories = levelConf?.categories ?? Object.keys(scores);
+  const categoryLabels = levelConf?.categoryLabels ?? {};
   if (chartInstances[canvasId]) {
     chartInstances[canvasId].destroy();
     delete chartInstances[canvasId];
@@ -43,8 +47,8 @@ async function renderRadar(scores, compareScores, canvasId) {
   const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/+esm');
   Chart.register(...registerables);
 
-  const labels = CONFIG.CATEGORIES.map(cat => CONFIG.CATEGORY_LABELS[cat]);
-  const myData = CONFIG.CATEGORIES.map(cat => scores[cat]?.correct ?? 0);
+  const labels = categories.map(cat => categoryLabels[cat] ?? cat);
+  const myData = categories.map(cat => scores[cat]?.correct ?? 0);
 
   const datasets = [{
     label: 'Moi',
@@ -59,7 +63,7 @@ async function renderRadar(scores, compareScores, canvasId) {
   if (compareScores) {
     datasets.push({
       label: 'Mon ami',
-      data: CONFIG.CATEGORIES.map(cat => compareScores[cat]?.correct ?? 0),
+      data: categories.map(cat => compareScores[cat]?.correct ?? 0),
       backgroundColor: 'rgba(251, 146, 60, 0.25)',
       borderColor: 'rgb(251, 146, 60)',
       pointBackgroundColor: 'rgb(251, 146, 60)',
@@ -107,15 +111,18 @@ async function renderRadar(scores, compareScores, canvasId) {
   });
 }
 
-export function renderEncouragingMessage(scores, elId = 'encouraging-msg') {
+export function renderEncouragingMessage(scores, elId = 'encouraging-msg', levelConf = null) {
   const el = document.getElementById(elId);
   if (!el) return;
 
-  const ranked = CONFIG.CATEGORIES
+  const categories = levelConf?.categories ?? Object.keys(scores);
+  const categoryLabels = levelConf?.categoryLabels ?? {};
+
+  const ranked = categories
     .map(cat => ({
       cat,
       correct: scores[cat]?.correct ?? 0,
-      label: CONFIG.CATEGORY_LABELS[cat].replace(/^\S+\s+/, '') // strip emoji
+      label: (categoryLabels[cat] ?? cat).replace(/^\S+\s+/, '') // strip emoji
     }))
     .sort((a, b) => b.correct - a.correct);
 
