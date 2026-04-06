@@ -3053,19 +3053,19 @@
         "id": "sci_011",
         "categorie": "sciences",
         "type": "qcm",
-        "question": "Quel est l organe le plus grand du corps humain ?",
+        "question": "Quel est le plus grand os du corps humain ?",
         "media": {
           "type": "emoji",
-          "valeur": "🧍"
+          "valeur": "🦴"
         },
         "choix": [
-          "Le foie",
-          "Les poumons",
-          "La peau",
-          "L intestin"
+          "Le tibia",
+          "Le fémur",
+          "L'humérus",
+          "Le péroné"
         ],
-        "reponse": "La peau",
-        "explication": "La peau est l organe le plus grand du corps humain. Elle pèse environ 4 kg et couvre 1,5 à 2 m².",
+        "reponse": "Le fémur",
+        "explication": "Le fémur (os de la cuisse) est le plus grand et le plus solide os du corps humain.",
         "difficulte": 2
       },
       {
