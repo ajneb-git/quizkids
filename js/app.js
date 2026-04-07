@@ -248,7 +248,7 @@ async function startQuiz() {
 
   const questions = prepareQuestions(allQuestions, levelConf.categories);
 
-  quizEngine = new QuizEngine(questions, levelConf.categories, async () => {
+  quizEngine = new QuizEngine(questions, levelConf.categories, levelConf.timerDuration, async () => {
     const today = new Date().toISOString().slice(0, 10);
     await persistPlayDateForSW(today);
     const pendingRef = sessionStorage.getItem('pending_ref');

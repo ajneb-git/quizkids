@@ -8,6 +8,7 @@ export const LEVEL_CONFIG = {
   college: {
     label: '6e / 5e',
     emoji: '📚',
+    timerDuration: 15000,
     categories: ['drapeaux', 'sport', 'histoire', 'sciences', 'culture', 'geographie'],
     categoryLabels: {
       drapeaux:   '🌍 Drapeaux',
@@ -23,6 +24,7 @@ export const LEVEL_CONFIG = {
   primaire: {
     label: 'École primaire',
     emoji: '🎒',
+    timerDuration: 20000,
     categories: ['drapeaux', 'geographie', 'culture', 'logique', 'sport', 'gastronomie'],
     categoryLabels: {
       drapeaux:    '🌍 Drapeaux',

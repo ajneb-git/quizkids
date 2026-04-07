@@ -32,9 +32,10 @@ class QuizTimer {
 }
 
 export class QuizEngine {
-  constructor(questions, categories, onEnd) {
+  constructor(questions, categories, timerDuration, onEnd) {
     this.questions = questions;
     this.categories = categories;
+    this.timerDuration = timerDuration;
     this.currentIndex = 0;
     this.onEnd = onEnd;
     this.timer = null;
@@ -52,7 +53,7 @@ export class QuizEngine {
   getCurrentIndex()     { return this.currentIndex; }
 
   startTimer(onTick, onExpire) {
-    this.timer = new QuizTimer(CONFIG.TIMER_DURATION_MS, onTick, onExpire);
+    this.timer = new QuizTimer(this.timerDuration, onTick, onExpire);
     this.timer.start();
   }
 
