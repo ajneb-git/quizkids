@@ -64,6 +64,18 @@
 
       <p id="play-status" class="muted">60 questions · 6 catégories · 15 sec par question</p>
 
+      <!-- Révision section -->
+      <div class="revision-section">
+        <p class="revision-title">✍️ Mode révision</p>
+        <div class="revision-cards">
+          <div class="revision-card" data-theme="conjugaison">
+            <span class="revision-card-emoji">📝</span>
+            <span class="revision-card-label">Conjugaison</span>
+            <span class="revision-card-sub">Passé composé · Plus-que-parfait<br>Impératif · Accord PP</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Notification reminder button -->
       <button id="btn-notif" class="btn btn-notif">
         🔕 Me rappeler chaque matin
@@ -76,7 +88,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════ SCREEN: QUIZ ══════════════════ -->
+  <!-- ══════════════════ SCREEN: QUIZ (quotidien) ══════════════════ -->
   <div id="screen-quiz" class="screen">
     <div class="quiz-header">
       <div class="timer-track">
@@ -97,6 +109,58 @@
     <div id="q-feedback" class="feedback hidden"></div>
   </div>
 
+  <!-- ══════════════════ SCREEN: REVISION QUIZ ══════════════════ -->
+  <div id="screen-revision-quiz" class="screen">
+    <div class="quiz-header">
+      <div class="timer-track">
+        <div id="rq-timer-bar" class="timer-bar"></div>
+      </div>
+      <div class="quiz-meta">
+        <span id="rq-number">Question 1 / 30</span>
+        <span id="rq-chapitre" class="chapitre-badge"></span>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <p id="rq-text" class="q-text rq-text">Chargement…</p>
+    </div>
+
+    <!-- QCM choices -->
+    <div id="rq-choices" class="choices-grid"></div>
+
+    <!-- Text input zone -->
+    <div id="rq-text-input-zone" class="text-input-zone" style="display:none">
+      <input type="text" id="rq-input" class="rq-input" placeholder="Écris ta réponse ici…" autocomplete="off" autocorrect="off" spellcheck="false" />
+      <button id="rq-submit" class="btn btn-primary">Valider ✓</button>
+    </div>
+
+    <div id="rq-feedback" class="feedback hidden"></div>
+
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: REVISION RESULTS ══════════════════ -->
+  <div id="screen-revision-results" class="screen">
+    <div class="screen-content results-content">
+      <h2>Résultats de révision ✍️</h2>
+
+      <div class="total-score">
+        <span id="rr-score">—</span>
+      </div>
+
+      <div id="rr-msg" class="encouraging-msg"></div>
+
+      <div id="rr-wrong" class="wrong-answers-section"></div>
+
+      <div class="results-actions">
+        <button id="btn-revision-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ══════════════════ SCREEN: RESULTS ══════════════════ -->
   <div id="screen-results" class="screen">
     <div class="screen-content results-content">
@@ -108,17 +172,14 @@
 
       <button id="btn-share" class="btn btn-accent btn-share-top">🎯 Défie un ami</button>
 
-      <!-- Encouraging message -->
       <div id="encouraging-msg" class="encouraging-msg"></div>
 
       <canvas id="radar-canvas"></canvas>
 
       <div id="score-breakdown" class="score-breakdown"></div>
 
-      <!-- Wrong answers recap -->
       <div id="wrong-answers" class="wrong-answers-section"></div>
 
-      <!-- Come back tomorrow -->
       <div id="come-back-msg" class="come-back-msg"></div>
 
       <div class="results-actions">
@@ -131,11 +192,8 @@
   <div id="screen-compare" class="screen">
     <div class="screen-content results-content">
       <h2 id="compare-title">Comparaison 🆚</h2>
-
       <canvas id="radar-canvas-compare"></canvas>
-
       <div id="score-breakdown-compare" class="score-breakdown"></div>
-
       <div class="results-actions">
         <button class="btn btn-secondary btn-home">🏠 Accueil</button>
       </div>

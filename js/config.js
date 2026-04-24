@@ -1,7 +1,7 @@
 export const CONFIG = {
   QUESTIONS_PER_CATEGORY: 10,
   TIMER_DURATION_MS: 15000,
-  FEEDBACK_DELAY_MS: 1500,
+  FEEDBACK_DELAY_MS: 2000,
 };
 
 export const LEVEL_CONFIG = {
@@ -36,5 +36,16 @@ export const LEVEL_CONFIG = {
     },
     questionsFile: './data/questions-primaire.json',
     maxScore: 60
+  }
+};
+
+export const REVISION_CONFIG = {
+  conjugaison: {
+    label: 'Conjugaison',
+    emoji: '✍️',
+    description: 'Passé composé · Plus-que-parfait · Impératif · Accord PP',
+    timerDuration: 30000,
+    questionsFile: './data/questions-revision-conjugaison.json',
+    category: 'conjugaison'
   }
 };

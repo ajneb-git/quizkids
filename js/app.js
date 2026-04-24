@@ -1,19 +1,18 @@
-import { CONFIG, LEVEL_CONFIG } from './config.js';
+import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
 import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday } from './storage.js';
-import { loadQuestions, prepareQuestions, QuizEngine } from './quiz.js';
+import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
 
 let quizEngine = null;
+let revisionEngine = null;
 let allQuestions = null;
 let currentLevelKey = null;
 let deferredInstallPrompt = null;
 
-// ─── Level helpers ────────────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function getLevelConf() {
-  return LEVEL_CONFIG[getActiveLevel()];
-}
+function getLevelConf() { return LEVEL_CONFIG[getActiveLevel()]; }
 
 // ─── Notifications ────────────────────────────────────────────────────────────
 
@@ -30,12 +29,8 @@ async function registerPeriodicSync() {
   if (!('serviceWorker' in navigator)) return;
   try {
     const reg = await navigator.serviceWorker.ready;
-    if ('periodicSync' in reg) {
-      await reg.periodicSync.register('daily-quiz-reminder', { minInterval: 12 * 60 * 60 * 1000 });
-    }
-  } catch (e) {
-    console.info('Periodic sync not available:', e.message);
-  }
+    if ('periodicSync' in reg) await reg.periodicSync.register('daily-quiz-reminder', { minInterval: 12 * 60 * 60 * 1000 });
+  } catch (e) { console.info('Periodic sync not available:', e.message); }
 }
 
 async function persistPlayDateForSW(date) {
@@ -52,19 +47,15 @@ function updateNotifButton(enabled) {
   btn.classList.toggle('notif-active', enabled);
 }
 
-function isNotifEnabled() {
-  return 'Notification' in window && Notification.permission === 'granted';
-}
+function isNotifEnabled() { return 'Notification' in window && Notification.permission === 'granted'; }
 
 // ─── PWA install ──────────────────────────────────────────────────────────────
 
 window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
+  e.preventDefault(); deferredInstallPrompt = e;
   const btn = document.getElementById('btn-install');
   if (btn) btn.style.display = 'flex';
 });
-
 window.addEventListener('appinstalled', () => {
   const btn = document.getElementById('btn-install');
   if (btn) btn.style.display = 'none';
@@ -77,17 +68,6 @@ function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(`screen-${id}`);
   if (el) el.classList.add('active');
-}
-
-// ─── Level selector ───────────────────────────────────────────────────────────
-
-function renderLevelSelector() {
-  const active = getActiveLevel();
-  document.querySelectorAll('.level-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.level === active);
-  });
-  // Update banner & play button label
-  renderHome();
 }
 
 // ─── Home screen ──────────────────────────────────────────────────────────────
@@ -121,21 +101,19 @@ function renderHome() {
     }
   }
 
-  // Highlight active level
   document.querySelectorAll('.level-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.level === level);
   });
 
-  // Show today's status under play button
   const playStatus = document.getElementById('play-status');
   if (playStatus) {
     playStatus.textContent = hasPlayedToday()
       ? '✅ Quiz du jour terminé — reviens demain !'
-      : `${levelConf.emoji} ${levelConf.label} · 60 questions · 15 sec par question`;
+      : `${levelConf.emoji} ${levelConf.label} · 60 questions · ${levelConf.timerDuration / 1000}s par question`;
   }
 }
 
-// ─── Quiz UI ──────────────────────────────────────────────────────────────────
+// ─── Quiz UI (quotidien) ──────────────────────────────────────────────────────
 
 function renderQuestion(engine) {
   const q = engine.getCurrentQuestion();
@@ -148,13 +126,8 @@ function renderQuestion(engine) {
   document.getElementById('q-text').textContent = q.question;
 
   const mediaEl = document.getElementById('q-media');
-  if (q.media?.type === 'emoji') {
-    mediaEl.textContent = q.media.valeur;
-    mediaEl.style.display = 'block';
-  } else {
-    mediaEl.textContent = '';
-    mediaEl.style.display = 'none';
-  }
+  if (q.media?.type === 'emoji') { mediaEl.textContent = q.media.valeur; mediaEl.style.display = 'block'; }
+  else { mediaEl.textContent = ''; mediaEl.style.display = 'none'; }
 
   const choicesEl = document.getElementById('q-choices');
   choicesEl.innerHTML = '';
@@ -170,24 +143,7 @@ function renderQuestion(engine) {
   feedback.className = 'feedback hidden';
   feedback.innerHTML = '';
 
-  const timerBar = document.getElementById('timer-bar');
-  timerBar.style.transition = 'none';
-  timerBar.style.width = '100%';
-  timerBar.style.backgroundColor = '';
-  requestAnimationFrame(() => { timerBar.style.transition = ''; });
-
-  engine.startTimer(
-    (progress) => {
-      timerBar.style.width = `${progress * 100}%`;
-      if (progress < 0.3) timerBar.style.backgroundColor = '#ef4444';
-      else if (progress < 0.6) timerBar.style.backgroundColor = '#f59e0b';
-      else timerBar.style.backgroundColor = '';
-    },
-    () => {
-      const result = engine.timeExpired();
-      if (result) showFeedback(result, engine);
-    }
-  );
+  startTimerUI(engine);
 }
 
 function handleAnswer(choice, engine) {
@@ -198,17 +154,15 @@ function handleAnswer(choice, engine) {
     if (btn.textContent === result.correctAnswer) btn.classList.add('correct');
     else if (btn.textContent === choice && !result.isCorrect) btn.classList.add('incorrect');
   });
-  showFeedback(result, engine);
+  showFeedback(result, engine, () => { if (engine.next()) renderQuestion(engine); });
 }
 
-function showFeedback(result, engine) {
-  const timerBar = document.getElementById('timer-bar');
-  timerBar.style.transition = 'none';
+function showFeedback(result, engine, onNext) {
+  document.getElementById('timer-bar').style.transition = 'none';
   document.querySelectorAll('.choice-btn').forEach(btn => {
     btn.disabled = true;
     if (btn.textContent === result.correctAnswer) btn.classList.add('correct');
   });
-
   const feedback = document.getElementById('q-feedback');
   if (result.isCorrect) {
     feedback.className = 'feedback correct';
@@ -217,11 +171,171 @@ function showFeedback(result, engine) {
     feedback.className = 'feedback incorrect';
     feedback.innerHTML = `✗ Réponse : <strong>${result.correctAnswer}</strong>${result.explication ? `<br><span class="explication">${result.explication}</span>` : ''}`;
   }
+  setTimeout(onNext, CONFIG.FEEDBACK_DELAY_MS);
+}
 
+function startTimerUI(engine) {
+  const timerBar = document.getElementById('timer-bar');
+  timerBar.style.transition = 'none';
+  timerBar.style.width = '100%';
+  timerBar.style.backgroundColor = '';
+  requestAnimationFrame(() => { timerBar.style.transition = ''; });
+  engine.startTimer(
+    (progress) => {
+      timerBar.style.width = `${progress * 100}%`;
+      if (progress < 0.3) timerBar.style.backgroundColor = '#ef4444';
+      else if (progress < 0.6) timerBar.style.backgroundColor = '#f59e0b';
+      else timerBar.style.backgroundColor = '';
+    },
+    () => { const result = engine.timeExpired(); if (result) showFeedback(result, engine, () => { if (engine.next()) renderQuestion(engine); }); }
+  );
+}
+
+// ─── Revision Quiz UI ─────────────────────────────────────────────────────────
+
+function renderRevisionQuestion(engine) {
+  const q = engine.getCurrentQuestion();
+  const idx = engine.getCurrentIndex();
+  const total = engine.getTotalQuestions();
+
+  document.getElementById('rq-number').textContent = `Question ${idx + 1} / ${total}`;
+  document.getElementById('rq-chapitre').textContent = q.chapitre ?? '';
+  document.getElementById('rq-text').textContent = q.question;
+
+  const choicesEl = document.getElementById('rq-choices');
+  const textEl = document.getElementById('rq-text-input-zone');
+  const feedback = document.getElementById('rq-feedback');
+  feedback.className = 'feedback hidden';
+  feedback.innerHTML = '';
+
+  if (q.type === 'qcm') {
+    choicesEl.style.display = '';
+    textEl.style.display = 'none';
+    choicesEl.innerHTML = '';
+    q.choix.forEach(choice => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-btn';
+      btn.textContent = choice;
+      btn.addEventListener('click', () => handleRevisionAnswer(choice, engine, 'qcm'));
+      choicesEl.appendChild(btn);
+    });
+  } else {
+    choicesEl.style.display = 'none';
+    textEl.style.display = '';
+    const input = document.getElementById('rq-input');
+    const submitBtn = document.getElementById('rq-submit');
+    input.value = '';
+    input.focus();
+
+    // Submit on button click
+    submitBtn.onclick = () => {
+      if (input.value.trim() === '') return;
+      handleRevisionAnswer(input.value, engine, 'texte');
+    };
+    // Submit on Enter
+    input.onkeydown = (e) => {
+      if (e.key === 'Enter' && input.value.trim() !== '') {
+        handleRevisionAnswer(input.value, engine, 'texte');
+      }
+    };
+  }
+
+  // Timer
+  const timerBar = document.getElementById('rq-timer-bar');
+  timerBar.style.transition = 'none';
+  timerBar.style.width = '100%';
+  timerBar.style.backgroundColor = '';
+  requestAnimationFrame(() => { timerBar.style.transition = ''; });
+  engine.startTimer(
+    (progress) => {
+      timerBar.style.width = `${progress * 100}%`;
+      if (progress < 0.3) timerBar.style.backgroundColor = '#ef4444';
+      else if (progress < 0.6) timerBar.style.backgroundColor = '#f59e0b';
+      else timerBar.style.backgroundColor = '';
+    },
+    () => {
+      const result = engine.timeExpired();
+      if (result) showRevisionFeedback(result, engine);
+    }
+  );
+}
+
+function handleRevisionAnswer(value, engine, type) {
+  const result = type === 'texte' ? engine.answerText(value) : engine.answer(value);
+  if (!result) return;
+
+  // Disable inputs
+  document.querySelectorAll('#rq-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === result.correctAnswer) btn.classList.add('correct');
+    else if (btn.textContent === value && !result.isCorrect) btn.classList.add('incorrect');
+  });
+  const input = document.getElementById('rq-input');
+  const submitBtn = document.getElementById('rq-submit');
+  if (input) input.disabled = true;
+  if (submitBtn) submitBtn.disabled = true;
+
+  showRevisionFeedback(result, engine);
+}
+
+function showRevisionFeedback(result, engine) {
+  document.getElementById('rq-timer-bar').style.transition = 'none';
+  const feedback = document.getElementById('rq-feedback');
+  if (result.isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.innerHTML = `✓ Bonne réponse !${result.explication ? `<br><span class="explication">${result.explication}</span>` : ''}`;
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ Réponse correcte : <strong>${result.correctAnswer}</strong>${result.explication ? `<br><span class="explication">${result.explication}</span>` : ''}`;
+  }
   setTimeout(() => {
     const hasNext = engine.next();
-    if (hasNext) renderQuestion(engine);
+    if (hasNext) renderRevisionQuestion(engine);
+    else renderRevisionResults(engine);
   }, CONFIG.FEEDBACK_DELAY_MS);
+}
+
+function renderRevisionResults(engine) {
+  const { correct, total, wrongAnswers } = engine.onEnd ? {} : { correct: engine.correct, total: engine.questions.length, wrongAnswers: engine.wrongAnswers };
+  showScreen('revision-results');
+  document.getElementById('rr-score').textContent = `${engine.correct} / ${engine.questions.length}`;
+
+  const pct = Math.round((engine.correct / engine.questions.length) * 100);
+  let msg = '';
+  if (pct === 100) msg = '🎉 Parfait ! Tu maîtrises tout le cours !';
+  else if (pct >= 75) msg = '💪 Très bien ! Encore un peu de travail sur les erreurs.';
+  else if (pct >= 50) msg = '📖 Pas mal, mais relis bien le cours sur les points ratés.';
+  else msg = '🔁 Courage ! Relis le cours et recommence — tu vas y arriver !';
+  document.getElementById('rr-msg').textContent = msg;
+
+  // Recap erreurs
+  const recapEl = document.getElementById('rr-wrong');
+  if (engine.wrongAnswers.length === 0) {
+    recapEl.innerHTML = '<p class="perfect-score">🎉 Aucune erreur !</p>';
+  } else {
+    // Group by chapitre
+    const byChap = {};
+    engine.wrongAnswers.forEach(w => {
+      const c = w.chapitre ?? 'Autre';
+      if (!byChap[c]) byChap[c] = [];
+      byChap[c].push(w);
+    });
+    recapEl.innerHTML = Object.entries(byChap).map(([chap, errors]) => `
+      <div class="revision-chap">
+        <h4 class="revision-chap-title">📌 ${chap}</h4>
+        ${errors.map(w => `
+          <div class="wrong-item">
+            <div class="wrong-body">
+              <p class="wrong-question">${w.question.replace(/\n/g, '<br>')}</p>
+              <p class="wrong-user">${w.userAnswer === null ? '⏱ Temps écoulé' : `Tu as répondu : <span class="wrong-answer-text">${w.userAnswer}</span>`}</p>
+              <p class="wrong-correct">✓ Bonne réponse : <strong>${w.correctAnswer}</strong></p>
+              ${w.explication ? `<p class="wrong-explication">${w.explication}</p>` : ''}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+  }
 }
 
 // ─── Quiz initialization ──────────────────────────────────────────────────────
@@ -229,25 +343,12 @@ function showFeedback(result, engine) {
 async function startQuiz() {
   const levelConf = getLevelConf();
   const levelKey = getActiveLevel();
-
-  // Reset cache if level changed
-  if (levelKey !== currentLevelKey) {
-    allQuestions = null;
-    currentLevelKey = levelKey;
-  }
-
+  if (levelKey !== currentLevelKey) { allQuestions = null; currentLevelKey = levelKey; }
   if (!allQuestions) {
-    try {
-      allQuestions = await loadQuestions(levelConf.questionsFile);
-    } catch (e) {
-      console.error('Failed to load questions:', e);
-      showScreen('home');
-      return;
-    }
+    try { allQuestions = await loadQuestions(levelConf.questionsFile); }
+    catch (e) { console.error('Failed to load questions:', e); showScreen('home'); return; }
   }
-
   const questions = prepareQuestions(allQuestions, levelConf.categories);
-
   quizEngine = new QuizEngine(questions, levelConf.categories, levelConf.timerDuration, async () => {
     const today = new Date().toISOString().slice(0, 10);
     await persistPlayDateForSW(today);
@@ -259,8 +360,23 @@ async function startQuiz() {
       window.location.hash = '#results';
     }
   });
-
   renderQuestion(quizEngine);
+}
+
+async function startRevision(themeKey) {
+  const conf = REVISION_CONFIG[themeKey];
+  if (!conf) return;
+  try {
+    const questions = await loadRevisionQuestions(conf.questionsFile, conf.category);
+    revisionEngine = new RevisionEngine(questions, conf.timerDuration, (result) => {
+      // onEnd is called inside renderRevisionResults via engine properties
+    });
+    showScreen('revision-quiz');
+    renderRevisionQuestion(revisionEngine);
+  } catch (e) {
+    console.error('Failed to load revision questions:', e);
+    showScreen('home');
+  }
 }
 
 // ─── Router ───────────────────────────────────────────────────────────────────
@@ -268,6 +384,12 @@ async function startQuiz() {
 async function route() {
   const hash = window.location.hash || '#home';
   const levelConf = getLevelConf();
+
+  if (hash.startsWith('#revision-quiz')) {
+    const theme = new URLSearchParams(hash.split('?')[1] ?? '').get('theme') || 'conjugaison';
+    await startRevision(theme);
+    return;
+  }
 
   if (hash.startsWith('#compare')) {
     const ref = getRefFromHash();
@@ -277,8 +399,7 @@ async function route() {
       showScreen('compare');
       if (myScores) {
         await renderResults(myScores, friendScores, 'radar-canvas-compare', 'score-breakdown-compare', levelConf);
-        document.getElementById('compare-title').textContent =
-          friendScores ? 'Vous deux face à face ! 🆚' : 'Tes résultats du jour';
+        document.getElementById('compare-title').textContent = friendScores ? 'Vous deux face à face ! 🆚' : 'Tes résultats du jour';
       }
     } else {
       sessionStorage.setItem('pending_ref', ref ?? '');
@@ -338,21 +459,33 @@ async function route() {
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function init() {
-  // Level selector buttons
+  // Level selector
   document.querySelectorAll('.level-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const newLevel = btn.dataset.level;
       if (newLevel === getActiveLevel()) return;
       setActiveLevel(newLevel);
-      allQuestions = null; // force reload
+      allQuestions = null;
       currentLevelKey = null;
       renderHome();
     });
   });
 
-  document.getElementById('btn-play')?.addEventListener('click', () => {
-    window.location.hash = '#quiz';
+  // Revision cards
+  document.querySelectorAll('.revision-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const theme = card.dataset.theme;
+      window.location.hash = `#revision-quiz?theme=${theme}`;
+    });
   });
+
+  // Replay revision
+  document.getElementById('btn-revision-replay')?.addEventListener('click', () => {
+    history.back();
+    setTimeout(() => { window.location.hash = window.location.hash; route(); }, 50);
+  });
+
+  document.getElementById('btn-play')?.addEventListener('click', () => { window.location.hash = '#quiz'; });
 
   document.getElementById('btn-notif')?.addEventListener('click', async () => {
     if (isNotifEnabled()) {

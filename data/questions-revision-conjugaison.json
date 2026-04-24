@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "theme": "conjugaison",
+  "niveau": "6eme",
+  "categories": {
+    "conjugaison": [
+      {
+        "id": "conj_001",
+        "type": "qcm",
+        "chapitre": "passé composé",
+        "question": "Choisissez la forme correcte du passé composé :\n« Hier, nous ___ au cinéma. »",
+        "choix": ["sommes allés", "avons allé", "sont allés", "avons été allés"],
+        "reponse": "sommes allés",
+        "explication": "« Aller » se conjugue avec l'auxiliaire ÊTRE au passé composé. Avec « nous », le participe passé s'accorde : allés.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_002",
+        "type": "qcm",
+        "chapitre": "passé composé",
+        "question": "Choisissez la forme correcte du passé composé :\n« Elle ___ une lettre à sa grand-mère. »",
+        "choix": ["a écrit", "est écrite", "a écrits", "est écrit"],
+        "reponse": "a écrit",
+        "explication": "« Écrire » se conjugue avec l'auxiliaire AVOIR. Le COD « une lettre » est placé après le verbe, donc le participe passé ne s'accorde pas.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_003",
+        "type": "qcm",
+        "chapitre": "accord participe passé",
+        "question": "Choisissez la forme correcte :\n« Les fleurs que j'___ sont magnifiques. »",
+        "choix": ["ai cueillies", "ai cueillis", "ai cueilli", "ais cueillies"],
+        "reponse": "ai cueillies",
+        "explication": "Le COD « que » représente « les fleurs » (féminin pluriel) et est placé AVANT le verbe. Le participe passé s'accorde donc : cueillies.",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_004",
+        "type": "qcm",
+        "chapitre": "plus-que-parfait",
+        "question": "Quelle phrase contient un plus-que-parfait ?",
+        "choix": [
+          "Il avait mangé avant que tu arrives.",
+          "Il a mangé une pomme.",
+          "Il mangeait souvent des pommes.",
+          "Il mange une pomme."
+        ],
+        "reponse": "Il avait mangé avant que tu arrives.",
+        "explication": "Le plus-que-parfait se forme avec l'imparfait de l'auxiliaire (avait / était) + participe passé. C'est une action accomplie avant une autre action passée.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_005",
+        "type": "qcm",
+        "chapitre": "impératif présent",
+        "question": "Choisissez la forme correcte de l'impératif présent du verbe « finir » :\n« ___ ton assiette ! »",
+        "choix": ["Finis", "Finit", "Finie", "Fini"],
+        "reponse": "Finis",
+        "explication": "À l'impératif présent, les verbes en -IR font : Finis / Finissons / Finissez. Pas de pronom sujet à l'impératif !",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_006",
+        "type": "qcm",
+        "chapitre": "impératif présent",
+        "question": "Choisissez la forme correcte de l'impératif présent du verbe « aller » :\n« ___ te coucher ! »",
+        "choix": ["Va", "Vas", "Aller", "Allez"],
+        "reponse": "Va",
+        "explication": "À l'impératif présent (2e pers. singulier), « aller » fait « Va » — sans -s, sauf devant « y » : Vas-y !",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_007",
+        "type": "qcm",
+        "chapitre": "accord participe passé",
+        "question": "Choisissez la forme correcte :\n« Mes sœurs sont ___ en retard. »",
+        "choix": ["arrivées", "arrivés", "arrivée", "arrivé"],
+        "reponse": "arrivées",
+        "explication": "Avec l'auxiliaire ÊTRE, le participe passé s'accorde avec le sujet. « Mes sœurs » est féminin pluriel → arrivées.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_008",
+        "type": "qcm",
+        "chapitre": "passé composé",
+        "question": "Quel auxiliaire utilise-t-on pour conjuguer « tomber » au passé composé ?",
+        "choix": ["être", "avoir", "les deux selon le sens", "aucun des deux"],
+        "reponse": "être",
+        "explication": "« Tomber » fait partie des verbes qui se conjuguent toujours avec ÊTRE : je suis tombé(e), tu es tombé(e)…",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_009",
+        "type": "qcm",
+        "chapitre": "accord participe passé",
+        "question": "Choisissez la forme correcte :\n« La robe que tu ___ est très jolie. »",
+        "choix": ["as achetée", "as acheté", "as achetés", "ais achetée"],
+        "reponse": "as achetée",
+        "explication": "Le pronom relatif « que » a pour antécédent « la robe » (féminin singulier). Ce COD est placé avant le verbe → accord : achetée.",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_010",
+        "type": "qcm",
+        "chapitre": "plus-que-parfait",
+        "question": "Choisissez la forme correcte du plus-que-parfait :\n« Quand nous sommes arrivés, il ___ déjà. »",
+        "choix": ["était parti", "est parti", "a parti", "avait parti"],
+        "reponse": "était parti",
+        "explication": "Le plus-que-parfait de « partir » (verbe avec ÊTRE) : était parti. L'action de partir est antérieure à l'arrivée.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_011",
+        "type": "qcm",
+        "chapitre": "impératif présent",
+        "question": "Choisissez la forme correcte de l'impératif présent (nous) du verbe « prendre » :",
+        "choix": ["Prenons", "Prenez", "Prends", "Prendons"],
+        "reponse": "Prenons",
+        "explication": "L'impératif présent de « prendre » : Prends (tu) / Prenons (nous) / Prenez (vous). La forme « nous » sert à proposer quelque chose ensemble.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_012",
+        "type": "qcm",
+        "chapitre": "accord participe passé",
+        "question": "Choisissez la forme correcte :\n« Les élèves ont ___ leurs devoirs. »",
+        "choix": ["rendu", "rendus", "rendue", "rendues"],
+        "reponse": "rendu",
+        "explication": "Avec AVOIR, le participe passé s'accorde avec le COD seulement si ce COD est AVANT le verbe. Ici, « leurs devoirs » est après → pas d'accord : rendu.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_013",
+        "type": "qcm",
+        "chapitre": "plus-que-parfait",
+        "question": "Choisissez la forme correcte du plus-que-parfait :\n« Elle ___ ses clés avant de partir. »",
+        "choix": ["avait perdu", "a perdu", "était perdu", "avait perdus"],
+        "reponse": "avait perdu",
+        "explication": "Plus-que-parfait de « perdre » avec AVOIR : avait perdu. Pas d'accord car le COD (ses clés) est après le verbe.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_014",
+        "type": "qcm",
+        "chapitre": "impératif présent",
+        "question": "Choisissez la forme correcte de l'impératif présent du verbe « être » :\n« ___ courageux ! »",
+        "choix": ["Sois", "Es", "Soit", "Être"],
+        "reponse": "Sois",
+        "explication": "L'impératif présent de « être » est irrégulier : Sois (tu) / Soyons (nous) / Soyez (vous).",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_015",
+        "type": "qcm",
+        "chapitre": "passé composé",
+        "question": "Choisissez la forme correcte du passé composé :\n« Les enfants ___ toute la nuit. »",
+        "choix": ["ont dormi", "sont dormis", "ont dormis", "sont dormi"],
+        "reponse": "ont dormi",
+        "explication": "« Dormir » se conjugue avec l'auxiliaire AVOIR. Le participe passé « dormi » est invariable ici (pas de COD avant le verbe).",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_016",
+        "type": "texte",
+        "chapitre": "passé composé",
+        "question": "Conjuguez au passé composé :\n« Elle ___ (manger) une pomme. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "a mangé",
+        "explication": "Passé composé de « manger » avec AVOIR : a mangé. Pas d'accord car le COD (une pomme) est après le verbe.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_017",
+        "type": "texte",
+        "chapitre": "passé composé",
+        "question": "Conjuguez au passé composé :\n« Ils ___ (partir) tôt ce matin. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "sont partis",
+        "explication": "« Partir » se conjugue avec ÊTRE. Le sujet « ils » est masculin pluriel → participe passé accordé : partis.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_018",
+        "type": "texte",
+        "chapitre": "plus-que-parfait",
+        "question": "Conjuguez au plus-que-parfait :\n« Nous ___ (finir) le repas quand il est arrivé. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "avions fini",
+        "explication": "Plus-que-parfait de « finir » avec AVOIR : avions fini. L'imparfait d'AVOIR pour « nous » est « avions ».",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_019",
+        "type": "texte",
+        "chapitre": "impératif présent",
+        "question": "Mettez à l'impératif présent (tu) :\n« ___ (écouter) attentivement ! »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "Écoute",
+        "explication": "À l'impératif présent, les verbes en -ER perdent le -s à la 2e pers. du singulier : Écoute (et non Écoutes).",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_020",
+        "type": "texte",
+        "chapitre": "accord participe passé",
+        "question": "Complétez avec le participe passé accordé correctement :\n« Les lettres qu'il a ___ (écrire) sont longues. »\n\nÉcrivez uniquement le participe passé.",
+        "reponse": "écrites",
+        "explication": "Le COD « que » représente « les lettres » (féminin pluriel) et est placé avant le verbe → accord : écrites.",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_021",
+        "type": "texte",
+        "chapitre": "plus-que-parfait",
+        "question": "Conjuguez au plus-que-parfait :\n« Elle ___ (arriver) avant tout le monde. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "était arrivée",
+        "explication": "Plus-que-parfait de « arriver » avec ÊTRE : était arrivée. Le sujet « elle » est féminin → accord : arrivée.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_022",
+        "type": "texte",
+        "chapitre": "passé composé",
+        "question": "Conjuguez au passé composé :\n« Vous ___ (venir) me voir hier. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "êtes venus",
+        "explication": "« Venir » se conjugue avec ÊTRE. Le sujet « vous » implique l'accord au masculin pluriel (par défaut) : venus.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_023",
+        "type": "texte",
+        "chapitre": "impératif présent",
+        "question": "Mettez à l'impératif présent (vous) :\n« ___ (avoir) de la patience ! »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "Ayez",
+        "explication": "L'impératif présent de « avoir » est irrégulier : Aie (tu) / Ayons (nous) / Ayez (vous).",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_024",
+        "type": "texte",
+        "chapitre": "accord participe passé",
+        "question": "Complétez avec le participe passé accordé correctement :\n« Ma sœur est ___ (rentrer) tard. »\n\nÉcrivez uniquement le participe passé.",
+        "reponse": "rentrée",
+        "explication": "Avec ÊTRE, le participe passé s'accorde avec le sujet. « Ma sœur » est féminin singulier → rentrée.",
+        "difficulte": 1
+      },
+      {
+        "id": "conj_025",
+        "type": "texte",
+        "chapitre": "plus-que-parfait",
+        "question": "Conjuguez au plus-que-parfait :\n« Tu ___ (voir) ce film avant moi. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "avais vu",
+        "explication": "Plus-que-parfait de « voir » avec AVOIR : avais vu. L'imparfait d'AVOIR pour « tu » est « avais ».",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_026",
+        "type": "texte",
+        "chapitre": "impératif présent",
+        "question": "Mettez à l'impératif présent (nous) :\n« ___ (faire) de notre mieux ! »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "Faisons",
+        "explication": "L'impératif présent de « faire » : Fais (tu) / Faisons (nous) / Faites (vous). « Faisons » invite à agir ensemble.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_027",
+        "type": "texte",
+        "chapitre": "accord participe passé",
+        "question": "Complétez avec le participe passé accordé correctement :\n« Les gâteaux que nous avons ___ (préparer) sont délicieux. »\n\nÉcrivez uniquement le participe passé.",
+        "reponse": "préparés",
+        "explication": "Le COD « que » représente « les gâteaux » (masculin pluriel) et est placé avant le verbe → accord : préparés.",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_028",
+        "type": "texte",
+        "chapitre": "passé composé",
+        "question": "Conjuguez au passé composé :\n« Je ___ (se lever) à 7 heures. »\n\nÉcrivez uniquement la forme conjuguée (sujet féminin).",
+        "reponse": "me suis levée",
+        "explication": "Les verbes pronominaux se conjuguent avec ÊTRE. Le sujet est féminin → participe passé accordé : levée.",
+        "difficulte": 3
+      },
+      {
+        "id": "conj_029",
+        "type": "texte",
+        "chapitre": "plus-que-parfait",
+        "question": "Conjuguez au plus-que-parfait :\n« Ils ___ (rentrer) quand la pluie a commencé. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "étaient rentrés",
+        "explication": "Plus-que-parfait de « rentrer » avec ÊTRE : étaient rentrés. Sujet masculin pluriel → accord : rentrés.",
+        "difficulte": 2
+      },
+      {
+        "id": "conj_030",
+        "type": "texte",
+        "chapitre": "accord participe passé",
+        "question": "Complétez avec le participe passé accordé correctement :\n« Combien de livres as-tu ___ (lire) cet été ? »\n\nÉcrivez uniquement le participe passé.",
+        "reponse": "lus",
+        "explication": "Le COD « Combien de livres » (masculin pluriel) est placé avant le verbe → accord : lus.",
+        "difficulte": 3
+      }
+    ]
+  }
+}

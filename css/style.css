@@ -756,3 +756,120 @@ html, body {
     margin: 8px 24px 0;
   }
 }
+
+/* ── Revision section (home) ────────────────────────────────────────────────── */
+.revision-section {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.revision-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.revision-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.revision-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 2px solid rgba(251,146,60,0.25);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.revision-card:hover {
+  border-color: var(--accent);
+  background: rgba(251,146,60,0.1);
+}
+
+.revision-card-emoji { font-size: 1.8rem; flex-shrink: 0; }
+.revision-card-label { font-size: 1rem; font-weight: 800; color: var(--text); }
+.revision-card-sub   { font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; }
+
+/* ── Revision quiz screen ────────────────────────────────────────────────────── */
+.chapitre-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(251,146,60,0.2);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(251,146,60,0.3);
+  text-transform: capitalize;
+}
+
+.rq-text {
+  white-space: pre-line;
+}
+
+/* ── Text input zone ─────────────────────────────────────────────────────────── */
+.text-input-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.rq-input {
+  width: 100%;
+  max-width: 440px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(165,180,252,0.3);
+  border-radius: var(--radius);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.rq-input:focus {
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.12);
+}
+
+.rq-input:disabled {
+  opacity: 0.6;
+}
+
+/* ── Quiz footer ─────────────────────────────────────────────────────────────── */
+.quiz-footer {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  margin-top: auto;
+}
+
+/* ── Revision results ────────────────────────────────────────────────────────── */
+.revision-chap { margin-bottom: 20px; }
+.revision-chap-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(251,146,60,0.2);
+}
