@@ -1,5 +1,5 @@
 import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
-import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord } from './storage.js';
+import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord, getDefiLogoRecord, saveDefiLogoRecord } from './storage.js';
 import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
@@ -12,9 +12,13 @@ let defiData = null;        // données brutes drapeaux (tiers)
 let currentDefiFlags = [];  // séquence de 50 drapeaux pour la partie en cours
 let defiIndex = 0;          // niveau en cours (0-based)
 
-let capitalesData = null;       // données brutes capitales (tiers)
-let currentCapitales = [];      // séquence de 50 capitales pour la partie en cours
-let capitaleIndex = 0;          // niveau en cours (0-based)
+let capitalesData = null;
+let currentCapitales = [];
+let capitaleIndex = 0;
+
+let logosData = null;
+let currentLogos = [];
+let logosIndex = 0;
 let deferredInstallPrompt = null;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -382,6 +386,11 @@ async function route() {
     return;
   }
 
+  if (hash === '#defi-logos') {
+    await startDefiLogos();
+    return;
+  }
+
   if (hash.startsWith('#revision-quiz')) {
     const theme = new URLSearchParams(hash.split('?')[1] ?? '').get('theme') || 'conjugaison';
     await startRevision(theme);
@@ -617,18 +626,15 @@ function endDefi(completed, erreur) {
 }
 
 function updateDefiRecordBadge() {
-  const record = getDefiFlagRecord();
-  const badge = document.getElementById('defi-drapeaux-record');
-  if (badge && record) {
-    badge.textContent = `🏆 Record : ${record.niveau} / 50`;
-    badge.style.display = 'inline-block';
-  }
-  const recCap = getDefiCapitaleRecord();
-  const badgeCap = document.getElementById('defi-capitales-record');
-  if (badgeCap && recCap) {
-    badgeCap.textContent = `🏆 Record : ${recCap.niveau} / 50`;
-    badgeCap.style.display = 'inline-block';
-  }
+  [
+    { id: 'defi-drapeaux-record',  fn: getDefiFlagRecord },
+    { id: 'defi-capitales-record', fn: getDefiCapitaleRecord },
+    { id: 'defi-logos-record',     fn: getDefiLogoRecord },
+  ].forEach(({ id, fn }) => {
+    const rec = fn();
+    const el  = document.getElementById(id);
+    if (el && rec) { el.textContent = `🏆 Record : ${rec.niveau} / 50`; el.style.display = 'inline-block'; }
+  });
 }
 
 // ─── Défi Capitales ───────────────────────────────────────────────────────────
@@ -778,9 +784,170 @@ function endDefiCapitale(completed, erreur) {
   updateDefiRecordBadge();
 }
 
+// ─── Défi Logos ───────────────────────────────────────────────────────────────
+
+function buildLogosGame(data) {
+  return data.tiers.flatMap(tier => {
+    const shuffled = [...tier.pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 10);
+  });
+}
+
+async function startDefiLogos() {
+  if (!logosData) {
+    try {
+      const res = await fetch('./data/logos-defi.json');
+      logosData = await res.json();
+    } catch (e) {
+      console.error('Erreur chargement logos-defi.json', e);
+      showScreen('home');
+      return;
+    }
+  }
+  currentLogos = buildLogosGame(logosData);
+  logosIndex = 0;
+  showScreen('defi-logos');
+  renderLogosRecord();
+  renderLogosQuestion();
+}
+
+function renderLogosRecord() {
+  const record = getDefiLogoRecord();
+  const el = document.getElementById('logos-record-live');
+  if (el && record) el.textContent = `Record : ${record.niveau} / 50`;
+}
+
+function renderLogosQuestion() {
+  const q = currentLogos[logosIndex];
+  const niveau = logosIndex + 1;
+
+  document.getElementById('logos-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('logos-progress-fill').style.width = `${(logosIndex / 50) * 100}%`;
+  document.getElementById('defi-logos-question').textContent =
+    q.sport === 'nba' ? 'À quelle franchise NBA appartient ce logo ?' : 'À quel club appartient ce logo ?';
+
+  const img = document.getElementById('defi-logo-img');
+  img.src = q.image;
+  img.alt = q.reponse;
+
+  const feedback = document.getElementById('logos-feedback');
+  feedback.className = 'feedback hidden';
+  feedback.innerHTML = '';
+
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('logos-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice;
+    btn.addEventListener('click', () => handleLogosAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleLogosAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+
+  document.querySelectorAll('#logos-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+
+  const feedback = document.getElementById('logos-feedback');
+
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    logosIndex++;
+    if (logosIndex >= currentLogos.length) {
+      setTimeout(() => endDefiLogos(true, null), 1500);
+    } else {
+      setTimeout(renderLogosQuestion, 1500);
+    }
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefiLogos(false, { image: q.image, reponse: q.reponse, choixUser: choice }), 3000);
+  }
+}
+
+function endDefiLogos(completed, erreur) {
+  const niveauAtteint = completed ? 50 : logosIndex;
+  const isNewRecord = saveDefiLogoRecord(niveauAtteint);
+
+  showScreen('defi-logos-results');
+
+  document.getElementById('logos-result-icon').textContent = completed ? '🏆' : '💥';
+  document.getElementById('logos-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+  document.getElementById('logos-result-score').textContent = `${niveauAtteint} / 50`;
+
+  const record = getDefiLogoRecord();
+  let msg = '';
+  if (completed)              msg = '🎉 Parfait ! Tu connais tous les logos !';
+  else if (niveauAtteint === 0) msg = 'Aïe, dès le premier logo ! Entraîne-toi et reviens !';
+  else if (niveauAtteint < 15) msg = 'Bon début ! Tu maîtrises les plus grands clubs.';
+  else if (niveauAtteint < 30) msg = 'Pas mal ! Les clubs européens et les grandes franchises NBA te résistent encore.';
+  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un vrai connaisseur du sport mondial !';
+  else                        msg = 'Exceptionnel ! Tu frôles la perfection !';
+  document.getElementById('logos-result-msg').textContent = msg;
+
+  const recordEl = document.getElementById('logos-result-record');
+  if (isNewRecord) {
+    recordEl.style.display = 'block';
+    recordEl.textContent = niveauAtteint === 50 ? '🏆 Record absolu — 50/50 !' : `🏆 Nouveau record : ${niveauAtteint}/50 !`;
+  } else {
+    recordEl.style.display = 'none';
+    if (record) document.getElementById('logos-result-msg').textContent += ` (Record actuel : ${record.niveau}/50)`;
+  }
+
+  const errorEl = document.getElementById('logos-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">Le logo qui t'a arrêté :</p>
+      <div class="logo-img-wrap" style="margin:12px auto;width:110px;height:110px">
+        <img src="${erreur.image}" alt="${erreur.reponse}" style="max-width:100%;max-height:100%;object-fit:contain" />
+      </div>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>
+    `;
+  } else {
+    errorEl.innerHTML = '';
+  }
+
+  document.getElementById('btn-logos-replay').onclick = () => {
+    currentLogos = buildLogosGame(logosData);
+    logosIndex = 0;
+    showScreen('defi-logos');
+    renderLogosRecord();
+    renderLogosQuestion();
+  };
+
+  updateDefiRecordBadge();
+}
+
+// ─── Tabs ─────────────────────────────────────────────────────────────────────
+
+function switchTab(tabId) {
+  localStorage.setItem('active_tab', tabId);
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${tabId}`));
+}
+
+function initTabs() {
+  const saved = localStorage.getItem('active_tab') || 'quiz';
+  switchTab(saved);
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+}
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function init() {
+  initTabs();
+
   // Level selector
   document.querySelectorAll('.level-btn').forEach(btn => {
     btn.addEventListener('click', () => {

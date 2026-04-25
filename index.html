@@ -29,56 +29,67 @@
 
   <!-- ══════════════════ SCREEN: HOME ══════════════════ -->
   <div id="screen-home" class="screen active">
-    <div class="screen-content">
-      <div class="logo">
-        <div class="logo-icon">🧠</div>
-        <h1>QuizKids</h1>
-        <p class="subtitle">Le quiz du jour</p>
+
+    <!-- Logo compact (toujours visible) -->
+    <div class="home-header">
+      <div class="home-logo-icon">🧠</div>
+      <h1 class="home-title">QuizKids</h1>
+    </div>
+
+    <!-- Navigation par onglets -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="quiz">🎮 Quiz</button>
+      <button class="tab-btn" data-tab="revision">✍️ Révision</button>
+      <button class="tab-btn" data-tab="defi">🏆 Défis</button>
+    </nav>
+
+    <!-- ── Onglet Quiz ── -->
+    <div class="tab-panel active" id="tab-quiz">
+      <div class="tab-content">
+        <div class="level-selector">
+          <button class="level-btn active" data-level="college">
+            <span class="level-emoji">📚</span>
+            <span class="level-label">Collège</span>
+            <span class="level-sub">6e / 5e</span>
+          </button>
+          <button class="level-btn" data-level="primaire">
+            <span class="level-emoji">🎒</span>
+            <span class="level-label">Primaire</span>
+            <span class="level-sub">CM1 / CM2</span>
+          </button>
+        </div>
+
+        <div id="best-score-banner" class="best-score-banner" style="display:none"></div>
+
+        <button id="btn-play" class="btn btn-primary btn-large">🎮 Jouer</button>
+
+        <button id="btn-share-home" class="btn btn-accent" style="display:none">🎯 Défie un ami</button>
+
+        <p id="play-status" class="muted">60 questions · 6 catégories · 15 sec par question</p>
+
+        <button id="btn-notif" class="btn btn-notif">🔕 Me rappeler chaque matin</button>
+        <button id="btn-install" class="btn btn-install" style="display:none">📲 Installer l'application</button>
       </div>
+    </div>
 
-      <!-- Level selector -->
-      <div class="level-selector">
-        <button class="level-btn active" data-level="college">
-          <span class="level-emoji">📚</span>
-          <span class="level-label">Collège</span>
-          <span class="level-sub">6e / 5e</span>
-        </button>
-        <button class="level-btn" data-level="primaire">
-          <span class="level-emoji">🎒</span>
-          <span class="level-label">Primaire</span>
-          <span class="level-sub">CM1 / CM2</span>
-        </button>
-      </div>
-
-      <!-- Best score banner -->
-      <div id="best-score-banner" class="best-score-banner" style="display:none"></div>
-
-      <button id="btn-play" class="btn btn-primary btn-large">
-        🎮 Jouer
-      </button>
-
-      <!-- Shown only if already played today -->
-      <button id="btn-share-home" class="btn btn-accent" style="display:none">
-        🎯 Défie un ami
-      </button>
-
-      <p id="play-status" class="muted">60 questions · 6 catégories · 15 sec par question</p>
-
-      <!-- Révision section -->
-      <div class="revision-section">
-        <p class="revision-title">✍️ Mode révision</p>
+    <!-- ── Onglet Révision ── -->
+    <div class="tab-panel" id="tab-revision">
+      <div class="tab-content">
         <div class="revision-cards">
           <div class="revision-card" data-theme="conjugaison">
             <span class="revision-card-emoji">📝</span>
-            <span class="revision-card-label">Conjugaison</span>
-            <span class="revision-card-sub">Passé composé · Plus-que-parfait<br>Impératif · Accord PP</span>
+            <div>
+              <span class="revision-card-label">Conjugaison</span>
+              <span class="revision-card-sub">Passé composé · Plus-que-parfait<br>Impératif · Accord PP</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Défis section -->
-      <div class="revision-section">
-        <p class="revision-title">🏆 Défis</p>
+    <!-- ── Onglet Défis ── -->
+    <div class="tab-panel" id="tab-defi">
+      <div class="tab-content">
         <div class="revision-cards">
           <div class="revision-card defi-card" id="defi-drapeaux-card" data-defi="drapeaux">
             <span class="revision-card-emoji">🌍</span>
@@ -96,19 +107,18 @@
               <span id="defi-capitales-record" class="defi-record-badge" style="display:none"></span>
             </div>
           </div>
+          <div class="revision-card defi-card" id="defi-logos-card" data-defi="logos">
+            <span class="revision-card-emoji">⚽</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="revision-card-label">Défi Logos</span>
+              <span class="revision-card-sub">50 logos · foot & NBA · difficulté croissante<br>Une erreur = game over</span>
+              <span id="defi-logos-record" class="defi-record-badge" style="display:none"></span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Notification reminder button -->
-      <button id="btn-notif" class="btn btn-notif">
-        🔕 Me rappeler chaque matin
-      </button>
-
-      <!-- PWA install button (hidden until browser fires beforeinstallprompt) -->
-      <button id="btn-install" class="btn btn-install" style="display:none">
-        📲 Installer l'application
-      </button>
     </div>
+
   </div>
 
   <!-- ══════════════════ SCREEN: QUIZ (quotidien) ══════════════════ -->
@@ -325,6 +335,49 @@
 
     <div class="quiz-footer">
       <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI LOGOS ══════════════════ -->
+  <div id="screen-defi-logos" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="logos-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="logos-level-label" class="defi-level-label">Niveau 1 / 50</span>
+      </div>
+      <div id="logos-record-live" class="defi-record-live"></div>
+    </div>
+
+    <div class="defi-flag-card">
+      <div class="logo-img-wrap">
+        <img id="defi-logo-img" class="defi-logo-img" src="" alt="Logo" />
+      </div>
+      <p id="defi-logos-question" class="defi-flag-question">À quel club appartient ce logo ?</p>
+    </div>
+
+    <div id="logos-choices" class="choices-grid defi-choices-grid"></div>
+    <div id="logos-feedback" class="feedback hidden"></div>
+
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI LOGOS RÉSULTATS ══════════════════ -->
+  <div id="screen-defi-logos-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="logos-result-icon">💥</div>
+      <h2 id="logos-result-title">Défi terminé !</h2>
+      <div class="total-score"><span id="logos-result-score">—</span></div>
+      <div id="logos-result-msg" class="encouraging-msg"></div>
+      <div id="logos-result-record" class="defi-new-record" style="display:none">🏆 Nouveau record !</div>
+      <div id="logos-result-error" class="defi-error-recap"></div>
+      <div class="results-actions">
+        <button id="btn-logos-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
     </div>
   </div>
 

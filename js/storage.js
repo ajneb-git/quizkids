@@ -153,3 +153,24 @@ export function saveDefiCapitaleRecord(niveau) {
   }
   return false;
 }
+
+// ─── Défi Logos record ────────────────────────────────────────────────────────
+
+export function getDefiLogoRecord() {
+  try {
+    const raw = localStorage.getItem('defi_logos_record');
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveDefiLogoRecord(niveau) {
+  const record = getDefiLogoRecord();
+  if (record === null || niveau > record.niveau) {
+    const date = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('defi_logos_record', JSON.stringify({ niveau, date }));
+    return true;
+  }
+  return false;
+}
