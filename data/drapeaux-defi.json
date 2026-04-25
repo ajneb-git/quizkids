@@ -1,6 +1,6 @@
 {
-  "version": "2.0",
-  "description": "5 paliers × 15 drapeaux, 10 tirés aléatoirement par palier à chaque partie",
+  "version": "2.1",
+  "description": "5 paliers × 20 drapeaux, 10 tirés aléatoirement par palier à chaque partie",
   "tiers": [
     {
       "tier": 1,
@@ -23,14 +23,15 @@
         { "emoji": "🇦🇷", "reponse": "Argentine",     "choix": ["Argentine", "Uruguay", "El Salvador", "Nicaragua"] },
         { "emoji": "🇮🇱", "reponse": "Israël",        "choix": ["Israël", "Grèce", "Argentine", "Uruguay"] },
         { "emoji": "🇳🇱", "reponse": "Pays-Bas",      "choix": ["Pays-Bas", "Luxembourg", "France", "Russie"] },
-        { "emoji": "🇧🇪", "reponse": "Belgique",      "choix": ["Belgique", "Allemagne", "Niger", "Tchad"] }
+        { "emoji": "🇧🇪", "reponse": "Belgique",      "choix": ["Belgique", "Allemagne", "Niger", "Tchad"] },
+        { "emoji": "🇷🇺", "reponse": "Russie",        "choix": ["Russie", "Pays-Bas", "Serbie", "Slovénie"] },
+        { "emoji": "🇺🇦", "reponse": "Ukraine",       "choix": ["Ukraine", "Suède", "Kazakhstan", "Finlande"] }
       ]
     },
     {
       "tier": 2,
       "label": "Facile",
       "pool": [
-        { "emoji": "🇷🇺", "reponse": "Russie",        "choix": ["Russie", "Pays-Bas", "Serbie", "Slovénie"] },
         { "emoji": "🇸🇪", "reponse": "Suède",         "choix": ["Finlande", "Suède", "Norvège", "Islande"] },
         { "emoji": "🇳🇴", "reponse": "Norvège",       "choix": ["Danemark", "Norvège", "Islande", "Finlande"] },
         { "emoji": "🇵🇹", "reponse": "Portugal",      "choix": ["Portugal", "Brésil", "Espagne", "Italie"] },
@@ -38,13 +39,19 @@
         { "emoji": "🇰🇷", "reponse": "Corée du Sud",  "choix": ["Japon", "Corée du Sud", "Taïwan", "Mongolie"] },
         { "emoji": "🇬🇷", "reponse": "Grèce",         "choix": ["Grèce", "Slovaquie", "Uruguay", "Finlande"] },
         { "emoji": "🇩🇰", "reponse": "Danemark",      "choix": ["Danemark", "Suisse", "Autriche", "Norvège"] },
-        { "emoji": "🇨🇺", "reponse": "Cuba",           "choix": ["Cuba", "Porto Rico", "Chili", "Liberia"] },
+        { "emoji": "🇨🇺", "reponse": "Cuba",          "choix": ["Cuba", "Porto Rico", "Chili", "Liberia"] },
         { "emoji": "🇰🇵", "reponse": "Corée du Nord", "choix": ["Corée du Nord", "Corée du Sud", "Chine", "Vietnam"] },
         { "emoji": "🇵🇱", "reponse": "Pologne",       "choix": ["Pologne", "Indonésie", "Singapour", "Monaco"] },
-        { "emoji": "🇺🇦", "reponse": "Ukraine",       "choix": ["Ukraine", "Suède", "Kazakhstan", "Finlande"] },
         { "emoji": "🇮🇪", "reponse": "Irlande",       "choix": ["Irlande", "Italie", "Côte d'Ivoire", "Niger"] },
         { "emoji": "🇫🇮", "reponse": "Finlande",      "choix": ["Finlande", "Estonie", "Grèce", "Suède"] },
-        { "emoji": "🇪🇬", "reponse": "Égypte",        "choix": ["Irak", "Égypte", "Syrie", "Yémen"] }
+        { "emoji": "🇪🇬", "reponse": "Égypte",        "choix": ["Irak", "Égypte", "Syrie", "Yémen"] },
+        { "emoji": "🇮🇩", "reponse": "Indonésie",     "choix": ["Indonésie", "Monaco", "Pologne", "Singapour"] },
+        { "emoji": "🇳🇵", "reponse": "Népal",         "choix": ["Népal", "Bhoutan", "Bangladesh", "Myanmar"] },
+        { "emoji": "🇧🇩", "reponse": "Bangladesh",    "choix": ["Bangladesh", "Japon", "Myanmar", "Pakistan"] },
+        { "emoji": "🇹🇭", "reponse": "Thaïlande",     "choix": ["Thaïlande", "Costa Rica", "Liberia", "Corée du Nord"] },
+        { "emoji": "🇸🇬", "reponse": "Singapour",     "choix": ["Singapour", "Indonésie", "Pologne", "Turquie"] },
+        { "emoji": "🇺🇾", "reponse": "Uruguay",       "choix": ["Uruguay", "Argentine", "États-Unis", "El Salvador"] },
+        { "emoji": "🇰🇿", "reponse": "Kazakhstan",    "choix": ["Kazakhstan", "Mongolie", "Kirghizstan", "Azerbaïdjan"] }
       ]
     },
     {
@@ -65,7 +72,12 @@
         { "emoji": "🇨🇿", "reponse": "Rép. tchèque",     "choix": ["Rép. tchèque", "Slovaquie", "Slovénie", "Russie"] },
         { "emoji": "🇩🇿", "reponse": "Algérie",          "choix": ["Algérie", "Pakistan", "Turquie", "Arabie Saoudite"] },
         { "emoji": "🇵🇪", "reponse": "Pérou",            "choix": ["Pérou", "Canada", "Lettonie", "Autriche"] },
-        { "emoji": "🇵🇰", "reponse": "Pakistan",         "choix": ["Pakistan", "Bangladesh", "Algérie", "Turquie"] }
+        { "emoji": "🇵🇰", "reponse": "Pakistan",         "choix": ["Pakistan", "Bangladesh", "Algérie", "Turquie"] },
+        { "emoji": "🇱🇧", "reponse": "Liban",            "choix": ["Liban", "Iran", "Syrie", "Arabie Saoudite"] },
+        { "emoji": "🇦🇪", "reponse": "Émirats arabes unis", "choix": ["Émirats arabes unis", "Koweït", "Jordanie", "Palestine"] },
+        { "emoji": "🇪🇹", "reponse": "Éthiopie",         "choix": ["Éthiopie", "Cameroun", "Sénégal", "Ghana"] },
+        { "emoji": "🇰🇭", "reponse": "Cambodge",         "choix": ["Cambodge", "Myanmar", "Laos", "Vietnam"] },
+        { "emoji": "🇨🇷", "reponse": "Costa Rica",       "choix": ["Costa Rica", "Cuba", "Thaïlande", "Liberia"] }
       ]
     },
     {
@@ -86,28 +98,38 @@
         { "emoji": "🇱🇻", "reponse": "Lettonie",        "choix": ["Lettonie", "Autriche", "Croatie", "Lituanie"] },
         { "emoji": "🇪🇪", "reponse": "Estonie",         "choix": ["Estonie", "Finlande", "Pays-Bas", "Lituanie"] },
         { "emoji": "🇳🇬", "reponse": "Nigeria",         "choix": ["Nigeria", "Côte d'Ivoire", "Sénégal", "Cameroun"] },
-        { "emoji": "🇨🇮", "reponse": "Côte d'Ivoire",  "choix": ["Côte d'Ivoire", "Irlande", "Nigeria", "Niger"] }
+        { "emoji": "🇨🇮", "reponse": "Côte d'Ivoire",  "choix": ["Côte d'Ivoire", "Irlande", "Nigeria", "Niger"] },
+        { "emoji": "🇸🇾", "reponse": "Syrie",           "choix": ["Syrie", "Irak", "Yémen", "Égypte"] },
+        { "emoji": "🇾🇪", "reponse": "Yémen",           "choix": ["Yémen", "Syrie", "Égypte", "Libye"] },
+        { "emoji": "🇮🇷", "reponse": "Iran",            "choix": ["Iran", "Irak", "Arabie Saoudite", "Algérie"] },
+        { "emoji": "🇿🇼", "reponse": "Zimbabwe",        "choix": ["Zimbabwe", "Kenya", "Zambie", "Mozambique"] },
+        { "emoji": "🇨🇲", "reponse": "Cameroun",        "choix": ["Cameroun", "Sénégal", "Mali", "Guinée"] }
       ]
     },
     {
       "tier": 5,
       "label": "Expert",
       "pool": [
-        { "emoji": "🇮🇸", "reponse": "Islande",         "choix": ["Islande", "Norvège", "Îles Féroé", "Suède"] },
-        { "emoji": "🇧🇹", "reponse": "Bhoutan",         "choix": ["Bhoutan", "Sri Lanka", "Népal", "Tibet"] },
-        { "emoji": "🇱🇮", "reponse": "Liechtenstein",   "choix": ["Liechtenstein", "Haïti", "Honduras", "Nicaragua"] },
-        { "emoji": "🇲🇹", "reponse": "Malte",           "choix": ["Malte", "Pologne", "Monaco", "Lettonie"] },
-        { "emoji": "🇦🇩", "reponse": "Andorre",         "choix": ["Andorre", "Roumanie", "Tchad", "Moldavie"] },
-        { "emoji": "🇲🇩", "reponse": "Moldavie",        "choix": ["Moldavie", "Roumanie", "Andorre", "Tchad"] },
-        { "emoji": "🇲🇪", "reponse": "Monténégro",      "choix": ["Monténégro", "Kosovo", "Serbie", "Albanie"] },
-        { "emoji": "🇦🇱", "reponse": "Albanie",         "choix": ["Albanie", "Géorgie", "Kosovo", "Monténégro"] },
-        { "emoji": "🇲🇰", "reponse": "Macédoine du Nord","choix": ["Macédoine du Nord", "Serbie", "Kosovo", "Croatie"] },
-        { "emoji": "🇧🇭", "reponse": "Bahreïn",         "choix": ["Bahreïn", "Qatar", "Koweït", "Jordanie"] },
-        { "emoji": "🇶🇦", "reponse": "Qatar",           "choix": ["Qatar", "Bahreïn", "Koweït", "Émirats arabes unis"] },
-        { "emoji": "🇸🇮", "reponse": "Slovénie",        "choix": ["Slovénie", "Slovaquie", "Russie", "Serbie"] },
-        { "emoji": "🇱🇸", "reponse": "Lesotho",         "choix": ["Lesotho", "Mozambique", "Bénin", "Eswatini"] },
-        { "emoji": "🇸🇲", "reponse": "Saint-Marin",     "choix": ["Saint-Marin", "Eswatini", "Lesotho", "Vatican"] },
-        { "emoji": "🇨🇾", "reponse": "Chypre",          "choix": ["Chypre", "Kosovo", "Koweït", "Malte"] }
+        { "emoji": "🇮🇸", "reponse": "Islande",              "choix": ["Islande", "Norvège", "Îles Féroé", "Suède"] },
+        { "emoji": "🇧🇹", "reponse": "Bhoutan",              "choix": ["Bhoutan", "Sri Lanka", "Népal", "Tibet"] },
+        { "emoji": "🇱🇮", "reponse": "Liechtenstein",        "choix": ["Liechtenstein", "Haïti", "Honduras", "Nicaragua"] },
+        { "emoji": "🇲🇹", "reponse": "Malte",                "choix": ["Malte", "Pologne", "Monaco", "Lettonie"] },
+        { "emoji": "🇦🇩", "reponse": "Andorre",              "choix": ["Andorre", "Roumanie", "Tchad", "Moldavie"] },
+        { "emoji": "🇲🇩", "reponse": "Moldavie",             "choix": ["Moldavie", "Roumanie", "Andorre", "Tchad"] },
+        { "emoji": "🇲🇪", "reponse": "Monténégro",           "choix": ["Monténégro", "Kosovo", "Serbie", "Albanie"] },
+        { "emoji": "🇦🇱", "reponse": "Albanie",              "choix": ["Albanie", "Géorgie", "Kosovo", "Monténégro"] },
+        { "emoji": "🇲🇰", "reponse": "Macédoine du Nord",    "choix": ["Macédoine du Nord", "Serbie", "Kosovo", "Croatie"] },
+        { "emoji": "🇧🇭", "reponse": "Bahreïn",              "choix": ["Bahreïn", "Qatar", "Koweït", "Jordanie"] },
+        { "emoji": "🇶🇦", "reponse": "Qatar",                "choix": ["Qatar", "Bahreïn", "Koweït", "Émirats arabes unis"] },
+        { "emoji": "🇸🇮", "reponse": "Slovénie",             "choix": ["Slovénie", "Slovaquie", "Russie", "Serbie"] },
+        { "emoji": "🇱🇸", "reponse": "Lesotho",              "choix": ["Lesotho", "Mozambique", "Bénin", "Eswatini"] },
+        { "emoji": "🇸🇲", "reponse": "Saint-Marin",          "choix": ["Saint-Marin", "Eswatini", "Lesotho", "Vatican"] },
+        { "emoji": "🇨🇾", "reponse": "Chypre",               "choix": ["Chypre", "Kosovo", "Koweït", "Malte"] },
+        { "emoji": "🇦🇿", "reponse": "Azerbaïdjan",          "choix": ["Azerbaïdjan", "Ouzbékistan", "Turkménistan", "Kazakhstan"] },
+        { "emoji": "🇦🇲", "reponse": "Arménie",              "choix": ["Arménie", "Bulgarie", "Russie", "Pays-Bas"] },
+        { "emoji": "🇬🇪", "reponse": "Géorgie",              "choix": ["Géorgie", "Suisse", "Danemark", "Malte"] },
+        { "emoji": "🇧🇾", "reponse": "Biélorussie",          "choix": ["Biélorussie", "Russie", "Hongrie", "Autriche"] },
+        { "emoji": "🇧🇦", "reponse": "Bosnie-Herzégovine",   "choix": ["Bosnie-Herzégovine", "Kosovo", "Ukraine", "Slovénie"] }
       ]
     }
   ]
