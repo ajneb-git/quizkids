@@ -128,7 +128,28 @@ export function saveDefiFlagRecord(niveau) {
   if (record === null || niveau > record.niveau) {
     const date = new Date().toISOString().slice(0, 10);
     localStorage.setItem('defi_drapeaux_record', JSON.stringify({ niveau, date }));
-    return true; // nouveau record
+    return true;
+  }
+  return false;
+}
+
+// ─── Défi Capitales record ────────────────────────────────────────────────────
+
+export function getDefiCapitaleRecord() {
+  try {
+    const raw = localStorage.getItem('defi_capitales_record');
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveDefiCapitaleRecord(niveau) {
+  const record = getDefiCapitaleRecord();
+  if (record === null || niveau > record.niveau) {
+    const date = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('defi_capitales_record', JSON.stringify({ niveau, date }));
+    return true;
   }
   return false;
 }

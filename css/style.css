@@ -1009,3 +1009,17 @@ html, body {
   line-height: 1;
   margin: 8px 0;
 }
+
+/* ── Défi Capitales ──────────────────────────────────────────────────────────── */
+.capitale-pays {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: flagPop 0.3s ease;
+  padding: 0 12px;
+}

@@ -1,5 +1,5 @@
 import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
-import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord } from './storage.js';
+import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord } from './storage.js';
 import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
@@ -8,9 +8,13 @@ let quizEngine = null;
 let revisionEngine = null;
 let allQuestions = null;
 let currentLevelKey = null;
-let defiData = null;      // données brutes (tiers) chargées depuis JSON
-let currentDefiFlags = []; // séquence de 50 drapeaux pour la partie en cours
-let defiIndex = 0;        // niveau en cours (0-based)
+let defiData = null;        // données brutes drapeaux (tiers)
+let currentDefiFlags = [];  // séquence de 50 drapeaux pour la partie en cours
+let defiIndex = 0;          // niveau en cours (0-based)
+
+let capitalesData = null;       // données brutes capitales (tiers)
+let currentCapitales = [];      // séquence de 50 capitales pour la partie en cours
+let capitaleIndex = 0;          // niveau en cours (0-based)
 let deferredInstallPrompt = null;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -373,6 +377,11 @@ async function route() {
     return;
   }
 
+  if (hash === '#defi-capitales') {
+    await startDefiCapitales();
+    return;
+  }
+
   if (hash.startsWith('#revision-quiz')) {
     const theme = new URLSearchParams(hash.split('?')[1] ?? '').get('theme') || 'conjugaison';
     await startRevision(theme);
@@ -614,6 +623,158 @@ function updateDefiRecordBadge() {
     badge.textContent = `🏆 Record : ${record.niveau} / 50`;
     badge.style.display = 'inline-block';
   }
+  const recCap = getDefiCapitaleRecord();
+  const badgeCap = document.getElementById('defi-capitales-record');
+  if (badgeCap && recCap) {
+    badgeCap.textContent = `🏆 Record : ${recCap.niveau} / 50`;
+    badgeCap.style.display = 'inline-block';
+  }
+}
+
+// ─── Défi Capitales ───────────────────────────────────────────────────────────
+
+function buildCapitaleGame(data) {
+  return data.tiers.flatMap(tier => {
+    const shuffled = [...tier.pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 10);
+  });
+}
+
+async function startDefiCapitales() {
+  if (!capitalesData) {
+    try {
+      const res = await fetch('./data/capitales-defi.json');
+      capitalesData = await res.json();
+    } catch (e) {
+      console.error('Erreur chargement capitales-defi.json', e);
+      showScreen('home');
+      return;
+    }
+  }
+  currentCapitales = buildCapitaleGame(capitalesData);
+  capitaleIndex = 0;
+  showScreen('defi-capitales');
+  renderCapitaleRecord();
+  renderCapitaleQuestion();
+}
+
+function renderCapitaleRecord() {
+  const record = getDefiCapitaleRecord();
+  const el = document.getElementById('capitale-record-live');
+  if (el && record) el.textContent = `Record : ${record.niveau} / 50`;
+}
+
+function renderCapitaleQuestion() {
+  const q = currentCapitales[capitaleIndex];
+  const niveau = capitaleIndex + 1;
+
+  document.getElementById('capitale-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('capitale-progress-fill').style.width = `${(capitaleIndex / 50) * 100}%`;
+  document.getElementById('capitale-pays').textContent = q.pays;
+
+  const feedback = document.getElementById('capitale-feedback');
+  feedback.className = 'feedback hidden';
+  feedback.innerHTML = '';
+
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('capitale-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice;
+    btn.addEventListener('click', () => handleCapitaleAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleCapitaleAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+
+  document.querySelectorAll('#capitale-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+
+  const feedback = document.getElementById('capitale-feedback');
+
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    capitaleIndex++;
+
+    if (capitaleIndex >= currentCapitales.length) {
+      setTimeout(() => endDefiCapitale(true, null), 1500);
+    } else {
+      setTimeout(renderCapitaleQuestion, 1500);
+    }
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefiCapitale(false, { pays: q.pays, reponse: q.reponse, choixUser: choice }), 3000);
+  }
+}
+
+function endDefiCapitale(completed, erreur) {
+  const niveauAtteint = completed ? 50 : capitaleIndex;
+  const isNewRecord = saveDefiCapitaleRecord(niveauAtteint);
+
+  showScreen('defi-capitales-results');
+
+  document.getElementById('capitale-result-icon').textContent = completed ? '🏆' : '💥';
+  document.getElementById('capitale-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+  document.getElementById('capitale-result-score').textContent = `${niveauAtteint} / 50`;
+
+  const record = getDefiCapitaleRecord();
+  let msg = '';
+  if (completed) {
+    msg = '🎉 Incroyable ! Tu connais toutes les capitales !';
+  } else if (niveauAtteint === 0) {
+    msg = 'Aïe, dès la première capitale ! À retenter !';
+  } else if (niveauAtteint < 15) {
+    msg = 'Bon début ! Révise tes capitales et recommence.';
+  } else if (niveauAtteint < 30) {
+    msg = 'Pas mal ! Tu maîtrises les grandes capitales. Les plus rares te résistent encore.';
+  } else if (niveauAtteint < 45) {
+    msg = 'Très bien ! Tu es un expert en géographie. Encore un effort pour le top !';
+  } else {
+    msg = 'Exceptionnel ! Tu frôles la perfection !';
+  }
+  document.getElementById('capitale-result-msg').textContent = msg;
+
+  const recordEl = document.getElementById('capitale-result-record');
+  if (isNewRecord) {
+    recordEl.style.display = 'block';
+    recordEl.textContent = niveauAtteint === 50 ? '🏆 Record absolu — 50/50 !' : `🏆 Nouveau record : ${niveauAtteint}/50 !`;
+  } else {
+    recordEl.style.display = 'none';
+    if (record) {
+      document.getElementById('capitale-result-msg').textContent += ` (Record actuel : ${record.niveau}/50)`;
+    }
+  }
+
+  const errorEl = document.getElementById('capitale-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">La capitale qui t'a arrêté :</p>
+      <p style="font-size:1.4rem;font-weight:900;margin:12px 0;color:var(--text-muted)">${erreur.pays}</p>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>
+    `;
+  } else {
+    errorEl.innerHTML = '';
+  }
+
+  document.getElementById('btn-capitale-replay').onclick = () => {
+    currentCapitales = buildCapitaleGame(capitalesData);
+    capitaleIndex = 0;
+    showScreen('defi-capitales');
+    renderCapitaleRecord();
+    renderCapitaleQuestion();
+  };
+
+  updateDefiRecordBadge();
 }
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
@@ -643,7 +804,7 @@ function init() {
   // Défi cards
   document.querySelectorAll('[data-defi]').forEach(card => {
     card.addEventListener('click', () => {
-      window.location.hash = `#${card.dataset.defi === 'drapeaux' ? 'defi-drapeaux' : card.dataset.defi}`;
+      window.location.hash = `#defi-${card.dataset.defi}`;
     });
   });
 
