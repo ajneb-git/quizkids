@@ -111,3 +111,24 @@ export function getBestScore() {
     return null;
   }
 }
+
+// ─── Défi Drapeaux record ─────────────────────────────────────────────────────
+
+export function getDefiFlagRecord() {
+  try {
+    const raw = localStorage.getItem('defi_drapeaux_record');
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveDefiFlagRecord(niveau) {
+  const record = getDefiFlagRecord();
+  if (record === null || niveau > record.niveau) {
+    const date = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('defi_drapeaux_record', JSON.stringify({ niveau, date }));
+    return true; // nouveau record
+  }
+  return false;
+}

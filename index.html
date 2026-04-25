@@ -76,6 +76,21 @@
         </div>
       </div>
 
+      <!-- Défi Drapeaux section -->
+      <div class="revision-section">
+        <p class="revision-title">🏆 Défis</p>
+        <div class="revision-cards">
+          <div class="revision-card defi-card" id="defi-drapeaux-card" data-defi="drapeaux">
+            <span class="revision-card-emoji">🌍</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="revision-card-label">Défi Drapeaux</span>
+              <span class="revision-card-sub">50 drapeaux · difficulté croissante<br>Une erreur = game over</span>
+              <span id="defi-drapeaux-record" class="defi-record-badge" style="display:none"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Notification reminder button -->
       <button id="btn-notif" class="btn btn-notif">
         🔕 Me rappeler chaque matin
@@ -227,6 +242,53 @@
       </div>
 
       <div class="results-actions">
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI DRAPEAUX ══════════════════ -->
+  <div id="screen-defi-drapeaux" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="defi-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="defi-level-label" class="defi-level-label">Niveau 1 / 50</span>
+      </div>
+      <div id="defi-record-live" class="defi-record-live"></div>
+    </div>
+
+    <div class="defi-flag-card">
+      <div id="defi-flag-emoji" class="defi-flag-emoji">🏳️</div>
+      <p class="defi-flag-question">À quel pays appartient ce drapeau ?</p>
+    </div>
+
+    <div id="defi-choices" class="choices-grid defi-choices-grid"></div>
+    <div id="defi-feedback" class="feedback hidden"></div>
+
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI DRAPEAUX RÉSULTATS ══════════════════ -->
+  <div id="screen-defi-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="defi-result-icon">💥</div>
+      <h2 id="defi-result-title">Défi terminé !</h2>
+
+      <div class="total-score">
+        <span id="defi-result-score">—</span>
+      </div>
+
+      <div id="defi-result-msg" class="encouraging-msg"></div>
+      <div id="defi-result-record" class="defi-new-record" style="display:none">🏆 Nouveau record !</div>
+
+      <div id="defi-result-error" class="defi-error-recap"></div>
+
+      <div class="results-actions">
+        <button id="btn-defi-replay" class="btn btn-primary">🔁 Rejouer</button>
         <button class="btn btn-secondary btn-home">🏠 Accueil</button>
       </div>
     </div>

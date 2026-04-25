@@ -1,5 +1,5 @@
 import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
-import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday } from './storage.js';
+import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord } from './storage.js';
 import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
@@ -8,6 +8,8 @@ let quizEngine = null;
 let revisionEngine = null;
 let allQuestions = null;
 let currentLevelKey = null;
+let defiData = null;      // liste des 50 drapeaux
+let defiIndex = 0;        // niveau en cours (0-based)
 let deferredInstallPrompt = null;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -365,6 +367,11 @@ async function route() {
   const hash = window.location.hash || '#home';
   const levelConf = getLevelConf();
 
+  if (hash === '#defi-drapeaux') {
+    await startDefiDrapeaux();
+    return;
+  }
+
   if (hash.startsWith('#revision-quiz')) {
     const theme = new URLSearchParams(hash.split('?')[1] ?? '').get('theme') || 'conjugaison';
     await startRevision(theme);
@@ -436,6 +443,169 @@ async function route() {
   }
 }
 
+// ─── Défi Drapeaux ────────────────────────────────────────────────────────────
+
+async function startDefiDrapeaux() {
+  if (!defiData) {
+    try {
+      const res = await fetch('./data/drapeaux-defi.json');
+      const json = await res.json();
+      defiData = json.drapeaux;
+    } catch (e) {
+      console.error('Erreur chargement drapeaux-defi.json', e);
+      showScreen('home');
+      return;
+    }
+  }
+  defiIndex = 0;
+  showScreen('defi-drapeaux');
+  renderDefiRecord();
+  renderDefiQuestion();
+}
+
+function renderDefiRecord() {
+  const record = getDefiFlagRecord();
+  const el = document.getElementById('defi-record-live');
+  if (el && record) el.textContent = `Record : ${record.niveau} / 50`;
+}
+
+function renderDefiQuestion() {
+  const q = defiData[defiIndex];
+  const niveau = defiIndex + 1;
+
+  // Progress bar
+  document.getElementById('defi-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('defi-progress-fill').style.width = `${(defiIndex / 50) * 100}%`;
+
+  // Flag
+  document.getElementById('defi-flag-emoji').textContent = q.emoji;
+
+  // Reset feedback
+  const feedback = document.getElementById('defi-feedback');
+  feedback.className = 'feedback hidden';
+  feedback.innerHTML = '';
+
+  // Choices — mélangés aléatoirement
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('defi-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice;
+    btn.addEventListener('click', () => handleDefiAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleDefiAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+
+  // Colorier les boutons
+  document.querySelectorAll('#defi-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+
+  const feedback = document.getElementById('defi-feedback');
+
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    defiIndex++;
+
+    if (defiIndex >= defiData.length) {
+      // Fini les 50 !
+      setTimeout(() => endDefi(true, null), 1500);
+    } else {
+      setTimeout(renderDefiQuestion, 1500);
+    }
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefi(false, { emoji: q.emoji, reponse: q.reponse, choixUser: choice }), 3000);
+  }
+}
+
+function endDefi(completed, erreur) {
+  const niveauAtteint = completed ? 50 : defiIndex; // defiIndex = nb de bonnes réponses
+  const isNewRecord = saveDefiFlagRecord(niveauAtteint);
+
+  showScreen('defi-results');
+
+  // Icône + titre
+  document.getElementById('defi-result-icon').textContent = completed ? '🏆' : '💥';
+  document.getElementById('defi-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+
+  // Score
+  document.getElementById('defi-result-score').textContent = `${niveauAtteint} / 50`;
+
+  // Message
+  const record = getDefiFlagRecord();
+  let msg = '';
+  if (completed) {
+    msg = '🎉 Incroyable ! Tu as reconnu les 50 drapeaux !';
+  } else if (niveauAtteint === 0) {
+    msg = 'Aïe, dès le premier drapeau ! Tu vas t\'améliorer rapidement.';
+  } else if (niveauAtteint < 15) {
+    msg = 'Bon début ! Continue à t\'entraîner sur les drapeaux.';
+  } else if (niveauAtteint < 30) {
+    msg = 'Pas mal ! Tu maîtrises les grandes nations. Les petits pays te résistent encore.';
+  } else if (niveauAtteint < 45) {
+    msg = 'Très bien ! Tu es un expert des drapeaux. Encore un effort pour le top !';
+  } else {
+    msg = 'Exceptionnel ! Tu frôles la perfection !';
+  }
+  document.getElementById('defi-result-msg').textContent = msg;
+
+  // Nouveau record
+  const recordEl = document.getElementById('defi-result-record');
+  if (isNewRecord) {
+    recordEl.style.display = 'block';
+    recordEl.textContent = niveauAtteint === 50 ? '🏆 Record absolu — 50/50 !' : `🏆 Nouveau record : ${niveauAtteint}/50 !`;
+  } else {
+    recordEl.style.display = 'none';
+    if (record) {
+      const prev = document.getElementById('defi-result-msg');
+      prev.textContent += ` (Record actuel : ${record.niveau}/50)`;
+    }
+  }
+
+  // Drapeau raté
+  const errorEl = document.getElementById('defi-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">Le drapeau qui t'a arrêté :</p>
+      <div class="defi-error-flag">${erreur.emoji}</div>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>
+    `;
+  } else {
+    errorEl.innerHTML = '';
+  }
+
+  // Rejouer
+  document.getElementById('btn-defi-replay').onclick = () => {
+    defiIndex = 0;
+    showScreen('defi-drapeaux');
+    renderDefiRecord();
+    renderDefiQuestion();
+  };
+
+  // Mettre à jour le badge sur l'accueil
+  updateDefiRecordBadge();
+}
+
+function updateDefiRecordBadge() {
+  const record = getDefiFlagRecord();
+  const badge = document.getElementById('defi-drapeaux-record');
+  if (badge && record) {
+    badge.textContent = `🏆 Record : ${record.niveau} / 50`;
+    badge.style.display = 'inline-block';
+  }
+}
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function init() {
@@ -453,11 +623,22 @@ function init() {
 
   // Revision cards
   document.querySelectorAll('.revision-card').forEach(card => {
+    if (card.dataset.theme) {
+      card.addEventListener('click', () => {
+        window.location.hash = `#revision-quiz?theme=${card.dataset.theme}`;
+      });
+    }
+  });
+
+  // Défi cards
+  document.querySelectorAll('[data-defi]').forEach(card => {
     card.addEventListener('click', () => {
-      const theme = card.dataset.theme;
-      window.location.hash = `#revision-quiz?theme=${theme}`;
+      window.location.hash = `#${card.dataset.defi === 'drapeaux' ? 'defi-drapeaux' : card.dataset.defi}`;
     });
   });
+
+  // Badge record accueil
+  updateDefiRecordBadge();
 
   // Replay revision
   document.getElementById('btn-revision-replay')?.addEventListener('click', () => {
