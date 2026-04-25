@@ -20,7 +20,10 @@
         { "emoji": "🇦🇺", "reponse": "Australie",     "choix": ["Nouvelle-Zélande", "Australie", "Royaume-Uni", "Fidji"] },
         { "emoji": "🇲🇽", "reponse": "Mexique",       "choix": ["Mexique", "Italie", "Bolivie", "Irlande"] },
         { "emoji": "🇮🇳", "reponse": "Inde",          "choix": ["Inde", "Niger", "Irlande", "Côte d'Ivoire"] },
-        { "emoji": "🇦🇷", "reponse": "Argentine",     "choix": ["Argentine", "Uruguay", "El Salvador", "Nicaragua"] }
+        { "emoji": "🇦🇷", "reponse": "Argentine",     "choix": ["Argentine", "Uruguay", "El Salvador", "Nicaragua"] },
+        { "emoji": "🇮🇱", "reponse": "Israël",        "choix": ["Israël", "Grèce", "Argentine", "Uruguay"] },
+        { "emoji": "🇳🇱", "reponse": "Pays-Bas",      "choix": ["Pays-Bas", "Luxembourg", "France", "Russie"] },
+        { "emoji": "🇧🇪", "reponse": "Belgique",      "choix": ["Belgique", "Allemagne", "Niger", "Tchad"] }
       ]
     },
     {
@@ -35,8 +38,8 @@
         { "emoji": "🇰🇷", "reponse": "Corée du Sud",  "choix": ["Japon", "Corée du Sud", "Taïwan", "Mongolie"] },
         { "emoji": "🇬🇷", "reponse": "Grèce",         "choix": ["Grèce", "Slovaquie", "Uruguay", "Finlande"] },
         { "emoji": "🇩🇰", "reponse": "Danemark",      "choix": ["Danemark", "Suisse", "Autriche", "Norvège"] },
-        { "emoji": "🇳🇱", "reponse": "Pays-Bas",      "choix": ["Pays-Bas", "Luxembourg", "France", "Russie"] },
-        { "emoji": "🇧🇪", "reponse": "Belgique",      "choix": ["Belgique", "Allemagne", "Niger", "Tchad"] },
+        { "emoji": "🇨🇺", "reponse": "Cuba",           "choix": ["Cuba", "Porto Rico", "Chili", "Liberia"] },
+        { "emoji": "🇰🇵", "reponse": "Corée du Nord", "choix": ["Corée du Nord", "Corée du Sud", "Chine", "Vietnam"] },
         { "emoji": "🇵🇱", "reponse": "Pologne",       "choix": ["Pologne", "Indonésie", "Singapour", "Monaco"] },
         { "emoji": "🇺🇦", "reponse": "Ukraine",       "choix": ["Ukraine", "Suède", "Kazakhstan", "Finlande"] },
         { "emoji": "🇮🇪", "reponse": "Irlande",       "choix": ["Irlande", "Italie", "Côte d'Ivoire", "Niger"] },
