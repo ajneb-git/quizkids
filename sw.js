@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quizkids-v1';
+const CACHE_NAME = 'quizkids-v2';
 
 const STATIC_ASSETS = [
   '/',
@@ -38,7 +38,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  if (url.pathname.includes('/data/questions.json')) {
+  if (url.pathname.includes('/data/questions') || url.pathname.includes('/data/drapeaux-defi.json')) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
