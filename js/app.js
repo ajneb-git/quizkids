@@ -8,7 +8,8 @@ let quizEngine = null;
 let revisionEngine = null;
 let allQuestions = null;
 let currentLevelKey = null;
-let defiData = null;      // liste des 50 drapeaux
+let defiData = null;      // données brutes (tiers) chargées depuis JSON
+let currentDefiFlags = []; // séquence de 50 drapeaux pour la partie en cours
 let defiIndex = 0;        // niveau en cours (0-based)
 let deferredInstallPrompt = null;
 
@@ -445,18 +446,26 @@ async function route() {
 
 // ─── Défi Drapeaux ────────────────────────────────────────────────────────────
 
+function buildDefiGame(data) {
+  // Pour chaque palier, mélanger le pool et prendre 10 drapeaux au hasard
+  return data.tiers.flatMap(tier => {
+    const shuffled = [...tier.pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 10);
+  });
+}
+
 async function startDefiDrapeaux() {
   if (!defiData) {
     try {
       const res = await fetch('./data/drapeaux-defi.json');
-      const json = await res.json();
-      defiData = json.drapeaux;
+      defiData = await res.json();
     } catch (e) {
       console.error('Erreur chargement drapeaux-defi.json', e);
       showScreen('home');
       return;
     }
   }
+  currentDefiFlags = buildDefiGame(defiData);
   defiIndex = 0;
   showScreen('defi-drapeaux');
   renderDefiRecord();
@@ -470,7 +479,7 @@ function renderDefiRecord() {
 }
 
 function renderDefiQuestion() {
-  const q = defiData[defiIndex];
+  const q = currentDefiFlags[defiIndex];
   const niveau = defiIndex + 1;
 
   // Progress bar
@@ -515,7 +524,7 @@ function handleDefiAnswer(choice, q) {
     feedback.textContent = '✓ Bonne réponse !';
     defiIndex++;
 
-    if (defiIndex >= defiData.length) {
+    if (defiIndex >= currentDefiFlags.length) {
       // Fini les 50 !
       setTimeout(() => endDefi(true, null), 1500);
     } else {
@@ -585,8 +594,9 @@ function endDefi(completed, erreur) {
     errorEl.innerHTML = '';
   }
 
-  // Rejouer
+  // Rejouer — on reconstruit une nouvelle séquence aléatoire
   document.getElementById('btn-defi-replay').onclick = () => {
+    currentDefiFlags = buildDefiGame(defiData);
     defiIndex = 0;
     showScreen('defi-drapeaux');
     renderDefiRecord();
