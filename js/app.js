@@ -224,40 +224,22 @@ function renderRevisionQuestion(engine) {
     textEl.style.display = '';
     const input = document.getElementById('rq-input');
     const submitBtn = document.getElementById('rq-submit');
+    // ⚠️ Toujours réactiver l'input entre les questions
+    input.disabled = false;
+    submitBtn.disabled = false;
     input.value = '';
-    input.focus();
+    setTimeout(() => input.focus(), 100);
 
-    // Submit on button click
     submitBtn.onclick = () => {
       if (input.value.trim() === '') return;
       handleRevisionAnswer(input.value, engine, 'texte');
     };
-    // Submit on Enter
     input.onkeydown = (e) => {
       if (e.key === 'Enter' && input.value.trim() !== '') {
         handleRevisionAnswer(input.value, engine, 'texte');
       }
     };
   }
-
-  // Timer
-  const timerBar = document.getElementById('rq-timer-bar');
-  timerBar.style.transition = 'none';
-  timerBar.style.width = '100%';
-  timerBar.style.backgroundColor = '';
-  requestAnimationFrame(() => { timerBar.style.transition = ''; });
-  engine.startTimer(
-    (progress) => {
-      timerBar.style.width = `${progress * 100}%`;
-      if (progress < 0.3) timerBar.style.backgroundColor = '#ef4444';
-      else if (progress < 0.6) timerBar.style.backgroundColor = '#f59e0b';
-      else timerBar.style.backgroundColor = '';
-    },
-    () => {
-      const result = engine.timeExpired();
-      if (result) showRevisionFeedback(result, engine);
-    }
-  );
 }
 
 function handleRevisionAnswer(value, engine, type) {
@@ -279,7 +261,6 @@ function handleRevisionAnswer(value, engine, type) {
 }
 
 function showRevisionFeedback(result, engine) {
-  document.getElementById('rq-timer-bar').style.transition = 'none';
   const feedback = document.getElementById('rq-feedback');
   if (result.isCorrect) {
     feedback.className = 'feedback correct';
@@ -368,9 +349,7 @@ async function startRevision(themeKey) {
   if (!conf) return;
   try {
     const questions = await loadRevisionQuestions(conf.questionsFile, conf.category);
-    revisionEngine = new RevisionEngine(questions, conf.timerDuration, (result) => {
-      // onEnd is called inside renderRevisionResults via engine properties
-    });
+    revisionEngine = new RevisionEngine(questions, () => {});
     showScreen('revision-quiz');
     renderRevisionQuestion(revisionEngine);
   } catch (e) {

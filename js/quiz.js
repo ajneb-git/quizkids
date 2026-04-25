@@ -100,13 +100,11 @@ export class QuizEngine {
 // ─── Revision Engine (rejouable, mélange aléatoire) ──────────────────────────
 
 export class RevisionEngine {
-  constructor(questions, timerDuration, onEnd) {
+  constructor(questions, onEnd) {
     // Shuffle randomly (pas de seed quotidienne)
     this.questions = [...questions].sort(() => Math.random() - 0.5);
-    this.timerDuration = timerDuration;
     this.currentIndex = 0;
     this.onEnd = onEnd;
-    this.timer = null;
     this.answered = false;
     this.correct = 0;
     this.wrongAnswers = [];
@@ -116,41 +114,24 @@ export class RevisionEngine {
   getTotalQuestions()   { return this.questions.length; }
   getCurrentIndex()     { return this.currentIndex; }
 
-  startTimer(onTick, onExpire) {
-    this.timer = new QuizTimer(this.timerDuration, onTick, onExpire);
-    this.timer.start();
-  }
-
-  stopTimer() { if (this.timer) this.timer.stop(); }
-
   // Pour QCM
   answer(choice) {
     if (this.answered) return null;
     this.answered = true;
-    this.stopTimer();
     const q = this.getCurrentQuestion();
     const isCorrect = choice === q.reponse;
     this._record(q, choice, isCorrect);
     return { isCorrect, correctAnswer: q.reponse, explication: q.explication, chapitre: q.chapitre };
   }
 
-  // Pour champ texte — comparaison exacte (casse + accents)
+  // Pour champ texte — insensible à la casse, accents obligatoires
   answerText(input) {
     if (this.answered) return null;
     this.answered = true;
-    this.stopTimer();
     const q = this.getCurrentQuestion();
-    const isCorrect = input.trim() === q.reponse;
+    const isCorrect = input.trim().toLowerCase() === q.reponse.toLowerCase();
     this._record(q, input.trim(), isCorrect);
     return { isCorrect, correctAnswer: q.reponse, explication: q.explication, chapitre: q.chapitre };
-  }
-
-  timeExpired() {
-    if (this.answered) return null;
-    this.answered = true;
-    const q = this.getCurrentQuestion();
-    this._record(q, null, false);
-    return { isCorrect: false, correctAnswer: q.reponse, explication: q.explication, chapitre: q.chapitre };
   }
 
   _record(q, userAnswer, isCorrect) {

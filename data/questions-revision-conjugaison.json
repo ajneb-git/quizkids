@@ -217,9 +217,9 @@
         "id": "conj_022",
         "type": "texte",
         "chapitre": "passé composé",
-        "question": "Conjuguez au passé composé :\n« Vous ___ (venir) me voir hier. »\n\nÉcrivez uniquement la forme conjuguée.",
-        "reponse": "êtes venus",
-        "explication": "« Venir » se conjugue avec ÊTRE. Le sujet « vous » implique l'accord au masculin pluriel (par défaut) : venus.",
+        "question": "Conjuguez au passé composé :\n« Elles ___ (venir) me voir hier. »\n\nÉcrivez uniquement la forme conjuguée.",
+        "reponse": "sont venues",
+        "explication": "« Venir » se conjugue avec ÊTRE. Le sujet « elles » est féminin pluriel → participe passé accordé : venues.",
         "difficulte": 2
       },
       {
