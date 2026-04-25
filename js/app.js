@@ -670,6 +670,7 @@ function renderCapitaleQuestion() {
 
   document.getElementById('capitale-level-label').textContent = `Niveau ${niveau} / 50`;
   document.getElementById('capitale-progress-fill').style.width = `${(capitaleIndex / 50) * 100}%`;
+  document.getElementById('capitale-drapeau').textContent = q.drapeau;
   document.getElementById('capitale-pays').textContent = q.pays;
 
   const feedback = document.getElementById('capitale-feedback');
