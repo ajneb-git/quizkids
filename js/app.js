@@ -261,6 +261,7 @@ function handleRevisionAnswer(value, engine, type) {
 }
 
 function showRevisionFeedback(result, engine) {
+  const delay = result.isCorrect ? CONFIG.FEEDBACK_DELAY_MS : 4500;
   const feedback = document.getElementById('rq-feedback');
   if (result.isCorrect) {
     feedback.className = 'feedback correct';
@@ -273,7 +274,7 @@ function showRevisionFeedback(result, engine) {
     const hasNext = engine.next();
     if (hasNext) renderRevisionQuestion(engine);
     else renderRevisionResults(engine);
-  }, CONFIG.FEEDBACK_DELAY_MS);
+  }, delay);
 }
 
 function renderRevisionResults(engine) {
