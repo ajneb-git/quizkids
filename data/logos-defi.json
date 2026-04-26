@@ -1,6 +1,6 @@
 {
-  "version": "1.2",
-  "description": "5 paliers × 20 logos foot & NBA — tous les IDs foot vérifiés sur crests.football-data.org",
+  "version": "1.3",
+  "description": "5 paliers × 20 logos foot & NBA — tous les IDs vérifiés visuellement dans le navigateur",
   "tiers": [
     {
       "tier": 1,
@@ -21,11 +21,11 @@
         { "nom": "AC Milan", "image": "https://crests.football-data.org/98.svg", "sport": "foot", "reponse": "AC Milan", "choix": ["AC Milan", "Inter Milan", "Roma", "Lazio"] },
         { "nom": "Dortmund", "image": "https://crests.football-data.org/4.svg", "sport": "foot", "reponse": "Dortmund", "choix": ["Dortmund", "Bayern Munich", "Leipzig", "Schalke"] },
         { "nom": "Atlético", "image": "https://crests.football-data.org/78.svg", "sport": "foot", "reponse": "Atlético Madrid", "choix": ["Atlético Madrid", "Real Madrid", "Séville", "Barça"] },
-        { "nom": "OL", "image": "https://crests.football-data.org/523.svg", "sport": "foot", "reponse": "Lyon", "choix": ["Lyon", "PSG", "Marseille", "Monaco"] },
-        { "nom": "Monaco", "image": "https://crests.football-data.org/548.svg", "sport": "foot", "reponse": "Monaco", "choix": ["Monaco", "Lyon", "PSG", "Nice"] },
+        { "nom": "OL", "image": "https://crests.football-data.org/523.svg", "sport": "foot", "reponse": "Lyon", "choix": ["Lyon", "PSG", "Marseille", "Lille"] },
         { "nom": "Ajax", "image": "https://crests.football-data.org/678.svg", "sport": "foot", "reponse": "Ajax", "choix": ["Ajax", "PSV", "Feyenoord", "Utrecht"] },
         { "nom": "Tottenham", "image": "https://crests.football-data.org/73.svg", "sport": "foot", "reponse": "Tottenham", "choix": ["Tottenham", "Arsenal", "Chelsea", "West Ham"] },
-        { "nom": "Séville", "image": "https://crests.football-data.org/559.svg", "sport": "foot", "reponse": "Séville", "choix": ["Séville", "Barça", "Real Madrid", "Valence"] }
+        { "nom": "Séville", "image": "https://crests.football-data.org/559.svg", "sport": "foot", "reponse": "Séville", "choix": ["Séville", "Barça", "Real Madrid", "Valence"] },
+        { "nom": "Everton", "image": "https://crests.football-data.org/62.svg", "sport": "foot", "reponse": "Everton", "choix": ["Everton", "Liverpool", "Man United", "Chelsea"] }
       ]
     },
     {
@@ -33,23 +33,23 @@
       "label": "Facile",
       "pool": [
         { "nom": "Lazio", "image": "https://crests.football-data.org/110.svg", "sport": "foot", "reponse": "Lazio", "choix": ["Lazio", "Roma", "Napoli", "Fiorentina"] },
-        { "nom": "Roma", "image": "https://crests.football-data.org/100.svg", "sport": "foot", "reponse": "Roma", "choix": ["Roma", "Lazio", "Juventus", "Napoli"] },
-        { "nom": "Napoli", "image": "https://crests.football-data.org/113.svg", "sport": "foot", "reponse": "Napoli", "choix": ["Napoli", "Roma", "Inter Milan", "Lazio"] },
+        { "nom": "Bologna", "image": "https://crests.football-data.org/103.svg", "sport": "foot", "reponse": "Bologna", "choix": ["Bologna", "Lazio", "Torino", "Fiorentina"] },
+        { "nom": "Newcastle", "image": "https://crests.football-data.org/67.svg", "sport": "foot", "reponse": "Newcastle", "choix": ["Newcastle", "Sunderland", "Middlesbrough", "Leeds"] },
         { "nom": "Porto", "image": "https://crests.football-data.org/503.svg", "sport": "foot", "reponse": "Porto", "choix": ["Porto", "Benfica", "Sporting CP", "Braga"] },
         { "nom": "Benfica", "image": "https://crests.football-data.org/492.svg", "sport": "foot", "reponse": "Benfica", "choix": ["Benfica", "Porto", "Sporting CP", "Braga"] },
         { "nom": "Celtic", "image": "https://crests.football-data.org/732.svg", "sport": "foot", "reponse": "Celtic", "choix": ["Celtic", "Rangers", "Hearts", "Aberdeen"] },
-        { "nom": "Rangers", "image": "https://crests.football-data.org/733.svg", "sport": "foot", "reponse": "Rangers", "choix": ["Rangers", "Celtic", "Aberdeen", "Hearts"] },
-        { "nom": "Valence", "image": "https://crests.football-data.org/532.svg", "sport": "foot", "reponse": "Valence", "choix": ["Valence", "Villarreal", "Séville", "Betis"] },
-        { "nom": "Villarreal", "image": "https://crests.football-data.org/533.svg", "sport": "foot", "reponse": "Villarreal", "choix": ["Villarreal", "Valence", "Séville", "Atlético Madrid"] },
+        { "nom": "Leicester", "image": "https://crests.football-data.org/338.svg", "sport": "foot", "reponse": "Leicester", "choix": ["Leicester", "Aston Villa", "Wolves", "Nottingham"] },
+        { "nom": "Valence", "image": "https://crests.football-data.org/95.svg", "sport": "foot", "reponse": "Valence", "choix": ["Valence", "Villarreal", "Séville", "Betis"] },
+        { "nom": "Villarreal", "image": "https://crests.football-data.org/94.svg", "sport": "foot", "reponse": "Villarreal", "choix": ["Villarreal", "Valence", "Séville", "Atlético Madrid"] },
         { "nom": "PSV", "image": "https://crests.football-data.org/674.svg", "sport": "foot", "reponse": "PSV", "choix": ["PSV", "Ajax", "Feyenoord", "AZ"] },
         { "nom": "Feyenoord", "image": "https://crests.football-data.org/675.svg", "sport": "foot", "reponse": "Feyenoord", "choix": ["Feyenoord", "Ajax", "PSV", "AZ"] },
         { "nom": "Leverkusen", "image": "https://crests.football-data.org/3.svg", "sport": "foot", "reponse": "Leverkusen", "choix": ["Leverkusen", "Dortmund", "Bayern Munich", "Cologne"] },
-        { "nom": "Lille", "image": "https://crests.football-data.org/521.svg", "sport": "foot", "reponse": "Lille", "choix": ["Lille", "Lens", "Rennes", "Strasbourg"] },
+        { "nom": "Lille", "image": "https://crests.football-data.org/521.svg", "sport": "foot", "reponse": "Lille", "choix": ["Lille", "Lens", "Rennes", "Bordeaux"] },
         { "nom": "Rennes", "image": "https://crests.football-data.org/518.svg", "sport": "foot", "reponse": "Rennes", "choix": ["Rennes", "Nantes", "Angers", "Lorient"] },
         { "nom": "Lens", "image": "https://crests.football-data.org/514.svg", "sport": "foot", "reponse": "Lens", "choix": ["Lens", "Lille", "Valenciennes", "Amiens"] },
-        { "nom": "Nice", "image": "https://crests.football-data.org/522.svg", "sport": "foot", "reponse": "Nice", "choix": ["Nice", "Monaco", "Marseille", "Toulouse"] },
+        { "nom": "Bordeaux", "image": "https://crests.football-data.org/526.svg", "sport": "foot", "reponse": "Bordeaux", "choix": ["Bordeaux", "Toulouse", "Marseille", "Lyon"] },
         { "nom": "Nantes", "image": "https://crests.football-data.org/558.svg", "sport": "foot", "reponse": "Nantes", "choix": ["Nantes", "Rennes", "Angers", "Lorient"] },
-        { "nom": "Strasbourg", "image": "https://crests.football-data.org/576.svg", "sport": "foot", "reponse": "Strasbourg", "choix": ["Strasbourg", "Metz", "Nancy", "Mulhouse"] },
+        { "nom": "Auxerre", "image": "https://crests.football-data.org/519.svg", "sport": "foot", "reponse": "Auxerre", "choix": ["Auxerre", "Troyes", "Dijon", "Reims"] },
         { "nom": "Frankfurt", "image": "https://crests.football-data.org/19.svg", "sport": "foot", "reponse": "Francfort", "choix": ["Francfort", "Stuttgart", "Cologne", "Leverkusen"] },
         { "nom": "Leipzig", "image": "https://crests.football-data.org/721.svg", "sport": "foot", "reponse": "Leipzig", "choix": ["Leipzig", "Dortmund", "Wolfsburg", "Schalke"] }
       ]
@@ -112,8 +112,8 @@
       "pool": [
         { "nom": "Malmö", "image": "https://crests.football-data.org/805.svg", "sport": "foot", "reponse": "Malmö FF", "choix": ["Malmö FF", "AIK", "Göteborg", "Djurgarden"] },
         { "nom": "Sheriff", "image": "https://crests.football-data.org/1880.svg", "sport": "foot", "reponse": "Sheriff Tiraspol", "choix": ["Sheriff Tiraspol", "Milsami", "Zimbru", "Zaria"] },
-        { "nom": "Basel", "image": "https://crests.football-data.org/584.svg", "sport": "foot", "reponse": "Bâle", "choix": ["Bâle", "Young Boys", "Lugano", "Servette"] },
-        { "nom": "Brondby", "image": "https://crests.football-data.org/803.svg", "sport": "foot", "reponse": "Brondby", "choix": ["Brondby", "Copenhague", "Midtjylland", "Aarhus"] },
+        { "nom": "Schalke", "image": "https://crests.football-data.org/6.svg", "sport": "foot", "reponse": "Schalke 04", "choix": ["Schalke 04", "Dortmund", "Bochum", "Gelsenkirchen"] },
+        { "nom": "Hamburg", "image": "https://crests.football-data.org/7.svg", "sport": "foot", "reponse": "Hamburger SV", "choix": ["Hamburger SV", "Werder Brême", "St. Pauli", "Hanovre"] },
         { "nom": "Plzen", "image": "https://crests.football-data.org/1881.svg", "sport": "foot", "reponse": "Viktoria Plzeň", "choix": ["Viktoria Plzeň", "Slavia Prague", "Sparta Prague", "Liberec"] },
         { "nom": "Young Boys", "image": "https://crests.football-data.org/1868.svg", "sport": "foot", "reponse": "Young Boys", "choix": ["Young Boys", "Bâle", "Lugano", "Servette"] },
         { "nom": "Ludogorets", "image": "https://crests.football-data.org/1901.svg", "sport": "foot", "reponse": "Ludogorets", "choix": ["Ludogorets", "CSKA Sofia", "Levski", "Botev"] },
