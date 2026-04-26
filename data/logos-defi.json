@@ -1,6 +1,6 @@
 {
-  "version": "1.1",
-  "description": "5 paliers × 20 logos foot & NBA, 10 tirés aléatoirement par palier à chaque partie",
+  "version": "1.2",
+  "description": "5 paliers × 20 logos foot & NBA — tous les IDs foot vérifiés sur crests.football-data.org",
   "tiers": [
     {
       "tier": 1,
@@ -39,7 +39,7 @@
         { "nom": "Benfica", "image": "https://crests.football-data.org/492.svg", "sport": "foot", "reponse": "Benfica", "choix": ["Benfica", "Porto", "Sporting CP", "Braga"] },
         { "nom": "Celtic", "image": "https://crests.football-data.org/732.svg", "sport": "foot", "reponse": "Celtic", "choix": ["Celtic", "Rangers", "Hearts", "Aberdeen"] },
         { "nom": "Rangers", "image": "https://crests.football-data.org/733.svg", "sport": "foot", "reponse": "Rangers", "choix": ["Rangers", "Celtic", "Aberdeen", "Hearts"] },
-        { "nom": "Valence", "image": "https://crests.football-data.org/532.svg", "sport": "foot", "reponse": "Valence", "choix": ["Valence", "Villarreal", "Séville", "Celta Vigo"] },
+        { "nom": "Valence", "image": "https://crests.football-data.org/532.svg", "sport": "foot", "reponse": "Valence", "choix": ["Valence", "Villarreal", "Séville", "Betis"] },
         { "nom": "Villarreal", "image": "https://crests.football-data.org/533.svg", "sport": "foot", "reponse": "Villarreal", "choix": ["Villarreal", "Valence", "Séville", "Atlético Madrid"] },
         { "nom": "PSV", "image": "https://crests.football-data.org/674.svg", "sport": "foot", "reponse": "PSV", "choix": ["PSV", "Ajax", "Feyenoord", "AZ"] },
         { "nom": "Feyenoord", "image": "https://crests.football-data.org/675.svg", "sport": "foot", "reponse": "Feyenoord", "choix": ["Feyenoord", "Ajax", "PSV", "AZ"] },
@@ -50,7 +50,7 @@
         { "nom": "Nice", "image": "https://crests.football-data.org/522.svg", "sport": "foot", "reponse": "Nice", "choix": ["Nice", "Monaco", "Marseille", "Toulouse"] },
         { "nom": "Nantes", "image": "https://crests.football-data.org/558.svg", "sport": "foot", "reponse": "Nantes", "choix": ["Nantes", "Rennes", "Angers", "Lorient"] },
         { "nom": "Strasbourg", "image": "https://crests.football-data.org/576.svg", "sport": "foot", "reponse": "Strasbourg", "choix": ["Strasbourg", "Metz", "Nancy", "Mulhouse"] },
-        { "nom": "Frankfurt", "image": "https://crests.football-data.org/9.svg", "sport": "foot", "reponse": "Francfort", "choix": ["Francfort", "Stuttgart", "Cologne", "Leverkusen"] },
+        { "nom": "Frankfurt", "image": "https://crests.football-data.org/19.svg", "sport": "foot", "reponse": "Francfort", "choix": ["Francfort", "Stuttgart", "Cologne", "Leverkusen"] },
         { "nom": "Leipzig", "image": "https://crests.football-data.org/721.svg", "sport": "foot", "reponse": "Leipzig", "choix": ["Leipzig", "Dortmund", "Wolfsburg", "Schalke"] }
       ]
     },
@@ -94,42 +94,42 @@
         { "nom": "Wizards", "image": "https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg", "sport": "nba", "reponse": "Wizards", "choix": ["Wizards", "Raptors", "Nets", "76ers"] },
         { "nom": "Hornets", "image": "https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg", "sport": "nba", "reponse": "Hornets", "choix": ["Hornets", "Hawks", "Magic", "Heat"] },
         { "nom": "Timberwolves", "image": "https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg", "sport": "nba", "reponse": "Timberwolves", "choix": ["Timberwolves", "Thunder", "Nuggets", "Jazz"] },
-        { "nom": "Olympiakos", "image": "https://crests.football-data.org/636.svg", "sport": "foot", "reponse": "Olympiakos", "choix": ["Olympiakos", "Panathinaikos", "PAOK", "AEK Athènes"] },
         { "nom": "Galatasaray", "image": "https://crests.football-data.org/1877.svg", "sport": "foot", "reponse": "Galatasaray", "choix": ["Galatasaray", "Fenerbahçe", "Besiktas", "Trabzonspor"] },
-        { "nom": "Fenerbahçe", "image": "https://crests.football-data.org/2004.svg", "sport": "foot", "reponse": "Fenerbahçe", "choix": ["Fenerbahçe", "Galatasaray", "Besiktas", "Trabzonspor"] },
-        { "nom": "Anderlecht", "image": "https://crests.football-data.org/1008.svg", "sport": "foot", "reponse": "Anderlecht", "choix": ["Anderlecht", "Club Brugge", "Gent", "Standard"] },
         { "nom": "Club Brugge", "image": "https://crests.football-data.org/851.svg", "sport": "foot", "reponse": "Club Brugge", "choix": ["Club Brugge", "Anderlecht", "Gent", "Standard"] },
-        { "nom": "Shakhtar", "image": "https://crests.football-data.org/1887.svg", "sport": "foot", "reponse": "Shakhtar", "choix": ["Shakhtar", "Dynamo Kiev", "Dnipro", "Vorskla"] },
-        { "nom": "Étoile Rouge", "image": "https://crests.football-data.org/4502.svg", "sport": "foot", "reponse": "Étoile Rouge", "choix": ["Étoile Rouge", "Partizan", "Vojvodina", "Rad"] },
+        { "nom": "Shakhtar", "image": "https://crests.football-data.org/1887.svg", "sport": "foot", "reponse": "Shakhtar", "choix": ["Shakhtar", "Dynamo Kyiv", "Dnipro", "Vorskla"] },
         { "nom": "Sporting CP", "image": "https://crests.football-data.org/498.svg", "sport": "foot", "reponse": "Sporting CP", "choix": ["Sporting CP", "Porto", "Benfica", "Braga"] },
-        { "nom": "Dinamo Zagreb", "image": "https://crests.football-data.org/1619.svg", "sport": "foot", "reponse": "Dinamo Zagreb", "choix": ["Dinamo Zagreb", "Hajduk Split", "Rijeka", "Osijek"] },
-        { "nom": "Celta Vigo", "image": "https://crests.football-data.org/769.svg", "sport": "foot", "reponse": "Celta Vigo", "choix": ["Celta Vigo", "Deportivo", "Valence", "Villarreal"] }
+        { "nom": "Celta Vigo", "image": "https://crests.football-data.org/769.svg", "sport": "foot", "reponse": "Celta Vigo", "choix": ["Celta Vigo", "Deportivo", "Valence", "Villarreal"] },
+        { "nom": "Real Sociedad", "image": "https://crests.football-data.org/92.svg", "sport": "foot", "reponse": "Real Sociedad", "choix": ["Real Sociedad", "Athletic Bilbao", "Valence", "Betis"] },
+        { "nom": "Athletic Bilbao", "image": "https://crests.football-data.org/77.svg", "sport": "foot", "reponse": "Athletic Bilbao", "choix": ["Athletic Bilbao", "Real Sociedad", "Betis", "Valence"] },
+        { "nom": "Antwerp", "image": "https://crests.football-data.org/1862.svg", "sport": "foot", "reponse": "Royal Antwerp", "choix": ["Royal Antwerp", "Club Brugge", "Anderlecht", "Gent"] },
+        { "nom": "Standard", "image": "https://crests.football-data.org/1864.svg", "sport": "foot", "reponse": "Standard Liège", "choix": ["Standard Liège", "Anderlecht", "Club Brugge", "Gent"] },
+        { "nom": "Dynamo Kyiv", "image": "https://crests.football-data.org/842.svg", "sport": "foot", "reponse": "Dynamo Kyiv", "choix": ["Dynamo Kyiv", "Shakhtar", "Vorskla", "Dnipro"] }
       ]
     },
     {
       "tier": 5,
       "label": "Expert",
       "pool": [
-        { "nom": "Ferencváros", "image": "https://crests.football-data.org/7023.svg", "sport": "foot", "reponse": "Ferencváros", "choix": ["Ferencváros", "Ujpest", "MTK", "Honved"] },
-        { "nom": "Slavia Prague", "image": "https://crests.football-data.org/738.svg", "sport": "foot", "reponse": "Slavia Prague", "choix": ["Slavia Prague", "Sparta Prague", "Plzen", "Liberec"] },
-        { "nom": "Malmö", "image": "https://crests.football-data.org/805.svg", "sport": "foot", "reponse": "Malmö", "choix": ["Malmö", "AIK", "Göteborg", "Djurgarden"] },
-        { "nom": "Rosenborg", "image": "https://crests.football-data.org/868.svg", "sport": "foot", "reponse": "Rosenborg", "choix": ["Rosenborg", "Molde", "Brann", "Viking"] },
-        { "nom": "Partizan", "image": "https://crests.football-data.org/550.svg", "sport": "foot", "reponse": "Partizan", "choix": ["Partizan", "Étoile Rouge", "Vojvodina", "Rad"] },
-        { "nom": "Panathinaikos", "image": "https://crests.football-data.org/640.svg", "sport": "foot", "reponse": "Panathinaikos", "choix": ["Panathinaikos", "Olympiakos", "PAOK", "AEK Athènes"] },
-        { "nom": "PAOK", "image": "https://crests.football-data.org/641.svg", "sport": "foot", "reponse": "PAOK", "choix": ["PAOK", "Olympiakos", "Panathinaikos", "AEK Athènes"] },
-        { "nom": "Maccabi TLV", "image": "https://crests.football-data.org/1099.svg", "sport": "foot", "reponse": "Maccabi Tel Aviv", "choix": ["Maccabi Tel Aviv", "Hapoel Tel Aviv", "Beitar Jérusalem", "Maccabi Haïfa"] },
-        { "nom": "Rapid Vienna", "image": "https://crests.football-data.org/442.svg", "sport": "foot", "reponse": "Rapid Vienne", "choix": ["Rapid Vienne", "Austria Vienne", "Sturm Graz", "LASK"] },
-        { "nom": "Sparta Prague", "image": "https://crests.football-data.org/739.svg", "sport": "foot", "reponse": "Sparta Prague", "choix": ["Sparta Prague", "Slavia Prague", "Plzen", "Liberec"] },
-        { "nom": "Qarabag", "image": "https://crests.football-data.org/7089.svg", "sport": "foot", "reponse": "Qarabag", "choix": ["Qarabag", "Neftchi", "Zira", "Sabail"] },
-        { "nom": "Sheriff", "image": "https://crests.football-data.org/8191.svg", "sport": "foot", "reponse": "Sheriff Tiraspol", "choix": ["Sheriff Tiraspol", "Milsami", "Sfintul Gheorghe", "Zimbru"] },
-        { "nom": "Young Boys", "image": "https://crests.football-data.org/1899.svg", "sport": "foot", "reponse": "Young Boys", "choix": ["Young Boys", "Bâle", "Lugano", "Servette"] },
+        { "nom": "Malmö", "image": "https://crests.football-data.org/805.svg", "sport": "foot", "reponse": "Malmö FF", "choix": ["Malmö FF", "AIK", "Göteborg", "Djurgarden"] },
+        { "nom": "Sheriff", "image": "https://crests.football-data.org/1880.svg", "sport": "foot", "reponse": "Sheriff Tiraspol", "choix": ["Sheriff Tiraspol", "Milsami", "Zimbru", "Zaria"] },
         { "nom": "Basel", "image": "https://crests.football-data.org/584.svg", "sport": "foot", "reponse": "Bâle", "choix": ["Bâle", "Young Boys", "Lugano", "Servette"] },
-        { "nom": "Midtjylland", "image": "https://crests.football-data.org/894.svg", "sport": "foot", "reponse": "Midtjylland", "choix": ["Midtjylland", "Brondby", "Copenhague", "Aarhus"] },
         { "nom": "Brondby", "image": "https://crests.football-data.org/803.svg", "sport": "foot", "reponse": "Brondby", "choix": ["Brondby", "Copenhague", "Midtjylland", "Aarhus"] },
-        { "nom": "AIK", "image": "https://crests.football-data.org/8016.svg", "sport": "foot", "reponse": "AIK", "choix": ["AIK", "Malmö", "Göteborg", "Djurgarden"] },
-        { "nom": "Hajduk Split", "image": "https://crests.football-data.org/1618.svg", "sport": "foot", "reponse": "Hajduk Split", "choix": ["Hajduk Split", "Dinamo Zagreb", "Rijeka", "Osijek"] },
-        { "nom": "Besiktas", "image": "https://crests.football-data.org/2015.svg", "sport": "foot", "reponse": "Besiktas", "choix": ["Besiktas", "Galatasaray", "Fenerbahçe", "Trabzonspor"] },
-        { "nom": "CSKA Moscou", "image": "https://crests.football-data.org/7008.svg", "sport": "foot", "reponse": "CSKA Moscou", "choix": ["CSKA Moscou", "Spartak", "Lokomotiv", "Zénith"] }
+        { "nom": "Plzen", "image": "https://crests.football-data.org/1881.svg", "sport": "foot", "reponse": "Viktoria Plzeň", "choix": ["Viktoria Plzeň", "Slavia Prague", "Sparta Prague", "Liberec"] },
+        { "nom": "Young Boys", "image": "https://crests.football-data.org/1868.svg", "sport": "foot", "reponse": "Young Boys", "choix": ["Young Boys", "Bâle", "Lugano", "Servette"] },
+        { "nom": "Ludogorets", "image": "https://crests.football-data.org/1901.svg", "sport": "foot", "reponse": "Ludogorets", "choix": ["Ludogorets", "CSKA Sofia", "Levski", "Botev"] },
+        { "nom": "CSKA Sofia", "image": "https://crests.football-data.org/1900.svg", "sport": "foot", "reponse": "CSKA Sofia", "choix": ["CSKA Sofia", "Ludogorets", "Levski", "Botev"] },
+        { "nom": "IFK Göteborg", "image": "https://crests.football-data.org/1895.svg", "sport": "foot", "reponse": "IFK Göteborg", "choix": ["IFK Göteborg", "Malmö FF", "AIK", "Djurgarden"] },
+        { "nom": "Boavista", "image": "https://crests.football-data.org/810.svg", "sport": "foot", "reponse": "Boavista", "choix": ["Boavista", "Porto", "Braga", "Vitória SC"] },
+        { "nom": "KAA Gent", "image": "https://crests.football-data.org/1057.svg", "sport": "foot", "reponse": "KAA Gent", "choix": ["KAA Gent", "Club Brugge", "Anderlecht", "Antwerp"] },
+        { "nom": "Fiorentina", "image": "https://crests.football-data.org/99.svg", "sport": "foot", "reponse": "Fiorentina", "choix": ["Fiorentina", "Bologna", "Torino", "Sampdoria"] },
+        { "nom": "Atalanta", "image": "https://crests.football-data.org/102.svg", "sport": "foot", "reponse": "Atalanta", "choix": ["Atalanta", "Bologna", "Fiorentina", "Hellas Vérone"] },
+        { "nom": "Betis", "image": "https://crests.football-data.org/90.svg", "sport": "foot", "reponse": "Real Betis", "choix": ["Real Betis", "Séville", "Celta Vigo", "Málaga"] },
+        { "nom": "Wolfsburg", "image": "https://crests.football-data.org/11.svg", "sport": "foot", "reponse": "Wolfsburg", "choix": ["Wolfsburg", "Leverkusen", "Hoffenheim", "Augsburg"] },
+        { "nom": "Werder", "image": "https://crests.football-data.org/12.svg", "sport": "foot", "reponse": "Werder Brême", "choix": ["Werder Brême", "Hambourg", "Cologne", "Wolfsburg"] },
+        { "nom": "BMG", "image": "https://crests.football-data.org/18.svg", "sport": "foot", "reponse": "Borussia MG", "choix": ["Borussia MG", "Dortmund", "Cologne", "Wolfsburg"] },
+        { "nom": "Stuttgart", "image": "https://crests.football-data.org/10.svg", "sport": "foot", "reponse": "Stuttgart", "choix": ["Stuttgart", "Fribourg", "Augsburg", "Karlsruhe"] },
+        { "nom": "Torino", "image": "https://crests.football-data.org/585.svg", "sport": "foot", "reponse": "Torino", "choix": ["Torino", "Juventus", "Sampdoria", "Gênes"] },
+        { "nom": "Copenhague", "image": "https://crests.football-data.org/1876.svg", "sport": "foot", "reponse": "FC Copenhague", "choix": ["FC Copenhague", "Brondby", "Midtjylland", "Aarhus"] }
       ]
     }
   ]
