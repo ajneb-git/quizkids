@@ -46,7 +46,7 @@
         { "nom": "Leverkusen", "image": "/logos/leverkusen.svg", "sport": "foot", "reponse": "Leverkusen", "choix": ["Leverkusen", "Dortmund", "Bayern Munich", "Cologne"] },
         { "nom": "Lille", "image": "/logos/lille.svg", "sport": "foot", "reponse": "Lille", "choix": ["Lille", "Lens", "Rennes", "Nantes"] },
         { "nom": "Rennes", "image": "/logos/rennes.svg", "sport": "foot", "reponse": "Rennes", "choix": ["Rennes", "Nantes", "Angers", "Lorient"] },
-        { "nom": "Lens", "image": "/logos/lens.svg", "sport": "foot", "reponse": "Lens", "choix": ["Lens", "Lille", "Amiens", "Valenciennes"] },
+        { "nom": "Toulouse", "image": "/logos/toulouse.svg", "sport": "foot", "reponse": "Toulouse", "choix": ["Toulouse", "Montpellier", "Nantes", "Bordeaux"] },
         { "nom": "West Ham", "image": "/logos/west-ham.svg", "sport": "foot", "reponse": "West Ham", "choix": ["West Ham", "Chelsea", "Arsenal", "Tottenham"] },
         { "nom": "Nantes", "image": "/logos/nantes.svg", "sport": "foot", "reponse": "Nantes", "choix": ["Nantes", "Rennes", "Angers", "Lorient"] },
         { "nom": "Auxerre", "image": "/logos/auxerre.svg", "sport": "foot", "reponse": "Auxerre", "choix": ["Auxerre", "Troyes", "Dijon", "Reims"] },
