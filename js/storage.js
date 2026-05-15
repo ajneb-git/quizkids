@@ -174,3 +174,31 @@ export function saveDefiLogoRecord(niveau) {
   }
   return false;
 }
+
+// ─── Défi Logos record mensuel ────────────────────────────────────────────────
+
+function currentMonth() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+}
+
+export function getDefiLogoMonthlyRecord() {
+  try {
+    const raw = localStorage.getItem('defi_logos_monthly_record');
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    return data.month === currentMonth() ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveDefiLogoMonthlyRecord(niveau) {
+  const current = getDefiLogoMonthlyRecord();
+  if (current === null || niveau > current.niveau) {
+    const date = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('defi_logos_monthly_record', JSON.stringify({ niveau, date, month: currentMonth() }));
+    return true;
+  }
+  return false;
+}

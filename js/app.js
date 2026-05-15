@@ -1,5 +1,5 @@
 import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
-import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord, getDefiLogoRecord, saveDefiLogoRecord } from './storage.js';
+import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord, getDefiLogoRecord, saveDefiLogoRecord, getDefiLogoMonthlyRecord, saveDefiLogoMonthlyRecord } from './storage.js';
 import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
@@ -812,9 +812,15 @@ async function startDefiLogos() {
 }
 
 function renderLogosRecord() {
-  const record = getDefiLogoRecord();
+  const record  = getDefiLogoRecord();
+  const monthly = getDefiLogoMonthlyRecord();
   const el = document.getElementById('logos-record-live');
-  if (el && record) el.textContent = `Record : ${record.niveau} / 50`;
+  if (el) {
+    const parts = [];
+    if (record)  parts.push(`🏆 ${record.niveau}/50`);
+    if (monthly) parts.push(`📅 ${monthly.niveau}/50`);
+    el.textContent = parts.length ? parts.join('  ·  ') : '';
+  }
 }
 
 function renderLogosQuestion() {
@@ -823,8 +829,7 @@ function renderLogosQuestion() {
 
   document.getElementById('logos-level-label').textContent = `Niveau ${niveau} / 50`;
   document.getElementById('logos-progress-fill').style.width = `${(logosIndex / 50) * 100}%`;
-  document.getElementById('defi-logos-question').textContent =
-    q.sport === 'nba' ? 'À quelle franchise NBA appartient ce logo ?' : 'À quel club appartient ce logo ?';
+  document.getElementById('defi-logos-question').textContent = 'À quel club appartient ce logo ?';
 
   const img = document.getElementById('defi-logo-img');
   img.src = q.image;
@@ -875,7 +880,8 @@ function handleLogosAnswer(choice, q) {
 
 function endDefiLogos(completed, erreur) {
   const niveauAtteint = completed ? 50 : logosIndex;
-  const isNewRecord = saveDefiLogoRecord(niveauAtteint);
+  const isNewRecord        = saveDefiLogoRecord(niveauAtteint);
+  const isNewMonthlyRecord = saveDefiLogoMonthlyRecord(niveauAtteint);
 
   showScreen('defi-logos-results');
 
@@ -883,23 +889,46 @@ function endDefiLogos(completed, erreur) {
   document.getElementById('logos-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
   document.getElementById('logos-result-score').textContent = `${niveauAtteint} / 50`;
 
-  const record = getDefiLogoRecord();
+  const record        = getDefiLogoRecord();
+  const monthlyRecord = getDefiLogoMonthlyRecord();
+
   let msg = '';
-  if (completed)              msg = '🎉 Parfait ! Tu connais tous les logos !';
+  if (completed)               msg = '🎉 Parfait ! Tu connais tous les logos !';
   else if (niveauAtteint === 0) msg = 'Aïe, dès le premier logo ! Entraîne-toi et reviens !';
   else if (niveauAtteint < 15) msg = 'Bon début ! Tu maîtrises les plus grands clubs.';
-  else if (niveauAtteint < 30) msg = 'Pas mal ! Les clubs européens et les grandes franchises NBA te résistent encore.';
-  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un vrai connaisseur du sport mondial !';
-  else                        msg = 'Exceptionnel ! Tu frôles la perfection !';
+  else if (niveauAtteint < 30) msg = 'Pas mal ! Les clubs européens te résistent encore.';
+  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un vrai connaisseur du football !';
+  else                         msg = 'Exceptionnel ! Tu frôles la perfection !';
   document.getElementById('logos-result-msg').textContent = msg;
 
   const recordEl = document.getElementById('logos-result-record');
-  if (isNewRecord) {
+  if (isNewRecord || isNewMonthlyRecord) {
     recordEl.style.display = 'block';
-    recordEl.textContent = niveauAtteint === 50 ? '🏆 Record absolu — 50/50 !' : `🏆 Nouveau record : ${niveauAtteint}/50 !`;
+    if (isNewRecord && niveauAtteint === 50) recordEl.textContent = '🏆 Record absolu — 50/50 !';
+    else if (isNewRecord)        recordEl.textContent = `🏆 Nouveau record all-time : ${niveauAtteint}/50 !`;
+    else if (isNewMonthlyRecord) recordEl.textContent = `📅 Nouveau record du mois : ${niveauAtteint}/50 !`;
   } else {
     recordEl.style.display = 'none';
-    if (record) document.getElementById('logos-result-msg').textContent += ` (Record actuel : ${record.niveau}/50)`;
+  }
+
+  // ── Tableau des records ──
+  const recordsPanel = document.getElementById('logos-result-records');
+  if (recordsPanel) {
+    const rows = [];
+    if (record) {
+      rows.push(`<div class="record-row">
+        <span class="record-label">🏆 Meilleur score all-time</span>
+        <span class="record-value${isNewRecord ? ' new' : ''}">${record.niveau} / 50 <small>(${record.date})</small></span>
+      </div>`);
+    }
+    if (monthlyRecord) {
+      const monthLabel = new Date(monthlyRecord.month + '-01').toLocaleString('fr-FR', { month: 'long', year: 'numeric' });
+      rows.push(`<div class="record-row">
+        <span class="record-label">📅 Meilleur ce mois (${monthLabel})</span>
+        <span class="record-value${isNewMonthlyRecord ? ' new' : ''}">${monthlyRecord.niveau} / 50</span>
+      </div>`);
+    }
+    recordsPanel.innerHTML = rows.join('');
   }
 
   const errorEl = document.getElementById('logos-result-error');
