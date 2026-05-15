@@ -986,8 +986,10 @@ async function loadSvgMap(url) {
   const res = await fetch(url);
   const text = await res.text();
   const parser = new DOMParser();
-  const doc = parser.parseFromString(text, 'image/svg+xml');
-  const svgEl = doc.documentElement;
+  // Use text/html (lenient) so malformed SVG doesn't produce a parseerror document
+  const doc = parser.parseFromString(text, 'text/html');
+  const svgEl = doc.querySelector('svg');
+  if (!svgEl) throw new Error('No SVG element found in ' + url);
   // Strip inline fill/stroke so CSS controls them
   svgEl.querySelectorAll('path, rect, polygon').forEach(el => {
     el.removeAttribute('fill');
@@ -1183,6 +1185,7 @@ function endDefiDepartements(completed, erreur) {
       <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
     if (franceSvg) {
       const wrap = document.createElement('div');
+      wrap.className = 'map-container';
       wrap.style.cssText = 'margin:10px auto;width:160px;height:108px';
       const mini = franceSvg.cloneNode(true);
       mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
@@ -1324,6 +1327,7 @@ function endDefiVilles(completed, erreur) {
       <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
     if (franceSvg) {
       const wrap = document.createElement('div');
+      wrap.className = 'map-container';
       wrap.style.cssText = 'margin:10px auto;width:160px;height:108px';
       const mini = franceSvg.cloneNode(true);
       mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
@@ -1461,6 +1465,7 @@ function endDefiPays(completed, erreur) {
       <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
     if (worldSvg) {
       const wrap = document.createElement('div');
+      wrap.className = 'map-container';
       wrap.style.cssText = 'margin:10px auto;width:200px;height:102px';
       const mini = worldSvg.cloneNode(true);
       mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
