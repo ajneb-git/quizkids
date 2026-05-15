@@ -202,3 +202,56 @@ export function saveDefiLogoMonthlyRecord(niveau) {
   }
   return false;
 }
+
+// ─── Helper générique pour records géo ───────────────────────────────────────
+
+function makeGeoRecordFns(key) {
+  return {
+    get: () => {
+      try { const r = localStorage.getItem(key); return r ? JSON.parse(r) : null; } catch { return null; }
+    },
+    save: (niveau) => {
+      const rec = makeGeoRecordFns(key).get();
+      if (rec === null || niveau > rec.niveau) {
+        localStorage.setItem(key, JSON.stringify({ niveau, date: new Date().toISOString().slice(0, 10) }));
+        return true;
+      }
+      return false;
+    },
+    getMonthly: () => {
+      try {
+        const r = localStorage.getItem(key + '_monthly'); if (!r) return null;
+        const d = JSON.parse(r); return d.month === currentMonth() ? d : null;
+      } catch { return null; }
+    },
+    saveMonthly: (niveau) => {
+      const cur = makeGeoRecordFns(key).getMonthly();
+      if (cur === null || niveau > cur.niveau) {
+        localStorage.setItem(key + '_monthly', JSON.stringify({ niveau, date: new Date().toISOString().slice(0, 10), month: currentMonth() }));
+        return true;
+      }
+      return false;
+    }
+  };
+}
+
+// ─── Défi Départements ───────────────────────────────────────────────────────
+const _dep = makeGeoRecordFns('defi_departements_record');
+export const getDefiDepartementsRecord      = _dep.get;
+export const saveDefiDepartementsRecord     = _dep.save;
+export const getDefiDepartementsMonthly     = _dep.getMonthly;
+export const saveDefiDepartementsMonthly    = _dep.saveMonthly;
+
+// ─── Défi Villes ─────────────────────────────────────────────────────────────
+const _vil = makeGeoRecordFns('defi_villes_record');
+export const getDefiVillesRecord            = _vil.get;
+export const saveDefiVillesRecord           = _vil.save;
+export const getDefiVillesMonthly           = _vil.getMonthly;
+export const saveDefiVillesMonthly          = _vil.saveMonthly;
+
+// ─── Défi Pays ───────────────────────────────────────────────────────────────
+const _pays = makeGeoRecordFns('defi_pays_record');
+export const getDefiPaysRecord              = _pays.get;
+export const saveDefiPaysRecord             = _pays.save;
+export const getDefiPaysMonthly             = _pays.getMonthly;
+export const saveDefiPaysMonthly            = _pays.saveMonthly;

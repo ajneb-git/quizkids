@@ -1127,3 +1127,103 @@ html, body {
   animation: flagPop 0.3s ease;
   padding: 0 12px;
 }
+
+/* ── Défi Géographie (Départements / Villes / Pays) ─────────────────────────── */
+
+.map-quiz-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.france-map-container {
+  max-height: 240px;
+  aspect-ratio: 1.48;
+}
+
+.world-map-container {
+  max-height: 220px;
+  aspect-ratio: 2;
+}
+
+.map-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Path/rect styles for geo maps */
+.map-container svg path,
+.map-container svg rect {
+  stroke: rgba(255,255,255,0.2);
+  stroke-width: 0.5;
+  fill: rgba(255,255,255,0.07);
+  transition: fill 0.2s;
+  cursor: default;
+}
+
+.map-container svg path.map-highlight,
+.map-container svg rect.map-highlight {
+  fill: #ffd700;
+  stroke: rgba(0,0,0,0.4);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 6px rgba(255,215,0,0.5));
+}
+
+.map-container svg path.map-answer-correct,
+.map-container svg rect.map-answer-correct {
+  fill: #4ade80;
+}
+
+.map-container svg path.map-answer-wrong,
+.map-container svg rect.map-answer-wrong {
+  fill: #f87171;
+}
+
+/* City marker (pulsing dot) */
+.city-marker-outer {
+  animation: cityPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes cityPulse {
+  0%, 100% { opacity: 1; r: 10; }
+  50%       { opacity: 0.5; r: 14; }
+}
+
+.map-quiz-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* Erreur recap géo */
+.geo-error-recap {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.geo-error-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 4px 0;
+}

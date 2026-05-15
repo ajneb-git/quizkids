@@ -1,5 +1,5 @@
 import { CONFIG, LEVEL_CONFIG, REVISION_CONFIG } from './config.js';
-import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord, getDefiLogoRecord, saveDefiLogoRecord, getDefiLogoMonthlyRecord, saveDefiLogoMonthlyRecord } from './storage.js';
+import { getActiveLevel, setActiveLevel, hasPlayedToday, getTodayScores, getTodayWrongAnswers, getBestScore, markPlayedToday, getDefiFlagRecord, saveDefiFlagRecord, getDefiCapitaleRecord, saveDefiCapitaleRecord, getDefiLogoRecord, saveDefiLogoRecord, getDefiLogoMonthlyRecord, saveDefiLogoMonthlyRecord, getDefiDepartementsRecord, saveDefiDepartementsRecord, getDefiDepartementsMonthly, saveDefiDepartementsMonthly, getDefiVillesRecord, saveDefiVillesRecord, getDefiVillesMonthly, saveDefiVillesMonthly, getDefiPaysRecord, saveDefiPaysRecord, getDefiPaysMonthly, saveDefiPaysMonthly } from './storage.js';
 import { loadQuestions, loadRevisionQuestions, prepareQuestions, QuizEngine, RevisionEngine } from './quiz.js';
 import { renderResults, renderEncouragingMessage, renderWrongAnswers, renderComeBackTomorrow, setupShareButton } from './results.js';
 import { decodeScores, getRefFromHash, getShareUrl } from './share.js';
@@ -20,6 +20,12 @@ let logosData = null;
 let currentLogos = [];
 let logosIndex = 0;
 let deferredInstallPrompt = null;
+
+let departementsData = null; let currentDepartements = []; let departementsIndex = 0;
+let villesData = null;       let currentVilles = [];       let villesIndex = 0;
+let paysData = null;         let currentPays = [];          let paysIndex = 0;
+let franceSvg = null;   // SVG element (cached after first load)
+let worldSvg = null;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -391,6 +397,21 @@ async function route() {
     return;
   }
 
+  if (hash === '#defi-departements') {
+    await startDefiDepartements();
+    return;
+  }
+
+  if (hash === '#defi-villes') {
+    await startDefiVilles();
+    return;
+  }
+
+  if (hash === '#defi-pays') {
+    await startDefiPays();
+    return;
+  }
+
   if (hash.startsWith('#revision-quiz')) {
     const theme = new URLSearchParams(hash.split('?')[1] ?? '').get('theme') || 'conjugaison';
     await startRevision(theme);
@@ -627,9 +648,12 @@ function endDefi(completed, erreur) {
 
 function updateDefiRecordBadge() {
   [
-    { id: 'defi-drapeaux-record',  fn: getDefiFlagRecord },
-    { id: 'defi-capitales-record', fn: getDefiCapitaleRecord },
-    { id: 'defi-logos-record',     fn: getDefiLogoRecord },
+    { id: 'defi-drapeaux-record',      fn: getDefiFlagRecord },
+    { id: 'defi-capitales-record',     fn: getDefiCapitaleRecord },
+    { id: 'defi-logos-record',         fn: getDefiLogoRecord },
+    { id: 'defi-departements-record',  fn: getDefiDepartementsRecord },
+    { id: 'defi-villes-record',        fn: getDefiVillesRecord },
+    { id: 'defi-pays-record',          fn: getDefiPaysRecord },
   ].forEach(({ id, fn }) => {
     const rec = fn();
     const el  = document.getElementById(id);
@@ -953,6 +977,508 @@ function endDefiLogos(completed, erreur) {
     renderLogosQuestion();
   };
 
+  updateDefiRecordBadge();
+}
+
+// ─── Geo Map Helpers ─────────────────────────────────────────────────────────
+
+async function loadSvgMap(url) {
+  const res = await fetch(url);
+  const text = await res.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, 'image/svg+xml');
+  const svgEl = doc.documentElement;
+  // Strip inline fill/stroke so CSS controls them
+  svgEl.querySelectorAll('path, rect, polygon').forEach(el => {
+    el.removeAttribute('fill');
+    el.removeAttribute('stroke');
+    el.removeAttribute('stroke-width');
+  });
+  return svgEl;
+}
+
+function injectSvg(containerId, svgEl) {
+  const container = document.getElementById(containerId);
+  if (!container) return null;
+  container.innerHTML = '';
+  const clone = svgEl.cloneNode(true);
+  clone.setAttribute('width', '100%');
+  clone.setAttribute('height', '100%');
+  clone.removeAttribute('style');
+  container.appendChild(clone);
+  return clone;
+}
+
+function highlightGeoPath(svgEl, id) {
+  svgEl.querySelectorAll('.map-highlight').forEach(el => el.classList.remove('map-highlight'));
+  const target = svgEl.querySelector(`[id="${id}"]`);
+  if (!target) return;
+  // For world SVG: <g id="FR"> containing <path> elements
+  if (target.tagName === 'g') {
+    target.querySelectorAll('path, rect, polygon').forEach(p => p.classList.add('map-highlight'));
+  } else {
+    target.classList.add('map-highlight');
+  }
+}
+
+// France SVG coordinate space (from GeoJSON → SVG conversion)
+const FRANCE_SVG_BOUNDS = { minLon: -5.40, maxLon: 9.86, minLat: 41.07, maxLat: 51.39, w: 800, h: 541 };
+
+function latLonToFranceSvg(lat, lon) {
+  const b = FRANCE_SVG_BOUNDS;
+  const x = (lon - b.minLon) / (b.maxLon - b.minLon) * b.w;
+  const y = (1 - (lat - b.minLat) / (b.maxLat - b.minLat)) * b.h;
+  return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+}
+
+function showCityMarker(svgEl, lat, lon) {
+  svgEl.querySelectorAll('.city-marker-outer, .city-marker-inner').forEach(el => el.remove());
+  const { x, y } = latLonToFranceSvg(lat, lon);
+  const NS = 'http://www.w3.org/2000/svg';
+  const outer = document.createElementNS(NS, 'circle');
+  outer.setAttribute('cx', x); outer.setAttribute('cy', y); outer.setAttribute('r', '10');
+  outer.setAttribute('fill', '#ffd700'); outer.setAttribute('opacity', '0.55');
+  outer.classList.add('city-marker-outer');
+  const inner = document.createElementNS(NS, 'circle');
+  inner.setAttribute('cx', x); inner.setAttribute('cy', y); inner.setAttribute('r', '5');
+  inner.setAttribute('fill', '#ffd700');
+  inner.classList.add('city-marker-inner');
+  svgEl.appendChild(outer);
+  svgEl.appendChild(inner);
+}
+
+function geoRecordPanel(panelId, record, monthly, isNewRecord, isNewMonthly) {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+  const rows = [];
+  if (record) {
+    rows.push(`<div class="record-row">
+      <span class="record-label">🏆 Meilleur score all-time</span>
+      <span class="record-value${isNewRecord ? ' new' : ''}">${record.niveau} / 50 <small>(${record.date})</small></span>
+    </div>`);
+  }
+  if (monthly) {
+    const label = new Date(monthly.month + '-01').toLocaleString('fr-FR', { month: 'long', year: 'numeric' });
+    rows.push(`<div class="record-row">
+      <span class="record-label">📅 Meilleur ce mois (${label})</span>
+      <span class="record-value${isNewMonthly ? ' new' : ''}">${monthly.niveau} / 50</span>
+    </div>`);
+  }
+  panel.innerHTML = rows.join('');
+}
+
+// ─── Défi Départements ────────────────────────────────────────────────────────
+
+async function startDefiDepartements() {
+  if (!departementsData) {
+    try {
+      const res = await fetch('./data/departements-defi.json');
+      departementsData = await res.json();
+    } catch (e) { console.error('Erreur departements-defi.json', e); showScreen('home'); return; }
+  }
+  if (!franceSvg) {
+    try { franceSvg = await loadSvgMap('./maps/france-departements.svg'); }
+    catch (e) { console.error('Erreur france-departements.svg', e); showScreen('home'); return; }
+  }
+  currentDepartements = buildDefiGame(departementsData);
+  departementsIndex = 0;
+  showScreen('defi-departements');
+  injectSvg('dep-map-container', franceSvg);
+  renderDepRecord();
+  renderDepQuestion();
+}
+
+function renderDepRecord() {
+  const record = getDefiDepartementsRecord();
+  const monthly = getDefiDepartementsMonthly();
+  const el = document.getElementById('dep-record-live');
+  if (!el) return;
+  const parts = [];
+  if (record)  parts.push(`🏆 ${record.niveau}/50`);
+  if (monthly) parts.push(`📅 ${monthly.niveau}/50`);
+  el.textContent = parts.join('  ·  ');
+}
+
+function renderDepQuestion() {
+  const q = currentDepartements[departementsIndex];
+  const niveau = departementsIndex + 1;
+  document.getElementById('dep-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('dep-progress-fill').style.width = `${(departementsIndex / 50) * 100}%`;
+
+  const svgEl = document.querySelector('#dep-map-container svg');
+  if (svgEl) highlightGeoPath(svgEl, q.id);
+
+  const feedback = document.getElementById('dep-feedback');
+  feedback.className = 'feedback hidden'; feedback.innerHTML = '';
+
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('dep-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn'; btn.textContent = choice;
+    btn.addEventListener('click', () => handleDepAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleDepAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+  document.querySelectorAll('#dep-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+  const feedback = document.getElementById('dep-feedback');
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    departementsIndex++;
+    if (departementsIndex >= currentDepartements.length) setTimeout(() => endDefiDepartements(true, null), 1500);
+    else setTimeout(renderDepQuestion, 1500);
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefiDepartements(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 3000);
+  }
+}
+
+function endDefiDepartements(completed, erreur) {
+  const niveauAtteint      = completed ? 50 : departementsIndex;
+  const isNewRecord        = saveDefiDepartementsRecord(niveauAtteint);
+  const isNewMonthlyRecord = saveDefiDepartementsMonthly(niveauAtteint);
+
+  showScreen('defi-departements-results');
+  document.getElementById('dep-result-icon').textContent  = completed ? '🏆' : '💥';
+  document.getElementById('dep-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+  document.getElementById('dep-result-score').textContent = `${niveauAtteint} / 50`;
+
+  const record  = getDefiDepartementsRecord();
+  const monthly = getDefiDepartementsMonthly();
+
+  let msg = '';
+  if (completed)                msg = '🎉 Parfait ! Tu connais tous les départements !';
+  else if (niveauAtteint === 0) msg = 'Aïe, dès le premier département ! À retenter !';
+  else if (niveauAtteint < 15) msg = 'Bon début ! Tu maîtrises les grands départements.';
+  else if (niveauAtteint < 30) msg = 'Pas mal ! Les départements moins connus te résistent encore.';
+  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un expert de la géographie française !';
+  else                          msg = 'Exceptionnel ! Tu frôles la perfection !';
+  document.getElementById('dep-result-msg').textContent = msg;
+
+  const recordEl = document.getElementById('dep-result-record');
+  if (isNewRecord || isNewMonthlyRecord) {
+    recordEl.style.display = 'block';
+    if (isNewRecord && niveauAtteint === 50) recordEl.textContent = '🏆 Record absolu — 50/50 !';
+    else if (isNewRecord)        recordEl.textContent = `🏆 Nouveau record all-time : ${niveauAtteint}/50 !`;
+    else if (isNewMonthlyRecord) recordEl.textContent = `📅 Nouveau record du mois : ${niveauAtteint}/50 !`;
+  } else { recordEl.style.display = 'none'; }
+
+  geoRecordPanel('dep-result-records', record, monthly, isNewRecord, isNewMonthlyRecord);
+
+  const errorEl = document.getElementById('dep-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">Le département qui t'a arrêté :</p>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
+    if (franceSvg) {
+      const wrap = document.createElement('div');
+      wrap.style.cssText = 'margin:10px auto;width:160px;height:108px';
+      const mini = franceSvg.cloneNode(true);
+      mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
+      mini.removeAttribute('style');
+      highlightGeoPath(mini, erreur.id);
+      wrap.appendChild(mini);
+      errorEl.insertBefore(wrap, errorEl.children[1]);
+    }
+  } else { errorEl.innerHTML = ''; }
+
+  document.getElementById('btn-dep-replay').onclick = () => {
+    currentDepartements = buildDefiGame(departementsData);
+    departementsIndex = 0;
+    showScreen('defi-departements');
+    injectSvg('dep-map-container', franceSvg);
+    renderDepRecord();
+    renderDepQuestion();
+  };
+  updateDefiRecordBadge();
+}
+
+// ─── Défi Villes ──────────────────────────────────────────────────────────────
+
+async function startDefiVilles() {
+  if (!villesData) {
+    try {
+      const res = await fetch('./data/villes-defi.json');
+      villesData = await res.json();
+    } catch (e) { console.error('Erreur villes-defi.json', e); showScreen('home'); return; }
+  }
+  if (!franceSvg) {
+    try { franceSvg = await loadSvgMap('./maps/france-departements.svg'); }
+    catch (e) { console.error('Erreur france-departements.svg', e); showScreen('home'); return; }
+  }
+  currentVilles = buildDefiGame(villesData);
+  villesIndex = 0;
+  showScreen('defi-villes');
+  injectSvg('vil-map-container', franceSvg);
+  renderVilRecord();
+  renderVilQuestion();
+}
+
+function renderVilRecord() {
+  const record = getDefiVillesRecord();
+  const monthly = getDefiVillesMonthly();
+  const el = document.getElementById('vil-record-live');
+  if (!el) return;
+  const parts = [];
+  if (record)  parts.push(`🏆 ${record.niveau}/50`);
+  if (monthly) parts.push(`📅 ${monthly.niveau}/50`);
+  el.textContent = parts.join('  ·  ');
+}
+
+function renderVilQuestion() {
+  const q = currentVilles[villesIndex];
+  const niveau = villesIndex + 1;
+  document.getElementById('vil-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('vil-progress-fill').style.width = `${(villesIndex / 50) * 100}%`;
+
+  const svgEl = document.querySelector('#vil-map-container svg');
+  if (svgEl) {
+    // Clear dept highlights, show city marker
+    svgEl.querySelectorAll('.map-highlight').forEach(el => el.classList.remove('map-highlight'));
+    showCityMarker(svgEl, q.lat, q.lon);
+  }
+
+  const feedback = document.getElementById('vil-feedback');
+  feedback.className = 'feedback hidden'; feedback.innerHTML = '';
+
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('vil-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn'; btn.textContent = choice;
+    btn.addEventListener('click', () => handleVilAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleVilAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+  document.querySelectorAll('#vil-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+  const feedback = document.getElementById('vil-feedback');
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    villesIndex++;
+    if (villesIndex >= currentVilles.length) setTimeout(() => endDefiVilles(true, null), 1500);
+    else setTimeout(renderVilQuestion, 1500);
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefiVilles(false, { reponse: q.reponse, choixUser: choice, lat: q.lat, lon: q.lon }), 3000);
+  }
+}
+
+function endDefiVilles(completed, erreur) {
+  const niveauAtteint      = completed ? 50 : villesIndex;
+  const isNewRecord        = saveDefiVillesRecord(niveauAtteint);
+  const isNewMonthlyRecord = saveDefiVillesMonthly(niveauAtteint);
+
+  showScreen('defi-villes-results');
+  document.getElementById('vil-result-icon').textContent  = completed ? '🏆' : '💥';
+  document.getElementById('vil-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+  document.getElementById('vil-result-score').textContent = `${niveauAtteint} / 50`;
+
+  const record  = getDefiVillesRecord();
+  const monthly = getDefiVillesMonthly();
+
+  let msg = '';
+  if (completed)                msg = '🎉 Parfait ! Tu connais toutes les villes françaises !';
+  else if (niveauAtteint === 0) msg = 'Aïe, dès la première ville ! À retenter !';
+  else if (niveauAtteint < 15) msg = 'Bon début ! Tu maîtrises les grandes villes.';
+  else if (niveauAtteint < 30) msg = 'Pas mal ! Les villes moyennes te résistent encore.';
+  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un expert de la France !';
+  else                          msg = 'Exceptionnel ! Tu frôles la perfection !';
+  document.getElementById('vil-result-msg').textContent = msg;
+
+  const recordEl = document.getElementById('vil-result-record');
+  if (isNewRecord || isNewMonthlyRecord) {
+    recordEl.style.display = 'block';
+    if (isNewRecord && niveauAtteint === 50) recordEl.textContent = '🏆 Record absolu — 50/50 !';
+    else if (isNewRecord)        recordEl.textContent = `🏆 Nouveau record all-time : ${niveauAtteint}/50 !`;
+    else if (isNewMonthlyRecord) recordEl.textContent = `📅 Nouveau record du mois : ${niveauAtteint}/50 !`;
+  } else { recordEl.style.display = 'none'; }
+
+  geoRecordPanel('vil-result-records', record, monthly, isNewRecord, isNewMonthlyRecord);
+
+  const errorEl = document.getElementById('vil-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">La ville qui t'a arrêtée :</p>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
+    if (franceSvg) {
+      const wrap = document.createElement('div');
+      wrap.style.cssText = 'margin:10px auto;width:160px;height:108px';
+      const mini = franceSvg.cloneNode(true);
+      mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
+      mini.removeAttribute('style');
+      showCityMarker(mini, erreur.lat, erreur.lon);
+      wrap.appendChild(mini);
+      errorEl.insertBefore(wrap, errorEl.children[1]);
+    }
+  } else { errorEl.innerHTML = ''; }
+
+  document.getElementById('btn-vil-replay').onclick = () => {
+    currentVilles = buildDefiGame(villesData);
+    villesIndex = 0;
+    showScreen('defi-villes');
+    injectSvg('vil-map-container', franceSvg);
+    renderVilRecord();
+    renderVilQuestion();
+  };
+  updateDefiRecordBadge();
+}
+
+// ─── Défi Pays ────────────────────────────────────────────────────────────────
+
+async function startDefiPays() {
+  if (!paysData) {
+    try {
+      const res = await fetch('./data/pays-defi.json');
+      paysData = await res.json();
+    } catch (e) { console.error('Erreur pays-defi.json', e); showScreen('home'); return; }
+  }
+  if (!worldSvg) {
+    try { worldSvg = await loadSvgMap('./maps/world.svg'); }
+    catch (e) { console.error('Erreur world.svg', e); showScreen('home'); return; }
+  }
+  currentPays = buildDefiGame(paysData);
+  paysIndex = 0;
+  showScreen('defi-pays');
+  injectSvg('pays-map-container', worldSvg);
+  renderPaysRecord();
+  renderPaysQuestion();
+}
+
+function renderPaysRecord() {
+  const record = getDefiPaysRecord();
+  const monthly = getDefiPaysMonthly();
+  const el = document.getElementById('pays-record-live');
+  if (!el) return;
+  const parts = [];
+  if (record)  parts.push(`🏆 ${record.niveau}/50`);
+  if (monthly) parts.push(`📅 ${monthly.niveau}/50`);
+  el.textContent = parts.join('  ·  ');
+}
+
+function renderPaysQuestion() {
+  const q = currentPays[paysIndex];
+  const niveau = paysIndex + 1;
+  document.getElementById('pays-level-label').textContent = `Niveau ${niveau} / 50`;
+  document.getElementById('pays-progress-fill').style.width = `${(paysIndex / 50) * 100}%`;
+
+  const svgEl = document.querySelector('#pays-map-container svg');
+  if (svgEl) highlightGeoPath(svgEl, q.id);
+
+  const feedback = document.getElementById('pays-feedback');
+  feedback.className = 'feedback hidden'; feedback.innerHTML = '';
+
+  const shuffled = [...q.choix].sort(() => Math.random() - 0.5);
+  const choicesEl = document.getElementById('pays-choices');
+  choicesEl.innerHTML = '';
+  shuffled.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn'; btn.textContent = choice;
+    btn.addEventListener('click', () => handlePaysAnswer(choice, q));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handlePaysAnswer(choice, q) {
+  const isCorrect = choice === q.reponse;
+  document.querySelectorAll('#pays-choices .choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === q.reponse) btn.classList.add('correct');
+    else if (btn.textContent === choice && !isCorrect) btn.classList.add('incorrect');
+  });
+  const feedback = document.getElementById('pays-feedback');
+  if (isCorrect) {
+    feedback.className = 'feedback correct';
+    feedback.textContent = '✓ Bonne réponse !';
+    paysIndex++;
+    if (paysIndex >= currentPays.length) setTimeout(() => endDefiPays(true, null), 1500);
+    else setTimeout(renderPaysQuestion, 1500);
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
+    setTimeout(() => endDefiPays(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 3000);
+  }
+}
+
+function endDefiPays(completed, erreur) {
+  const niveauAtteint      = completed ? 50 : paysIndex;
+  const isNewRecord        = saveDefiPaysRecord(niveauAtteint);
+  const isNewMonthlyRecord = saveDefiPaysMonthly(niveauAtteint);
+
+  showScreen('defi-pays-results');
+  document.getElementById('pays-result-icon').textContent  = completed ? '🏆' : '💥';
+  document.getElementById('pays-result-title').textContent = completed ? 'Bravo, défi complété !' : 'Game over !';
+  document.getElementById('pays-result-score').textContent = `${niveauAtteint} / 50`;
+
+  const record  = getDefiPaysRecord();
+  const monthly = getDefiPaysMonthly();
+
+  let msg = '';
+  if (completed)                msg = '🎉 Parfait ! Tu connais tous les pays du monde !';
+  else if (niveauAtteint === 0) msg = 'Aïe, dès le premier pays ! À retenter !';
+  else if (niveauAtteint < 15) msg = 'Bon début ! Tu maîtrises les grands pays.';
+  else if (niveauAtteint < 30) msg = 'Pas mal ! Les petits pays te résistent encore.';
+  else if (niveauAtteint < 45) msg = 'Très bien ! Tu es un expert en géographie mondiale !';
+  else                          msg = 'Exceptionnel ! Tu frôles la perfection !';
+  document.getElementById('pays-result-msg').textContent = msg;
+
+  const recordEl = document.getElementById('pays-result-record');
+  if (isNewRecord || isNewMonthlyRecord) {
+    recordEl.style.display = 'block';
+    if (isNewRecord && niveauAtteint === 50) recordEl.textContent = '🏆 Record absolu — 50/50 !';
+    else if (isNewRecord)        recordEl.textContent = `🏆 Nouveau record all-time : ${niveauAtteint}/50 !`;
+    else if (isNewMonthlyRecord) recordEl.textContent = `📅 Nouveau record du mois : ${niveauAtteint}/50 !`;
+  } else { recordEl.style.display = 'none'; }
+
+  geoRecordPanel('pays-result-records', record, monthly, isNewRecord, isNewMonthlyRecord);
+
+  const errorEl = document.getElementById('pays-result-error');
+  if (erreur) {
+    errorEl.innerHTML = `
+      <p class="defi-error-title">Le pays qui t'a arrêté :</p>
+      <p>Tu as répondu <span class="wrong-answer-text">${erreur.choixUser}</span></p>
+      <p>✓ La bonne réponse était : <strong>${erreur.reponse}</strong></p>`;
+    if (worldSvg) {
+      const wrap = document.createElement('div');
+      wrap.style.cssText = 'margin:10px auto;width:200px;height:102px';
+      const mini = worldSvg.cloneNode(true);
+      mini.setAttribute('width', '100%'); mini.setAttribute('height', '100%');
+      mini.removeAttribute('style');
+      highlightGeoPath(mini, erreur.id);
+      wrap.appendChild(mini);
+      errorEl.insertBefore(wrap, errorEl.children[1]);
+    }
+  } else { errorEl.innerHTML = ''; }
+
+  document.getElementById('btn-pays-replay').onclick = () => {
+    currentPays = buildDefiGame(paysData);
+    paysIndex = 0;
+    showScreen('defi-pays');
+    injectSvg('pays-map-container', worldSvg);
+    renderPaysRecord();
+    renderPaysQuestion();
+  };
   updateDefiRecordBadge();
 }
 

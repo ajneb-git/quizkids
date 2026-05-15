@@ -111,8 +111,32 @@
             <span class="revision-card-emoji">⚽</span>
             <div style="display:flex;flex-direction:column;gap:2px">
               <span class="revision-card-label">Défi Logos</span>
-              <span class="revision-card-sub">50 logos · foot & NBA · difficulté croissante<br>Une erreur = game over</span>
+              <span class="revision-card-sub">50 logos foot · difficulté croissante<br>Une erreur = game over</span>
               <span id="defi-logos-record" class="defi-record-badge" style="display:none"></span>
+            </div>
+          </div>
+          <div class="revision-card defi-card" id="defi-departements-card" data-defi="departements">
+            <span class="revision-card-emoji">🗺️</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="revision-card-label">Défi Départements</span>
+              <span class="revision-card-sub">99 départements · carte France<br>Une erreur = game over</span>
+              <span id="defi-departements-record" class="defi-record-badge" style="display:none"></span>
+            </div>
+          </div>
+          <div class="revision-card defi-card" id="defi-villes-card" data-defi="villes">
+            <span class="revision-card-emoji">🏙️</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="revision-card-label">Défi Villes</span>
+              <span class="revision-card-sub">100 villes françaises · localise le point<br>Une erreur = game over</span>
+              <span id="defi-villes-record" class="defi-record-badge" style="display:none"></span>
+            </div>
+          </div>
+          <div class="revision-card defi-card" id="defi-pays-card" data-defi="pays">
+            <span class="revision-card-emoji">🌍</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="revision-card-label">Défi Pays</span>
+              <span class="revision-card-sub">100 pays · carte du monde<br>Une erreur = game over</span>
+              <span id="defi-pays-record" class="defi-record-badge" style="display:none"></span>
             </div>
           </div>
         </div>
@@ -382,6 +406,123 @@
     </div>
   </div>
 
+  <!-- ══════════════════ SCREEN: DÉFI DÉPARTEMENTS ══════════════════ -->
+  <div id="screen-defi-departements" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="dep-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="dep-level-label" class="defi-level-label">Niveau 1 / 50</span>
+      </div>
+      <div id="dep-record-live" class="defi-record-live"></div>
+    </div>
+    <div class="map-quiz-card">
+      <div id="dep-map-container" class="map-container france-map-container"></div>
+      <p id="dep-question" class="map-quiz-question">Quel est ce département ?</p>
+    </div>
+    <div id="dep-choices" class="choices-grid defi-choices-grid"></div>
+    <div id="dep-feedback" class="feedback hidden"></div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI DÉPARTEMENTS RÉSULTATS ══════════════════ -->
+  <div id="screen-defi-departements-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="dep-result-icon">💥</div>
+      <h2 id="dep-result-title">Défi terminé !</h2>
+      <div class="total-score"><span id="dep-result-score">—</span></div>
+      <div id="dep-result-msg" class="encouraging-msg"></div>
+      <div id="dep-result-record" class="defi-new-record" style="display:none">🏆 Nouveau record !</div>
+      <div id="dep-result-records" class="defi-records-panel"></div>
+      <div id="dep-result-error" class="defi-error-recap"></div>
+      <div class="results-actions">
+        <button id="btn-dep-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI VILLES ══════════════════ -->
+  <div id="screen-defi-villes" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="vil-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="vil-level-label" class="defi-level-label">Niveau 1 / 50</span>
+      </div>
+      <div id="vil-record-live" class="defi-record-live"></div>
+    </div>
+    <div class="map-quiz-card">
+      <div id="vil-map-container" class="map-container france-map-container"></div>
+      <p id="vil-question" class="map-quiz-question">Quelle est cette ville ?</p>
+    </div>
+    <div id="vil-choices" class="choices-grid defi-choices-grid"></div>
+    <div id="vil-feedback" class="feedback hidden"></div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI VILLES RÉSULTATS ══════════════════ -->
+  <div id="screen-defi-villes-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="vil-result-icon">💥</div>
+      <h2 id="vil-result-title">Défi terminé !</h2>
+      <div class="total-score"><span id="vil-result-score">—</span></div>
+      <div id="vil-result-msg" class="encouraging-msg"></div>
+      <div id="vil-result-record" class="defi-new-record" style="display:none">🏆 Nouveau record !</div>
+      <div id="vil-result-records" class="defi-records-panel"></div>
+      <div id="vil-result-error" class="defi-error-recap"></div>
+      <div class="results-actions">
+        <button id="btn-vil-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI PAYS ══════════════════ -->
+  <div id="screen-defi-pays" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="pays-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="pays-level-label" class="defi-level-label">Niveau 1 / 50</span>
+      </div>
+      <div id="pays-record-live" class="defi-record-live"></div>
+    </div>
+    <div class="map-quiz-card">
+      <div id="pays-map-container" class="map-container world-map-container"></div>
+      <p id="pays-question" class="map-quiz-question">Quel est ce pays ?</p>
+    </div>
+    <div id="pays-choices" class="choices-grid defi-choices-grid"></div>
+    <div id="pays-feedback" class="feedback hidden"></div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: DÉFI PAYS RÉSULTATS ══════════════════ -->
+  <div id="screen-defi-pays-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="pays-result-icon">💥</div>
+      <h2 id="pays-result-title">Défi terminé !</h2>
+      <div class="total-score"><span id="pays-result-score">—</span></div>
+      <div id="pays-result-msg" class="encouraging-msg"></div>
+      <div id="pays-result-record" class="defi-new-record" style="display:none">🏆 Nouveau record !</div>
+      <div id="pays-result-records" class="defi-records-panel"></div>
+      <div id="pays-result-error" class="defi-error-recap"></div>
+      <div class="results-actions">
+        <button id="btn-pays-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ══════════════════ SCREEN: DÉFI CAPITALES RÉSULTATS ══════════════════ -->
   <div id="screen-defi-capitales-results" class="screen">
     <div class="screen-content results-content">
@@ -404,7 +545,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=6"></script>
+  <script type="module" src="js/app.js?v=7"></script>
   <script data-goatcounter="https://ajneb.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
