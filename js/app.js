@@ -1229,6 +1229,7 @@ function renderDepRecord() {
 }
 
 function renderDepQuestion() {
+  document.getElementById('dep-map-container')?._resetZoom?.();
   const q = currentDepartements[departementsIndex];
   const niveau = departementsIndex + 1;
   document.getElementById('dep-level-label').textContent = `Niveau ${niveau} / 50`;
@@ -1369,6 +1370,7 @@ function renderVilRecord() {
 }
 
 function renderVilQuestion() {
+  document.getElementById('vil-map-container')?._resetZoom?.();
   const q = currentVilles[villesIndex];
   const niveau = villesIndex + 1;
   document.getElementById('vil-level-label').textContent = `Niveau ${niveau} / 50`;
@@ -1513,6 +1515,7 @@ function renderPaysRecord() {
 }
 
 function renderPaysQuestion() {
+  document.getElementById('pays-map-container')?._resetZoom?.();
   const q = currentPays[paysIndex];
   const niveau = paysIndex + 1;
   document.getElementById('pays-level-label').textContent = `Niveau ${niveau} / 50`;
