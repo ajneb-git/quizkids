@@ -1226,6 +1226,15 @@ html, body {
   fill: #f87171;
 }
 
+.map-container svg path.map-highlight-error,
+.map-container svg rect.map-highlight-error,
+.map-container svg polygon.map-highlight-error {
+  fill: #ef4444;
+  stroke: rgba(0,0,0,0.4);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 6px rgba(239,68,68,0.6));
+}
+
 /* City marker (pulsing dot) */
 .city-marker-outer {
   animation: cityPulse 1.2s ease-in-out infinite;

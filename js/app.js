@@ -1192,6 +1192,46 @@ function showCityMarker(svgEl, lat, lon) {
   svgEl.appendChild(inner);
 }
 
+// Highlight the WRONG choice in red (keeps existing yellow highlight intact)
+function highlightGeoPathError(svgEl, id) {
+  if (!svgEl || !id) return;
+  const target = svgEl.querySelector(`[id="${id}"]`);
+  if (!target) return;
+  if (target.tagName === 'g') {
+    target.querySelectorAll('path, rect, polygon').forEach(p => p.classList.add('map-highlight-error'));
+  } else {
+    target.classList.add('map-highlight-error');
+  }
+}
+
+// Red city marker for the wrong city (leaves the gold correct marker untouched)
+function showCityMarkerError(svgEl, lat, lon) {
+  if (!svgEl || lat == null || lon == null) return;
+  const { x, y } = latLonToFranceSvg(lat, lon);
+  const NS = 'http://www.w3.org/2000/svg';
+  const outer = document.createElementNS(NS, 'circle');
+  outer.setAttribute('cx', x); outer.setAttribute('cy', y); outer.setAttribute('r', '10');
+  outer.setAttribute('fill', '#ef4444'); outer.setAttribute('opacity', '0.5');
+  outer.classList.add('city-marker-error-outer');
+  const inner = document.createElementNS(NS, 'circle');
+  inner.setAttribute('cx', x); inner.setAttribute('cy', y); inner.setAttribute('r', '5');
+  inner.setAttribute('fill', '#ef4444');
+  inner.classList.add('city-marker-error-inner');
+  svgEl.appendChild(outer);
+  svgEl.appendChild(inner);
+}
+
+// Search all tiers pools for the entry matching reponseValue
+function findInDefiData(data, reponseValue) {
+  if (!data) return null;
+  for (const tier of data.tiers) {
+    for (const item of tier.pool) {
+      if (item.reponse === reponseValue) return item;
+    }
+  }
+  return null;
+}
+
 function geoRecordPanel(panelId, record, monthly, isNewRecord, isNewMonthly) {
   const panel = document.getElementById(panelId);
   if (!panel) return;
@@ -1286,7 +1326,12 @@ function handleDepAnswer(choice, q) {
   } else {
     feedback.className = 'feedback incorrect';
     feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
-    setTimeout(() => endDefiDepartements(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 3000);
+    const svgEl = document.querySelector('#dep-map-container svg');
+    if (svgEl) {
+      const wrongItem = findInDefiData(departementsData, choice);
+      if (wrongItem?.id) highlightGeoPathError(svgEl, wrongItem.id);
+    }
+    setTimeout(() => endDefiDepartements(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 8000);
   }
 }
 
@@ -1431,7 +1476,12 @@ function handleVilAnswer(choice, q) {
   } else {
     feedback.className = 'feedback incorrect';
     feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
-    setTimeout(() => endDefiVilles(false, { reponse: q.reponse, choixUser: choice, lat: q.lat, lon: q.lon }), 3000);
+    const svgEl = document.querySelector('#vil-map-container svg');
+    if (svgEl) {
+      const wrongItem = findInDefiData(villesData, choice);
+      if (wrongItem?.lat != null) showCityMarkerError(svgEl, wrongItem.lat, wrongItem.lon);
+    }
+    setTimeout(() => endDefiVilles(false, { reponse: q.reponse, choixUser: choice, lat: q.lat, lon: q.lon }), 8000);
   }
 }
 
@@ -1572,7 +1622,12 @@ function handlePaysAnswer(choice, q) {
   } else {
     feedback.className = 'feedback incorrect';
     feedback.innerHTML = `✗ C'était : <strong>${q.reponse}</strong>`;
-    setTimeout(() => endDefiPays(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 3000);
+    const svgEl = document.querySelector('#pays-map-container svg');
+    if (svgEl) {
+      const wrongItem = findInDefiData(paysData, choice);
+      if (wrongItem?.id) highlightGeoPathError(svgEl, wrongItem.id);
+    }
+    setTimeout(() => endDefiPays(false, { id: q.id, reponse: q.reponse, choixUser: choice }), 8000);
   }
 }
 
