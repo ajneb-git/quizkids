@@ -24,6 +24,13 @@ let deferredInstallPrompt = null;
 let departementsData = null; let currentDepartements = []; let departementsIndex = 0;
 let villesData = null;       let currentVilles = [];       let villesIndex = 0;
 let paysData = null;         let currentPays = [];          let paysIndex = 0;
+
+let histoireFrData = null;
+let histoireMondeData = null;
+let currentHistoire = [];
+let histoireIndex = 0;
+let histoireScore = 0;
+let histoireMode = null; // 'france' | 'monde'
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -409,6 +416,16 @@ async function route() {
 
   if (hash === '#defi-pays') {
     await startDefiPays();
+    return;
+  }
+
+  if (hash === '#defi-histoire-france') {
+    await startHistoire('france');
+    return;
+  }
+
+  if (hash === '#defi-histoire-monde') {
+    await startHistoire('monde');
     return;
   }
 
@@ -1722,6 +1739,125 @@ function init() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(console.error);
   }
+}
+
+// ─── Histoire France & Monde ──────────────────────────────────────────────────
+
+async function startHistoire(mode) {
+  histoireMode = mode;
+  if (mode === 'france') {
+    if (!histoireFrData) {
+      try { const r = await fetch('./data/histoire-france.json'); histoireFrData = await r.json(); }
+      catch (e) { console.error(e); showScreen('home'); return; }
+    }
+    currentHistoire = buildDefiGame(histoireFrData);
+  } else {
+    if (!histoireMondeData) {
+      try { const r = await fetch('./data/histoire-monde.json'); histoireMondeData = await r.json(); }
+      catch (e) { console.error(e); showScreen('home'); return; }
+    }
+    currentHistoire = buildDefiGame(histoireMondeData);
+  }
+  histoireIndex = 0;
+  histoireScore = 0;
+  document.getElementById('hist-mode-badge').textContent = mode === 'france' ? '🏰 France' : '🌐 Monde';
+  showScreen('histoire');
+  renderHistoireQuestion();
+}
+
+function renderHistoireQuestion() {
+  const q = currentHistoire[histoireIndex];
+  const total = currentHistoire.length;
+  document.getElementById('hist-level-label').textContent = `Question ${histoireIndex + 1} / ${total}`;
+  document.getElementById('hist-progress-fill').style.width = `${(histoireIndex / total) * 100}%`;
+
+  // Randomly assign event1/event2 to left/right button
+  const swap = Math.random() < 0.5;
+  const evA = swap ? q.event2 : q.event1;
+  const evB = swap ? q.event1 : q.event2;
+
+  const btn1 = document.getElementById('hist-btn1');
+  const btn2 = document.getElementById('hist-btn2');
+
+  [btn1, btn2].forEach((btn, i) => {
+    const ev = i === 0 ? evA : evB;
+    btn.querySelector('.hist-event-label').textContent = ev.label;
+    const dateEl = btn.querySelector('.hist-event-date');
+    dateEl.textContent = '';
+    dateEl.classList.add('hidden');
+    btn.className = 'hist-event-btn';
+    btn.disabled = false;
+    btn.dataset.annee = ev.annee;
+    btn.dataset.display = ev.display;
+  });
+
+  const nextBtn = document.getElementById('hist-next-btn');
+  nextBtn.classList.add('hidden');
+  nextBtn.textContent = histoireIndex >= total - 1 ? 'Voir les résultats →' : 'Suivant →';
+}
+
+window.handleHistoireAnswer = function(btnNum) {
+  const btn1 = document.getElementById('hist-btn1');
+  const btn2 = document.getElementById('hist-btn2');
+  const a1 = parseFloat(btn1.dataset.annee);
+  const a2 = parseFloat(btn2.dataset.annee);
+
+  // Reveal dates
+  [btn1, btn2].forEach(btn => {
+    const dateEl = btn.querySelector('.hist-event-date');
+    dateEl.textContent = btn.dataset.display;
+    dateEl.classList.remove('hidden');
+    btn.disabled = true;
+  });
+
+  // Special case: Darwin & Lincoln born same day — both correct
+  const tie = (a1 === a2);
+  const correctBtn = tie ? btnNum : (a1 < a2 ? 1 : 2);
+  const isCorrect = tie || (btnNum === correctBtn);
+
+  if (isCorrect) {
+    histoireScore++;
+    (btnNum === 1 ? btn1 : btn2).classList.add('hist-correct');
+    const other = btnNum === 1 ? btn2 : btn1;
+    other.classList.add('hist-neutral');
+  } else {
+    (btnNum === 1 ? btn1 : btn2).classList.add('hist-wrong');
+    (correctBtn === 1 ? btn1 : btn2).classList.add('hist-correct');
+  }
+
+  document.getElementById('hist-next-btn').classList.remove('hidden');
+};
+
+window.nextHistoireQuestion = function() {
+  histoireIndex++;
+  if (histoireIndex >= currentHistoire.length) {
+    showHistoireResults();
+  } else {
+    renderHistoireQuestion();
+  }
+};
+
+function showHistoireResults() {
+  const total = currentHistoire.length;
+  const pct = Math.round(histoireScore / total * 100);
+  showScreen('histoire-results');
+  document.getElementById('hist-result-title').textContent =
+    histoireMode === 'france' ? 'Quiz Histoire de France !' : 'Quiz Histoire du monde !';
+  document.getElementById('hist-result-score').textContent = `${histoireScore} / ${total}`;
+  document.getElementById('hist-result-pct').textContent = `${pct}%`;
+
+  let icon, msg;
+  if (pct >= 90)      { icon = '🏆'; msg = 'Excellent ! Tu es un expert en histoire !'; }
+  else if (pct >= 70) { icon = '⭐'; msg = 'Très bien ! Tu connais bien ton histoire !'; }
+  else if (pct >= 50) { icon = '👍'; msg = 'Pas mal ! Continue à apprendre !'; }
+  else                { icon = '📚'; msg = 'À réviser ! Tu feras mieux la prochaine fois.'; }
+
+  document.getElementById('hist-result-icon').textContent = icon;
+  document.getElementById('hist-result-msg').textContent = msg;
+
+  document.getElementById('btn-hist-replay').onclick = () => {
+    window.location.hash = `#defi-histoire-${histoireMode}`;
+  };
 }
 
 document.addEventListener('DOMContentLoaded', init);

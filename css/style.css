@@ -1259,3 +1259,128 @@ html, body {
   color: var(--text);
   margin: 4px 0;
 }
+
+/* ── Quiz Histoire ─────────────────────────────────────────────────────── */
+
+.hist-mode-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 3px 10px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.hist-game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 0 12px;
+}
+
+.hist-question-label {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.hist-question-label strong {
+  color: var(--text);
+}
+
+.hist-events {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.hist-event-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 12px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  min-height: 120px;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.hist-event-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+.hist-event-btn:disabled {
+  cursor: default;
+}
+
+.hist-event-label {
+  display: block;
+}
+
+.hist-event-date {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f9c74f;
+  margin-top: 4px;
+}
+
+.hist-event-date.hidden {
+  display: none;
+}
+
+.hist-event-btn.hist-correct {
+  background: rgba(76, 201, 120, 0.22);
+  border-color: #4cc978;
+}
+
+.hist-event-btn.hist-correct .hist-event-date {
+  color: #7efbb4;
+}
+
+.hist-event-btn.hist-wrong {
+  background: rgba(239, 68, 68, 0.20);
+  border-color: #ef4444;
+}
+
+.hist-event-btn.hist-neutral {
+  opacity: 0.55;
+}
+
+.hist-vs {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding: 0 2px;
+}
+
+.hist-next-btn {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 4px;
+}
+
+.hist-next-btn.hidden {
+  display: none;
+}
