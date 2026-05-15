@@ -1148,6 +1148,38 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  cursor: grab;
+}
+
+.map-container.map-zoomed {
+  cursor: move;
+}
+
+/* Badge visible quand zoomé */
+.map-container.map-zoomed::after {
+  content: '⊖ double-tap';
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  background: rgba(255, 215, 0, 0.88);
+  color: #1a1a3e;
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  pointer-events: none;
+  letter-spacing: 0.03em;
+  z-index: 10;
+}
+
+/* Hint sous la carte */
+.map-zoom-hint {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  margin: 4px 0 0;
+  user-select: none;
 }
 
 .france-map-container {

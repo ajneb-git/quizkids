@@ -1011,6 +1011,132 @@ function injectSvg(containerId, svgEl) {
   return clone;
 }
 
+// ─── Pinch-to-zoom on map containers ─────────────────────────────────────────
+
+function setupMapZoom(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  // On subsequent calls (game restart): just reset zoom state and return
+  if (container._resetZoom) { container._resetZoom(); return; }
+
+  let scale = 1, tx = 0, ty = 0;
+  let pinching = false, lastDist = 0, lastMidX = 0, lastMidY = 0;
+
+  // Disable browser default touch handling on this element
+  container.style.touchAction = 'none';
+
+  function getSvg() { return container.querySelector('svg'); }
+
+  function applyTransform() {
+    const svg = getSvg();
+    if (!svg) return;
+    if (scale <= 1) {
+      scale = 1; tx = 0; ty = 0;
+      svg.style.transform = '';
+      container.classList.remove('map-zoomed');
+      return;
+    }
+    const { width: W, height: H } = container.getBoundingClientRect();
+    // Clamp so the map can't be dragged out of bounds
+    tx = Math.min(0, Math.max(W * (1 - scale), tx));
+    ty = Math.min(0, Math.max(H * (1 - scale), ty));
+    svg.style.transformOrigin = '0 0';
+    svg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+    container.classList.add('map-zoomed');
+  }
+
+  // Expose reset for game restarts (called at top of this function on re-entry)
+  container._resetZoom = () => {
+    scale = 1; tx = 0; ty = 0;
+    const svg = getSvg();
+    if (svg) svg.style.transform = '';
+    container.classList.remove('map-zoomed');
+  };
+
+  // ── Touch: pinch + pan ────────────────────────────────────────────────────
+  container.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      pinching = true;
+      lastDist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      lastMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      lastMidY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    } else if (e.touches.length === 1) {
+      lastMidX = e.touches[0].clientX;
+      lastMidY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  container.addEventListener('touchmove', e => {
+    if (e.touches.length === 2) {
+      if (!pinching) {
+        pinching = true;
+        lastDist = Math.hypot(
+          e.touches[1].clientX - e.touches[0].clientX,
+          e.touches[1].clientY - e.touches[0].clientY
+        );
+      }
+      const dist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      const newScale = Math.min(Math.max(scale * (dist / lastDist), 1), 5);
+      const ratio = newScale / scale;
+      const rect = container.getBoundingClientRect();
+      // Zoom toward pinch midpoint
+      tx = (midX - rect.left) * (1 - ratio) + tx * ratio;
+      ty = (midY - rect.top) * (1 - ratio) + ty * ratio;
+      scale = newScale;
+      lastDist = dist;
+      applyTransform();
+    } else if (e.touches.length === 1 && scale > 1) {
+      tx += e.touches[0].clientX - lastMidX;
+      ty += e.touches[0].clientY - lastMidY;
+      lastMidX = e.touches[0].clientX;
+      lastMidY = e.touches[0].clientY;
+      applyTransform();
+    }
+  }, { passive: true });
+
+  container.addEventListener('touchend', e => {
+    if (e.touches.length < 2) pinching = false;
+    if (e.touches.length === 1) {
+      lastMidX = e.touches[0].clientX;
+      lastMidY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  // Double-tap to reset zoom
+  let lastTap = 0;
+  container.addEventListener('touchend', e => {
+    if (e.touches.length === 0) {
+      const now = Date.now();
+      if (now - lastTap < 300) { scale = 1; tx = 0; ty = 0; applyTransform(); }
+      lastTap = now;
+    }
+  }, { passive: true });
+
+  // ── Mouse wheel (desktop) ─────────────────────────────────────────────────
+  container.addEventListener('wheel', e => {
+    e.preventDefault();
+    const rect = container.getBoundingClientRect();
+    const cx = e.clientX - rect.left;
+    const cy = e.clientY - rect.top;
+    const factor = e.deltaY > 0 ? 0.85 : 1.18;
+    const newScale = Math.min(Math.max(scale * factor, 1), 5);
+    const ratio = newScale / scale;
+    tx = cx * (1 - ratio) + tx * ratio;
+    ty = cy * (1 - ratio) + ty * ratio;
+    scale = newScale;
+    applyTransform();
+  }, { passive: false });
+}
+
 function highlightGeoPath(svgEl, id) {
   svgEl.querySelectorAll('.map-highlight').forEach(el => el.classList.remove('map-highlight'));
   const target = svgEl.querySelector(`[id="${id}"]`);
@@ -1086,6 +1212,7 @@ async function startDefiDepartements() {
   departementsIndex = 0;
   showScreen('defi-departements');
   injectSvg('dep-map-container', franceSvg);
+  setupMapZoom('dep-map-container');
   renderDepRecord();
   renderDepQuestion();
 }
@@ -1201,6 +1328,7 @@ function endDefiDepartements(completed, erreur) {
     departementsIndex = 0;
     showScreen('defi-departements');
     injectSvg('dep-map-container', franceSvg);
+    setupMapZoom('dep-map-container');
     renderDepRecord();
     renderDepQuestion();
   };
@@ -1224,6 +1352,7 @@ async function startDefiVilles() {
   villesIndex = 0;
   showScreen('defi-villes');
   injectSvg('vil-map-container', franceSvg);
+  setupMapZoom('vil-map-container');
   renderVilRecord();
   renderVilQuestion();
 }
@@ -1343,6 +1472,7 @@ function endDefiVilles(completed, erreur) {
     villesIndex = 0;
     showScreen('defi-villes');
     injectSvg('vil-map-container', franceSvg);
+    setupMapZoom('vil-map-container');
     renderVilRecord();
     renderVilQuestion();
   };
@@ -1366,6 +1496,7 @@ async function startDefiPays() {
   paysIndex = 0;
   showScreen('defi-pays');
   injectSvg('pays-map-container', worldSvg);
+  setupMapZoom('pays-map-container');
   renderPaysRecord();
   renderPaysQuestion();
 }
@@ -1481,6 +1612,7 @@ function endDefiPays(completed, erreur) {
     paysIndex = 0;
     showScreen('defi-pays');
     injectSvg('pays-map-container', worldSvg);
+    setupMapZoom('pays-map-container');
     renderPaysRecord();
     renderPaysQuestion();
   };
