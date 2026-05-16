@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "description": "Sport : Qui a le plus ? — 5 niveaux × 20 questions, 100 au total. Football, tennis, NBA, F1, cyclisme, rugby, golf, boxe, JO, athlétisme.",
+  "tiers": [
+    {
+      "tier": 1,
+      "label": "Très facile",
+      "pool": [
+        {
+          "question": "Qui a remporté le plus de Ballons d'Or ?",
+          "sport1": { "label": "Lionel Messi", "stat": 8, "display": "8 Ballons d'Or" },
+          "sport2": { "label": "Cristiano Ronaldo", "stat": 5, "display": "5 Ballons d'Or" }
+        },
+        {
+          "question": "Qui a remporté le plus de Coupes du Monde de football ?",
+          "sport1": { "label": "Brésil", "stat": 5, "display": "5 Coupes du Monde" },
+          "sport2": { "label": "France", "stat": 2, "display": "2 Coupes du Monde" }
+        },
+        {
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Novak Djokovic", "stat": 24, "display": "24 titres du Grand Chelem" },
+          "sport2": { "label": "Andre Agassi", "stat": 8, "display": "8 titres du Grand Chelem" }
+        }
+      ]
+    },
+    {
+      "tier": 2,
+      "label": "Facile",
+      "pool": [
+        {
+          "question": "Qui a remporté le plus de Ballons d'Or ?",
+          "sport1": { "label": "Johan Cruyff", "stat": 3, "display": "3 Ballons d'Or" },
+          "sport2": { "label": "Zinédine Zidane", "stat": 1, "display": "1 Ballon d'Or" }
+        },
+        {
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Roger Federer", "stat": 20, "display": "20 titres du Grand Chelem" },
+          "sport2": { "label": "Pete Sampras", "stat": 14, "display": "14 titres du Grand Chelem" }
+        },
+        {
+          "question": "Qui a remporté le plus de victoires en Grand Prix de F1 ?",
+          "sport1": { "label": "Lewis Hamilton", "stat": 103, "display": "103 victoires" },
+          "sport2": { "label": "Alain Prost", "stat": 51, "display": "51 victoires" }
+        }
+      ]
+    },
+    {
+      "tier": 3,
+      "label": "Moyen",
+      "pool": [
+        {
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Alain Prost", "stat": 4, "display": "4 titres de champion du monde" },
+          "sport2": { "label": "Ayrton Senna", "stat": 3, "display": "3 titres de champion du monde" }
+        },
+        {
+          "question": "Qui a marqué le plus de buts avec l'équipe de France ?",
+          "sport1": { "label": "Olivier Giroud", "stat": 57, "display": "57 buts avec l'équipe de France" },
+          "sport2": { "label": "Thierry Henry", "stat": 51, "display": "51 buts avec l'équipe de France" }
+        },
+        {
+          "question": "Qui a remporté le plus de médailles d'or olympiques en athlétisme ?",
+          "sport1": { "label": "Carl Lewis", "stat": 9, "display": "9 médailles d'or olympiques" },
+          "sport2": { "label": "Usain Bolt", "stat": 8, "display": "8 médailles d'or olympiques" }
+        }
+      ]
+    },
+    {
+      "tier": 4,
+      "label": "Difficile",
+      "pool": [
+        {
+          "question": "Qui a marqué le plus de buts en Coupe du Monde ?",
+          "sport1": { "label": "Miroslav Klose", "stat": 16, "display": "16 buts en Coupe du Monde" },
+          "sport2": { "label": "Ronaldo Nazário", "stat": 15, "display": "15 buts en Coupe du Monde" }
+        },
+        {
+          "question": "Qui a réalisé le plus de pole positions en F1 ?",
+          "sport1": { "label": "Ayrton Senna", "stat": 65, "display": "65 pole positions" },
+          "sport2": { "label": "Michael Schumacher", "stat": 68, "display": "68 pole positions" }
+        },
+        {
+          "question": "Qui a réalisé le plus de triple-doubles en carrière en NBA ?",
+          "sport1": { "label": "Russell Westbrook", "stat": 200, "display": "200+ triple-doubles" },
+          "sport2": { "label": "Oscar Robertson", "stat": 181, "display": "181 triple-doubles" }
+        }
+      ]
+    },
+    {
+      "tier": 5,
+      "label": "Expert",
+      "pool": [
+        {
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Serena Williams", "stat": 23, "display": "23 titres du Grand Chelem" },
+          "sport2": { "label": "Steffi Graf", "stat": 22, "display": "22 titres du Grand Chelem" }
+        },
+        {
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Alain Prost", "stat": 4, "display": "4 titres de champion du monde" },
+          "sport2": { "label": "Ayrton Senna", "stat": 3, "display": "3 titres de champion du monde" }
+        },
+        {
+          "question": "Qui a disputé le plus de finales de Coupe du Monde de football ?",
+          "sport1": { "label": "Allemagne", "stat": 8, "display": "8 finales de Coupe du Monde" },
+          "sport2": { "label": "Brésil", "stat": 7, "display": "7 finales de Coupe du Monde" }
+        }
+      ]
+    }
+  ]
+}

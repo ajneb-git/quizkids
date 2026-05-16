@@ -31,6 +31,11 @@ let currentHistoire = [];
 let histoireIndex = 0;
 let histoireScore = 0;
 let histoireMode = null; // 'france' | 'monde'
+
+let sportData = null;
+let currentSport = [];
+let sportIndex = 0;
+let sportScore = 0;
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -426,6 +431,11 @@ async function route() {
 
   if (hash === '#defi-histoire-monde') {
     await startHistoire('monde');
+    return;
+  }
+
+  if (hash === '#defi-sport') {
+    await startSport();
     return;
   }
 
@@ -1913,6 +1923,110 @@ function showHistoireResults() {
   document.getElementById('btn-hist-replay').onclick = () => {
     window.location.hash = `#defi-histoire-${histoireMode}`;
   };
+}
+
+// ─── Sport : Qui a le plus ? ──────────────────────────────────────────────────
+
+async function startSport() {
+  if (!sportData) {
+    try { const r = await fetch('./data/sport-defi.json'); sportData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  currentSport = buildDefiGame(sportData);
+  sportIndex = 0;
+  sportScore = 0;
+  showScreen('sport');
+  renderSportQuestion();
+}
+
+function renderSportQuestion() {
+  const q = currentSport[sportIndex];
+  const total = currentSport.length;
+  document.getElementById('sport-level-label').textContent = `Question ${sportIndex + 1} / ${total}`;
+  document.getElementById('sport-progress-fill').style.width = `${(sportIndex / total) * 100}%`;
+  document.getElementById('sport-question-text').textContent = q.question;
+
+  // Randomly swap sport1/sport2 between left and right button
+  const swap = Math.random() < 0.5;
+  const sA = swap ? q.sport2 : q.sport1;
+  const sB = swap ? q.sport1 : q.sport2;
+
+  const btn1 = document.getElementById('sport-btn1');
+  const btn2 = document.getElementById('sport-btn2');
+
+  [btn1, btn2].forEach((btn, i) => {
+    const s = i === 0 ? sA : sB;
+    btn.querySelector('.hist-event-label').textContent = s.label;
+    const statEl = btn.querySelector('.hist-event-date');
+    statEl.textContent = '';
+    statEl.classList.add('hidden');
+    btn.className = 'hist-event-btn';
+    btn.disabled = false;
+    btn.dataset.stat = s.stat;
+    btn.dataset.display = s.display;
+  });
+
+  const nextBtn = document.getElementById('sport-next-btn');
+  nextBtn.classList.add('hidden');
+  nextBtn.textContent = sportIndex >= total - 1 ? 'Voir les résultats →' : 'Suivant →';
+}
+
+window.handleSportAnswer = function(btnNum) {
+  const btn1 = document.getElementById('sport-btn1');
+  const btn2 = document.getElementById('sport-btn2');
+  const s1 = parseFloat(btn1.dataset.stat);
+  const s2 = parseFloat(btn2.dataset.stat);
+
+  // Reveal stat on both buttons
+  [btn1, btn2].forEach(btn => {
+    const statEl = btn.querySelector('.hist-event-date');
+    statEl.textContent = btn.dataset.display;
+    statEl.classList.remove('hidden');
+    btn.disabled = true;
+  });
+
+  // Égalité possible (même stat)
+  const tie = (s1 === s2);
+  const correctBtn = tie ? btnNum : (s1 > s2 ? 1 : 2);
+  const isCorrect = tie || (btnNum === correctBtn);
+
+  if (isCorrect) {
+    sportScore++;
+    (btnNum === 1 ? btn1 : btn2).classList.add('hist-correct');
+    (btnNum === 1 ? btn2 : btn1).classList.add('hist-neutral');
+  } else {
+    (btnNum === 1 ? btn1 : btn2).classList.add('hist-wrong');
+    (correctBtn === 1 ? btn1 : btn2).classList.add('hist-correct');
+  }
+
+  document.getElementById('sport-next-btn').classList.remove('hidden');
+};
+
+window.nextSportQuestion = function() {
+  sportIndex++;
+  if (sportIndex >= currentSport.length) {
+    showSportResults();
+  } else {
+    renderSportQuestion();
+  }
+};
+
+function showSportResults() {
+  const total = currentSport.length;
+  const pct = Math.round(sportScore / total * 100);
+  showScreen('sport-results');
+  document.getElementById('sport-result-score').textContent = `${sportScore} / ${total}`;
+  document.getElementById('sport-result-pct').textContent = `${pct}%`;
+
+  let icon, msg;
+  if (pct >= 90)      { icon = '🏆'; msg = 'Exceptionnel ! Tu es un vrai expert du sport !'; }
+  else if (pct >= 70) { icon = '⭐'; msg = 'Très bien ! Tu t\'y connais en sport !'; }
+  else if (pct >= 50) { icon = '👍'; msg = 'Pas mal ! Continue à suivre l\'actu sportive !'; }
+  else                { icon = '📺'; msg = 'Les stats du sport te réservent encore des surprises !'; }
+
+  document.getElementById('sport-result-icon').textContent = icon;
+  document.getElementById('sport-result-msg').textContent = msg;
+  document.getElementById('btn-sport-replay').onclick = () => { window.location.hash = '#defi-sport'; };
 }
 
 document.addEventListener('DOMContentLoaded', init);
