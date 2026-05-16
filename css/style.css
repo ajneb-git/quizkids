@@ -948,21 +948,63 @@ html, body {
 
 /* ── Défi — catégories ───────────────────────────────────────────────────────── */
 .defi-category-section {
-  margin-bottom: 22px;
+  margin-bottom: 4px;
 }
 
 .defi-category-header {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  padding: 13px 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.defi-category-header:hover {
+  background: rgba(251,146,60,0.08);
+}
+
+.defi-category-header::after {
+  content: '❯';
+  margin-left: auto;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  margin-bottom: 10px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.22s ease;
+  line-height: 1;
+}
+
+.defi-category-section.open .defi-category-header {
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: rgba(251,146,60,0.07);
+}
+
+.defi-category-section.open .defi-category-header::after {
+  transform: rotate(90deg);
+}
+
+/* Cards collapse/expand */
+.defi-category-section .revision-cards {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-card);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.defi-category-section.open .revision-cards {
+  max-height: 1000px;
+  padding: 8px 10px 10px;
+  gap: 8px;
 }
 
 .defi-placeholder-card {

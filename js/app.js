@@ -1746,10 +1746,20 @@ function init() {
     }
   });
 
-  // Défi cards
-  document.querySelectorAll('[data-defi]').forEach(card => {
+  // Défi cards (uniquement les vraies cards, pas les placeholders)
+  document.querySelectorAll('.defi-card[data-defi]').forEach(card => {
     card.addEventListener('click', () => {
       window.location.hash = `#defi-${card.dataset.defi}`;
+    });
+  });
+
+  // Accordéon catégories Défi
+  document.querySelectorAll('.defi-category-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const section = header.closest('.defi-category-section');
+      const isOpen = section.classList.contains('open');
+      document.querySelectorAll('.defi-category-section.open').forEach(s => s.classList.remove('open'));
+      if (!isOpen) section.classList.add('open');
     });
   });
 
