@@ -36,6 +36,11 @@ let sportData = null;
 let currentSport = [];
 let sportIndex = 0;
 let sportScore = 0;
+
+let vraiFauxData = null;
+let currentVraiFaux = [];
+let vraiFauxIndex = 0;
+let vraiFauxStreak = 0;
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -436,6 +441,11 @@ async function route() {
 
   if (hash === '#defi-sport') {
     await startSport();
+    return;
+  }
+
+  if (hash === '#defi-vrai-faux') {
+    await startVraiFaux();
     return;
   }
 
@@ -2042,6 +2052,117 @@ function showSportResults() {
   document.getElementById('sport-result-icon').textContent = icon;
   document.getElementById('sport-result-msg').textContent = msg;
   document.getElementById('btn-sport-replay').onclick = () => { window.location.hash = '#defi-sport'; };
+}
+
+// ─── Vrai ou Faux en chaîne ──────────────────────────────────────────────────
+
+const VF_BEST_KEY = 'quizkids_vraifaux_best';
+
+function getVraiFauxBest() {
+  return parseInt(localStorage.getItem(VF_BEST_KEY) || '0', 10);
+}
+
+function saveVraiFauxBest(score) {
+  const prev = getVraiFauxBest();
+  if (score > prev) { localStorage.setItem(VF_BEST_KEY, score); return true; }
+  return false;
+}
+
+async function startVraiFaux() {
+  if (!vraiFauxData) {
+    try { const r = await fetch('./data/vrai-faux.json'); vraiFauxData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  if (!vraiFauxData.pool?.length) { alert('Pool vide — questions à venir !'); showScreen('home'); return; }
+
+  const shuffled = [...vraiFauxData.pool].sort(() => Math.random() - 0.5);
+  currentVraiFaux = shuffled.slice(0, 50);
+  vraiFauxIndex = 0;
+  vraiFauxStreak = 0;
+
+  document.getElementById('vf-best-display').textContent = `🏆 ${getVraiFauxBest()}`;
+  showScreen('vrai-faux');
+  renderVraiFauxQuestion();
+}
+
+function renderVraiFauxQuestion() {
+  const q = currentVraiFaux[vraiFauxIndex];
+  const total = currentVraiFaux.length;
+  document.getElementById('vf-progress-fill').style.width = `${(vraiFauxIndex / total) * 100}%`;
+  document.getElementById('vf-counter').textContent = `${vraiFauxIndex + 1} / ${total}`;
+  document.getElementById('vf-streak-count').textContent = vraiFauxStreak;
+  document.getElementById('vf-statement').textContent = q.statement;
+
+  const fb = document.getElementById('vf-feedback');
+  fb.textContent = '';
+  fb.className = 'vf-feedback';
+
+  const btnV = document.getElementById('vf-btn-vrai');
+  const btnF = document.getElementById('vf-btn-faux');
+  btnV.disabled = false; btnV.className = 'vf-btn vf-btn-vrai';
+  btnF.disabled = false; btnF.className = 'vf-btn vf-btn-faux';
+}
+
+window.handleVraiFaux = function(answer) {
+  const q = currentVraiFaux[vraiFauxIndex];
+  const btnV = document.getElementById('vf-btn-vrai');
+  const btnF = document.getElementById('vf-btn-faux');
+  btnV.disabled = true; btnF.disabled = true;
+
+  const chosen = answer ? btnV : btnF;
+  const other  = answer ? btnF : btnV;
+  const correctBtn = q.answer ? btnV : btnF;
+
+  if (answer === q.answer) {
+    chosen.classList.add('vf-btn-correct');
+    vraiFauxStreak++;
+    vraiFauxIndex++;
+    if (vraiFauxIndex >= currentVraiFaux.length) {
+      setTimeout(() => showVraiFauxResults(true, null), 700);
+    } else {
+      setTimeout(renderVraiFauxQuestion, 550);
+    }
+  } else {
+    chosen.classList.add('vf-btn-wrong');
+    correctBtn.classList.add('vf-btn-correct-hint');
+    const fb = document.getElementById('vf-feedback');
+    fb.textContent = `C'était : ${q.answer ? 'VRAI ✅' : 'FAUX ❌'}`;
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => showVraiFauxResults(false, q), 1800);
+  }
+};
+
+function showVraiFauxResults(perfect, wrongQ) {
+  const isNewBest = saveVraiFauxBest(vraiFauxStreak);
+  const best = getVraiFauxBest();
+  showScreen('vrai-faux-results');
+
+  const icon = perfect ? '🏆' : vraiFauxStreak >= 30 ? '⭐' : vraiFauxStreak >= 15 ? '👍' : '💥';
+  document.getElementById('vf-result-icon').textContent = icon;
+  document.getElementById('vf-result-title').textContent = perfect ? 'Parfait — 50/50 !' : 'Série terminée !';
+  document.getElementById('vf-result-streak').textContent =
+    `${vraiFauxStreak} bonne${vraiFauxStreak > 1 ? 's' : ''} réponse${vraiFauxStreak > 1 ? 's' : ''} d'affilée`;
+
+  const bestEl = document.getElementById('vf-result-best');
+  if (isNewBest && vraiFauxStreak > 0) {
+    bestEl.textContent = `🏆 Nouveau record : ${best} !`;
+  } else if (best > 0) {
+    bestEl.textContent = `🏆 Record : ${best}`;
+  } else {
+    bestEl.textContent = '';
+  }
+
+  const wrongEl = document.getElementById('vf-result-wrong');
+  if (wrongQ) {
+    wrongEl.innerHTML = `
+      <p class="vf-wrong-label">L'affirmation qui a stoppé la série :</p>
+      <p class="vf-wrong-statement">« ${wrongQ.statement} »</p>
+      <p class="vf-wrong-answer">→ C'était : <strong>${wrongQ.answer ? 'VRAI ✅' : 'FAUX ❌'}</strong></p>`;
+  } else {
+    wrongEl.innerHTML = '';
+  }
+
+  document.getElementById('btn-vf-replay').onclick = () => { window.location.hash = '#defi-vrai-faux'; };
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
 </head>
 <body>
 
@@ -241,11 +241,11 @@
         <div class="defi-category-section">
           <div class="defi-category-header"><span>🎯</span> Général</div>
           <div class="revision-cards">
-            <div class="defi-placeholder-card" id="defi-vrai-faux-card" data-defi="vrai-faux">
+            <div class="revision-card defi-card" id="defi-vrai-faux-card" data-defi="vrai-faux">
               <span class="revision-card-emoji">✅</span>
               <div style="display:flex;flex-direction:column;gap:2px">
                 <span class="revision-card-label">Vrai ou Faux en chaîne</span>
-                <span class="revision-card-sub">Géographie, sciences, sport, culture…<br>150 affirmations · bientôt disponible</span>
+                <span class="revision-card-sub">Géographie, sciences, sport, culture…<br>La chaîne s'arrête à la 1ère erreur</span>
               </div>
             </div>
           </div>
@@ -752,7 +752,53 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=15"></script>
+  <!-- ══════════════════ SCREEN: VRAI OU FAUX ══════════════════ -->
+  <div id="screen-vrai-faux" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="vf-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="vf-counter" class="defi-level-label">1 / 50</span>
+      </div>
+      <span class="hist-mode-badge">🎯 Vrai ou Faux</span>
+    </div>
+    <div class="vf-game-area">
+      <div class="vf-streak-bar">
+        <span class="vf-streak-label">Série</span>
+        <span id="vf-streak-count" class="vf-streak-num">0</span>
+        <span id="vf-best-display" class="vf-best-inline">🏆 0</span>
+      </div>
+      <div class="vf-statement-card">
+        <p id="vf-statement" class="vf-statement-text">…</p>
+      </div>
+      <p id="vf-feedback" class="vf-feedback"></p>
+      <div class="vf-buttons">
+        <button id="vf-btn-vrai" class="vf-btn vf-btn-vrai" onclick="handleVraiFaux(true)">✅ VRAI</button>
+        <button id="vf-btn-faux" class="vf-btn vf-btn-faux" onclick="handleVraiFaux(false)">❌ FAUX</button>
+      </div>
+    </div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: VRAI OU FAUX RÉSULTATS ══════════════════ -->
+  <div id="screen-vrai-faux-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="vf-result-icon">💥</div>
+      <h2 id="vf-result-title">Série terminée !</h2>
+      <div class="total-score"><span id="vf-result-streak">0 bonne réponse</span></div>
+      <div id="vf-result-best" class="encouraging-msg" style="font-weight:700;margin-top:4px"></div>
+      <div id="vf-result-wrong" class="vf-result-wrong-block"></div>
+      <div class="results-actions">
+        <button id="btn-vf-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=16"></script>
   <script data-goatcounter="https://ajneb.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
