@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=13" />
+  <link rel="stylesheet" href="css/style.css?v=14" />
 </head>
 <body>
 
@@ -90,77 +90,167 @@
     <!-- ── Onglet Défis ── -->
     <div class="tab-panel" id="tab-defi">
       <div class="tab-content">
-        <div class="revision-cards">
-          <div class="revision-card defi-card" id="defi-drapeaux-card" data-defi="drapeaux">
-            <span class="revision-card-emoji">🌍</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Drapeaux</span>
-              <span class="revision-card-sub">50 drapeaux · difficulté croissante<br>Une erreur = game over</span>
-              <span id="defi-drapeaux-record" class="defi-record-badge" style="display:none"></span>
+
+        <!-- ── 🌍 Géographie ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🌍</span> Géographie</div>
+          <div class="revision-cards">
+            <div class="revision-card defi-card" id="defi-drapeaux-card" data-defi="drapeaux">
+              <span class="revision-card-emoji">🏴</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Drapeaux</span>
+                <span class="revision-card-sub">50 drapeaux · difficulté croissante<br>Une erreur = game over</span>
+                <span id="defi-drapeaux-record" class="defi-record-badge" style="display:none"></span>
+              </div>
             </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-capitales-card" data-defi="capitales">
-            <span class="revision-card-emoji">🏛️</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Capitales</span>
-              <span class="revision-card-sub">50 capitales · difficulté croissante<br>Une erreur = game over</span>
-              <span id="defi-capitales-record" class="defi-record-badge" style="display:none"></span>
+            <div class="revision-card defi-card" id="defi-capitales-card" data-defi="capitales">
+              <span class="revision-card-emoji">📍</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Capitales</span>
+                <span class="revision-card-sub">50 capitales · difficulté croissante<br>Une erreur = game over</span>
+                <span id="defi-capitales-record" class="defi-record-badge" style="display:none"></span>
+              </div>
             </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-logos-card" data-defi="logos">
-            <span class="revision-card-emoji">⚽</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Logos</span>
-              <span class="revision-card-sub">50 logos foot · difficulté croissante<br>Une erreur = game over</span>
-              <span id="defi-logos-record" class="defi-record-badge" style="display:none"></span>
+            <div class="revision-card defi-card" id="defi-departements-card" data-defi="departements">
+              <span class="revision-card-emoji">🗺️</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Départements</span>
+                <span class="revision-card-sub">99 départements · carte France<br>Une erreur = game over</span>
+                <span id="defi-departements-record" class="defi-record-badge" style="display:none"></span>
+              </div>
             </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-departements-card" data-defi="departements">
-            <span class="revision-card-emoji">🗺️</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Départements</span>
-              <span class="revision-card-sub">99 départements · carte France<br>Une erreur = game over</span>
-              <span id="defi-departements-record" class="defi-record-badge" style="display:none"></span>
+            <div class="revision-card defi-card" id="defi-villes-card" data-defi="villes">
+              <span class="revision-card-emoji">🏙️</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Villes de France</span>
+                <span class="revision-card-sub">100 villes · localise le point sur la carte<br>Une erreur = game over</span>
+                <span id="defi-villes-record" class="defi-record-badge" style="display:none"></span>
+              </div>
             </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-villes-card" data-defi="villes">
-            <span class="revision-card-emoji">🏙️</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Villes</span>
-              <span class="revision-card-sub">100 villes françaises · localise le point<br>Une erreur = game over</span>
-              <span id="defi-villes-record" class="defi-record-badge" style="display:none"></span>
-            </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-pays-card" data-defi="pays">
-            <span class="revision-card-emoji">🌍</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Défi Pays</span>
-              <span class="revision-card-sub">100 pays · carte du monde<br>Une erreur = game over</span>
-              <span id="defi-pays-record" class="defi-record-badge" style="display:none"></span>
-            </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-histoire-france-card" data-defi="histoire-france">
-            <span class="revision-card-emoji">🏰</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Histoire de France</span>
-              <span class="revision-card-sub">Lequel est arrivé en premier ?<br>50 questions · 5 niveaux</span>
-            </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-histoire-monde-card" data-defi="histoire-monde">
-            <span class="revision-card-emoji">🌐</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Histoire du monde</span>
-              <span class="revision-card-sub">Lequel est arrivé en premier ?<br>50 questions · 5 niveaux</span>
-            </div>
-          </div>
-          <div class="revision-card defi-card" id="defi-sport-card" data-defi="sport">
-            <span class="revision-card-emoji">🏆</span>
-            <div style="display:flex;flex-direction:column;gap:2px">
-              <span class="revision-card-label">Sport</span>
-              <span class="revision-card-sub">Qui a le plus ?<br>50 questions · 5 niveaux</span>
+            <div class="revision-card defi-card" id="defi-pays-card" data-defi="pays">
+              <span class="revision-card-emoji">🌍</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Pays du monde</span>
+                <span class="revision-card-sub">100 pays · carte du monde<br>Une erreur = game over</span>
+                <span id="defi-pays-record" class="defi-record-badge" style="display:none"></span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- ── ⚽ Sport ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>⚽</span> Sport</div>
+          <div class="revision-cards">
+            <div class="revision-card defi-card" id="defi-logos-card" data-defi="logos">
+              <span class="revision-card-emoji">🛡️</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Logos de football</span>
+                <span class="revision-card-sub">50 logos · difficulté croissante<br>Une erreur = game over</span>
+                <span id="defi-logos-record" class="defi-record-badge" style="display:none"></span>
+              </div>
+            </div>
+            <div class="revision-card defi-card" id="defi-sport-card" data-defi="sport">
+              <span class="revision-card-emoji">🏆</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Qui a le plus ?</span>
+                <span class="revision-card-sub">Football, tennis, NBA, F1…<br>50 questions · 5 niveaux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 🏛️ Histoire ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🏛️</span> Histoire</div>
+          <div class="revision-cards">
+            <div class="revision-card defi-card" id="defi-histoire-france-card" data-defi="histoire-france">
+              <span class="revision-card-emoji">🏰</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Histoire de France</span>
+                <span class="revision-card-sub">Lequel est arrivé en premier ?<br>50 questions · 5 niveaux</span>
+              </div>
+            </div>
+            <div class="revision-card defi-card" id="defi-histoire-monde-card" data-defi="histoire-monde">
+              <span class="revision-card-emoji">🌐</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Histoire du monde</span>
+                <span class="revision-card-sub">Lequel est arrivé en premier ?<br>50 questions · 5 niveaux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 🔬 Sciences & Nature ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🔬</span> Sciences &amp; Nature</div>
+          <div class="revision-cards">
+            <div class="defi-placeholder-card" id="defi-sciences-card" data-defi="sciences">
+              <span class="revision-card-emoji">🔬</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Sciences &amp; Nature</span>
+                <span class="revision-card-sub">Corps humain, animaux, planètes…<br>150 questions · bientôt disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 💡 Technologie ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>💡</span> Technologie</div>
+          <div class="revision-cards">
+            <div class="defi-placeholder-card" id="defi-techno-card" data-defi="techno">
+              <span class="revision-card-emoji">💡</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Technologie &amp; Inventions</span>
+                <span class="revision-card-sub">Inventeurs, grandes inventions…<br>150 questions · bientôt disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 🎭 Culture & Personnages ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🎭</span> Culture &amp; Personnages</div>
+          <div class="revision-cards">
+            <div class="defi-placeholder-card" id="defi-quisuisje-card" data-defi="quisuisje">
+              <span class="revision-card-emoji">🎭</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Qui suis-je ?</span>
+                <span class="revision-card-sub">Scientifiques, explorateurs, artistes…<br>150 fiches · bientôt disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 🧠 Langue & Mots ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🧠</span> Langue &amp; Mots</div>
+          <div class="revision-cards">
+            <div class="defi-placeholder-card" id="defi-anagrammes-card" data-defi="anagrammes">
+              <span class="revision-card-emoji">🔤</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Anagrammes</span>
+                <span class="revision-card-sub">Reconstitue le mot mélangé<br>150 mots · bientôt disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 🎯 Général ── -->
+        <div class="defi-category-section">
+          <div class="defi-category-header"><span>🎯</span> Général</div>
+          <div class="revision-cards">
+            <div class="defi-placeholder-card" id="defi-vrai-faux-card" data-defi="vrai-faux">
+              <span class="revision-card-emoji">✅</span>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <span class="revision-card-label">Vrai ou Faux en chaîne</span>
+                <span class="revision-card-sub">Géographie, sciences, sport, culture…<br>150 affirmations · bientôt disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -662,7 +752,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=13"></script>
+  <script type="module" src="js/app.js?v=14"></script>
   <script data-goatcounter="https://ajneb.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
