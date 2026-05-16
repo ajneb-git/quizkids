@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "Sport : Qui a le plus ? — 5 niveaux × 20 questions, 100 au total. Football, tennis, NBA, F1, cyclisme, rugby, golf, boxe, JO, athlétisme.",
   "tiers": [
     {
@@ -7,19 +7,124 @@
       "label": "Très facile",
       "pool": [
         {
+          "emoji": "⚽",
           "question": "Qui a remporté le plus de Ballons d'Or ?",
           "sport1": { "label": "Lionel Messi", "stat": 8, "display": "8 Ballons d'Or" },
           "sport2": { "label": "Cristiano Ronaldo", "stat": 5, "display": "5 Ballons d'Or" }
         },
         {
+          "emoji": "⚽",
           "question": "Qui a remporté le plus de Coupes du Monde de football ?",
           "sport1": { "label": "Brésil", "stat": 5, "display": "5 Coupes du Monde" },
           "sport2": { "label": "France", "stat": 2, "display": "2 Coupes du Monde" }
         },
         {
+          "emoji": "🎾",
           "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
           "sport1": { "label": "Novak Djokovic", "stat": 24, "display": "24 titres du Grand Chelem" },
           "sport2": { "label": "Andre Agassi", "stat": 8, "display": "8 titres du Grand Chelem" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA ?",
+          "sport1": { "label": "Chicago Bulls", "stat": 6, "display": "6 titres NBA" },
+          "sport2": { "label": "Miami Heat", "stat": 3, "display": "3 titres NBA" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Lewis Hamilton", "stat": 7, "display": "7 titres de champion du monde" },
+          "sport2": { "label": "Fernando Alonso", "stat": 2, "display": "2 titres de champion du monde" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Ligues des Champions ?",
+          "sport1": { "label": "Real Madrid", "stat": 15, "display": "15 Ligues des Champions" },
+          "sport2": { "label": "FC Barcelone", "stat": 5, "display": "5 Ligues des Champions" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Roland Garros ?",
+          "sport1": { "label": "Rafael Nadal", "stat": 14, "display": "14 titres à Roland Garros" },
+          "sport2": { "label": "Novak Djokovic", "stat": 3, "display": "3 titres à Roland Garros" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA ?",
+          "sport1": { "label": "Los Angeles Lakers", "stat": 17, "display": "17 titres NBA" },
+          "sport2": { "label": "Golden State Warriors", "stat": 4, "display": "4 titres NBA" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Tours de France ?",
+          "sport1": { "label": "Eddy Merckx", "stat": 5, "display": "5 Tours de France" },
+          "sport2": { "label": "Greg LeMond", "stat": 3, "display": "3 Tours de France" }
+        },
+        {
+          "emoji": "⛳",
+          "question": "Qui a remporté le plus de tournois majeurs de golf ?",
+          "sport1": { "label": "Jack Nicklaus", "stat": 18, "display": "18 titres en tournois majeurs" },
+          "sport2": { "label": "Arnold Palmer", "stat": 7, "display": "7 titres en tournois majeurs" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Ballons d'Or ?",
+          "sport1": { "label": "Michel Platini", "stat": 3, "display": "3 Ballons d'Or (1983, 84, 85)" },
+          "sport2": { "label": "Zinédine Zidane", "stat": 1, "display": "1 Ballon d'Or (1998)" }
+        },
+        {
+          "emoji": "🏉",
+          "question": "Qui a remporté le plus de Coupes du Monde de rugby ?",
+          "sport1": { "label": "Afrique du Sud", "stat": 4, "display": "4 Coupes du Monde de rugby" },
+          "sport2": { "label": "France", "stat": 0, "display": "0 Coupe du Monde de rugby" }
+        },
+        {
+          "emoji": "🏊",
+          "question": "Qui a remporté le plus de médailles d'or olympiques en natation ?",
+          "sport1": { "label": "Michael Phelps", "stat": 23, "display": "23 médailles d'or olympiques" },
+          "sport2": { "label": "Mark Spitz", "stat": 9, "display": "9 médailles d'or olympiques" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Michael Schumacher", "stat": 7, "display": "7 titres de champion du monde" },
+          "sport2": { "label": "Ayrton Senna", "stat": 3, "display": "3 titres de champion du monde" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Coupes du Monde de football ?",
+          "sport1": { "label": "Allemagne", "stat": 4, "display": "4 Coupes du Monde" },
+          "sport2": { "label": "Angleterre", "stat": 1, "display": "1 Coupe du Monde (1966)" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA ?",
+          "sport1": { "label": "Boston Celtics", "stat": 18, "display": "18 titres NBA" },
+          "sport2": { "label": "San Antonio Spurs", "stat": 5, "display": "5 titres NBA" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Wimbledon ?",
+          "sport1": { "label": "Roger Federer", "stat": 8, "display": "8 titres à Wimbledon" },
+          "sport2": { "label": "Boris Becker", "stat": 3, "display": "3 titres à Wimbledon" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Ligues des Champions ?",
+          "sport1": { "label": "AC Milan", "stat": 7, "display": "7 Ligues des Champions" },
+          "sport2": { "label": "Juventus", "stat": 2, "display": "2 Ligues des Champions" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA ?",
+          "sport1": { "label": "Michael Jordan", "stat": 6, "display": "6 titres NBA" },
+          "sport2": { "label": "LeBron James", "stat": 4, "display": "4 titres NBA" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Tours de France ?",
+          "sport1": { "label": "Miguel Indurain", "stat": 5, "display": "5 Tours de France" },
+          "sport2": { "label": "Chris Froome", "stat": 4, "display": "4 Tours de France" }
         }
       ]
     },
@@ -28,19 +133,124 @@
       "label": "Facile",
       "pool": [
         {
+          "emoji": "⚽",
           "question": "Qui a remporté le plus de Ballons d'Or ?",
-          "sport1": { "label": "Johan Cruyff", "stat": 3, "display": "3 Ballons d'Or" },
-          "sport2": { "label": "Zinédine Zidane", "stat": 1, "display": "1 Ballon d'Or" }
+          "sport1": { "label": "Johan Cruyff", "stat": 3, "display": "3 Ballons d'Or (1971, 73, 74)" },
+          "sport2": { "label": "Zinédine Zidane", "stat": 1, "display": "1 Ballon d'Or (1998)" }
         },
         {
+          "emoji": "🎾",
           "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
           "sport1": { "label": "Roger Federer", "stat": 20, "display": "20 titres du Grand Chelem" },
           "sport2": { "label": "Pete Sampras", "stat": 14, "display": "14 titres du Grand Chelem" }
         },
         {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA ?",
+          "sport1": { "label": "Magic Johnson", "stat": 5, "display": "5 titres NBA" },
+          "sport2": { "label": "Larry Bird", "stat": 3, "display": "3 titres NBA" }
+        },
+        {
+          "emoji": "🏎️",
           "question": "Qui a remporté le plus de victoires en Grand Prix de F1 ?",
-          "sport1": { "label": "Lewis Hamilton", "stat": 103, "display": "103 victoires" },
-          "sport2": { "label": "Alain Prost", "stat": 51, "display": "51 victoires" }
+          "sport1": { "label": "Lewis Hamilton", "stat": 103, "display": "103 victoires en Grand Prix" },
+          "sport2": { "label": "Alain Prost", "stat": 51, "display": "51 victoires en Grand Prix" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Coupes du Monde de football ?",
+          "sport1": { "label": "Italie", "stat": 4, "display": "4 Coupes du Monde" },
+          "sport2": { "label": "Espagne", "stat": 1, "display": "1 Coupe du Monde (2010)" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Serena Williams", "stat": 23, "display": "23 titres du Grand Chelem" },
+          "sport2": { "label": "Monica Seles", "stat": 9, "display": "9 titres du Grand Chelem" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de fois le titre de MVP de la saison en NBA ?",
+          "sport1": { "label": "Kareem Abdul-Jabbar", "stat": 6, "display": "6 titres de MVP de la saison" },
+          "sport2": { "label": "Michael Jordan", "stat": 5, "display": "5 titres de MVP de la saison" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Tours de France ?",
+          "sport1": { "label": "Bernard Hinault", "stat": 5, "display": "5 Tours de France" },
+          "sport2": { "label": "Greg LeMond", "stat": 3, "display": "3 Tours de France" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de fois la Premier League (depuis 1992) ?",
+          "sport1": { "label": "Manchester United", "stat": 13, "display": "13 titres de Premier League" },
+          "sport2": { "label": "Arsenal", "stat": 3, "display": "3 titres de Premier League" }
+        },
+        {
+          "emoji": "⛳",
+          "question": "Qui a remporté le plus de tournois majeurs de golf ?",
+          "sport1": { "label": "Tiger Woods", "stat": 15, "display": "15 titres en tournois majeurs" },
+          "sport2": { "label": "Gary Player", "stat": 9, "display": "9 titres en tournois majeurs" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Ligues des Champions ?",
+          "sport1": { "label": "Liverpool", "stat": 6, "display": "6 Ligues des Champions" },
+          "sport2": { "label": "FC Barcelone", "stat": 5, "display": "5 Ligues des Champions" }
+        },
+        {
+          "emoji": "🏉",
+          "question": "Qui a remporté le plus de Coupes du Monde de rugby ?",
+          "sport1": { "label": "Nouvelle-Zélande", "stat": 3, "display": "3 Coupes du Monde de rugby" },
+          "sport2": { "label": "Australie", "stat": 2, "display": "2 Coupes du Monde de rugby" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Wimbledon ?",
+          "sport1": { "label": "Martina Navratilova", "stat": 9, "display": "9 titres à Wimbledon" },
+          "sport2": { "label": "Steffi Graf", "stat": 7, "display": "7 titres à Wimbledon" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Sebastian Vettel", "stat": 4, "display": "4 titres de champion du monde" },
+          "sport2": { "label": "Niki Lauda", "stat": 3, "display": "3 titres de champion du monde" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de fois le championnat de Ligue 1 ?",
+          "sport1": { "label": "Paris Saint-Germain", "stat": 12, "display": "12 titres de Ligue 1" },
+          "sport2": { "label": "Olympique de Marseille", "stat": 9, "display": "9 titres de Ligue 1" }
+        },
+        {
+          "emoji": "🏅",
+          "question": "Qui a remporté le plus de médailles d'or aux Jeux Olympiques ?",
+          "sport1": { "label": "Michael Phelps", "stat": 23, "display": "23 médailles d'or olympiques" },
+          "sport2": { "label": "Usain Bolt", "stat": 8, "display": "8 médailles d'or olympiques" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a marqué le plus de points en carrière en NBA ?",
+          "sport1": { "label": "LeBron James", "stat": 40000, "display": "plus de 40 000 points en carrière" },
+          "sport2": { "label": "Kobe Bryant", "stat": 33643, "display": "33 643 points en carrière" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Novak Djokovic", "stat": 24, "display": "24 titres du Grand Chelem" },
+          "sport2": { "label": "Pete Sampras", "stat": 14, "display": "14 titres du Grand Chelem" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Tours de France ?",
+          "sport1": { "label": "Jacques Anquetil", "stat": 5, "display": "5 Tours de France" },
+          "sport2": { "label": "Laurent Fignon", "stat": 2, "display": "2 Tours de France" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a disputé le plus de matchs avec l'équipe de France ?",
+          "sport1": { "label": "Lilian Thuram", "stat": 142, "display": "142 sélections avec l'équipe de France" },
+          "sport2": { "label": "Thierry Henry", "stat": 123, "display": "123 sélections avec l'équipe de France" }
         }
       ]
     },
@@ -49,19 +259,124 @@
       "label": "Moyen",
       "pool": [
         {
-          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
-          "sport1": { "label": "Alain Prost", "stat": 4, "display": "4 titres de champion du monde" },
-          "sport2": { "label": "Ayrton Senna", "stat": 3, "display": "3 titres de champion du monde" }
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Björn Borg", "stat": 11, "display": "11 titres du Grand Chelem" },
+          "sport2": { "label": "John McEnroe", "stat": 7, "display": "7 titres du Grand Chelem" }
         },
         {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de victoires en Grand Prix de F1 ?",
+          "sport1": { "label": "Alain Prost", "stat": 51, "display": "51 victoires en Grand Prix" },
+          "sport2": { "label": "Ayrton Senna", "stat": 41, "display": "41 victoires en Grand Prix" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de fois le Championnat d'Europe de football ?",
+          "sport1": { "label": "Espagne", "stat": 4, "display": "4 Championnats d'Europe (1964, 2008, 2012, 2024)" },
+          "sport2": { "label": "France", "stat": 2, "display": "2 Championnats d'Europe (1984, 2000)" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a réalisé le plus de triple-doubles en carrière en NBA ?",
+          "sport1": { "label": "Russell Westbrook", "stat": 198, "display": "198 triple-doubles en carrière" },
+          "sport2": { "label": "Oscar Robertson", "stat": 181, "display": "181 triple-doubles en carrière" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Ligues des Champions ?",
+          "sport1": { "label": "Bayern Munich", "stat": 6, "display": "6 Ligues des Champions" },
+          "sport2": { "label": "Manchester United", "stat": 3, "display": "3 Ligues des Champions" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
+          "sport1": { "label": "Juan Manuel Fangio", "stat": 5, "display": "5 titres de champion du monde (1951–57)" },
+          "sport2": { "label": "Jim Clark", "stat": 2, "display": "2 titres de champion du monde (1963, 1965)" }
+        },
+        {
+          "emoji": "🏅",
+          "question": "Qui a remporté le plus de médailles d'or olympiques en athlétisme ?",
+          "sport1": { "label": "Carl Lewis", "stat": 9, "display": "9 médailles d'or olympiques" },
+          "sport2": { "label": "Usain Bolt", "stat": 8, "display": "8 médailles d'or olympiques" }
+        },
+        {
+          "emoji": "🏉",
+          "question": "Qui a remporté le plus de Coupes du Monde de rugby ?",
+          "sport1": { "label": "Angleterre", "stat": 1, "display": "1 Coupe du Monde de rugby (2003)" },
+          "sport2": { "label": "France", "stat": 0, "display": "0 Coupe du Monde de rugby" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Wimbledon ?",
+          "sport1": { "label": "Pete Sampras", "stat": 7, "display": "7 titres à Wimbledon" },
+          "sport2": { "label": "Björn Borg", "stat": 5, "display": "5 titres à Wimbledon" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a disputé le plus de matchs avec l'équipe de France ?",
+          "sport1": { "label": "Hugo Lloris", "stat": 145, "display": "145 sélections avec l'équipe de France" },
+          "sport2": { "label": "Lilian Thuram", "stat": 142, "display": "142 sélections avec l'équipe de France" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Tours de France ?",
+          "sport1": { "label": "Tadej Pogačar", "stat": 3, "display": "3 Tours de France (2020, 2021, 2024)" },
+          "sport2": { "label": "Jonas Vingegaard", "stat": 2, "display": "2 Tours de France (2022, 2023)" }
+        },
+        {
+          "emoji": "⚽",
           "question": "Qui a marqué le plus de buts avec l'équipe de France ?",
           "sport1": { "label": "Olivier Giroud", "stat": 57, "display": "57 buts avec l'équipe de France" },
           "sport2": { "label": "Thierry Henry", "stat": 51, "display": "51 buts avec l'équipe de France" }
         },
         {
-          "question": "Qui a remporté le plus de médailles d'or olympiques en athlétisme ?",
-          "sport1": { "label": "Carl Lewis", "stat": 9, "display": "9 médailles d'or olympiques" },
-          "sport2": { "label": "Usain Bolt", "stat": 8, "display": "8 médailles d'or olympiques" }
+          "emoji": "🥊",
+          "question": "Qui a remporté le plus de combats professionnels de boxe ?",
+          "sport1": { "label": "Muhammad Ali", "stat": 56, "display": "56 victoires professionnelles" },
+          "sport2": { "label": "Floyd Mayweather", "stat": 50, "display": "50 victoires professionnelles (50–0)" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a été sélectionné le plus de fois au NBA All-Star Game ?",
+          "sport1": { "label": "LeBron James", "stat": 20, "display": "20 sélections au All-Star Game" },
+          "sport2": { "label": "Kobe Bryant", "stat": 18, "display": "18 sélections au All-Star Game" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a réalisé le plus de pole positions en F1 ?",
+          "sport1": { "label": "Lewis Hamilton", "stat": 104, "display": "104 pole positions" },
+          "sport2": { "label": "Ayrton Senna", "stat": 65, "display": "65 pole positions" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de fois le championnat d'Espagne (La Liga) ?",
+          "sport1": { "label": "Real Madrid", "stat": 36, "display": "36 titres de La Liga" },
+          "sport2": { "label": "FC Barcelone", "stat": 27, "display": "27 titres de La Liga" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a passé le plus de semaines classé n°1 mondial au tennis ?",
+          "sport1": { "label": "Novak Djokovic", "stat": 420, "display": "plus de 420 semaines classé n°1 mondial" },
+          "sport2": { "label": "Roger Federer", "stat": 310, "display": "310 semaines classé n°1 mondial" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a pris le plus de rebonds en carrière en NBA ?",
+          "sport1": { "label": "Wilt Chamberlain", "stat": 23924, "display": "23 924 rebonds en carrière" },
+          "sport2": { "label": "Bill Russell", "stat": 21620, "display": "21 620 rebonds en carrière" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de fois le Tour d'Italie (Giro) ?",
+          "sport1": { "label": "Eddy Merckx", "stat": 5, "display": "5 Tours d'Italie" },
+          "sport2": { "label": "Bernard Hinault", "stat": 3, "display": "3 Tours d'Italie" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Roland Garros (dames) ?",
+          "sport1": { "label": "Chris Evert", "stat": 7, "display": "7 titres à Roland Garros" },
+          "sport2": { "label": "Steffi Graf", "stat": 6, "display": "6 titres à Roland Garros" }
         }
       ]
     },
@@ -70,19 +385,124 @@
       "label": "Difficile",
       "pool": [
         {
-          "question": "Qui a marqué le plus de buts en Coupe du Monde ?",
+          "emoji": "🥊",
+          "question": "Qui a effectué le plus de défenses du titre mondial poids lourd en boxe ?",
+          "sport1": { "label": "Joe Louis", "stat": 25, "display": "25 défenses du titre mondial (1937–1948)" },
+          "sport2": { "label": "Muhammad Ali", "stat": 19, "display": "19 défenses du titre mondial" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a marqué le plus de buts en Coupe du Monde de football ?",
           "sport1": { "label": "Miroslav Klose", "stat": 16, "display": "16 buts en Coupe du Monde" },
           "sport2": { "label": "Ronaldo Nazário", "stat": 15, "display": "15 buts en Coupe du Monde" }
         },
         {
+          "emoji": "🏎️",
           "question": "Qui a réalisé le plus de pole positions en F1 ?",
           "sport1": { "label": "Ayrton Senna", "stat": 65, "display": "65 pole positions" },
           "sport2": { "label": "Michael Schumacher", "stat": 68, "display": "68 pole positions" }
         },
         {
-          "question": "Qui a réalisé le plus de triple-doubles en carrière en NBA ?",
-          "sport1": { "label": "Russell Westbrook", "stat": 200, "display": "200+ triple-doubles" },
-          "sport2": { "label": "Oscar Robertson", "stat": 181, "display": "181 triple-doubles" }
+          "emoji": "🏀",
+          "question": "Qui a marqué le plus de points dans un seul match NBA ?",
+          "sport1": { "label": "Wilt Chamberlain", "stat": 100, "display": "100 points en un seul match (2 mars 1962)" },
+          "sport2": { "label": "Kobe Bryant", "stat": 81, "display": "81 points en un seul match (2006)" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Ivan Lendl", "stat": 8, "display": "8 titres du Grand Chelem" },
+          "sport2": { "label": "Stefan Edberg", "stat": 6, "display": "6 titres du Grand Chelem" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a disputé le plus de matchs avec sa sélection nationale ?",
+          "sport1": { "label": "Cristiano Ronaldo", "stat": 213, "display": "213 sélections avec le Portugal" },
+          "sport2": { "label": "Lionel Messi", "stat": 180, "display": "180 sélections avec l'Argentine" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de fois Paris-Roubaix ?",
+          "sport1": { "label": "Roger De Vlaeminck", "stat": 4, "display": "4 victoires à Paris-Roubaix (1972, 74, 75, 77)" },
+          "sport2": { "label": "Eddy Merckx", "stat": 3, "display": "3 victoires à Paris-Roubaix (1968, 70, 73)" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois l'US Open ?",
+          "sport1": { "label": "Pete Sampras", "stat": 5, "display": "5 titres à l'US Open" },
+          "sport2": { "label": "John McEnroe", "stat": 4, "display": "4 titres à l'US Open" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de victoires en Grand Prix de F1 ?",
+          "sport1": { "label": "Sebastian Vettel", "stat": 53, "display": "53 victoires en Grand Prix" },
+          "sport2": { "label": "Alain Prost", "stat": 51, "display": "51 victoires en Grand Prix" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a disputé le plus de finales de Coupe du Monde ?",
+          "sport1": { "label": "Allemagne", "stat": 8, "display": "8 finales de Coupe du Monde (4 victoires, 4 défaites)" },
+          "sport2": { "label": "Brésil", "stat": 7, "display": "7 finales de Coupe du Monde (5 victoires, 2 défaites)" }
+        },
+        {
+          "emoji": "⛳",
+          "question": "Qui a remporté le plus de tournois majeurs de golf ?",
+          "sport1": { "label": "Jack Nicklaus", "stat": 18, "display": "18 titres en tournois majeurs" },
+          "sport2": { "label": "Tiger Woods", "stat": 15, "display": "15 titres en tournois majeurs" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a la meilleure moyenne de rebonds par match en carrière en NBA ?",
+          "sport1": { "label": "Wilt Chamberlain", "stat": 229, "display": "22,9 rebonds par match en carrière" },
+          "sport2": { "label": "Bill Russell", "stat": 225, "display": "22,5 rebonds par match en carrière" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de fois la Vuelta d'Espagne ?",
+          "sport1": { "label": "Primož Roglič", "stat": 4, "display": "4 Vueltas d'Espagne (2019, 2020, 2021, 2023)" },
+          "sport2": { "label": "Alberto Contador", "stat": 3, "display": "3 Vueltas d'Espagne (2006, 2008, 2012)" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de fois Wimbledon (dames) ?",
+          "sport1": { "label": "Martina Navratilova", "stat": 9, "display": "9 titres à Wimbledon" },
+          "sport2": { "label": "Serena Williams", "stat": 7, "display": "7 titres à Wimbledon" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a marqué le plus de points sur une seule saison NBA ?",
+          "sport1": { "label": "Wilt Chamberlain", "stat": 4029, "display": "4 029 points sur la saison 1961-62" },
+          "sport2": { "label": "Michael Jordan", "stat": 3041, "display": "3 041 points sur la saison 1986-87" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a marqué le plus de buts avec sa sélection nationale ?",
+          "sport1": { "label": "Cristiano Ronaldo", "stat": 130, "display": "plus de 130 buts avec le Portugal" },
+          "sport2": { "label": "Lionel Messi", "stat": 106, "display": "106 buts avec l'Argentine" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de titres sur le circuit ATP en carrière ?",
+          "sport1": { "label": "Jimmy Connors", "stat": 109, "display": "109 titres ATP en carrière" },
+          "sport2": { "label": "Roger Federer", "stat": 103, "display": "103 titres ATP en carrière" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a réalisé le plus de meilleurs tours (fastest laps) en F1 ?",
+          "sport1": { "label": "Michael Schumacher", "stat": 77, "display": "77 meilleurs tours en carrière" },
+          "sport2": { "label": "Lewis Hamilton", "stat": 67, "display": "67 meilleurs tours en carrière" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de Coupes du Monde de football ?",
+          "sport1": { "label": "Uruguay", "stat": 2, "display": "2 Coupes du Monde (1930, 1950)" },
+          "sport2": { "label": "Espagne", "stat": 1, "display": "1 Coupe du Monde (2010)" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui détient le record de passes décisives en carrière en NBA ?",
+          "sport1": { "label": "John Stockton", "stat": 15806, "display": "15 806 passes décisives en carrière" },
+          "sport2": { "label": "Jason Kidd", "stat": 12091, "display": "12 091 passes décisives en carrière" }
         }
       ]
     },
@@ -91,19 +511,124 @@
       "label": "Expert",
       "pool": [
         {
+          "emoji": "🎾",
           "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
           "sport1": { "label": "Serena Williams", "stat": 23, "display": "23 titres du Grand Chelem" },
           "sport2": { "label": "Steffi Graf", "stat": 22, "display": "22 titres du Grand Chelem" }
         },
         {
+          "emoji": "🏎️",
           "question": "Qui a remporté le plus de titres de champion du monde de F1 ?",
           "sport1": { "label": "Alain Prost", "stat": 4, "display": "4 titres de champion du monde" },
           "sport2": { "label": "Ayrton Senna", "stat": 3, "display": "3 titres de champion du monde" }
         },
         {
-          "question": "Qui a disputé le plus de finales de Coupe du Monde de football ?",
-          "sport1": { "label": "Allemagne", "stat": 8, "display": "8 finales de Coupe du Monde" },
-          "sport2": { "label": "Brésil", "stat": 7, "display": "7 finales de Coupe du Monde" }
+          "emoji": "🏀",
+          "question": "Qui a la meilleure moyenne de points par match en carrière en NBA ?",
+          "sport1": { "label": "Michael Jordan", "stat": 3012, "display": "30,12 points par match en carrière" },
+          "sport2": { "label": "Wilt Chamberlain", "stat": 3007, "display": "30,07 points par match en carrière" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de titres en simple tout au long de sa carrière ?",
+          "sport1": { "label": "Martina Navratilova", "stat": 167, "display": "167 titres en simple sur le circuit WTA" },
+          "sport2": { "label": "Serena Williams", "stat": 73, "display": "73 titres en simple sur le circuit WTA" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a marqué le plus de buts en Coupe du Monde de football ?",
+          "sport1": { "label": "Ronaldo Nazário", "stat": 15, "display": "15 buts en Coupe du Monde (Brésil)" },
+          "sport2": { "label": "Pelé", "stat": 12, "display": "12 buts en Coupe du Monde (Brésil)" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a la meilleure moyenne de points par match sur une saison en NBA ?",
+          "sport1": { "label": "Wilt Chamberlain", "stat": 504, "display": "50,4 pts par match (saison 1961-62, record absolu)" },
+          "sport2": { "label": "Michael Jordan", "stat": 371, "display": "37,1 pts par match (saison 1986-87)" }
+        },
+        {
+          "emoji": "🎾",
+          "question": "Qui a remporté le plus de tournois du Grand Chelem ?",
+          "sport1": { "label": "Novak Djokovic", "stat": 24, "display": "24 titres du Grand Chelem" },
+          "sport2": { "label": "Margaret Court", "stat": 24, "display": "24 titres du Grand Chelem — ÉGALITÉ !" }
+        },
+        {
+          "emoji": "🥊",
+          "question": "Qui a remporté le plus de victoires par KO en boxe professionnelle ?",
+          "sport1": { "label": "Archie Moore", "stat": 131, "display": "131 victoires par KO (record historique)" },
+          "sport2": { "label": "George Foreman", "stat": 76, "display": "76 victoires par KO" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de victoires d'étapes sur le Tour de France ?",
+          "sport1": { "label": "Eddy Merckx", "stat": 34, "display": "34 victoires d'étapes sur le Tour de France" },
+          "sport2": { "label": "Bernard Hinault", "stat": 28, "display": "28 victoires d'étapes sur le Tour de France" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui détient le record de passes décisives en carrière en NBA ?",
+          "sport1": { "label": "John Stockton", "stat": 15806, "display": "15 806 passes décisives en carrière" },
+          "sport2": { "label": "Magic Johnson", "stat": 10141, "display": "10 141 passes décisives en carrière" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a marqué le plus de buts en Ligue des Champions ?",
+          "sport1": { "label": "Cristiano Ronaldo", "stat": 140, "display": "140 buts en Ligue des Champions" },
+          "sport2": { "label": "Lionel Messi", "stat": 129, "display": "129 buts en Ligue des Champions" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a disputé le plus de Grands Prix de F1 en carrière ?",
+          "sport1": { "label": "Kimi Räikkönen", "stat": 349, "display": "349 Grands Prix disputés (record historique)" },
+          "sport2": { "label": "Michael Schumacher", "stat": 308, "display": "308 Grands Prix disputés" }
+        },
+        {
+          "emoji": "🏉",
+          "question": "Qui a inscrit le plus d'essais en Coupe du Monde de rugby ?",
+          "sport1": { "label": "Jonah Lomu", "stat": 15, "display": "15 essais en Coupe du Monde — ÉGALITÉ !" },
+          "sport2": { "label": "Bryan Habana", "stat": 15, "display": "15 essais en Coupe du Monde — ÉGALITÉ !" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a remporté le plus de fois la Copa América ?",
+          "sport1": { "label": "Uruguay", "stat": 15, "display": "15 titres de Copa América" },
+          "sport2": { "label": "Brésil", "stat": 9, "display": "9 titres de Copa América" }
+        },
+        {
+          "emoji": "🚴",
+          "question": "Qui a remporté le plus de Monuments cyclistes ?",
+          "sport1": { "label": "Eddy Merckx", "stat": 19, "display": "19 victoires dans les Monuments cyclistes" },
+          "sport2": { "label": "Fabian Cancellara", "stat": 11, "display": "11 victoires dans les Monuments cyclistes" }
+        },
+        {
+          "emoji": "⛳",
+          "question": "Qui a remporté le plus de fois le Masters d'Augusta ?",
+          "sport1": { "label": "Jack Nicklaus", "stat": 6, "display": "6 titres au Masters d'Augusta" },
+          "sport2": { "label": "Tiger Woods", "stat": 5, "display": "5 titres au Masters d'Augusta" }
+        },
+        {
+          "emoji": "🏀",
+          "question": "Qui a remporté le plus de titres NBA en tant qu'entraîneur ?",
+          "sport1": { "label": "Phil Jackson", "stat": 11, "display": "11 titres NBA en tant qu'entraîneur" },
+          "sport2": { "label": "Pat Riley", "stat": 5, "display": "5 titres NBA en tant qu'entraîneur" }
+        },
+        {
+          "emoji": "🏎️",
+          "question": "Qui a remporté le plus de fois les 24 Heures du Mans ?",
+          "sport1": { "label": "Tom Kristensen", "stat": 9, "display": "9 victoires aux 24 Heures du Mans (record absolu)" },
+          "sport2": { "label": "Jacky Ickx", "stat": 6, "display": "6 victoires aux 24 Heures du Mans" }
+        },
+        {
+          "emoji": "⚽",
+          "question": "Qui a participé au plus grand nombre de Coupes du Monde différentes ?",
+          "sport1": { "label": "Lothar Matthäus", "stat": 5, "display": "5 Coupes du Monde (1982, 86, 90, 94, 98) — ÉGALITÉ !" },
+          "sport2": { "label": "Lionel Messi", "stat": 5, "display": "5 Coupes du Monde (2006, 10, 14, 18, 22) — ÉGALITÉ !" }
+        },
+        {
+          "emoji": "🏅",
+          "question": "Qui a remporté le plus de médailles olympiques (toutes disciplines) ?",
+          "sport1": { "label": "Michael Phelps", "stat": 28, "display": "28 médailles olympiques (23 or, 3 argent, 2 bronze)" },
+          "sport2": { "label": "Larissa Latynina", "stat": 18, "display": "18 médailles olympiques (9 or, 5 argent, 4 bronze)" }
         }
       ]
     }

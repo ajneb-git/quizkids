@@ -1286,6 +1286,13 @@ html, body {
   color: #fbbf24;
 }
 
+.sport-question-emoji {
+  font-size: 2.6rem;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
 .hist-game-card {
   display: flex;
   flex-direction: column;

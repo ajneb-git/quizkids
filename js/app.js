@@ -1944,6 +1944,7 @@ function renderSportQuestion() {
   const total = currentSport.length;
   document.getElementById('sport-level-label').textContent = `Question ${sportIndex + 1} / ${total}`;
   document.getElementById('sport-progress-fill').style.width = `${(sportIndex / total) * 100}%`;
+  document.getElementById('sport-question-emoji').textContent = q.emoji || '🏆';
   document.getElementById('sport-question-text').textContent = q.question;
 
   // Randomly swap sport1/sport2 between left and right button
@@ -1990,7 +1991,11 @@ window.handleSportAnswer = function(btnNum) {
   const correctBtn = tie ? btnNum : (s1 > s2 ? 1 : 2);
   const isCorrect = tie || (btnNum === correctBtn);
 
-  if (isCorrect) {
+  if (tie) {
+    sportScore++;
+    btn1.classList.add('hist-correct');
+    btn2.classList.add('hist-correct');
+  } else if (isCorrect) {
     sportScore++;
     (btnNum === 1 ? btn1 : btn2).classList.add('hist-correct');
     (btnNum === 1 ? btn2 : btn1).classList.add('hist-neutral');
