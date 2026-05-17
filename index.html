@@ -818,7 +818,13 @@
         <div class="ana-hint" id="ana-hint">💡 Indice…</div>
         <div class="ana-scrambled-word" id="ana-scrambled">? ? ? ?</div>
       </div>
-      <div class="ana-choices" id="ana-choices"></div>
+      <div class="ana-input-area">
+        <input type="text" id="ana-input" class="ana-text-input"
+               placeholder="Tape ta réponse…"
+               autocomplete="off" autocorrect="off"
+               autocapitalize="characters" spellcheck="false" />
+        <button id="ana-submit-btn" class="btn btn-primary ana-submit-btn">Valider ✓</button>
+      </div>
       <p id="ana-feedback" class="vf-feedback"></p>
     </div>
     <div class="quiz-footer">

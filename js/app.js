@@ -2210,6 +2210,11 @@ async function startDefiAnagrammes() {
 
   showScreen('anagrammes');
   renderAnaQuestion();
+
+  const submitBtn = document.getElementById('ana-submit-btn');
+  const input = document.getElementById('ana-input');
+  submitBtn.onclick = () => window.handleAnaAnswer();
+  input.onkeydown = (e) => { if (e.key === 'Enter') window.handleAnaAnswer(); };
 }
 
 function renderAnaQuestion() {
@@ -2229,37 +2234,38 @@ function renderAnaQuestion() {
   fb.textContent = '';
   fb.className = 'vf-feedback';
 
-  const choicesEl = document.getElementById('ana-choices');
-  choicesEl.innerHTML = '';
-  q.choices.forEach(choice => {
-    const btn = document.createElement('button');
-    btn.className = 'ana-choice-btn';
-    btn.textContent = choice;
-    btn.onclick = () => window.handleAnaAnswer(choice);
-    choicesEl.appendChild(btn);
-  });
+  const input = document.getElementById('ana-input');
+  input.value = '';
+  input.disabled = false;
+  input.className = 'ana-text-input';
+  document.getElementById('ana-submit-btn').disabled = false;
+  setTimeout(() => input.focus(), 50);
 }
 
-window.handleAnaAnswer = function(answer) {
+window.handleAnaAnswer = function() {
   const q = currentAnagrammes[anagrammesIndex];
-  const btns = document.querySelectorAll('.ana-choice-btn');
-  btns.forEach(b => b.disabled = true);
+  const input = document.getElementById('ana-input');
+  const submitBtn = document.getElementById('ana-submit-btn');
+  const answer = input.value.trim().toUpperCase();
+
+  if (!answer) return;
+
+  input.disabled = true;
+  submitBtn.disabled = true;
 
   const correct = (answer === q.answer);
-  btns.forEach(b => {
-    if (b.textContent === q.answer) b.classList.add('hist-correct');
-    else if (b.textContent === answer && !correct) b.classList.add('hist-wrong');
-  });
 
   if (correct) {
+    input.classList.add('ana-input-correct');
     anagrammesScore++;
     anagrammesIndex++;
     if (anagrammesIndex >= currentAnagrammes.length) {
       setTimeout(() => endDefiAnagrammes(true, null), 700);
     } else {
-      setTimeout(renderAnaQuestion, 600);
+      setTimeout(renderAnaQuestion, 800);
     }
   } else {
+    input.classList.add('ana-input-wrong');
     const fb = document.getElementById('ana-feedback');
     fb.textContent = `La bonne réponse était : ${q.answer}`;
     fb.className = 'vf-feedback vf-feedback-wrong';
