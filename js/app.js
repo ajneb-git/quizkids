@@ -2788,6 +2788,11 @@ function cebFalseSolutions(validOps, target, numbers) {
   return [t1, t2, t3];
 }
 
+// Extrait le résultat final d'une liste d'étapes ["a op b = r", ...]
+function cebFinalResult(steps) {
+  return parseInt(steps[steps.length - 1].split(' = ')[1], 10);
+}
+
 // --- Génère un puzzle complet ---
 function cebGeneratePuzzle() {
   for (let attempt = 0; attempt < 300; attempt++) {
@@ -2799,11 +2804,19 @@ function cebGeneratePuzzle() {
     const validSteps = cebOpsToSteps(ops);
     const falseSteps = cebFalseSolutions(ops, target, numbers);
 
+    const r1 = cebFinalResult(falseSteps[0]);
+    const r2 = cebFinalResult(falseSteps[1]);
+    const r3 = cebFinalResult(falseSteps[2]);
+
+    // Tous les résultats doivent être distincts et positifs
+    const results = new Set([target, r1, r2, r3]);
+    if (results.size < 4 || r1 <= 0 || r2 <= 0 || r3 <= 0) continue;
+
     const allSolutions = [
-      { steps: validSteps, valid: true },
-      { steps: falseSteps[0], valid: false },
-      { steps: falseSteps[1], valid: false },
-      { steps: falseSteps[2], valid: false }
+      { steps: validSteps, valid: true,  result: target },
+      { steps: falseSteps[0], valid: false, result: r1 },
+      { steps: falseSteps[1], valid: false, result: r2 },
+      { steps: falseSteps[2], valid: false, result: r3 }
     ].sort(() => Math.random() - 0.5);
 
     return { numbers, target, solutions: allSolutions };
@@ -2834,7 +2847,6 @@ function renderCompteQuestion() {
   document.getElementById('ceb-progress-fill').style.width = `${(compteIndex / total) * 100}%`;
   document.getElementById('ceb-counter').textContent = `${compteIndex + 1} / ${total}`;
   document.getElementById('ceb-score').textContent = compteScore;
-  document.getElementById('ceb-target').textContent = puzzle.target;
   document.getElementById('ceb-feedback').textContent = '';
   document.getElementById('ceb-feedback').className = 'vf-feedback';
 
@@ -2848,19 +2860,18 @@ function renderCompteQuestion() {
     numsEl.appendChild(tile);
   });
 
-  // Cartes solutions
+  // Cartes : afficher uniquement le résultat, calculs cachés
   const solsEl = document.getElementById('ceb-solutions');
   solsEl.innerHTML = '';
   puzzle.solutions.forEach((sol, idx) => {
     const card = document.createElement('div');
     card.className = 'ceb-solution-card';
     card.innerHTML = `
-      <div class="ceb-solution-header">
-        <span class="ceb-solution-num">Solution ${idx + 1}</span>
-        <span class="ceb-solution-badge" id="ceb-badge-${idx}"></span>
+      <div class="ceb-result-number" id="ceb-result-${idx}">${sol.result}</div>
+      <div class="ceb-steps ceb-steps-hidden" id="ceb-steps-${idx}">
+        ${sol.steps.map(s => `<div class="ceb-step">${s}</div>`).join('')}
       </div>
-      <div class="ceb-steps">${sol.steps.map(s => `<div class="ceb-step">${s}</div>`).join('')}</div>
-      <button class="btn btn-primary ceb-validate-btn" id="ceb-btn-${idx}">✓ C'est cette solution !</button>
+      <button class="btn btn-primary ceb-validate-btn" id="ceb-btn-${idx}">C'est ce nombre !</button>
     `;
     card.querySelector(`#ceb-btn-${idx}`).onclick = () => handleCompteAnswer(idx);
     solsEl.appendChild(card);
@@ -2874,13 +2885,17 @@ function handleCompteAnswer(selectedIdx) {
   const isCorrect = puzzle.solutions[selectedIdx].valid;
   const cards = document.querySelectorAll('.ceb-solution-card');
 
+  // Révéler les calculs et les badges sur toutes les cartes
   puzzle.solutions.forEach((sol, idx) => {
-    const badge = document.getElementById(`ceb-badge-${idx}`);
+    const stepsEl = document.getElementById(`ceb-steps-${idx}`);
+    stepsEl.classList.remove('ceb-steps-hidden');
+
+    const resultEl = document.getElementById(`ceb-result-${idx}`);
     if (sol.valid) {
-      badge.textContent = '✅';
+      resultEl.textContent = `${sol.result} ✅`;
       cards[idx].classList.add(idx === selectedIdx ? 'selected-correct' : 'revealed-correct');
     } else {
-      badge.textContent = '❌';
+      resultEl.textContent = `${sol.result} ❌`;
       if (idx === selectedIdx) cards[idx].classList.add('selected-wrong');
       else cards[idx].classList.add('revealed-wrong');
     }
@@ -2892,12 +2907,12 @@ function handleCompteAnswer(selectedIdx) {
     setTimeout(() => {
       if (compteIndex >= compteSession.length) endDefiCompte(true);
       else renderCompteQuestion();
-    }, 1800);
+    }, 2200);
   } else {
     const fb = document.getElementById('ceb-feedback');
-    fb.textContent = 'Mauvaise solution — la bonne est indiquée en vert !';
+    fb.textContent = 'Raté ! La bonne réponse est indiquée en vert.';
     fb.className = 'vf-feedback vf-feedback-wrong';
-    setTimeout(() => endDefiCompte(false), 2500);
+    setTimeout(() => endDefiCompte(false), 3000);
   }
 }
 

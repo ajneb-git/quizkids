@@ -1884,20 +1884,11 @@ html, body {
 }
 
 .ceb-target-label {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
-  margin-bottom: 2px;
-}
-
-.ceb-target-number {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-  line-height: 1;
 }
 
 .ceb-numbers-row {
@@ -1929,6 +1920,19 @@ html, body {
   gap: 10px;
 }
 
+.ceb-result-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -0.02em;
+  padding: 8px 0 4px;
+  line-height: 1;
+}
+
+.ceb-steps-hidden {
+  display: none !important;
+}
+
 .ceb-solution-card {
   background: var(--bg-card);
   border: 2px solid var(--border);
@@ -1953,25 +1957,6 @@ html, body {
 
 .ceb-solution-card.revealed-wrong {
   opacity: 0.5;
-}
-
-.ceb-solution-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 7px;
-}
-
-.ceb-solution-num {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-}
-
-.ceb-solution-badge {
-  font-size: 1.1rem;
 }
 
 .ceb-steps {
