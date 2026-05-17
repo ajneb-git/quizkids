@@ -160,13 +160,100 @@ export class RevisionEngine {
   }
 }
 
+// ─── Défi → Quiz converters ───────────────────────────────────────────────────
+
+function capitalToQ(item, tierIdx) {
+  const slug = item.pays.replace(/[^a-zA-Z0-9]/g, '_');
+  return {
+    id: `defi_cap_t${tierIdx}_${slug}`,
+    categorie: 'geographie',
+    type: 'qcm',
+    question: `Quelle est la capitale de ${item.pays} ?`,
+    media: { type: 'emoji', valeur: item.drapeau },
+    choix: item.choix,
+    reponse: item.reponse,
+    explication: `La capitale de ${item.pays} est ${item.reponse}.`,
+    difficulte: tierIdx + 1
+  };
+}
+
+function scienceToQ(item, tierIdx, idx, cat) {
+  return {
+    id: `defi_sci_t${tierIdx}_${idx}`,
+    categorie: cat,
+    type: 'qcm',
+    question: item.question,
+    media: { type: 'emoji', valeur: '🔬' },
+    choix: item.choices,
+    reponse: item.answer,
+    explication: '',
+    difficulte: tierIdx + 1
+  };
+}
+
+function technoToQ(item, tierIdx, idx, cat) {
+  return {
+    id: `defi_tec_t${tierIdx}_${idx}`,
+    categorie: cat,
+    type: 'qcm',
+    question: item.question,
+    media: { type: 'emoji', valeur: '💡' },
+    choix: item.choices,
+    reponse: item.answer,
+    explication: '',
+    difficulte: tierIdx + 1
+  };
+}
+
+async function enrichWithDefi(categories, levelKey) {
+  try {
+    const [capData, sciData, tecData] = await Promise.all([
+      fetch('./data/capitales-defi.json').then(r => r.json()),
+      fetch('./data/sciences-defi.json').then(r => r.json()),
+      fetch('./data/techno-defi.json').then(r => r.json()),
+    ]);
+
+    if (levelKey === 'primaire') {
+      // Tier 1 ("Très facile") uniquement
+      categories['geographie'].push(
+        ...capData.tiers[0].pool.map(item => capitalToQ(item, 0))
+      );
+      categories['culture'].push(
+        ...sciData.tiers[0].pool.map((item, i) => scienceToQ(item, 0, i, 'culture')),
+        ...tecData.tiers[0].pool.map((item, i) => technoToQ(item, 0, i, 'culture'))
+      );
+    } else if (levelKey === 'college') {
+      // Tiers 2 et 3 ("Facile" + "Moyen")
+      for (const [i, tier] of [capData.tiers[1], capData.tiers[2]].entries()) {
+        categories['geographie'].push(
+          ...tier.pool.map(item => capitalToQ(item, i + 1))
+        );
+      }
+      for (const [i, tier] of [sciData.tiers[1], sciData.tiers[2]].entries()) {
+        categories['sciences'].push(
+          ...tier.pool.map((item, j) => scienceToQ(item, i + 1, j, 'sciences'))
+        );
+      }
+      for (const [i, tier] of [tecData.tiers[1], tecData.tiers[2]].entries()) {
+        categories['culture'].push(
+          ...tier.pool.map((item, j) => technoToQ(item, i + 1, j, 'culture'))
+        );
+      }
+    }
+  } catch (e) {
+    console.warn('Enrichissement défi ignoré :', e);
+  }
+}
+
 // ─── Loaders ─────────────────────────────────────────────────────────────────
 
-export async function loadQuestions(questionsFile) {
+export async function loadQuestions(questionsFile, levelKey) {
   const response = await fetch(questionsFile);
   if (!response.ok) throw new Error('Failed to load questions');
   const data = await response.json();
-  return data.categories;
+  const categories = data.categories;
+  await enrichWithDefi(categories, levelKey);
+  return categories;
 }
 
 export async function loadRevisionQuestions(questionsFile, category) {

@@ -387,7 +387,7 @@ async function startQuiz() {
   const levelKey = getActiveLevel();
   if (levelKey !== currentLevelKey) { allQuestions = null; currentLevelKey = levelKey; }
   if (!allQuestions) {
-    try { allQuestions = await loadQuestions(levelConf.questionsFile); }
+    try { allQuestions = await loadQuestions(levelConf.questionsFile, levelKey); }
     catch (e) { console.error('Failed to load questions:', e); showScreen('home'); return; }
   }
   const questions = prepareQuestions(allQuestions, levelConf.categories);
