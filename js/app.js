@@ -2378,7 +2378,7 @@ function renderQSJQuestion() {
 
   const choicesEl = document.getElementById('qsj-choices');
   choicesEl.innerHTML = '';
-  q.choices.forEach(choice => {
+  [...q.choices].sort(() => Math.random() - 0.5).forEach(choice => {
     const btn = document.createElement('button');
     btn.className = 'defi-choice-btn qsj-choice-btn';
     btn.textContent = choice;
@@ -2486,7 +2486,7 @@ function renderSciQuestion() {
 
   const choicesEl = document.getElementById('sci-choices');
   choicesEl.innerHTML = '';
-  q.choices.forEach(choice => {
+  [...q.choices].sort(() => Math.random() - 0.5).forEach(choice => {
     const btn = document.createElement('button');
     btn.className = 'defi-choice-btn';
     btn.textContent = choice;
@@ -2589,7 +2589,7 @@ function renderTecQuestion() {
 
   const choicesEl = document.getElementById('tec-choices');
   choicesEl.innerHTML = '';
-  q.choices.forEach(choice => {
+  [...q.choices].sort(() => Math.random() - 0.5).forEach(choice => {
     const btn = document.createElement('button');
     btn.className = 'defi-choice-btn';
     btn.textContent = choice;
