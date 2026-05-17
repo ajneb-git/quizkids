@@ -2287,12 +2287,15 @@ window.handleAnaAnswer = function() {
 
   if (correct) {
     input.classList.add('ana-input-correct');
+    const fb = document.getElementById('ana-feedback');
+    fb.textContent = 'Bravo ! ✓';
+    fb.className = 'vf-feedback vf-feedback-correct';
     anagrammesScore++;
     anagrammesIndex++;
     if (anagrammesIndex >= currentAnagrammes.length) {
-      setTimeout(() => endDefiAnagrammes(true, null), 700);
+      setTimeout(() => endDefiAnagrammes(true, null), 900);
     } else {
-      setTimeout(renderAnaQuestion, 800);
+      setTimeout(renderAnaQuestion, 900);
     }
   } else {
     input.classList.add('ana-input-wrong');
