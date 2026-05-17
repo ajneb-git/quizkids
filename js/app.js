@@ -47,6 +47,11 @@ let currentAnagrammes = [];
 let anagrammesIndex = 0;
 let anagrammesScore = 0;
 
+let quisuisjeData = null;
+let currentQSJ = [];
+let quisuisjeIndex = 0;
+let quisuisjeScore = 0;
+
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -457,6 +462,11 @@ async function route() {
 
   if (hash === '#defi-anagrammes') {
     await startDefiAnagrammes();
+    return;
+  }
+
+  if (hash === '#defi-quisuisje') {
+    await startDefiQSJ();
     return;
   }
 
@@ -2288,6 +2298,127 @@ function endDefiAnagrammes(perfect, wrongQ) {
   }
 
   document.getElementById('btn-ana-replay').onclick = () => { window.location.hash = '#defi-anagrammes'; };
+}
+
+// ─── Qui suis-je ? ────────────────────────────────────────────────────────────
+
+const QSJ_BEST_KEY = 'quizkids_quisuisje_best';
+function getQSJBest() { return parseInt(localStorage.getItem(QSJ_BEST_KEY) || '0', 10); }
+function saveQSJBest(score) {
+  const prev = getQSJBest();
+  if (score > prev) { localStorage.setItem(QSJ_BEST_KEY, score); return true; }
+  return false;
+}
+
+async function startDefiQSJ() {
+  if (!quisuisjeData) {
+    try { const r = await fetch('./data/quisuisje-defi.json'); quisuisjeData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  const hasQuestions = quisuisjeData.tiers?.some(t => t.pool?.length > 0);
+  if (!hasQuestions) { alert('Questions à venir bientôt !'); showScreen('home'); return; }
+
+  currentQSJ = buildDefiGame(quisuisjeData);
+  quisuisjeIndex = 0;
+  quisuisjeScore = 0;
+
+  showScreen('quisuisje');
+  renderQSJQuestion();
+}
+
+function renderQSJQuestion() {
+  const q = currentQSJ[quisuisjeIndex];
+  const total = currentQSJ.length;
+  const tier = Math.floor(quisuisjeIndex / 10) + 1;
+  const tierLabels = ['Très facile', 'Facile', 'Moyen', 'Difficile', 'Expert'];
+
+  document.getElementById('qsj-progress-fill').style.width = `${(quisuisjeIndex / total) * 100}%`;
+  document.getElementById('qsj-counter').textContent = `${quisuisjeIndex + 1} / ${total}`;
+  document.getElementById('qsj-score').textContent = quisuisjeScore;
+  document.getElementById('qsj-tier-label').textContent = `Niveau ${tier} — ${tierLabels[tier - 1]}`;
+
+  const cluesEl = document.getElementById('qsj-clues');
+  cluesEl.innerHTML = '';
+  q.indices.forEach(clue => {
+    const li = document.createElement('li');
+    li.className = 'qsj-clue-item';
+    li.textContent = clue;
+    cluesEl.appendChild(li);
+  });
+
+  const fb = document.getElementById('qsj-feedback');
+  fb.textContent = '';
+  fb.className = 'vf-feedback';
+
+  const choicesEl = document.getElementById('qsj-choices');
+  choicesEl.innerHTML = '';
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'ana-choice-btn qsj-choice-btn';
+    btn.textContent = choice;
+    btn.onclick = () => window.handleQSJAnswer(choice);
+    choicesEl.appendChild(btn);
+  });
+}
+
+window.handleQSJAnswer = function(answer) {
+  const q = currentQSJ[quisuisjeIndex];
+  const btns = document.querySelectorAll('.qsj-choice-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = (answer === q.answer);
+  btns.forEach(b => {
+    if (b.textContent === q.answer) b.classList.add('hist-correct');
+    else if (b.textContent === answer && !correct) b.classList.add('hist-wrong');
+  });
+
+  if (correct) {
+    quisuisjeScore++;
+    quisuisjeIndex++;
+    if (quisuisjeIndex >= currentQSJ.length) {
+      setTimeout(() => endDefiQSJ(true, null), 700);
+    } else {
+      setTimeout(renderQSJQuestion, 700);
+    }
+  } else {
+    const fb = document.getElementById('qsj-feedback');
+    fb.textContent = `C'était : ${q.answer}`;
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => endDefiQSJ(false, q), 2000);
+  }
+};
+
+function endDefiQSJ(perfect, wrongQ) {
+  const isNewBest = saveQSJBest(quisuisjeScore);
+  const best = getQSJBest();
+  showScreen('quisuisje-results');
+
+  const icon = perfect ? '🏆' : quisuisjeScore >= 40 ? '⭐' : quisuisjeScore >= 20 ? '👍' : '💥';
+  document.getElementById('qsj-result-icon').textContent = icon;
+  document.getElementById('qsj-result-title').textContent = perfect ? 'Parfait — 50/50 !' : 'Série terminée !';
+  document.getElementById('qsj-result-score').textContent =
+    `${quisuisjeScore} bonne${quisuisjeScore > 1 ? 's' : ''} réponse${quisuisjeScore > 1 ? 's' : ''} sur 50`;
+
+  const bestEl = document.getElementById('qsj-result-best');
+  if (isNewBest && quisuisjeScore > 0) {
+    bestEl.textContent = `🏆 Nouveau record : ${best} !`;
+  } else if (best > 0) {
+    bestEl.textContent = `🏆 Record : ${best}`;
+  } else {
+    bestEl.textContent = '';
+  }
+
+  const wrongEl = document.getElementById('qsj-result-wrong');
+  if (wrongQ) {
+    wrongEl.innerHTML = `
+      <p class="vf-wrong-label">La personnalité qui a stoppé la série :</p>
+      <p class="vf-wrong-statement">→ <strong>${wrongQ.answer}</strong></p>
+      <p class="vf-wrong-answer">${wrongQ.indices[0]}</p>`;
+  } else {
+    wrongEl.innerHTML = '';
+  }
+
+  document.getElementById('btn-qsj-replay').onclick = () => { window.location.hash = '#defi-quisuisje'; };
 }
 
 document.addEventListener('DOMContentLoaded', init);

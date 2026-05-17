@@ -1,0 +1,784 @@
+{
+  "tiers": [
+    {
+      "level": 1,
+      "label": "Très facile",
+      "pool": [
+        {
+          "indices": ["🇩🇪 Physicien allemand du XXe siècle", "📐 A développé la théorie de la relativité", "🏅 Prix Nobel de physique en 1921"],
+          "answer": "ALBERT EINSTEIN",
+          "choices": ["ALBERT EINSTEIN", "ISAAC NEWTON", "NIKOLA TESLA", "MAX PLANCK"]
+        },
+        {
+          "indices": ["🇫🇷 Général et homme d'État français", "⚔️ A dirigé la France libre pendant la Seconde Guerre mondiale", "🎖️ Fondateur de la Ve République"],
+          "answer": "CHARLES DE GAULLE",
+          "choices": ["CHARLES DE GAULLE", "NAPOLEON BONAPARTE", "GEORGES CLEMENCEAU", "LOUIS XIV"]
+        },
+        {
+          "indices": ["🎵 Compositeur autrichien du XVIIIe siècle", "🎹 Enfant prodige qui composait dès 5 ans", "🎼 A composé La Flûte enchantée et Don Giovanni"],
+          "answer": "MOZART",
+          "choices": ["MOZART", "BEETHOVEN", "BACH", "HAYDN"]
+        },
+        {
+          "indices": ["🇫🇷 Savant français du XIXe siècle", "🔬 A inventé le vaccin contre la rage", "🥛 A créé la pasteurisation"],
+          "answer": "LOUIS PASTEUR",
+          "choices": ["LOUIS PASTEUR", "MARIE CURIE", "CLAUDE BERNARD", "RENE DESCARTES"]
+        },
+        {
+          "indices": ["🇵🇱 Scientifique franco-polonaise", "🏅 Première femme Prix Nobel", "☢️ A découvert le radium et le polonium"],
+          "answer": "MARIE CURIE",
+          "choices": ["MARIE CURIE", "ROSALIND FRANKLIN", "LISE MEITNER", "IRENE JOLIOT-CURIE"]
+        },
+        {
+          "indices": ["🇬🇧 Naturaliste britannique du XIXe siècle", "🚢 A voyagé sur le Beagle", "🦎 A publié L'Origine des espèces"],
+          "answer": "CHARLES DARWIN",
+          "choices": ["CHARLES DARWIN", "GREGOR MENDEL", "JEAN-BAPTISTE LAMARCK", "ALFRED RUSSEL WALLACE"]
+        },
+        {
+          "indices": ["🇬🇧 Physicien et mathématicien anglais", "🍎 La chute d'une pomme lui aurait inspiré la loi de la gravitation", "📏 A énoncé les lois du mouvement"],
+          "answer": "ISAAC NEWTON",
+          "choices": ["ISAAC NEWTON", "GALILEO GALILEI", "RENE DESCARTES", "GOTTFRIED LEIBNIZ"]
+        },
+        {
+          "indices": ["🇬🇧 Dramaturge anglais du XVIe siècle", "🎭 A écrit Hamlet, Roméo et Juliette", "📝 Considéré le plus grand auteur de langue anglaise"],
+          "answer": "SHAKESPEARE",
+          "choices": ["SHAKESPEARE", "VICTOR HUGO", "MOLIERE", "JEAN RACINE"]
+        },
+        {
+          "indices": ["🏛️ Général et homme politique romain", "⚔️ A conquis la Gaule", "🗡️ Assassiné aux Ides de Mars"],
+          "answer": "JULES CESAR",
+          "choices": ["JULES CESAR", "MARC ANTOINE", "CICERON", "AUGUSTE"]
+        },
+        {
+          "indices": ["🇮🇹 Navigateur génois du XVe siècle", "⛵ A traversé l'Atlantique en 1492", "🌎 A ouvert la route vers l'Amérique pour l'Europe"],
+          "answer": "CHRISTOPHE COLOMB",
+          "choices": ["CHRISTOPHE COLOMB", "VASCO DE GAMA", "AMERIGO VESPUCCI", "MAGELLAN"]
+        },
+        {
+          "indices": ["🇮🇹 Génie de la Renaissance italienne", "🎨 A peint La Joconde et La Cène", "✏️ Inventeur, sculpteur, architecte et scientifique"],
+          "answer": "LEONARD DE VINCI",
+          "choices": ["LEONARD DE VINCI", "MICHEL-ANGE", "RAPHAEL", "BOTTICELLI"]
+        },
+        {
+          "indices": ["🇪🇸 Peintre espagnol du XXe siècle", "🖼️ Fondateur du cubisme avec Braque", "🕊️ A peint Guernica"],
+          "answer": "PABLO PICASSO",
+          "choices": ["PABLO PICASSO", "SALVADOR DALI", "JOAN MIRO", "VINCENT VAN GOGH"]
+        },
+        {
+          "indices": ["🇩🇪 Compositeur allemand sourd", "🎵 A composé la Symphonie n°9 malgré sa surdité", "🎹 Auteur de la Lettre à Élise"],
+          "answer": "BEETHOVEN",
+          "choices": ["BEETHOVEN", "MOZART", "BRAHMS", "SCHUBERT"]
+        },
+        {
+          "indices": ["🇺🇸 Astronaute américain", "🌕 Premier homme à marcher sur la Lune en 1969", "🚀 Mission Apollo 11"],
+          "answer": "NEIL ARMSTRONG",
+          "choices": ["NEIL ARMSTRONG", "BUZZ ALDRIN", "YOURI GAGARINE", "JOHN GLENN"]
+        },
+        {
+          "indices": ["🇮🇳 Leader indien du XXe siècle", "☮️ Pionnier de la résistance non-violente", "🧵 A mené l'Inde à l'indépendance face aux Britanniques"],
+          "answer": "GANDHI",
+          "choices": ["GANDHI", "NEHRU", "MANDELA", "MARTIN LUTHER KING"]
+        },
+        {
+          "indices": ["🇿🇦 Leader politique sud-africain", "⛓️ A passé 27 ans en prison", "🏅 Premier président noir d'Afrique du Sud"],
+          "answer": "NELSON MANDELA",
+          "choices": ["NELSON MANDELA", "DESMOND TUTU", "GANDHI", "MARTIN LUTHER KING"]
+        },
+        {
+          "indices": ["🇺🇸 Pasteur américain", "✊ Figure emblématique des droits civiques", "🗣️ Auteur du discours I Have a Dream"],
+          "answer": "MARTIN LUTHER KING",
+          "choices": ["MARTIN LUTHER KING", "MALCOLM X", "NELSON MANDELA", "FREDERICK DOUGLASS"]
+        },
+        {
+          "indices": ["🇮🇹 Explorateur vénitien du XIIIe siècle", "🐪 A traversé l'Asie jusqu'en Chine", "📖 A raconté ses voyages dans Le Livre des Merveilles"],
+          "answer": "MARCO POLO",
+          "choices": ["MARCO POLO", "IBN BATTUTA", "CHRISTOPHE COLOMB", "VASCO DE GAMA"]
+        },
+        {
+          "indices": ["🇩🇪 Inventeur du XVe siècle", "📚 A inventé l'imprimerie à caractères mobiles", "📖 A imprimé la Bible de Gutenberg"],
+          "answer": "GUTENBERG",
+          "choices": ["GUTENBERG", "THOMAS EDISON", "JAMES WATT", "NICOLAS COPERNIC"]
+        },
+        {
+          "indices": ["👑 Roi de France du XVIIe siècle", "☀️ Surnommé le Roi-Soleil", "🏰 A fait construire le château de Versailles"],
+          "answer": "LOUIS XIV",
+          "choices": ["LOUIS XIV", "NAPOLEON BONAPARTE", "LOUIS XVI", "FRANCOIS 1ER"]
+        },
+        {
+          "indices": ["🇵🇹 Navigateur portugais du XVe siècle", "⛵ Premier Européen à atteindre l'Inde par mer", "🌊 A doublé le Cap de Bonne-Espérance"],
+          "answer": "VASCO DE GAMA",
+          "choices": ["VASCO DE GAMA", "MAGELLAN", "CHRISTOPHE COLOMB", "BARTOLOMEU DIAS"]
+        },
+        {
+          "indices": ["🇮🇹 Artiste de la Renaissance", "🎨 A peint la chapelle Sixtine", "🗿 A sculpté le David et la Pieta"],
+          "answer": "MICHEL-ANGE",
+          "choices": ["MICHEL-ANGE", "LEONARD DE VINCI", "RAPHAEL", "DONATELLO"]
+        },
+        {
+          "indices": ["🇬🇷 Roi macédonien du IVe siècle av. J.-C.", "⚔️ A construit un empire de la Grèce à l'Inde", "🐴 Son cheval s'appelait Bucéphale"],
+          "answer": "ALEXANDRE LE GRAND",
+          "choices": ["ALEXANDRE LE GRAND", "JULES CESAR", "HANNIBAL", "CYRUS LE GRAND"]
+        },
+        {
+          "indices": ["🇪🇬 Reine d'Égypte du Ier siècle av. J.-C.", "👑 Dernière pharaonne de la dynastie ptolémaïque", "💚 A séduit Jules César puis Marc Antoine"],
+          "answer": "CLEOPATRE",
+          "choices": ["CLEOPATRE", "NEFERTITI", "HATCHEPSOUT", "ZENOBIA"]
+        },
+        {
+          "indices": ["🇵🇹 Navigateur portugais du XVIe siècle", "🌍 Premier à effectuer le tour du monde", "⛵ A donné son nom à un détroit en Amérique du Sud"],
+          "answer": "MAGELLAN",
+          "choices": ["MAGELLAN", "VASCO DE GAMA", "CHRISTOPHE COLOMB", "BARTOLOMEU DIAS"]
+        },
+        {
+          "indices": ["🇺🇸 Dessinateur et producteur américain", "🐭 A créé Mickey Mouse", "🎬 A fondé un empire mondial du divertissement"],
+          "answer": "WALT DISNEY",
+          "choices": ["WALT DISNEY", "CHARLIE CHAPLIN", "STEVEN SPIELBERG", "GEORGE LUCAS"]
+        },
+        {
+          "indices": ["🇷🇸 Inventeur serbo-américain", "⚡ A développé le courant alternatif", "💡 Rival d'Edison, pionnier de l'électricité moderne"],
+          "answer": "NIKOLA TESLA",
+          "choices": ["NIKOLA TESLA", "THOMAS EDISON", "JAMES WATT", "MICHAEL FARADAY"]
+        },
+        {
+          "indices": ["🇫🇷 Inventeur français du XIXe siècle", "👁️ A perdu la vue dans un accident d'enfance", "📖 A inventé le système d'écriture pour aveugles"],
+          "answer": "LOUIS BRAILLE",
+          "choices": ["LOUIS BRAILLE", "LOUIS PASTEUR", "THOMAS EDISON", "GRAHAM BELL"]
+        },
+        {
+          "indices": ["🇺🇸 Inventeur américain du XIXe siècle", "💡 A inventé l'ampoule électrique", "📽️ A déposé plus de 1000 brevets"],
+          "answer": "THOMAS EDISON",
+          "choices": ["THOMAS EDISON", "NIKOLA TESLA", "GRAHAM BELL", "JAMES WATT"]
+        },
+        {
+          "indices": ["🇫🇷 Général corse devenu Empereur", "⚔️ A dominé l'Europe au début du XIXe siècle", "🏝️ A fini exilé à Sainte-Hélène"],
+          "answer": "NAPOLEON BONAPARTE",
+          "choices": ["NAPOLEON BONAPARTE", "CHARLEMAGNE", "LOUIS XIV", "CHARLES DE GAULLE"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "Facile",
+      "pool": [
+        {
+          "indices": ["🇮🇹 Astronome italien du XVIIe siècle", "🔭 A perfectionné le télescope", "⚖️ Condamné par l'Inquisition pour avoir soutenu Copernic"],
+          "answer": "GALILEE",
+          "choices": ["GALILEE", "NICOLAS COPERNIC", "TYCHO BRAHE", "JOHANNES KEPLER"]
+        },
+        {
+          "indices": ["🇦🇹 Neurologue autrichien du XIXe siècle", "🛋️ Fondateur de la psychanalyse", "📓 A théorisé l'inconscient et le complexe d'Œdipe"],
+          "answer": "SIGMUND FREUD",
+          "choices": ["SIGMUND FREUD", "CARL JUNG", "ALFRED ADLER", "JEAN PIAGET"]
+        },
+        {
+          "indices": ["🇫🇷 Écrivain romantique du XIXe siècle", "📝 A écrit Les Misérables et Notre-Dame de Paris", "🏛️ A été aussi homme politique et sénateur"],
+          "answer": "VICTOR HUGO",
+          "choices": ["VICTOR HUGO", "ALEXANDRE DUMAS", "GUSTAVE FLAUBERT", "HONORE DE BALZAC"]
+        },
+        {
+          "indices": ["🇩🇪 Compositeur baroque du XVIIIe siècle", "🎵 A composé les Variations Goldberg et les Suites anglaises", "⛪ A écrit une immense quantité de musique religieuse"],
+          "answer": "JEAN-SEBASTIEN BACH",
+          "choices": ["JEAN-SEBASTIEN BACH", "HANDEL", "VIVALDI", "TELEMANN"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe des Lumières du XVIIIe siècle", "✍️ Auteur de Candide et de nombreuses lettres satiriques", "⚔️ A combattu l'obscurantisme et l'intolérance"],
+          "answer": "VOLTAIRE",
+          "choices": ["VOLTAIRE", "ROUSSEAU", "MONTESQUIEU", "DIDEROT"]
+        },
+        {
+          "indices": ["🇫🇷 Héroïne française du XVe siècle", "⚔️ A mené les armées françaises contre les Anglais", "🔥 Brûlée vive à Rouen en 1431"],
+          "answer": "JEANNE D'ARC",
+          "choices": ["JEANNE D'ARC", "ALIENOR D'AQUITAINE", "CLEOPATRE", "BOUDICCA"]
+        },
+        {
+          "indices": ["🇵🇱 Astronome polonais du XVIe siècle", "🌞 A proposé que la Terre tourne autour du Soleil", "📖 A publié De Revolutionibus en 1543"],
+          "answer": "NICOLAS COPERNIC",
+          "choices": ["NICOLAS COPERNIC", "GALILEE", "TYCHO BRAHE", "JOHANNES KEPLER"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe du XVIIIe siècle", "📝 A écrit Du Contrat social et Émile", "🌿 Défenseur de la nature et de l'éducation naturelle"],
+          "answer": "JEAN-JACQUES ROUSSEAU",
+          "choices": ["JEAN-JACQUES ROUSSEAU", "VOLTAIRE", "MONTESQUIEU", "CONDORCET"]
+        },
+        {
+          "indices": ["🏰 Roi des Francs couronné en l'an 800", "🗡️ A unifié une grande partie de l'Europe occidentale", "✝️ Couronné Empereur d'Occident par le pape Léon III"],
+          "answer": "CHARLEMAGNE",
+          "choices": ["CHARLEMAGNE", "CLOVIS", "LOUIS LE PIEUX", "PEPIN LE BREF"]
+        },
+        {
+          "indices": ["🇩🇪 Astronome allemand du XVIIe siècle", "🌌 A établi les lois du mouvement des planètes", "🔭 Disciple de Tycho Brahe"],
+          "answer": "JOHANNES KEPLER",
+          "choices": ["JOHANNES KEPLER", "GALILEE", "NICOLAS COPERNIC", "TYCHO BRAHE"]
+        },
+        {
+          "indices": ["🇫🇷 Dramaturge français du XVIIe siècle", "🎭 A écrit L'Avare, Le Misanthrope et Tartuffe", "😄 Maître de la comédie classique française"],
+          "answer": "MOLIERE",
+          "choices": ["MOLIERE", "JEAN RACINE", "PIERRE CORNEILLE", "BEAUMARCHAIS"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe et mathématicien du XVIIe siècle", "🧠 Auteur du cogito : Je pense donc je suis", "📐 A inventé la géométrie analytique"],
+          "answer": "RENE DESCARTES",
+          "choices": ["RENE DESCARTES", "BLAISE PASCAL", "VOLTAIRE", "MONTAIGNE"]
+        },
+        {
+          "indices": ["🇬🇷 Savant grec de l'Antiquité", "🛁 A crié Eurêka en découvrant la poussée hydrostatique", "🔧 A inventé la vis d'Archimède"],
+          "answer": "ARCHIMEDE",
+          "choices": ["ARCHIMEDE", "PYTHAGORE", "EUCLIDE", "THALES"]
+        },
+        {
+          "indices": ["🇬🇷 Poète grec de l'Antiquité", "📜 Auteur de l'Iliade et de l'Odyssée", "👁️ Aurait été aveugle selon la tradition"],
+          "answer": "HOMERE",
+          "choices": ["HOMERE", "VIRGILE", "HESIODE", "SOPHOCLE"]
+        },
+        {
+          "indices": ["🇬🇷 Philosophe grec du IVe siècle av. J.-C.", "🏛️ Élève de Socrate, maître d'Aristote", "📖 A fondé l'Académie et écrit La République"],
+          "answer": "PLATON",
+          "choices": ["PLATON", "ARISTOTE", "SOCRATE", "EPICURE"]
+        },
+        {
+          "indices": ["🏛️ Chef gaulois du Ier siècle av. J.-C.", "⚔️ A résisté à Jules César lors de la Guerre des Gaules", "🛡️ A été vaincu à Alésia en 52 av. J.-C."],
+          "answer": "VERCINGETORIX",
+          "choices": ["VERCINGETORIX", "AMBIORIX", "BRENNUS", "DIVICIAC"]
+        },
+        {
+          "indices": ["🇫🇷 Physicien français du XIXe siècle", "☢️ Mari et collaborateur de Marie Curie", "🏅 Prix Nobel de physique en 1903"],
+          "answer": "PIERRE CURIE",
+          "choices": ["PIERRE CURIE", "HENRI BECQUEREL", "PAUL LANGEVIN", "JEAN PERRIN"]
+        },
+        {
+          "indices": ["🇫🇷 Écrivain français du XIXe siècle", "📝 A écrit Les Trois Mousquetaires et Le Comte de Monte-Cristo", "✍️ Fils d'un général de Napoléon"],
+          "answer": "ALEXANDRE DUMAS",
+          "choices": ["ALEXANDRE DUMAS", "VICTOR HUGO", "HONORE DE BALZAC", "STENDHAL"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe existentialiste du XXe siècle", "📚 A écrit L'Être et le Néant et La Nausée", "🏅 A refusé le Prix Nobel de littérature en 1964"],
+          "answer": "JEAN-PAUL SARTRE",
+          "choices": ["JEAN-PAUL SARTRE", "ALBERT CAMUS", "SIMONE DE BEAUVOIR", "MAURRICE MERLEAU-PONTY"]
+        },
+        {
+          "indices": ["🇫🇷 Naturaliste français du XVIIIe siècle", "🌿 A écrit la monumentale Histoire naturelle en 44 volumes", "🦁 A popularisé l'étude de la nature en France"],
+          "answer": "BUFFON",
+          "choices": ["BUFFON", "JEAN-BAPTISTE LAMARCK", "CUVIER", "ADANSON"]
+        },
+        {
+          "indices": ["🇩🇪 Physicien et médecin du XVIIIe siècle", "🌡️ A inventé l'échelle de température qui porte son nom", "🌡️ A établi 0° pour la glace et 212° pour l'eau bouillante"],
+          "answer": "FAHRENHEIT",
+          "choices": ["FAHRENHEIT", "CELSIUS", "KELVIN", "REAUMUR"]
+        },
+        {
+          "indices": ["🇮🇹 Philosophe florentin de la Renaissance", "📖 A écrit Le Prince, guide du pouvoir politique", "🎭 A théorisé que la fin justifie les moyens"],
+          "answer": "MACHIAVEL",
+          "choices": ["MACHIAVEL", "DANTE ALIGHIERI", "ERASME", "THOMAS MORE"]
+        },
+        {
+          "indices": ["🇳🇱 Peintre hollandais du XVIIe siècle", "🎨 A peint La Ronde de nuit et des autoportraits célèbres", "💡 Maître du clair-obscur"],
+          "answer": "REMBRANDT",
+          "choices": ["REMBRANDT", "VERMEER", "RUBENS", "VAN EYCK"]
+        },
+        {
+          "indices": ["🇫🇷 Écrivain et philosophe français de la Renaissance", "📝 Inventeur du genre littéraire des Essais", "🤔 A popularisé l'introspection et le scepticisme"],
+          "answer": "MONTAIGNE",
+          "choices": ["MONTAIGNE", "RABELAIS", "RONSARD", "ERASME"]
+        },
+        {
+          "indices": ["🇩🇪 Compositeur romantique du XIXe siècle", "🎵 A composé L'Anneau des Nibelungs et Tristan et Isolde", "🎭 A fondé le festival de Bayreuth"],
+          "answer": "RICHARD WAGNER",
+          "choices": ["RICHARD WAGNER", "BRAHMS", "SCHUMANN", "LISZT"]
+        },
+        {
+          "indices": ["🇮🇹 Mathématicien médiéval du XIIIe siècle", "🔢 A popularisé les chiffres arabes en Europe", "🐇 A décrit la suite numérique qui porte son nom"],
+          "answer": "FIBONACCI",
+          "choices": ["FIBONACCI", "TARTAGLIA", "CARDANO", "EUCLIDE"]
+        },
+        {
+          "indices": ["🇫🇷 Chimiste français du XVIIIe siècle", "⚗️ A démontré la loi de conservation de la masse", "⚖️ Guillotiné pendant la Révolution française"],
+          "answer": "LAVOISIER",
+          "choices": ["LAVOISIER", "BERTHOLLET", "GAY-LUSSAC", "BERZELIUS"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe des Lumières du XVIIIe siècle", "⚖️ Auteur de L'Esprit des lois", "🏛️ A théorisé la séparation des pouvoirs"],
+          "answer": "MONTESQUIEU",
+          "choices": ["MONTESQUIEU", "VOLTAIRE", "ROUSSEAU", "CONDORCET"]
+        },
+        {
+          "indices": ["🇫🇷 Naturaliste français du XIXe siècle", "🦒 A proposé une théorie de l'évolution avant Darwin", "🦕 A théorisé l'héritage des caractères acquis"],
+          "answer": "JEAN-BAPTISTE LAMARCK",
+          "choices": ["JEAN-BAPTISTE LAMARCK", "BUFFON", "CUVIER", "GEOFFROY SAINT-HILAIRE"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe et encyclopédiste du XVIIIe siècle", "📚 Directeur principal de l'Encyclopédie", "✍️ A écrit Jacques le Fataliste et Le Neveu de Rameau"],
+          "answer": "DENIS DIDEROT",
+          "choices": ["DENIS DIDEROT", "D'ALEMBERT", "VOLTAIRE", "CONDORCET"]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "Moyen",
+      "pool": [
+        {
+          "indices": ["🇬🇷 Mathématicien grec du VIe siècle av. J.-C.", "📐 A démontré un célèbre théorème sur les triangles rectangles", "🔢 A fondé une école philosophique à Crotone"],
+          "answer": "PYTHAGORE",
+          "choices": ["PYTHAGORE", "EUCLIDE", "THALES", "ARCHIMEDE"]
+        },
+        {
+          "indices": ["🇮🇷 Médecin et philosophe perse du Xe siècle", "📖 A écrit Le Canon de la médecine", "🩺 Surnommé le Prince des médecins"],
+          "answer": "AVICENNE",
+          "choices": ["AVICENNE", "AVERROES", "AL-KHAWARIZMI", "AL-BIRUNI"]
+        },
+        {
+          "indices": ["🇦🇹 Moine botaniste du XIXe siècle", "🫛 A étudié l'hérédité à travers des expériences sur les petits pois", "🧬 Fondateur de la génétique"],
+          "answer": "GREGOR MENDEL",
+          "choices": ["GREGOR MENDEL", "CHARLES DARWIN", "THOMAS MORGAN", "FRANCIS GALTON"]
+        },
+        {
+          "indices": ["🇬🇷 Philosophe et mathématicien grec du VIe siècle av. J.-C.", "💧 A dit que tout vient de l'eau", "📐 Aurait prédit une éclipse solaire en 585 av. J.-C."],
+          "answer": "THALES",
+          "choices": ["THALES", "ANAXIMENE", "HERACLITE", "PYTHAGORE"]
+        },
+        {
+          "indices": ["🇫🇷 Linguiste et égyptologue du XIXe siècle", "🪨 A déchiffré les hiéroglyphes grâce à la pierre de Rosette", "📜 A fondé l'égyptologie moderne"],
+          "answer": "CHAMPOLLION",
+          "choices": ["CHAMPOLLION", "MARIETTE", "MASPERO", "BELZONI"]
+        },
+        {
+          "indices": ["🇬🇧 Bactériologiste écossais du XXe siècle", "🍄 A découvert la pénicilline par accident en 1928", "🏅 Prix Nobel de médecine en 1945"],
+          "answer": "ALEXANDRE FLEMING",
+          "choices": ["ALEXANDRE FLEMING", "LOUIS PASTEUR", "PAUL EHRLICH", "GERHARD DOMAGK"]
+        },
+        {
+          "indices": ["🇬🇷 Médecin grec de l'Antiquité", "⚕️ Considéré comme le père de la médecine", "📜 Le serment médical porte son nom"],
+          "answer": "HIPPOCRATE",
+          "choices": ["HIPPOCRATE", "GALIEN", "AVICENNE", "DIOCLES"]
+        },
+        {
+          "indices": ["🇹🇷 Sultan ottoman du XVIe siècle", "🕌 A porté l'Empire ottoman à son apogée", "⚖️ Surnommé le Législateur par ses sujets"],
+          "answer": "SOLIMAN LE MAGNIFIQUE",
+          "choices": ["SOLIMAN LE MAGNIFIQUE", "MEHMED II", "SELIM IER", "BAJAZET"]
+        },
+        {
+          "indices": ["🇩🇪 Mathématicien et philosophe du XVIIe siècle", "📐 A inventé le calcul infinitésimal indépendamment de Newton", "🔢 A conçu une machine à calculer"],
+          "answer": "GOTTFRIED LEIBNIZ",
+          "choices": ["GOTTFRIED LEIBNIZ", "BLAISE PASCAL", "RENE DESCARTES", "CHRISTIAN HUYGENS"]
+        },
+        {
+          "indices": ["🇬🇧 Mathématicien britannique du XXe siècle", "💻 Père de l'informatique théorique", "🔐 A brisé le code Enigma pendant la Seconde Guerre mondiale"],
+          "answer": "ALAN TURING",
+          "choices": ["ALAN TURING", "JOHN VON NEUMANN", "CLAUDE SHANNON", "GEORGE BOOLE"]
+        },
+        {
+          "indices": ["🇦🇹 Reine de France du XVIIIe siècle", "👑 Épouse de Louis XVI", "🔪 Guillotinée pendant la Révolution française en 1793"],
+          "answer": "MARIE-ANTOINETTE",
+          "choices": ["MARIE-ANTOINETTE", "MARIE DE MEDICIS", "ANNE D'AUTRICHE", "MAINTENON"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicien français du XIXe siècle", "🔢 A fondé la théorie des groupes", "💔 Mort en duel à 20 ans seulement"],
+          "answer": "EVARISTE GALOIS",
+          "choices": ["EVARISTE GALOIS", "AUGUSTIN CAUCHY", "JOSEPH FOURIER", "SADI CARNOT"]
+        },
+        {
+          "indices": ["🇪🇬 Pharaon du XIIIe siècle av. J.-C.", "🏛️ A fait construire d'immenses temples, dont Abou Simbel", "⚔️ A régné plus de 60 ans, l'un des plus longs règnes de l'histoire"],
+          "answer": "RAMSES II",
+          "choices": ["RAMSES II", "TOUTANKHAMON", "AMENHOTEP IV", "THOUTMOSIS III"]
+        },
+        {
+          "indices": ["🇺🇸 Militante américaine des droits civiques", "🚌 A refusé de céder sa place dans le bus à Montgomery en 1955", "✊ Son acte a déclenché le boycott des bus de Montgomery"],
+          "answer": "ROSA PARKS",
+          "choices": ["ROSA PARKS", "HARRIET TUBMAN", "SOJOURNER TRUTH", "CORETTA SCOTT KING"]
+        },
+        {
+          "indices": ["🏇 Chef de guerre hun du Ve siècle", "🗡️ Surnommé le Fléau de Dieu", "⚔️ A ravagé l'Europe avec ses cavaliers"],
+          "answer": "ATTILA",
+          "choices": ["ATTILA", "GENGHIS KHAN", "TAMERLAN", "ALARIC"]
+        },
+        {
+          "indices": ["🇬🇷 Médecin grec du IIe siècle", "📜 A dominé la médecine occidentale pendant 1400 ans", "🩺 A développé la théorie des humeurs"],
+          "answer": "GALIEN",
+          "choices": ["GALIEN", "HIPPOCRATE", "DIOSCORIDE", "SORANOS"]
+        },
+        {
+          "indices": ["🇲🇦 Explorateur et géographe arabe du XIVe siècle", "🌍 A voyagé plus de 120 000 km à travers le monde islamique", "📖 A narré ses voyages dans la Rihla"],
+          "answer": "IBN BATTUTA",
+          "choices": ["IBN BATTUTA", "MARCO POLO", "AL-IDRISI", "AL-MASUDI"]
+        },
+        {
+          "indices": ["🇫🇷 Révolutionnaire français du XVIIIe siècle", "⚖️ Figure emblématique de la Terreur", "🔪 A été guillotiné le 9 thermidor an II"],
+          "answer": "ROBESPIERRE",
+          "choices": ["ROBESPIERRE", "DANTON", "MARAT", "SAINT-JUST"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicien et physicien du XVIIe siècle", "🔢 A inventé la pascaline, une machine à calculer", "✝️ Philosophe mystique, auteur des Pensées"],
+          "answer": "BLAISE PASCAL",
+          "choices": ["BLAISE PASCAL", "RENE DESCARTES", "LEIBNIZ", "FERMAT"]
+        },
+        {
+          "indices": ["🇬🇷 Astronome et géographe grec du IIe siècle", "🌍 A proposé un modèle géocentrique de l'univers", "📖 A écrit l'Almageste"],
+          "answer": "PTOLEMEE",
+          "choices": ["PTOLEMEE", "HIPPARQUE", "ARISTARQUE", "ERATOSTHENE"]
+        },
+        {
+          "indices": ["🇫🇷 Cardinal et homme d'État du XVIIe siècle", "👑 Premier ministre de Louis XIII", "🏰 A centralisé le pouvoir royal et fondé l'Académie française"],
+          "answer": "RICHELIEU",
+          "choices": ["RICHELIEU", "MAZARIN", "COLBERT", "SULLY"]
+        },
+        {
+          "indices": ["👑 Premier roi des Francs converti au christianisme", "⚔️ A vaincu les Wisigoths à la bataille de Vouillé", "✝️ Baptisé à Reims vers 498"],
+          "answer": "CLOVIS",
+          "choices": ["CLOVIS", "CHARLEMAGNE", "DAGOBERT", "CHILDERIC"]
+        },
+        {
+          "indices": ["🇮🇹 Navigateur du XVe siècle", "🌎 A donné son prénom au continent américain", "⛵ A exploré la côte de l'Amérique du Sud"],
+          "answer": "AMERIGO VESPUCCI",
+          "choices": ["AMERIGO VESPUCCI", "CHRISTOPHE COLOMB", "BARTOLOMEU DIAS", "MAGELLAN"]
+        },
+        {
+          "indices": ["🇮🇹 Physicien du XVIIIe siècle", "⚡ A inventé la pile électrique", "🐸 A étudié l'électricité animale avec des grenouilles"],
+          "answer": "ALESSANDRO VOLTA",
+          "choices": ["ALESSANDRO VOLTA", "LUIGI GALVANI", "AMPERE", "OHM"]
+        },
+        {
+          "indices": ["🇬🇷 Historien du Ve siècle av. J.-C.", "📖 Souvent surnommé le père de l'Histoire", "🌍 A écrit une enquête sur les Guerres médiques"],
+          "answer": "HERODOTE",
+          "choices": ["HERODOTE", "THUCYDIDE", "XENOPHON", "PLUTARQUE"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe et féministe du XXe siècle", "📝 A écrit Le Deuxième Sexe", "💑 Compagne de Jean-Paul Sartre"],
+          "answer": "SIMONE DE BEAUVOIR",
+          "choices": ["SIMONE DE BEAUVOIR", "SIMONE VEIL", "GERMAINE GREER", "VIRGINIA WOOLF"]
+        },
+        {
+          "indices": ["🇬🇧 Médecin anglais du XVIIe siècle", "❤️ A découvert la circulation sanguine", "🔬 A décrit le rôle du cœur comme pompe"],
+          "answer": "WILLIAM HARVEY",
+          "choices": ["WILLIAM HARVEY", "VESALE", "GALIEN", "MALPIGHI"]
+        },
+        {
+          "indices": ["🇳🇴 Explorateur polaire du XXe siècle", "🧊 Premier homme à atteindre le pôle Sud en 1911", "🏁 A devancé le Britannique Scott dans la course au pôle"],
+          "answer": "ROALD AMUNDSEN",
+          "choices": ["ROALD AMUNDSEN", "ROBERT SCOTT", "ERNEST SHACKLETON", "FRIDTJOF NANSEN"]
+        },
+        {
+          "indices": ["🇫🇷 Physiologiste du XIXe siècle", "🔬 A fondé la physiologie expérimentale moderne", "📖 A écrit l'Introduction à l'étude de la médecine expérimentale"],
+          "answer": "CLAUDE BERNARD",
+          "choices": ["CLAUDE BERNARD", "LOUIS PASTEUR", "MAGENDIE", "FLOURENS"]
+        },
+        {
+          "indices": ["🏴󠁧󠁢󠁳󠁣󠁴󠁿 Ingénieur écossais du XVIIIe siècle", "⚙️ A amélioré la machine à vapeur, révolutionnant l'industrie", "🌡️ L'unité de puissance porte son nom"],
+          "answer": "JAMES WATT",
+          "choices": ["JAMES WATT", "GEORGE STEPHENSON", "RICHARD TREVITHICK", "THOMAS NEWCOMEN"]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "Difficile",
+      "pool": [
+        {
+          "indices": ["🇬🇷 Géographe et astronome grec du IIIe siècle av. J.-C.", "🌍 A calculé la circonférence de la Terre avec une précision remarquable", "📚 A été directeur de la bibliothèque d'Alexandrie"],
+          "answer": "ERATOSTHENE",
+          "choices": ["ERATOSTHENE", "HIPPARQUE", "STRABON", "PTOLEMEE"]
+        },
+        {
+          "indices": ["🇮🇶 Mathématicien arabe du IXe siècle", "🔢 A fondé l'algèbre et introduit le concept d'algorithme", "📖 Son prénom latinisé a donné le mot algorisme"],
+          "answer": "AL-KHAWARIZMI",
+          "choices": ["AL-KHAWARIZMI", "AVICENNE", "AL-BIRUNI", "AL-FARABI"]
+        },
+        {
+          "indices": ["🇬🇷 Mathématicienne et philosophe d'Alexandrie du Ve siècle", "📐 Première mathématicienne connue de l'histoire", "⚔️ Assassinée par une foule de fanatiques chrétiens"],
+          "answer": "HYPATIA",
+          "choices": ["HYPATIA", "SOPHIE GERMAIN", "EMMY NOETHER", "ADA LOVELACE"]
+        },
+        {
+          "indices": ["🇮🇳 Mathématicien indien du XXe siècle", "🔢 Génie autodidacte, maître des nombres et des suites infinies", "📧 A correspondu avec le mathématicien Hardy depuis Cambridge"],
+          "answer": "SRINIVASA RAMANUJAN",
+          "choices": ["SRINIVASA RAMANUJAN", "ARYABHATA", "BRAHMAGUPTA", "BHASKARACHARYA"]
+        },
+        {
+          "indices": ["🇬🇷 Mathématicien grec du IIIe siècle av. J.-C.", "📐 A rédigé les Éléments, base de la géométrie", "🔺 A démontré qu'il existe une infinité de nombres premiers"],
+          "answer": "EUCLIDE",
+          "choices": ["EUCLIDE", "PYTHAGORE", "ARCHIMEDE", "THALES"]
+        },
+        {
+          "indices": ["🇳🇱 Scientifique du XVIIe siècle", "🔬 Pionnier de la microscopie", "🦠 Premier à observer des bactéries et des protozoaires"],
+          "answer": "ANTONIE VAN LEEUWENHOEK",
+          "choices": ["ANTONIE VAN LEEUWENHOEK", "ROBERT HOOKE", "MALPIGHI", "SWAMMERDAM"]
+        },
+        {
+          "indices": ["🇫🇷 Résistant français de la Seconde Guerre mondiale", "✊ Chef de la Résistance intérieure française", "💔 Arrêté par la Gestapo, mort sous la torture en 1943"],
+          "answer": "JEAN MOULIN",
+          "choices": ["JEAN MOULIN", "PIERRE BROSSOLETTE", "GEORGES BIDAULT", "HENRI FRENAY"]
+        },
+        {
+          "indices": ["🇬🇧 Astronome britannique du XVIIe siècle", "☄️ A prédit le retour d'une comète qui porte son nom", "📡 A appliqué la loi de Newton aux comètes"],
+          "answer": "EDMOND HALLEY",
+          "choices": ["EDMOND HALLEY", "WILLIAM HERSCHEL", "JAMES BRADLEY", "JOHN FLAMSTEED"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicien et astronome du XVIIIe siècle", "🌌 A contribué à la mécanique céleste", "📖 A écrit Exposition du système du monde"],
+          "answer": "PIERRE-SIMON LAPLACE",
+          "choices": ["PIERRE-SIMON LAPLACE", "LAGRANGE", "FOURIER", "POISSON"]
+        },
+        {
+          "indices": ["🇫🇷 Femme politique française du XXe siècle", "⚖️ A fait voter la loi sur l'interruption volontaire de grossesse en 1975", "🏛️ Présidente du Parlement européen de 1979 à 1982"],
+          "answer": "SIMONE VEIL",
+          "choices": ["SIMONE VEIL", "SIMONE DE BEAUVOIR", "MARGUERITE YOURCENAR", "EDITH CRESSON"]
+        },
+        {
+          "indices": ["🇩🇰 Astronome danois du XVIe siècle", "🔭 A effectué des observations astronomiques très précises sans télescope", "🌌 A eu le nez coupé lors d'un duel"],
+          "answer": "TYCHO BRAHE",
+          "choices": ["TYCHO BRAHE", "JOHANNES KEPLER", "GALILEE", "NICOLAS COPERNIC"]
+        },
+        {
+          "indices": ["🇩🇪 Bactériologiste du XIXe siècle", "🦠 A identifié les bacilles responsables de la tuberculose et du choléra", "🏅 Prix Nobel de médecine en 1905"],
+          "answer": "ROBERT KOCH",
+          "choices": ["ROBERT KOCH", "LOUIS PASTEUR", "ALEXANDRE FLEMING", "PAUL EHRLICH"]
+        },
+        {
+          "indices": ["🇩🇪 Mathématicien du XVIIIe-XIXe siècle", "🔢 Surnommé le Prince des mathématiques", "📐 A contribué à la théorie des nombres, la géométrie non-euclidienne et la statistique"],
+          "answer": "CARL FRIEDRICH GAUSS",
+          "choices": ["CARL FRIEDRICH GAUSS", "EULER", "RIEMANN", "DIRICHLET"]
+        },
+        {
+          "indices": ["🇨🇭 Médecin alchimiste du XVIe siècle", "⚗️ A introduit des minéraux dans les traitements médicaux", "🪄 Précurseur de la pharmacologie moderne"],
+          "answer": "PARACELSE",
+          "choices": ["PARACELSE", "AVICENNE", "GALIEN", "VESALE"]
+        },
+        {
+          "indices": ["🇫🇷 Physicien du XIXe siècle", "⚡ L'unité de l'intensité du courant électrique porte son nom", "🔌 A fondé l'électrodynamique"],
+          "answer": "AMPERE",
+          "choices": ["AMPERE", "VOLTA", "OHM", "FARADAY"]
+        },
+        {
+          "indices": ["🇳🇱 Peintre de la Renaissance du XVe-XVIe siècle", "🖼️ Connu pour ses tableaux fantastiques peuplés de monstres", "🎨 A peint Le Jardin des délices"],
+          "answer": "HIERONYMUS BOSCH",
+          "choices": ["HIERONYMUS BOSCH", "PIETER BRUEGEL", "VAN EYCK", "DURER"]
+        },
+        {
+          "indices": ["🇮🇹 Physicien du XVIIIe siècle", "🐸 A étudié les contractions musculaires par l'électricité", "⚡ Ses travaux ont inspiré l'invention de la pile électrique"],
+          "answer": "LUIGI GALVANI",
+          "choices": ["LUIGI GALVANI", "VOLTA", "AMPERE", "FARADAY"]
+        },
+        {
+          "indices": ["🇭🇺 Médecin obstétricien du XIXe siècle", "🏥 A découvert que les médecins transmettaient la fièvre puerpérale", "😢 Mort à l'asile, ses idées reconnues trop tard"],
+          "answer": "IGNAZ SEMMELWEIS",
+          "choices": ["IGNAZ SEMMELWEIS", "JOSEPH LISTER", "LOUIS PASTEUR", "ROBERT KOCH"]
+        },
+        {
+          "indices": ["🇬🇧 Physicien nucléaire du XXe siècle", "⚛️ A découvert le neutron en 1932", "🏅 Prix Nobel de physique en 1935"],
+          "answer": "JAMES CHADWICK",
+          "choices": ["JAMES CHADWICK", "ERNEST RUTHERFORD", "NIELS BOHR", "ENRICO FERMI"]
+        },
+        {
+          "indices": ["🇬🇧 Physicien et chimiste du XVIIIe siècle", "⚗️ A découvert l'hydrogène et pesé la Terre", "🔬 L'un des plus grands expérimentateurs de l'histoire"],
+          "answer": "HENRY CAVENDISH",
+          "choices": ["HENRY CAVENDISH", "JOSEPH PRIESTLEY", "JOHN DALTON", "HUMPHRY DAVY"]
+        },
+        {
+          "indices": ["🇮🇷 Poète et mathématicien persan du XIe siècle", "📐 A réformé le calendrier persan", "🍷 Ses Rubaïyat sont célèbres dans le monde entier"],
+          "answer": "OMAR KHAYYAM",
+          "choices": ["OMAR KHAYYAM", "AL-KHAWARIZMI", "AVICENNE", "AL-BIRUNI"]
+        },
+        {
+          "indices": ["🇬🇧 Cristallographe britannique du XXe siècle", "🧬 A pris le cliché 51, clé de la découverte de l'ADN", "😔 Son travail a été utilisé sans sa reconnaissance"],
+          "answer": "ROSALIND FRANKLIN",
+          "choices": ["ROSALIND FRANKLIN", "MARIE CURIE", "LISE MEITNER", "DOROTHY HODGKIN"]
+        },
+        {
+          "indices": ["🇩🇪 Général et théoricien militaire du XIXe siècle", "📖 A écrit De la guerre, traité stratégique fondamental", "⚔️ A participé aux guerres napoléoniennes"],
+          "answer": "CARL VON CLAUSEWITZ",
+          "choices": ["CARL VON CLAUSEWITZ", "VON MOLTKE", "SCHARNHORST", "WELLINGTON"]
+        },
+        {
+          "indices": ["🇫🇷 Physicien du XIXe siècle", "💡 A travaillé sur la nature ondulatoire de la lumière", "🔬 A contribué à l'optique et a inventé la lentille de Fresnel"],
+          "answer": "AUGUSTIN FRESNEL",
+          "choices": ["AUGUSTIN FRESNEL", "ARAGO", "MALUS", "BIOT"]
+        },
+        {
+          "indices": ["🇲🇦 Philosophe et médecin andalou du XIIe siècle", "📚 A commenté l'œuvre d'Aristote pour l'Occident", "🏛️ Son nom latinisé est Averroès"],
+          "answer": "AVERROES",
+          "choices": ["AVERROES", "AVICENNE", "AL-KHAWARIZMI", "MAIMONIDE"]
+        },
+        {
+          "indices": ["🇮🇹 Physicien et mathématicien du XVIIe siècle", "🌡️ A inventé le baromètre à mercure", "💨 A démontré l'existence de la pression atmosphérique"],
+          "answer": "EVANGELISTA TORRICELLI",
+          "choices": ["EVANGELISTA TORRICELLI", "BLAISE PASCAL", "OTTO VON GUERICKE", "BOYLE"]
+        },
+        {
+          "indices": ["🇬🇧 Scientifique du XVIIe siècle", "🦠 A décrit les cellules en observant du liège au microscope", "🌱 A publié Micrographia, premier grand ouvrage de microscopie"],
+          "answer": "ROBERT HOOKE",
+          "choices": ["ROBERT HOOKE", "ANTONIE VAN LEEUWENHOEK", "MALPIGHI", "NEHEMIAH GREW"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicienne du XIXe siècle", "📐 A correspondu avec Gauss sous un pseudonyme masculin", "🔢 A travaillé sur les surfaces minimales et les nombres premiers"],
+          "answer": "SOPHIE GERMAIN",
+          "choices": ["SOPHIE GERMAIN", "HYPATIA", "ADA LOVELACE", "EMMY NOETHER"]
+        },
+        {
+          "indices": ["🇬🇷 Historien grec du Ve siècle av. J.-C.", "📖 A écrit l'Histoire de la Guerre du Péloponnèse", "🏛️ Considéré comme le premier historien scientifique"],
+          "answer": "THUCYDIDE",
+          "choices": ["THUCYDIDE", "HERODOTE", "XENOPHON", "POLYBE"]
+        },
+        {
+          "indices": ["🇩🇪 Mathématicienne du XIXe-XXe siècle", "🔢 A révolutionné l'algèbre abstraite", "🏅 Einstein la qualifiait de mathématicienne la plus importante de l'histoire"],
+          "answer": "EMMY NOETHER",
+          "choices": ["EMMY NOETHER", "SOPHIE GERMAIN", "ADA LOVELACE", "HYPATIA"]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "Expert",
+      "pool": [
+        {
+          "indices": ["🇬🇷 Astronome grec du IIe siècle av. J.-C.", "🌟 A établi le premier catalogue d'étoiles précis", "🌙 A découvert la précession des équinoxes"],
+          "answer": "HIPPARQUE",
+          "choices": ["HIPPARQUE", "ARISTARQUE", "ERATOSTHENE", "PTOLEMEE"]
+        },
+        {
+          "indices": ["🇮🇶 Scientifique arabe du Xe siècle", "💡 Considéré comme le fondateur de l'optique moderne", "📖 A écrit le Livre d'optique, influençant Kepler et Newton"],
+          "answer": "IBN AL-HAYTHAM",
+          "choices": ["IBN AL-HAYTHAM", "AL-KHAWARIZMI", "AVICENNE", "AL-BIRUNI"]
+        },
+        {
+          "indices": ["🇬🇷 Astronome grec du IIIe siècle av. J.-C.", "☀️ A proposé que la Terre tourne autour du Soleil (héliocentrisme)", "🌌 A précédé Copernic de 1700 ans dans cette idée"],
+          "answer": "ARISTARQUE DE SAMOS",
+          "choices": ["ARISTARQUE DE SAMOS", "HIPPARQUE", "ERATOSTHENE", "THALES"]
+        },
+        {
+          "indices": ["🇮🇹 Moine philosophe du XVIe siècle", "🔥 Brûlé vif à Rome en 1600 pour hérésie", "🌌 A défendu l'infinité de l'univers et l'existence d'autres mondes"],
+          "answer": "GIORDANO BRUNO",
+          "choices": ["GIORDANO BRUNO", "GALILEE", "COPERNIC", "CAMPANELLA"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicien et théologien du XVIIe siècle", "🔢 A fondé la théorie des nombres et étudié les nombres premiers", "📜 A correspondu avec Descartes et Pascal"],
+          "answer": "MARIN MERSENNE",
+          "choices": ["MARIN MERSENNE", "FERMAT", "PASCAL", "ROBERVAL"]
+        },
+        {
+          "indices": ["🇨🇭 Mathématicien du XVIIIe siècle", "🔢 Le plus prolifique mathématicien de l'histoire", "📐 A travaillé dans presque tous les domaines des mathématiques de son temps"],
+          "answer": "LEONHARD EULER",
+          "choices": ["LEONHARD EULER", "GAUSS", "LAGRANGE", "LAPLACE"]
+        },
+        {
+          "indices": ["🇫🇷 Mathématicien du XVIIe siècle", "🔢 A fondé la théorie des nombres et préparé le calcul différentiel", "📜 Son dernier théorème a résisté 358 ans avant d'être prouvé"],
+          "answer": "PIERRE DE FERMAT",
+          "choices": ["PIERRE DE FERMAT", "BLAISE PASCAL", "DESCARTES", "MERSENNE"]
+        },
+        {
+          "indices": ["🇸🇪 Naturaliste du XVIIIe siècle", "🌿 A créé la classification des êtres vivants (taxonomie binomiale)", "🌸 A donné un nom latin à toutes les espèces connues"],
+          "answer": "CARL VON LINNE",
+          "choices": ["CARL VON LINNE", "BUFFON", "LAMARCK", "CUVIER"]
+        },
+        {
+          "indices": ["🇪🇸 Fondateur des Jésuites du XVIe siècle", "⛪ A fondé la Compagnie de Jésus en 1540", "✝️ A été soldat blessé avant de se convertir à la vie religieuse"],
+          "answer": "IGNACE DE LOYOLA",
+          "choices": ["IGNACE DE LOYOLA", "THOMAS MORE", "ERASME", "LUTHER"]
+        },
+        {
+          "indices": ["🇬🇧 Mathématicienne du XIXe siècle", "💻 Considérée comme la première programmeuse de l'histoire", "👩‍💻 A travaillé avec Charles Babbage sur sa machine analytique"],
+          "answer": "ADA LOVELACE",
+          "choices": ["ADA LOVELACE", "SOPHIE GERMAIN", "EMMY NOETHER", "GRACE HOPPER"]
+        },
+        {
+          "indices": ["🇬🇷 Sculpteur athénien du Ve siècle av. J.-C.", "🏛️ A supervisé la construction du Parthénon", "🗿 A créé les sculptures d'Athéna Parthénos et de Zeus olympien"],
+          "answer": "PHIDIAS",
+          "choices": ["PHIDIAS", "PRAXITELE", "LYSIPPE", "SCOPAS"]
+        },
+        {
+          "indices": ["🇬🇧 Chimiste du XVIIIe siècle", "🌬️ A découvert l'oxygène et plusieurs autres gaz", "📖 Contemporain et ami de Benjamin Franklin"],
+          "answer": "JOSEPH PRIESTLEY",
+          "choices": ["JOSEPH PRIESTLEY", "HENRY CAVENDISH", "HUMPHRY DAVY", "JOHN DALTON"]
+        },
+        {
+          "indices": ["🇷🇺 Chimiste du XIXe siècle", "📊 A créé le tableau périodique des éléments", "🔮 A prédit l'existence d'éléments non encore découverts"],
+          "answer": "DMITRI MENDELEIEV",
+          "choices": ["DMITRI MENDELEIEV", "JOHN DALTON", "LOTHAR MEYER", "BERZELIUS"]
+        },
+        {
+          "indices": ["🇩🇪 Physicien du XIXe siècle", "⚡ A énoncé les lois sur les circuits électriques qui portent son nom", "🔌 A montré le lien entre courant, tension et résistance"],
+          "answer": "GUSTAV KIRCHHOFF",
+          "choices": ["GUSTAV KIRCHHOFF", "OHM", "AMPERE", "WHEATSTONE"]
+        },
+        {
+          "indices": ["🇬🇧 Physicien du XIXe siècle", "💡 A réalisé l'expérience des deux fentes prouvant la nature ondulatoire de la lumière", "🗿 A contribué au déchiffrement des hiéroglyphes"],
+          "answer": "THOMAS YOUNG",
+          "choices": ["THOMAS YOUNG", "FRESNEL", "HUYGENS", "FIZEAU"]
+        },
+        {
+          "indices": ["🇧🇪 Médecin anatomiste du XVIe siècle", "🔬 A révolutionné l'anatomie humaine par la dissection", "📖 A publié De Humani Corporis Fabrica en 1543"],
+          "answer": "ANDRE VESALE",
+          "choices": ["ANDRE VESALE", "WILLIAM HARVEY", "GALIEN", "FALLOPE"]
+        },
+        {
+          "indices": ["🇫🇷 Philosophe libéral du XIXe siècle", "🌍 A voyagé aux États-Unis pour étudier la démocratie", "📖 A écrit De la démocratie en Amérique"],
+          "answer": "ALEXIS DE TOCQUEVILLE",
+          "choices": ["ALEXIS DE TOCQUEVILLE", "MONTESQUIEU", "CONDORCET", "GUIZOT"]
+        },
+        {
+          "indices": ["🇩🇰 Physicien du XXe siècle", "⚛️ A proposé un modèle de l'atome avec des orbites électroniques", "🏅 Prix Nobel de physique en 1922"],
+          "answer": "NIELS BOHR",
+          "choices": ["NIELS BOHR", "HEISENBERG", "SCHRODINGER", "PAULI"]
+        },
+        {
+          "indices": ["🇩🇪 Physicien du XXe siècle", "⚛️ A énoncé le principe d'incertitude", "🏅 Prix Nobel de physique en 1932 pour la mécanique quantique"],
+          "answer": "WERNER HEISENBERG",
+          "choices": ["WERNER HEISENBERG", "NIELS BOHR", "SCHRODINGER", "MAX PLANCK"]
+        },
+        {
+          "indices": ["🇷🇺 Mathématicien du XIXe siècle", "📐 A fondé la géométrie non-euclidienne indépendamment de Bolyai", "🌐 A remis en cause le postulat des parallèles d'Euclide"],
+          "answer": "NICOLAS LOBATCHEVSKI",
+          "choices": ["NICOLAS LOBATCHEVSKI", "BERNHARD RIEMANN", "JANOS BOLYAI", "GAUSS"]
+        },
+        {
+          "indices": ["🇩🇪 Médecin du XIXe siècle", "💉 A développé la sérothérapie et le traitement de la syphilis", "🏅 Premier Prix Nobel de médecine en 1901"],
+          "answer": "PAUL EHRLICH",
+          "choices": ["PAUL EHRLICH", "ROBERT KOCH", "RUDOLF VIRCHOW", "JOSEPH LISTER"]
+        },
+        {
+          "indices": ["🇬🇧 Chimiste et physicien du XIXe siècle", "⚛️ A développé la théorie atomique de la matière", "🔬 A établi les lois des proportions définies"],
+          "answer": "JOHN DALTON",
+          "choices": ["JOHN DALTON", "LAVOISIER", "MENDELEIEV", "BERZELIUS"]
+        },
+        {
+          "indices": ["🇮🇹 Chimiste du XIXe siècle", "🔢 A formulé la loi sur les gaz qui porte son nom", "⚗️ A distingué atomes et molécules"],
+          "answer": "AMEDEO AVOGADRO",
+          "choices": ["AMEDEO AVOGADRO", "DALTON", "GAY-LUSSAC", "BERZELIUS"]
+        },
+        {
+          "indices": ["🇬🇧 Mathématicien et inventeur du XIXe siècle", "💻 A conçu la machine analytique, ancêtre de l'ordinateur", "🔢 A travaillé avec Ada Lovelace"],
+          "answer": "CHARLES BABBAGE",
+          "choices": ["CHARLES BABBAGE", "ALAN TURING", "GEORGE BOOLE", "JOHN VON NEUMANN"]
+        },
+        {
+          "indices": ["🏴󠁧󠁢󠁳󠁣󠁴󠁿 Physicien écossais du XIXe siècle", "⚡ A unifié l'électricité, le magnétisme et l'optique", "📡 Ses équations prédirent l'existence des ondes électromagnétiques"],
+          "answer": "JAMES CLERK MAXWELL",
+          "choices": ["JAMES CLERK MAXWELL", "MICHAEL FARADAY", "HEINRICH HERTZ", "OLIVER HEAVISIDE"]
+        },
+        {
+          "indices": ["🇫🇷 Sociologue du XIXe siècle", "📊 A fondé la sociologie comme science", "📖 A étudié le suicide comme phénomène social"],
+          "answer": "EMILE DURKHEIM",
+          "choices": ["EMILE DURKHEIM", "MAX WEBER", "AUGUSTE COMTE", "MARCEL MAUSS"]
+        },
+        {
+          "indices": ["🇬🇧 Mathématicien du XIXe siècle", "🔢 A fondé l'algèbre booléenne", "💻 Ses travaux sont à la base de l'informatique moderne"],
+          "answer": "GEORGE BOOLE",
+          "choices": ["GEORGE BOOLE", "ALAN TURING", "BABBAGE", "SHANNON"]
+        },
+        {
+          "indices": ["🇩🇪 Physicien du XIXe siècle", "☢️ A découvert les rayons X en 1895", "🏅 Premier Prix Nobel de physique en 1901"],
+          "answer": "WILHELM RONTGEN",
+          "choices": ["WILHELM RONTGEN", "HENRI BECQUEREL", "PIERRE CURIE", "PHILIP LENARD"]
+        },
+        {
+          "indices": ["🇺🇸 Mathématicien du XXe siècle", "📡 A fondé la théorie de l'information", "💻 A travaillé sur la cryptographie et les automates"],
+          "answer": "CLAUDE SHANNON",
+          "choices": ["CLAUDE SHANNON", "ALAN TURING", "JOHN VON NEUMANN", "NORBERT WIENER"]
+        },
+        {
+          "indices": ["🇫🇷 Physicienne du XXe siècle", "☢️ Fille de Marie et Pierre Curie", "🏅 Prix Nobel de chimie en 1935 pour la radioactivité artificielle"],
+          "answer": "IRENE JOLIOT-CURIE",
+          "choices": ["IRENE JOLIOT-CURIE", "MARIE CURIE", "ROSALIND FRANKLIN", "LISE MEITNER"]
+        }
+      ]
+    }
+  ]
+}
