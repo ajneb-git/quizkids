@@ -1742,8 +1742,6 @@ html, body {
   border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, transform 0.1s;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 .defi-choice-btn:hover:not(:disabled) {
@@ -1753,6 +1751,18 @@ html, body {
 
 .defi-choice-btn:active { transform: scale(0.97); }
 .defi-choice-btn:disabled { cursor: default; }
+
+.defi-choice-btn.hist-correct {
+  background: rgba(34,197,94,0.15);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.defi-choice-btn.hist-wrong {
+  background: rgba(239,68,68,0.15);
+  border-color: #ef4444;
+  color: #ef4444;
+}
 
 /* ══════════════════════════════════════════════════════
    SCIENCES & NATURE / TECHNOLOGIE

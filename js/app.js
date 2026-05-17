@@ -2323,7 +2323,7 @@ function endDefiAnagrammes(perfect, wrongQ) {
     wrongEl.innerHTML = '';
   }
 
-  document.getElementById('btn-ana-replay').onclick = () => { window.location.hash = '#defi-anagrammes'; };
+  document.getElementById('btn-ana-replay').onclick = () => startDefiAnagrammes();
 }
 
 // ─── Qui suis-je ? ────────────────────────────────────────────────────────────
@@ -2444,7 +2444,7 @@ function endDefiQSJ(perfect, wrongQ) {
     wrongEl.innerHTML = '';
   }
 
-  document.getElementById('btn-qsj-replay').onclick = () => { window.location.hash = '#defi-quisuisje'; };
+  document.getElementById('btn-qsj-replay').onclick = () => startDefiQSJ();
 }
 
 // ─── Sciences & Nature ────────────────────────────────────────────────────────
@@ -2547,7 +2547,7 @@ function endDefiSciences(perfect, wrongQ) {
       <div class="vf-result-wrong-a">→ <strong>${wrongQ.answer}</strong></div>`;
   } else { wrongEl.innerHTML = ''; }
 
-  document.getElementById('btn-sci-replay').onclick = () => { window.location.hash = '#defi-sciences'; };
+  document.getElementById('btn-sci-replay').onclick = () => startDefiSciences();
 }
 
 // ─── Technologie & Inventions ─────────────────────────────────────────────────
@@ -2650,7 +2650,7 @@ function endDefiTechno(perfect, wrongQ) {
       <div class="vf-result-wrong-a">→ <strong>${wrongQ.answer}</strong></div>`;
   } else { wrongEl.innerHTML = ''; }
 
-  document.getElementById('btn-tec-replay').onclick = () => { window.location.hash = '#defi-techno'; };
+  document.getElementById('btn-tec-replay').onclick = () => startDefiTechno();
 }
 
 document.addEventListener('DOMContentLoaded', init);
