@@ -62,6 +62,10 @@ let currentTechno = [];
 let technoIndex = 0;
 let technoScore = 0;
 
+let compteSession = [];
+let compteIndex = 0;
+let compteScore = 0;
+
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -487,6 +491,11 @@ async function route() {
 
   if (hash === '#defi-techno') {
     await startDefiTechno();
+    return;
+  }
+
+  if (hash === '#defi-compte') {
+    startDefiCompte();
     return;
   }
 
@@ -2651,6 +2660,258 @@ function endDefiTechno(perfect, wrongQ) {
   } else { wrongEl.innerHTML = ''; }
 
   document.getElementById('btn-tec-replay').onclick = () => startDefiTechno();
+}
+
+// ─── Le Compte est Bon ────────────────────────────────────────────────────────
+
+const CEB_BEST_KEY = 'quizkids_compte_best';
+function getCebBest() { return parseInt(localStorage.getItem(CEB_BEST_KEY) || '0', 10); }
+function saveCebBest(score) {
+  const prev = getCebBest();
+  if (score > prev) { localStorage.setItem(CEB_BEST_KEY, score); return true; }
+  return false;
+}
+
+// --- Générateur de nombres ---
+function cebPickNumbers() {
+  const smallPool = [1,2,3,4,5,6,7,8,9,10];
+  const pool = [...smallPool].sort(() => Math.random() - 0.5);
+  const small = pool.slice(0, 4);
+  const largePool = [25,50,75,100].sort(() => Math.random() - 0.5);
+  return [...small, largePool[0], largePool[1]];
+}
+
+// --- Solver DFS (Countdown) ---
+function cebEval(op, a, b) {
+  if (op === '+') return a + b;
+  if (op === '-') return a > b ? a - b : NaN;
+  if (op === '×') return a * b;
+  if (op === '÷') return b > 1 && a % b === 0 ? a / b : NaN;
+  return NaN;
+}
+
+function cebSolve(numbers, target) {
+  let nodeCount = 0;
+  function dfs(pool) {
+    if (++nodeCount > 80000) return null;
+    for (const item of pool) {
+      if (item.v === target) return item.ops;
+    }
+    if (pool.length < 2) return null;
+    for (let i = 0; i < pool.length; i++) {
+      for (let j = 0; j < pool.length; j++) {
+        if (i === j) continue;
+        const a = pool[i], b = pool[j];
+        for (const op of ['+', '-', '×', '÷']) {
+          const r = cebEval(op, a.v, b.v);
+          if (!r || !isFinite(r) || r <= 0 || r > 9999 || !Number.isInteger(r)) continue;
+          const newItem = {
+            v: r,
+            ops: [...a.ops, ...b.ops, { a: a.v, op, b: b.v, r }]
+          };
+          const newPool = pool.filter((_, k) => k !== i && k !== j).concat(newItem);
+          const sol = dfs(newPool);
+          if (sol) return sol;
+        }
+      }
+    }
+    return null;
+  }
+  return dfs(numbers.map(n => ({ v: n, ops: [] })));
+}
+
+function cebOpsToSteps(ops) {
+  return ops.map(o => `${o.a} ${o.op} ${o.b} = ${o.r}`);
+}
+
+// --- Cascade : modifie une étape et propage les changements ---
+function cebCascade(validOps, stepIdx, field, newVal) {
+  const ops = validOps.map(o => ({ ...o }));
+  ops[stepIdx][field] = newVal;
+  if (field !== 'r') {
+    const res = cebEval(ops[stepIdx].op, ops[stepIdx].a, ops[stepIdx].b);
+    ops[stepIdx].r = isFinite(res) && Number.isInteger(res) ? res : validOps[stepIdx].r + (newVal - validOps[stepIdx][field]);
+  }
+  const remap = new Map([[validOps[stepIdx].r, ops[stepIdx].r]]);
+  for (let i = stepIdx + 1; i < ops.length; i++) {
+    let changed = false;
+    if (remap.has(ops[i].a)) { ops[i].a = remap.get(ops[i].a); changed = true; }
+    if (remap.has(ops[i].b)) { ops[i].b = remap.get(ops[i].b); changed = true; }
+    if (changed) {
+      const oldR = validOps[i].r;
+      const newR = cebEval(ops[i].op, ops[i].a, ops[i].b);
+      ops[i].r = isFinite(newR) && Number.isInteger(newR) && newR > 0 ? newR : oldR + (ops[i].a - validOps[i].a || 0) + (ops[i].b - validOps[i].b || 0);
+      remap.set(oldR, ops[i].r);
+    }
+  }
+  return ops;
+}
+
+// --- Génération de 3 fausses solutions ---
+function cebFalseSolutions(validOps, target, numbers) {
+  const computedResults = new Set(validOps.map(o => o.r));
+  const wrongFinal = (delta) => {
+    const ops = validOps.map(o => ({ ...o }));
+    ops[ops.length - 1] = { ...ops[ops.length - 1], r: target + delta };
+    return cebOpsToSteps(ops);
+  };
+
+  // Type 1 : résultat final légèrement différent
+  const d1 = (target % 3 === 0 ? -1 : 1) * (3 + Math.floor(Math.random() * 5));
+  const t1 = wrongFinal(d1);
+
+  // Type 2 : mauvais nombre (leaf input modifié + cascade)
+  let t2 = null;
+  for (let i = 0; i < validOps.length && !t2; i++) {
+    for (const field of ['a', 'b']) {
+      const val = validOps[i][field];
+      if (computedResults.has(val)) continue; // c'est un résultat intermédiaire, pas une feuille
+      const delta = (Math.random() < 0.5 ? 1 : -1) * (1 + Math.floor(Math.random() * 2));
+      const wrongVal = val + delta;
+      if (wrongVal <= 0 || numbers.includes(wrongVal)) continue;
+      const modOps = cebCascade(validOps, i, field, wrongVal);
+      if (modOps[modOps.length - 1].r !== target) { t2 = cebOpsToSteps(modOps); break; }
+    }
+  }
+  if (!t2) t2 = wrongFinal(-(8 + Math.floor(Math.random() * 6)));
+
+  // Type 3 : erreur de calcul intermédiaire (résultat d'étape légèrement faux)
+  let t3 = null;
+  if (validOps.length >= 2) {
+    const midIdx = Math.floor((validOps.length - 1) / 2);
+    const d3 = (Math.random() < 0.5 ? 1 : -1) * (1 + Math.floor(Math.random() * 2));
+    const modOps = cebCascade(validOps, midIdx, 'r', validOps[midIdx].r + d3);
+    if (modOps[modOps.length - 1].r !== target) t3 = cebOpsToSteps(modOps);
+  }
+  if (!t3) t3 = wrongFinal(13 + Math.floor(Math.random() * 7));
+
+  return [t1, t2, t3];
+}
+
+// --- Génère un puzzle complet ---
+function cebGeneratePuzzle() {
+  for (let attempt = 0; attempt < 300; attempt++) {
+    const numbers = cebPickNumbers();
+    const target = 100 + Math.floor(Math.random() * 900);
+    const ops = cebSolve(numbers, target);
+    if (!ops || ops.length < 2) continue;
+
+    const validSteps = cebOpsToSteps(ops);
+    const falseSteps = cebFalseSolutions(ops, target, numbers);
+
+    const allSolutions = [
+      { steps: validSteps, valid: true },
+      { steps: falseSteps[0], valid: false },
+      { steps: falseSteps[1], valid: false },
+      { steps: falseSteps[2], valid: false }
+    ].sort(() => Math.random() - 0.5);
+
+    return { numbers, target, solutions: allSolutions };
+  }
+  return null;
+}
+
+// --- Jeu ---
+function startDefiCompte() {
+  compteSession = [];
+  for (let i = 0; i < 10; i++) {
+    const p = cebGeneratePuzzle();
+    if (p) compteSession.push(p);
+  }
+  if (!compteSession.length) { showScreen('home'); return; }
+  compteIndex = 0;
+  compteScore = 0;
+  showScreen('compte');
+  renderCompteQuestion();
+  document.getElementById('btn-ceb-replay').onclick = () => startDefiCompte();
+}
+
+function renderCompteQuestion() {
+  const puzzle = compteSession[compteIndex];
+  const total = compteSession.length;
+  const largePlates = new Set([25, 50, 75, 100]);
+
+  document.getElementById('ceb-progress-fill').style.width = `${(compteIndex / total) * 100}%`;
+  document.getElementById('ceb-counter').textContent = `${compteIndex + 1} / ${total}`;
+  document.getElementById('ceb-score').textContent = compteScore;
+  document.getElementById('ceb-target').textContent = puzzle.target;
+  document.getElementById('ceb-feedback').textContent = '';
+  document.getElementById('ceb-feedback').className = 'vf-feedback';
+
+  // Tuiles des nombres
+  const numsEl = document.getElementById('ceb-numbers');
+  numsEl.innerHTML = '';
+  puzzle.numbers.forEach(n => {
+    const tile = document.createElement('div');
+    tile.className = 'ceb-number-tile' + (largePlates.has(n) ? ' large' : '');
+    tile.textContent = n;
+    numsEl.appendChild(tile);
+  });
+
+  // Cartes solutions
+  const solsEl = document.getElementById('ceb-solutions');
+  solsEl.innerHTML = '';
+  puzzle.solutions.forEach((sol, idx) => {
+    const card = document.createElement('div');
+    card.className = 'ceb-solution-card';
+    card.innerHTML = `
+      <div class="ceb-solution-header">
+        <span class="ceb-solution-num">Solution ${idx + 1}</span>
+        <span class="ceb-solution-badge" id="ceb-badge-${idx}"></span>
+      </div>
+      <div class="ceb-steps">${sol.steps.map(s => `<div class="ceb-step">${s}</div>`).join('')}</div>
+      <button class="btn btn-primary ceb-validate-btn" id="ceb-btn-${idx}">✓ C'est cette solution !</button>
+    `;
+    card.querySelector(`#ceb-btn-${idx}`).onclick = () => handleCompteAnswer(idx);
+    solsEl.appendChild(card);
+  });
+}
+
+function handleCompteAnswer(selectedIdx) {
+  const puzzle = compteSession[compteIndex];
+  document.querySelectorAll('.ceb-validate-btn').forEach(b => b.disabled = true);
+
+  const isCorrect = puzzle.solutions[selectedIdx].valid;
+  const cards = document.querySelectorAll('.ceb-solution-card');
+
+  puzzle.solutions.forEach((sol, idx) => {
+    const badge = document.getElementById(`ceb-badge-${idx}`);
+    if (sol.valid) {
+      badge.textContent = '✅';
+      cards[idx].classList.add(idx === selectedIdx ? 'selected-correct' : 'revealed-correct');
+    } else {
+      badge.textContent = '❌';
+      if (idx === selectedIdx) cards[idx].classList.add('selected-wrong');
+      else cards[idx].classList.add('revealed-wrong');
+    }
+  });
+
+  if (isCorrect) {
+    compteScore++;
+    compteIndex++;
+    setTimeout(() => {
+      if (compteIndex >= compteSession.length) endDefiCompte(true);
+      else renderCompteQuestion();
+    }, 1800);
+  } else {
+    const fb = document.getElementById('ceb-feedback');
+    fb.textContent = 'Mauvaise solution — la bonne est indiquée en vert !';
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => endDefiCompte(false), 2500);
+  }
+}
+
+function endDefiCompte(perfect) {
+  const isNewBest = saveCebBest(compteScore);
+  const best = getCebBest();
+  showScreen('compte-results');
+  const icon = perfect ? '🏆' : compteScore >= 8 ? '⭐' : compteScore >= 5 ? '👍' : '💥';
+  document.getElementById('ceb-result-icon').textContent = icon;
+  document.getElementById('ceb-result-title').textContent = perfect ? 'Parfait ! 🎉' : 'Série terminée !';
+  document.getElementById('ceb-result-score').textContent =
+    `${compteScore} bonne${compteScore !== 1 ? 's' : ''} réponse${compteScore !== 1 ? 's' : ''} sur ${compteSession.length}`;
+  const bestEl = document.getElementById('ceb-result-best');
+  bestEl.textContent = isNewBest && compteScore > 0 ? `🏅 Nouveau record : ${compteScore} !` : best > 0 ? `Meilleur score : ${best}` : '';
 }
 
 document.addEventListener('DOMContentLoaded', init);
