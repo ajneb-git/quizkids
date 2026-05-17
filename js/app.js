@@ -2724,121 +2724,35 @@ function cebOpsToSteps(ops) {
   return ops.map(o => `${o.a} ${o.op} ${o.b} = ${o.r}`);
 }
 
-// Calcule UNE FOIS l'ensemble de toutes les valeurs atteignables avec les chiffres donnés.
-// Utilisé pour garantir que les faux résultats sont vraiment impossibles.
-function cebAllReachable(numbers, nodeLimit = 150000) {
-  const reachable = new Set(numbers);
-  let count = 0;
-  function dfs(pool) {
-    for (let i = 0; i < pool.length; i++) {
-      for (let j = 0; j < pool.length; j++) {
-        if (i === j) continue;
-        for (const op of ['+', '-', '×', '÷']) {
-          if (++count > nodeLimit) return;
-          const r = cebEval(op, pool[i], pool[j]);
-          if (!r || !isFinite(r) || r <= 0 || r > 9999 || !Number.isInteger(r)) continue;
-          if (!reachable.has(r)) {
-            reachable.add(r);
-            const newPool = pool.filter((_, k) => k !== i && k !== j).concat(r);
-            dfs(newPool);
-          }
-        }
-      }
-    }
-  }
-  dfs([...numbers]);
-  return reachable;
-}
-
-// Choisit 3 résultats garantis inatteignables proches de la cible.
-function cebPickFalseResults(target, reachable) {
-  const deltas = [3,4,5,6,7,8,10,12,15,20,-3,-4,-5,-6,-7,-8,-10,-12,-15,-20,25,-25,30,-30,35,-35]
-    .sort(() => Math.random() - 0.5);
-  const picked = [];
-  for (const d of deltas) {
-    const c = target + d;
-    if (c > 0 && c <= 9999 && !reachable.has(c) && !picked.includes(c)) {
-      picked.push(c);
-      if (picked.length === 3) break;
-    }
-  }
-  return picked;
-}
-
-// --- Génère un puzzle complet (fallback dynamique) ---
-function cebGeneratePuzzle() {
-  for (let attempt = 0; attempt < 200; attempt++) {
+// Génère un puzzle solvable ou impossible selon type ('solvable' | 'impossible')
+function cebGeneratePuzzle(type) {
+  for (let attempt = 0; attempt < 300; attempt++) {
     const numbers = cebPickNumbers();
     const target = 100 + Math.floor(Math.random() * 900);
     const ops = cebSolve(numbers, target);
-    if (!ops || ops.length < 2) continue;
-
-    const reachable = cebAllReachable(numbers);
-    const falseResults = cebPickFalseResults(target, reachable);
-    if (falseResults.length < 3) continue;
-
-    const allSolutions = [
-      { steps: cebOpsToSteps(ops), valid: true,  result: target },
-      { steps: [],                  valid: false, result: falseResults[0] },
-      { steps: [],                  valid: false, result: falseResults[1] },
-      { steps: [],                  valid: false, result: falseResults[2] },
-    ].sort(() => Math.random() - 0.5);
-
-    return { numbers, target, solutions: allSolutions };
+    if (type === 'solvable') {
+      if (!ops || ops.length < 2) continue;
+      return { numbers, target, solvable: true, ops };
+    } else {
+      if (ops) continue;
+      return { numbers, target, solvable: false, ops: null };
+    }
   }
   return null;
 }
 
-// Construit un puzzle à partir d'un enregistrement JSON {n, t, ops}
-function cebPuzzleFromRaw(raw) {
-  const reachable = cebAllReachable(raw.n);
-  const falseResults = cebPickFalseResults(raw.t, reachable);
-  if (falseResults.length < 3) return null;
-  const allSolutions = [
-    { steps: cebOpsToSteps(raw.ops), valid: true,  result: raw.t },
-    { steps: [],                      valid: false, result: falseResults[0] },
-    { steps: [],                      valid: false, result: falseResults[1] },
-    { steps: [],                      valid: false, result: falseResults[2] },
-  ].sort(() => Math.random() - 0.5);
-  return { numbers: raw.n, target: raw.t, solutions: allSolutions };
-}
-
 // --- Jeu ---
-async function startDefiCompte() {
+function startDefiCompte() {
   compteSession = [];
-
-  // Charger les puzzles pré-calculés (avec fallback sur la génération dynamique)
-  let poolData = null;
-  try {
-    const res = await fetch('data/compte-defi.json');
-    if (res.ok) poolData = await res.json();
-  } catch (_) { /* offline : génération dynamique */ }
-
-  if (poolData && poolData.tiers && poolData.tiers.length === 3) {
-    const [facile, moyen, difficile] = poolData.tiers.map(t => [...t.pool].sort(() => Math.random() - 0.5));
-    const picks = [
-      ...facile.slice(0, 4),
-      ...moyen.slice(0, 3),
-      ...difficile.slice(0, 3),
-    ].sort(() => Math.random() - 0.5);
-
-    for (const raw of picks) {
-      const p = cebPuzzleFromRaw(raw);
-      if (p) compteSession.push(p);
-      else {
-        const fallback = cebGeneratePuzzle();
-        if (fallback) compteSession.push(fallback);
-      }
-    }
+  for (let i = 0; i < 5; i++) {
+    const p = cebGeneratePuzzle('solvable');
+    if (p) compteSession.push(p);
   }
-
-  // Fallback dynamique si le JSON n'est pas disponible
-  if (!compteSession.length) {
-    for (let i = 0; i < 10; i++) {
-      const p = cebGeneratePuzzle();
-      if (p) compteSession.push(p);
-    }
+  for (let i = 0; i < 5; i++) {
+    const p = cebGeneratePuzzle('impossible');
+    if (p) compteSession.push(p);
   }
+  compteSession.sort(() => Math.random() - 0.5);
 
   if (!compteSession.length) { showScreen('home'); return; }
   compteIndex = 0;
@@ -2856,11 +2770,16 @@ function renderCompteQuestion() {
   document.getElementById('ceb-progress-fill').style.width = `${(compteIndex / total) * 100}%`;
   document.getElementById('ceb-counter').textContent = `${compteIndex + 1} / ${total}`;
   document.getElementById('ceb-score').textContent = compteScore;
+  document.getElementById('ceb-target').textContent = puzzle.target;
   document.getElementById('ceb-feedback').textContent = '';
   document.getElementById('ceb-feedback').className = 'vf-feedback';
+  document.getElementById('ceb-steps').innerHTML = '';
+  document.getElementById('ceb-steps').classList.add('ceb-steps-hidden');
   document.getElementById('ceb-next-wrap').style.display = 'none';
+  document.getElementById('ceb-yn-wrap').style.display = 'flex';
+  document.getElementById('ceb-btn-oui').disabled = false;
+  document.getElementById('ceb-btn-non').disabled = false;
 
-  // Tuiles des nombres
   const numsEl = document.getElementById('ceb-numbers');
   numsEl.innerHTML = '';
   puzzle.numbers.forEach(n => {
@@ -2870,65 +2789,54 @@ function renderCompteQuestion() {
     numsEl.appendChild(tile);
   });
 
-  // Cartes : afficher uniquement le résultat, calculs cachés
-  const solsEl = document.getElementById('ceb-solutions');
-  solsEl.innerHTML = '';
-  puzzle.solutions.forEach((sol, idx) => {
-    const card = document.createElement('div');
-    card.className = 'ceb-solution-card';
-    card.innerHTML = `
-      <div class="ceb-result-number" id="ceb-result-${idx}">${sol.result}</div>
-      <div class="ceb-steps ceb-steps-hidden" id="ceb-steps-${idx}">
-        ${sol.steps.map(s => `<div class="ceb-step">${s}</div>`).join('')}
-      </div>
-      <button class="btn btn-primary ceb-validate-btn" id="ceb-btn-${idx}">C'est ce nombre !</button>
-    `;
-    card.querySelector(`#ceb-btn-${idx}`).onclick = () => handleCompteAnswer(idx);
-    solsEl.appendChild(card);
-  });
+  document.getElementById('ceb-btn-oui').onclick = () => handleCompteAnswer(true);
+  document.getElementById('ceb-btn-non').onclick = () => handleCompteAnswer(false);
 }
 
-function handleCompteAnswer(selectedIdx) {
+function handleCompteAnswer(answeredYes) {
   const puzzle = compteSession[compteIndex];
-  document.querySelectorAll('.ceb-validate-btn').forEach(b => b.disabled = true);
+  document.getElementById('ceb-btn-oui').disabled = true;
+  document.getElementById('ceb-btn-non').disabled = true;
+  document.getElementById('ceb-yn-wrap').style.display = 'none';
 
-  const isCorrect = puzzle.solutions[selectedIdx].valid;
-  const cards = document.querySelectorAll('.ceb-solution-card');
+  const isCorrect = answeredYes === puzzle.solvable;
+  if (isCorrect) compteScore++;
+  compteIndex++;
+  document.getElementById('ceb-score').textContent = compteScore;
 
-  // Révéler uniquement les calculs de la bonne réponse
-  puzzle.solutions.forEach((sol, idx) => {
-    const stepsEl = document.getElementById(`ceb-steps-${idx}`);
-    const resultEl = document.getElementById(`ceb-result-${idx}`);
-    if (sol.valid) {
-      stepsEl.classList.remove('ceb-steps-hidden');
-      resultEl.textContent = `${sol.result} ✅`;
-      cards[idx].classList.add(idx === selectedIdx ? 'selected-correct' : 'revealed-correct');
-    } else {
-      // Garder les calculs cachés pour les mauvaises réponses
-      resultEl.textContent = `${sol.result} ❌`;
-      if (idx === selectedIdx) cards[idx].classList.add('selected-wrong');
-      else cards[idx].classList.add('revealed-wrong');
-    }
-  });
-
-  const fb     = document.getElementById('ceb-feedback');
-  const wrap   = document.getElementById('ceb-next-wrap');
-  const btn    = document.getElementById('ceb-next-btn');
+  const fb = document.getElementById('ceb-feedback');
+  const stepsEl = document.getElementById('ceb-steps');
+  const wrap = document.getElementById('ceb-next-wrap');
+  const btn = document.getElementById('ceb-next-btn');
 
   if (isCorrect) {
-    compteScore++;
-    compteIndex++;
-    fb.textContent = 'Bonne réponse ! Vérifie bien les calculs ci-dessous.';
-    fb.className   = 'vf-feedback vf-feedback-correct';
-    const isLast   = compteIndex >= compteSession.length;
-    btn.textContent = isLast ? '🏁 Voir mes résultats' : 'Question suivante →';
-    btn.onclick     = () => { wrap.style.display = 'none'; isLast ? endDefiCompte(true) : renderCompteQuestion(); };
+    if (puzzle.solvable) {
+      fb.textContent = "Bravo ! Voici une façon d'y arriver :";
+      fb.className = 'vf-feedback vf-feedback-correct';
+      stepsEl.innerHTML = cebOpsToSteps(puzzle.ops).map(s => `<div class="ceb-step">${s}</div>`).join('');
+      stepsEl.classList.remove('ceb-steps-hidden');
+    } else {
+      fb.textContent = 'Bien vu ! Ce nombre est impossible à atteindre avec ces chiffres.';
+      fb.className = 'vf-feedback vf-feedback-correct';
+    }
   } else {
-    fb.textContent = 'Raté ! La bonne méthode est indiquée en vert.';
-    fb.className   = 'vf-feedback vf-feedback-wrong';
-    btn.textContent = '🏁 Voir mes résultats';
-    btn.onclick     = () => endDefiCompte(false);
+    if (puzzle.solvable) {
+      fb.textContent = "C'était possible ! Voici comment :";
+      fb.className = 'vf-feedback vf-feedback-wrong';
+      stepsEl.innerHTML = cebOpsToSteps(puzzle.ops).map(s => `<div class="ceb-step">${s}</div>`).join('');
+      stepsEl.classList.remove('ceb-steps-hidden');
+    } else {
+      fb.textContent = 'Non, ce nombre est impossible avec ces chiffres !';
+      fb.className = 'vf-feedback vf-feedback-wrong';
+    }
   }
+
+  const isLast = compteIndex >= compteSession.length;
+  btn.textContent = isLast ? '🏁 Voir mes résultats' : 'Question suivante →';
+  btn.onclick = () => {
+    wrap.style.display = 'none';
+    isLast ? endDefiCompte(compteScore === compteSession.length) : renderCompteQuestion();
+  };
   wrap.style.display = 'block';
 }
 

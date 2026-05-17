@@ -1549,6 +1549,7 @@ html, body {
   transition: color 0.2s;
 }
 
+.vf-feedback.vf-feedback-correct { color: #22c55e; }
 .vf-feedback.vf-feedback-wrong { color: #ef4444; }
 
 .vf-buttons {
@@ -1889,6 +1890,16 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.ceb-target-number {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
 }
 
 .ceb-numbers-row {
@@ -1914,49 +1925,33 @@ html, body {
   color: var(--accent);
 }
 
-.ceb-solutions-grid {
+.ceb-yn-wrap {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 4px;
 }
 
-.ceb-result-number {
-  font-size: 2.2rem;
-  font-weight: 900;
-  text-align: center;
-  letter-spacing: -0.02em;
-  padding: 8px 0 4px;
-  line-height: 1;
+.ceb-btn-oui,
+.ceb-btn-non {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
 }
+
+.ceb-btn-oui { background: #22c55e; color: #fff; }
+.ceb-btn-non { background: #ef4444; color: #fff; }
+
+.ceb-btn-oui:disabled,
+.ceb-btn-non:disabled { opacity: 0.5; cursor: default; }
 
 .ceb-steps-hidden {
   display: none !important;
-}
-
-.ceb-solution-card {
-  background: var(--bg-card);
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  padding: 11px 13px;
-  transition: border-color 0.25s, background 0.25s, opacity 0.25s;
-}
-
-.ceb-solution-card.selected-correct {
-  border-color: #22c55e;
-  background: rgba(34,197,94,0.10);
-}
-
-.ceb-solution-card.selected-wrong {
-  border-color: #ef4444;
-  background: rgba(239,68,68,0.10);
-}
-
-.ceb-solution-card.revealed-correct {
-  border-color: #22c55e;
-}
-
-.ceb-solution-card.revealed-wrong {
-  opacity: 0.5;
 }
 
 .ceb-steps {
@@ -1964,6 +1959,9 @@ html, body {
   flex-direction: column;
   gap: 4px;
   margin-bottom: 10px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 10px 14px;
 }
 
 .ceb-step {
@@ -1978,10 +1976,4 @@ html, body {
   border-bottom: none;
   color: var(--accent);
   font-size: 0.98rem;
-}
-
-.ceb-validate-btn {
-  width: 100%;
-  padding: 9px 12px;
-  font-size: 0.88rem;
 }

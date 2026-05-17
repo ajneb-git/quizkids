@@ -998,11 +998,16 @@
         <span class="ceb-score-box">Score : <strong id="ceb-score">0</strong></span>
       </div>
       <div class="ceb-target-section">
-        <div class="ceb-target-label">Avec ces nombres, lequel peux-tu obtenir ?</div>
+        <div class="ceb-target-label">Peux-tu obtenir ce résultat ?</div>
+        <div class="ceb-target-number" id="ceb-target">—</div>
       </div>
       <div class="ceb-numbers-row" id="ceb-numbers"></div>
-      <div class="ceb-solutions-grid" id="ceb-solutions"></div>
+      <div class="ceb-yn-wrap" id="ceb-yn-wrap">
+        <button class="ceb-btn-oui" id="ceb-btn-oui">✓ Oui, c'est possible !</button>
+        <button class="ceb-btn-non" id="ceb-btn-non">✗ Non, c'est impossible !</button>
+      </div>
       <p id="ceb-feedback" class="vf-feedback"></p>
+      <div class="ceb-steps ceb-steps-hidden" id="ceb-steps"></div>
       <div id="ceb-next-wrap" style="display:none; margin-top:12px;">
         <button class="btn btn-primary" id="ceb-next-btn" style="width:100%"></button>
       </div>
