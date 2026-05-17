@@ -2896,6 +2896,7 @@ function renderCompteQuestion() {
   document.getElementById('ceb-score').textContent = compteScore;
   document.getElementById('ceb-feedback').textContent = '';
   document.getElementById('ceb-feedback').className = 'vf-feedback';
+  document.getElementById('ceb-next-wrap').style.display = 'none';
 
   // Tuiles des nombres
   const numsEl = document.getElementById('ceb-numbers');
@@ -2948,19 +2949,25 @@ function handleCompteAnswer(selectedIdx) {
     }
   });
 
+  const fb     = document.getElementById('ceb-feedback');
+  const wrap   = document.getElementById('ceb-next-wrap');
+  const btn    = document.getElementById('ceb-next-btn');
+
   if (isCorrect) {
     compteScore++;
     compteIndex++;
-    setTimeout(() => {
-      if (compteIndex >= compteSession.length) endDefiCompte(true);
-      else renderCompteQuestion();
-    }, 2200);
+    fb.textContent = 'Bonne réponse ! Vérifie bien les calculs ci-dessous.';
+    fb.className   = 'vf-feedback vf-feedback-correct';
+    const isLast   = compteIndex >= compteSession.length;
+    btn.textContent = isLast ? '🏁 Voir mes résultats' : 'Question suivante →';
+    btn.onclick     = () => { wrap.style.display = 'none'; isLast ? endDefiCompte(true) : renderCompteQuestion(); };
   } else {
-    const fb = document.getElementById('ceb-feedback');
-    fb.textContent = 'Raté ! La bonne réponse est indiquée en vert.';
-    fb.className = 'vf-feedback vf-feedback-wrong';
-    setTimeout(() => endDefiCompte(false), 3000);
+    fb.textContent = 'Raté ! La bonne méthode est indiquée en vert.';
+    fb.className   = 'vf-feedback vf-feedback-wrong';
+    btn.textContent = '🏁 Voir mes résultats';
+    btn.onclick     = () => endDefiCompte(false);
   }
+  wrap.style.display = 'block';
 }
 
 function endDefiCompte(perfect) {
