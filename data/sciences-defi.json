@@ -1,0 +1,784 @@
+{
+  "tiers": [
+    {
+      "level": 1,
+      "label": "Très facile",
+      "pool": [
+        {
+          "question": "Combien de planètes y a-t-il dans le système solaire ?",
+          "answer": "8",
+          "choices": ["8", "9", "7", "10"]
+        },
+        {
+          "question": "Quelle est la planète la plus proche du Soleil ?",
+          "answer": "Mercure",
+          "choices": ["Mercure", "Vénus", "Mars", "Terre"]
+        },
+        {
+          "question": "Combien d'os y a-t-il dans le corps humain adulte ?",
+          "answer": "206",
+          "choices": ["206", "186", "226", "250"]
+        },
+        {
+          "question": "Quel organe pompe le sang dans le corps humain ?",
+          "answer": "Le cœur",
+          "choices": ["Le cœur", "Le foie", "Les poumons", "Le cerveau"]
+        },
+        {
+          "question": "De quelle couleur est le sang oxygéné dans les artères ?",
+          "answer": "Rouge vif",
+          "choices": ["Rouge vif", "Bleu", "Violet", "Rose"]
+        },
+        {
+          "question": "Quel est le plus grand organe du corps humain ?",
+          "answer": "La peau",
+          "choices": ["La peau", "Le foie", "L'intestin", "Le poumon"]
+        },
+        {
+          "question": "Combien de dents a un adulte (dents de sagesse comprises) ?",
+          "answer": "32",
+          "choices": ["32", "28", "30", "36"]
+        },
+        {
+          "question": "Quel gaz les plantes absorbent-elles pour faire la photosynthèse ?",
+          "answer": "Le dioxyde de carbone (CO₂)",
+          "choices": ["Le dioxyde de carbone (CO₂)", "L'oxygène", "L'azote", "L'hydrogène"]
+        },
+        {
+          "question": "Quel gaz les plantes rejettent-elles lors de la photosynthèse ?",
+          "answer": "L'oxygène",
+          "choices": ["L'oxygène", "Le CO₂", "L'azote", "La vapeur d'eau"]
+        },
+        {
+          "question": "Combien de couleurs y a-t-il dans l'arc-en-ciel ?",
+          "answer": "7",
+          "choices": ["7", "6", "8", "5"]
+        },
+        {
+          "question": "Quelle est la planète la plus grande du système solaire ?",
+          "answer": "Jupiter",
+          "choices": ["Jupiter", "Saturne", "Uranus", "Neptune"]
+        },
+        {
+          "question": "Comment appelle-t-on les animaux qui mangent uniquement des plantes ?",
+          "answer": "Herbivores",
+          "choices": ["Herbivores", "Carnivores", "Omnivores", "Insectivores"]
+        },
+        {
+          "question": "Quel animal est le plus rapide sur terre ?",
+          "answer": "Le guépard",
+          "choices": ["Le guépard", "Le lion", "L'autruche", "Le cheval"]
+        },
+        {
+          "question": "Combien de pattes a une araignée ?",
+          "answer": "8",
+          "choices": ["8", "6", "10", "12"]
+        },
+        {
+          "question": "Quel est l'état de l'eau à 0 °C sous pression normale ?",
+          "answer": "Solide (glace)",
+          "choices": ["Solide (glace)", "Liquide", "Gazeux", "Plasma"]
+        },
+        {
+          "question": "À quelle température l'eau bout-elle à pression normale ?",
+          "answer": "100 °C",
+          "choices": ["100 °C", "90 °C", "110 °C", "120 °C"]
+        },
+        {
+          "question": "Quel est le nom de notre galaxie ?",
+          "answer": "La Voie lactée",
+          "choices": ["La Voie lactée", "Andromède", "Le Grand Nuage", "Centaurus A"]
+        },
+        {
+          "question": "Combien de chambres (cavités) a le cœur humain ?",
+          "answer": "4",
+          "choices": ["4", "2", "3", "6"]
+        },
+        {
+          "question": "Quel organe est responsable de la digestion des aliments dans le ventre ?",
+          "answer": "L'estomac",
+          "choices": ["L'estomac", "Le foie", "Les reins", "Le pancréas"]
+        },
+        {
+          "question": "Combien de pattes a un insecte ?",
+          "answer": "6",
+          "choices": ["6", "8", "4", "10"]
+        },
+        {
+          "question": "Quel est le symbole chimique de l'eau ?",
+          "answer": "H₂O",
+          "choices": ["H₂O", "CO₂", "NaCl", "O₂"]
+        },
+        {
+          "question": "Quel sens utilise-t-on avec les yeux ?",
+          "answer": "La vue",
+          "choices": ["La vue", "L'ouïe", "Le toucher", "L'odorat"]
+        },
+        {
+          "question": "Quel est le nom de l'étoile la plus proche de la Terre ?",
+          "answer": "Le Soleil",
+          "choices": ["Le Soleil", "Proxima Centauri", "Sirius", "Bételgeuse"]
+        },
+        {
+          "question": "Comment appelle-t-on les animaux qui pondent des œufs ?",
+          "answer": "Ovipares",
+          "choices": ["Ovipares", "Vivipares", "Mammifères", "Amphibiens"]
+        },
+        {
+          "question": "Quel organe filtre le sang et produit l'urine ?",
+          "answer": "Les reins",
+          "choices": ["Les reins", "Le foie", "La rate", "Le pancréas"]
+        },
+        {
+          "question": "De quoi se nourrit principalement un koala ?",
+          "answer": "De feuilles d'eucalyptus",
+          "choices": ["De feuilles d'eucalyptus", "De bambou", "De fruits tropicaux", "De graines"]
+        },
+        {
+          "question": "Combien de sens principaux possède l'être humain ?",
+          "answer": "5",
+          "choices": ["5", "4", "6", "7"]
+        },
+        {
+          "question": "Quel animal produit le miel ?",
+          "answer": "L'abeille",
+          "choices": ["L'abeille", "La guêpe", "Le bourdon", "Le papillon"]
+        },
+        {
+          "question": "Quelle planète est entourée de bagues (anneaux) très visibles ?",
+          "answer": "Saturne",
+          "choices": ["Saturne", "Jupiter", "Uranus", "Neptune"]
+        },
+        {
+          "question": "Quel est le plus grand mammifère terrestre ?",
+          "answer": "L'éléphant d'Afrique",
+          "choices": ["L'éléphant d'Afrique", "Le rhinocéros", "L'hippopotame", "La girafe"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "Facile",
+      "pool": [
+        {
+          "question": "Combien de chromosomes possède une cellule humaine normale ?",
+          "answer": "46",
+          "choices": ["46", "23", "48", "52"]
+        },
+        {
+          "question": "Quel est le nom du processus par lequel les plantes fabriquent leur nourriture grâce à la lumière ?",
+          "answer": "La photosynthèse",
+          "choices": ["La photosynthèse", "La respiration", "La fermentation", "La digestion"]
+        },
+        {
+          "question": "Quelle planète est surnommée la « planète rouge » ?",
+          "answer": "Mars",
+          "choices": ["Mars", "Vénus", "Jupiter", "Mercure"]
+        },
+        {
+          "question": "Combien de temps met la lumière du Soleil pour atteindre la Terre ?",
+          "answer": "Environ 8 minutes",
+          "choices": ["Environ 8 minutes", "Environ 1 minute", "Environ 1 heure", "Environ 1 seconde"]
+        },
+        {
+          "question": "Quel est le symbole chimique du fer ?",
+          "answer": "Fe",
+          "choices": ["Fe", "Fr", "Fo", "Fi"]
+        },
+        {
+          "question": "Comment appelle-t-on la transformation d'une chenille en papillon ?",
+          "answer": "La métamorphose",
+          "choices": ["La métamorphose", "La mue", "L'évolution", "La chrysalide"]
+        },
+        {
+          "question": "Quel gaz constitue environ 78 % de l'atmosphère terrestre ?",
+          "answer": "L'azote",
+          "choices": ["L'azote", "L'oxygène", "Le CO₂", "L'argon"]
+        },
+        {
+          "question": "Combien de temps dure une révolution de la Terre autour du Soleil ?",
+          "answer": "365 jours (1 an)",
+          "choices": ["365 jours (1 an)", "24 heures", "30 jours", "100 jours"]
+        },
+        {
+          "question": "Quel organe du corps humain produit la bile pour aider la digestion ?",
+          "answer": "Le foie",
+          "choices": ["Le foie", "Le pancréas", "L'estomac", "La vésicule biliaire"]
+        },
+        {
+          "question": "Quel est le symbole chimique de l'or ?",
+          "answer": "Au",
+          "choices": ["Au", "Or", "Ag", "Go"]
+        },
+        {
+          "question": "Combien de temps met la Lune pour tourner autour de la Terre ?",
+          "answer": "Environ 27 jours",
+          "choices": ["Environ 27 jours", "Environ 7 jours", "Environ 365 jours", "Environ 1 jour"]
+        },
+        {
+          "question": "Quelle force maintient les planètes en orbite autour du Soleil ?",
+          "answer": "La gravité",
+          "choices": ["La gravité", "Le magnétisme", "L'électricité", "Le vent solaire"]
+        },
+        {
+          "question": "Quel est l'état de la matière où les atomes sont les plus proches les uns des autres ?",
+          "answer": "Solide",
+          "choices": ["Solide", "Liquide", "Gazeux", "Plasma"]
+        },
+        {
+          "question": "Comment appelle-t-on les animaux à sang froid ?",
+          "answer": "Ectothermes (ou poïkilothermes)",
+          "choices": ["Ectothermes (ou poïkilothermes)", "Endothermes", "Homéothermes", "Exothermes"]
+        },
+        {
+          "question": "Quel est le symbole chimique du sel de table (chlorure de sodium) ?",
+          "answer": "NaCl",
+          "choices": ["NaCl", "NaOH", "KCl", "CaCl₂"]
+        },
+        {
+          "question": "Quel est le premier élément du tableau périodique ?",
+          "answer": "L'hydrogène (H)",
+          "choices": ["L'hydrogène (H)", "L'hélium (He)", "Le lithium (Li)", "Le carbone (C)"]
+        },
+        {
+          "question": "Comment appelle-t-on la couche de gaz qui entoure la Terre ?",
+          "answer": "L'atmosphère",
+          "choices": ["L'atmosphère", "La lithosphère", "La biosphère", "L'ionosphère"]
+        },
+        {
+          "question": "Quelle vitesse (environ) atteint la lumière dans le vide ?",
+          "answer": "300 000 km/s",
+          "choices": ["300 000 km/s", "30 000 km/s", "3 000 000 km/s", "150 000 km/s"]
+        },
+        {
+          "question": "Combien de litres de sang contient environ le corps d'un adulte ?",
+          "answer": "5 litres",
+          "choices": ["5 litres", "2 litres", "10 litres", "8 litres"]
+        },
+        {
+          "question": "Quel minéral compose principalement les os et les dents ?",
+          "answer": "Le calcium",
+          "choices": ["Le calcium", "Le fer", "Le magnésium", "Le phosphore"]
+        },
+        {
+          "question": "Comment appelle-t-on la plus petite unité du vivant ?",
+          "answer": "La cellule",
+          "choices": ["La cellule", "L'atome", "La molécule", "Le tissu"]
+        },
+        {
+          "question": "Quelle est la couche de l'atmosphère qui nous protège des UV du Soleil ?",
+          "answer": "La couche d'ozone",
+          "choices": ["La couche d'ozone", "La stratosphère", "La troposphère", "La mésosphère"]
+        },
+        {
+          "question": "Quel animal est le mammifère volant ?",
+          "answer": "La chauve-souris",
+          "choices": ["La chauve-souris", "L'écureuil volant", "La sauterelle", "Le faucon"]
+        },
+        {
+          "question": "Combien vaut 1 kilogramme en grammes ?",
+          "answer": "1 000 g",
+          "choices": ["1 000 g", "100 g", "10 000 g", "500 g"]
+        },
+        {
+          "question": "Quelle planète tourne sur le côté (axe presque horizontal) ?",
+          "answer": "Uranus",
+          "choices": ["Uranus", "Neptune", "Saturne", "Vénus"]
+        },
+        {
+          "question": "Quel est le processus par lequel l'eau liquide se transforme en vapeur ?",
+          "answer": "L'évaporation",
+          "choices": ["L'évaporation", "La condensation", "La solidification", "La sublimation"]
+        },
+        {
+          "question": "Combien d'yeux a une abeille ?",
+          "answer": "5",
+          "choices": ["5", "2", "4", "8"]
+        },
+        {
+          "question": "Quelle est la formule chimique du dioxyde de carbone ?",
+          "answer": "CO₂",
+          "choices": ["CO₂", "CO", "C₂O", "O₂C"]
+        },
+        {
+          "question": "Quelle énergie le Soleil émet-il principalement ?",
+          "answer": "Énergie lumineuse et chaleur (rayonnement électromagnétique)",
+          "choices": ["Énergie lumineuse et chaleur (rayonnement électromagnétique)", "Énergie électrique", "Énergie chimique", "Énergie sonore"]
+        },
+        {
+          "question": "Quel est le plus grand océan de la Terre ?",
+          "answer": "L'océan Pacifique",
+          "choices": ["L'océan Pacifique", "L'océan Atlantique", "L'océan Indien", "L'océan Arctique"]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "Moyen",
+      "pool": [
+        {
+          "question": "Quel est le nom de la molécule qui porte l'information génétique dans les cellules ?",
+          "answer": "L'ADN (acide désoxyribonucléique)",
+          "choices": ["L'ADN (acide désoxyribonucléique)", "L'ARN", "Les protéines", "Le glucose"]
+        },
+        {
+          "question": "Combien de neurones possède environ le cerveau humain ?",
+          "answer": "86 milliards",
+          "choices": ["86 milliards", "1 milliard", "10 milliards", "500 milliards"]
+        },
+        {
+          "question": "Quel phénomène météorologique est causé par la différence de pression atmosphérique ?",
+          "answer": "Le vent",
+          "choices": ["Le vent", "La pluie", "La neige", "La foudre"]
+        },
+        {
+          "question": "Quel est le pH d'un acide fort ?",
+          "answer": "Inférieur à 7",
+          "choices": ["Inférieur à 7", "Supérieur à 7", "Égal à 7", "Supérieur à 14"]
+        },
+        {
+          "question": "Quelle est la distance approximative entre la Terre et la Lune ?",
+          "answer": "384 000 km",
+          "choices": ["384 000 km", "150 millions de km", "1 million de km", "100 000 km"]
+        },
+        {
+          "question": "Comment appelle-t-on le cycle de l'eau dans la nature ?",
+          "answer": "Le cycle hydrologique",
+          "choices": ["Le cycle hydrologique", "Le cycle du carbone", "Le cycle de l'azote", "Le cycle minéral"]
+        },
+        {
+          "question": "Quelle partie de la plante produit les graines ?",
+          "answer": "La fleur (puis le fruit)",
+          "choices": ["La fleur (puis le fruit)", "La feuille", "La racine", "La tige"]
+        },
+        {
+          "question": "Quel est le nom des globules blancs qui défendent l'organisme contre les infections ?",
+          "answer": "Les leucocytes",
+          "choices": ["Les leucocytes", "Les érythrocytes", "Les plaquettes", "Les hématies"]
+        },
+        {
+          "question": "Quel type de roche est formé par le refroidissement du magma ?",
+          "answer": "La roche magmatique (ou ignée)",
+          "choices": ["La roche magmatique (ou ignée)", "La roche sédimentaire", "La roche métamorphique", "La roche calcaire"]
+        },
+        {
+          "question": "Comment appelle-t-on la zone de la Terre où se produisent la plupart des tremblements de terre ?",
+          "answer": "La ceinture de feu du Pacifique",
+          "choices": ["La ceinture de feu du Pacifique", "La dorsale atlantique", "Le rift africain", "La fosse des Mariannes"]
+        },
+        {
+          "question": "Quelle est la principale fonction des globules rouges ?",
+          "answer": "Transporter l'oxygène",
+          "choices": ["Transporter l'oxygène", "Défendre contre les microbes", "Coaguler le sang", "Produire des hormones"]
+        },
+        {
+          "question": "Quel est le gaz produit lors de la fermentation du pain (levure) ?",
+          "answer": "Le dioxyde de carbone (CO₂)",
+          "choices": ["Le dioxyde de carbone (CO₂)", "L'oxygène", "Le méthane", "L'éthanol"]
+        },
+        {
+          "question": "Comment appelle-t-on la distance que la lumière parcourt en un an ?",
+          "answer": "Une année-lumière",
+          "choices": ["Une année-lumière", "Un parsec", "Une unité astronomique", "Un light-day"]
+        },
+        {
+          "question": "Quel phénomène cause les marées sur Terre ?",
+          "answer": "L'attraction gravitationnelle de la Lune (et du Soleil)",
+          "choices": ["L'attraction gravitationnelle de la Lune (et du Soleil)", "La rotation de la Terre", "Les vents", "La pression atmosphérique"]
+        },
+        {
+          "question": "Dans quelle partie de la cellule se trouve l'ADN ?",
+          "answer": "Le noyau",
+          "choices": ["Le noyau", "La mitochondrie", "Le cytoplasme", "La membrane"]
+        },
+        {
+          "question": "Quelle couche de la Terre est liquide ?",
+          "answer": "Le manteau externe (noyau externe)",
+          "choices": ["Le manteau externe (noyau externe)", "La croûte", "Le manteau interne", "Le noyau interne"]
+        },
+        {
+          "question": "Combien de vertèbres compose la colonne vertébrale humaine ?",
+          "answer": "33",
+          "choices": ["33", "26", "40", "24"]
+        },
+        {
+          "question": "Quel est le nom du processus par lequel une plante perd de l'eau par ses feuilles ?",
+          "answer": "La transpiration (ou évapotranspiration)",
+          "choices": ["La transpiration (ou évapotranspiration)", "La respiration", "La photosynthèse", "L'absorption"]
+        },
+        {
+          "question": "Quelle est la formule chimique du glucose ?",
+          "answer": "C₆H₁₂O₆",
+          "choices": ["C₆H₁₂O₆", "C₂H₅OH", "CH₄", "CO₂"]
+        },
+        {
+          "question": "Comment appelle-t-on un organisme qui fabrique sa propre nourriture ?",
+          "answer": "Un producteur (autotrophe)",
+          "choices": ["Un producteur (autotrophe)", "Un consommateur (hétérotrophe)", "Un décomposeur", "Un parasite"]
+        },
+        {
+          "question": "Quelle est la vitesse approximative du son dans l'air ?",
+          "answer": "340 m/s",
+          "choices": ["340 m/s", "3 400 m/s", "34 m/s", "3 000 000 m/s"]
+        },
+        {
+          "question": "Quel minéral est le plus dur selon l'échelle de Mohs ?",
+          "answer": "Le diamant",
+          "choices": ["Le diamant", "Le rubis", "Le quartz", "Le saphir"]
+        },
+        {
+          "question": "Comment appelle-t-on le phénomène lumineux causé par des particules solaires entrant dans l'atmosphère ?",
+          "answer": "Les aurores polaires",
+          "choices": ["Les aurores polaires", "Les éclairs", "Les étoiles filantes", "Le halo solaire"]
+        },
+        {
+          "question": "Quel est le nom de l'hormone qui régule le taux de sucre dans le sang ?",
+          "answer": "L'insuline",
+          "choices": ["L'insuline", "L'adrénaline", "La mélatonine", "La cortisone"]
+        },
+        {
+          "question": "Quel type d'énergie est stockée dans les liaisons chimiques d'un aliment ?",
+          "answer": "L'énergie chimique",
+          "choices": ["L'énergie chimique", "L'énergie cinétique", "L'énergie potentielle", "L'énergie nucléaire"]
+        },
+        {
+          "question": "Combien de temps dure la rotation complète de la Terre sur elle-même ?",
+          "answer": "24 heures",
+          "choices": ["24 heures", "12 heures", "48 heures", "365 jours"]
+        },
+        {
+          "question": "Quel est le nom de la science qui étudie les séismes ?",
+          "answer": "La sismologie",
+          "choices": ["La sismologie", "La volcanologie", "La géologie", "La géophysique"]
+        },
+        {
+          "question": "Quelle est la principale source d'énergie des étoiles comme le Soleil ?",
+          "answer": "La fusion nucléaire",
+          "choices": ["La fusion nucléaire", "La fission nucléaire", "La combustion chimique", "La réaction chimique"]
+        },
+        {
+          "question": "Comment appelle-t-on le processus de division d'une cellule en deux cellules identiques ?",
+          "answer": "La mitose",
+          "choices": ["La mitose", "La méiose", "La cytokinèse", "La multiplication"]
+        },
+        {
+          "question": "Quel est le nom de la couche superficielle de la Terre sur laquelle nous vivons ?",
+          "answer": "La croûte terrestre",
+          "choices": ["La croûte terrestre", "Le manteau", "La lithosphère", "L'asthénosphère"]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "Difficile",
+      "pool": [
+        {
+          "question": "Quelle est la loi de Newton qui énonce que la force est égale à la masse multipliée par l'accélération ?",
+          "answer": "La deuxième loi de Newton (F = ma)",
+          "choices": ["La deuxième loi de Newton (F = ma)", "La première loi de Newton", "La troisième loi de Newton", "La loi de la gravitation"]
+        },
+        {
+          "question": "Combien de paires de chromosomes homologues contient une cellule humaine diploïde ?",
+          "answer": "23 paires",
+          "choices": ["23 paires", "46 paires", "12 paires", "8 paires"]
+        },
+        {
+          "question": "Quel type de liaison chimique implique le partage d'électrons entre atomes ?",
+          "answer": "La liaison covalente",
+          "choices": ["La liaison covalente", "La liaison ionique", "La liaison hydrogène", "La liaison de van der Waals"]
+        },
+        {
+          "question": "Quel scientifique a formulé la théorie de l'évolution par sélection naturelle ?",
+          "answer": "Charles Darwin",
+          "choices": ["Charles Darwin", "Jean-Baptiste Lamarck", "Gregor Mendel", "Alfred Russel Wallace"]
+        },
+        {
+          "question": "Comment appelle-t-on la mesure de l'énergie libérée par un séisme ?",
+          "answer": "La magnitude (échelle de Richter)",
+          "choices": ["La magnitude (échelle de Richter)", "L'intensité", "La fréquence", "L'amplitude"]
+        },
+        {
+          "question": "Quelle est la composition chimique de l'air sec environ ?",
+          "answer": "78 % azote, 21 % oxygène, 1 % argon",
+          "choices": ["78 % azote, 21 % oxygène, 1 % argon", "50 % azote, 50 % oxygène", "90 % oxygène, 10 % azote", "60 % azote, 30 % oxygène, 10 % CO₂"]
+        },
+        {
+          "question": "Quel organe humain produit l'insuline ?",
+          "answer": "Le pancréas",
+          "choices": ["Le pancréas", "Le foie", "La rate", "Les glandes surrénales"]
+        },
+        {
+          "question": "Quel est le nom du phénomène par lequel un solide passe directement à l'état gazeux sans passer par l'état liquide ?",
+          "answer": "La sublimation",
+          "choices": ["La sublimation", "L'évaporation", "La vaporisation", "La fusion"]
+        },
+        {
+          "question": "Quel type de roche est formée par transformation sous haute pression et haute température ?",
+          "answer": "La roche métamorphique",
+          "choices": ["La roche métamorphique", "La roche sédimentaire", "La roche magmatique", "La roche carbonatée"]
+        },
+        {
+          "question": "Quelle est la valeur de l'accélération de la pesanteur sur Terre (g) ?",
+          "answer": "9,81 m/s²",
+          "choices": ["9,81 m/s²", "6,67 m/s²", "3,71 m/s²", "1,62 m/s²"]
+        },
+        {
+          "question": "Quel est le nom du processus par lequel les cellules sexuelles (gamètes) se forment ?",
+          "answer": "La méiose",
+          "choices": ["La méiose", "La mitose", "La fécondation", "La différenciation"]
+        },
+        {
+          "question": "Quel est le numéro atomique de l'oxygène dans le tableau périodique ?",
+          "answer": "8",
+          "choices": ["8", "6", "16", "7"]
+        },
+        {
+          "question": "Comment appelle-t-on le changement de direction d'un rayon lumineux lorsqu'il passe d'un milieu à un autre ?",
+          "answer": "La réfraction",
+          "choices": ["La réfraction", "La réflexion", "La diffraction", "L'absorption"]
+        },
+        {
+          "question": "Quel est le nom de la protéine contenue dans les globules rouges qui transporte l'oxygène ?",
+          "answer": "L'hémoglobine",
+          "choices": ["L'hémoglobine", "L'albumine", "La myoglobine", "La fibrine"]
+        },
+        {
+          "question": "Quelle est la principale différence entre une cellule animale et une cellule végétale ?",
+          "answer": "La cellule végétale possède une paroi cellulaire et des chloroplastes",
+          "choices": ["La cellule végétale possède une paroi cellulaire et des chloroplastes", "La cellule animale possède des chloroplastes", "La cellule animale n'a pas de noyau", "La cellule végétale n'a pas de membrane"]
+        },
+        {
+          "question": "Quel est le nom de la structure en double hélice découverte par Watson et Crick ?",
+          "answer": "L'ADN (acide désoxyribonucléique)",
+          "choices": ["L'ADN (acide désoxyribonucléique)", "L'ARN", "Une protéine", "Un lipide"]
+        },
+        {
+          "question": "Combien d'électrons peut contenir la première couche électronique d'un atome ?",
+          "answer": "2 électrons",
+          "choices": ["2 électrons", "8 électrons", "18 électrons", "4 électrons"]
+        },
+        {
+          "question": "Quelle loi stipule que le volume d'un gaz est inversement proportionnel à sa pression (à température constante) ?",
+          "answer": "La loi de Boyle-Mariotte",
+          "choices": ["La loi de Boyle-Mariotte", "La loi de Charles", "La loi de Gay-Lussac", "La loi d'Avogadro"]
+        },
+        {
+          "question": "Quel est le nom de la plus longue chaîne de montagnes sous-marines de la Terre ?",
+          "answer": "La dorsale médio-atlantique",
+          "choices": ["La dorsale médio-atlantique", "La fosse des Mariannes", "La ceinture de feu", "Le rift africain"]
+        },
+        {
+          "question": "Quelle particule subatomique se trouve dans le noyau de l'atome et n'a pas de charge électrique ?",
+          "answer": "Le neutron",
+          "choices": ["Le neutron", "L'électron", "Le proton", "Le photon"]
+        },
+        {
+          "question": "Comment appelle-t-on l'unité de mesure de la résistance électrique ?",
+          "answer": "L'ohm (Ω)",
+          "choices": ["L'ohm (Ω)", "Le volt (V)", "L'ampère (A)", "Le watt (W)"]
+        },
+        {
+          "question": "Quel est le nom du processus de respiration cellulaire qui produit de l'ATP sans oxygène ?",
+          "answer": "La glycolyse (ou respiration anaérobie)",
+          "choices": ["La glycolyse (ou respiration anaérobie)", "La respiration aérobie", "La photosynthèse", "La fermentation"]
+        },
+        {
+          "question": "Quelle est la formule chimique de l'éthanol (alcool) ?",
+          "answer": "C₂H₅OH",
+          "choices": ["C₂H₅OH", "CH₃OH", "C₃H₇OH", "C₆H₁₂O₆"]
+        },
+        {
+          "question": "Comment appelle-t-on un corps céleste qui orbite autour d'une planète ?",
+          "answer": "Un satellite naturel",
+          "choices": ["Un satellite naturel", "Une comète", "Un astéroïde", "Un météore"]
+        },
+        {
+          "question": "Quelle est la propriété d'un matériau qui laisse passer la lumière tout en la diffusant ?",
+          "answer": "La translucidité",
+          "choices": ["La translucidité", "La transparence", "L'opacité", "La réflectivité"]
+        },
+        {
+          "question": "Quel est le nom du processus par lequel les plaques tectoniques s'éloignent l'une de l'autre ?",
+          "answer": "L'expansion océanique (divergence)",
+          "choices": ["L'expansion océanique (divergence)", "La subduction", "La collision", "Le glissement transformant"]
+        },
+        {
+          "question": "Quelle hormone est produite par la glande thyroïde ?",
+          "answer": "La thyroxine (T4)",
+          "choices": ["La thyroxine (T4)", "L'adrénaline", "L'insuline", "La mélatonine"]
+        },
+        {
+          "question": "Quel est le nom de la loi qui lie tension, intensité et résistance électrique ?",
+          "answer": "La loi d'Ohm (U = R × I)",
+          "choices": ["La loi d'Ohm (U = R × I)", "La loi de Faraday", "La loi de Kirchhoff", "La loi de Coulomb"]
+        },
+        {
+          "question": "Quel type de liaison chimique se forme entre un cation et un anion ?",
+          "answer": "La liaison ionique",
+          "choices": ["La liaison ionique", "La liaison covalente", "La liaison métallique", "La liaison hydrogène"]
+        },
+        {
+          "question": "Comment appelle-t-on le phénomène de déviation de la lumière autour d'un obstacle ?",
+          "answer": "La diffraction",
+          "choices": ["La diffraction", "La réfraction", "La réflexion", "La polarisation"]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "Expert",
+      "pool": [
+        {
+          "question": "Quel principe de la physique quantique stipule qu'il est impossible de connaître simultanément la position et la quantité de mouvement d'une particule avec précision ?",
+          "answer": "Le principe d'incertitude d'Heisenberg",
+          "choices": ["Le principe d'incertitude d'Heisenberg", "Le principe de superposition", "Le principe d'exclusion de Pauli", "Le principe de complémentarité de Bohr"]
+        },
+        {
+          "question": "Quelle est la formule de l'énergie de masse établie par Einstein ?",
+          "answer": "E = mc²",
+          "choices": ["E = mc²", "E = mv²", "E = mgh", "E = ½mv²"]
+        },
+        {
+          "question": "Quel est le nom de la particule responsable de la force nucléaire forte qui maintient les quarks dans les protons et neutrons ?",
+          "answer": "Le gluon",
+          "choices": ["Le gluon", "Le boson W", "Le graviton", "Le photon"]
+        },
+        {
+          "question": "Quelle est la structure tridimensionnelle d'une protéine déterminée par sa séquence d'acides aminés ?",
+          "answer": "Sa conformation (structure tertiaire)",
+          "choices": ["Sa conformation (structure tertiaire)", "Sa structure primaire", "Sa structure secondaire", "Sa structure quaternaire"]
+        },
+        {
+          "question": "Comment appelle-t-on le phénomène par lequel certains noyaux atomiques lourds se divisent spontanément en libérant de l'énergie ?",
+          "answer": "La fission nucléaire (ou désintégration radioactive)",
+          "choices": ["La fission nucléaire (ou désintégration radioactive)", "La fusion nucléaire", "La radioactivité beta", "La fission spontanée"]
+        },
+        {
+          "question": "Quelle constante fondamentale est la charge élémentaire de l'électron (valeur approchée) ?",
+          "answer": "1,6 × 10⁻¹⁹ coulombs",
+          "choices": ["1,6 × 10⁻¹⁹ coulombs", "9,1 × 10⁻³¹ coulombs", "6,6 × 10⁻³⁴ coulombs", "1,67 × 10⁻²⁷ coulombs"]
+        },
+        {
+          "question": "Quel est le nom du processus de réplication de l'ADN qui est dit semi-conservatif ?",
+          "answer": "La réplication semi-conservative",
+          "choices": ["La réplication semi-conservative", "La transcription", "La traduction", "La recombinaison"]
+        },
+        {
+          "question": "Comment appelle-t-on la limite théorique d'un trou noir au-delà de laquelle rien ne peut s'échapper ?",
+          "answer": "L'horizon des événements",
+          "choices": ["L'horizon des événements", "La singularité", "Le rayon de Schwarzschild", "La photosphère"]
+        },
+        {
+          "question": "Quel est le nom de l'enzyme qui réplique l'ADN dans la cellule ?",
+          "answer": "L'ADN polymérase",
+          "choices": ["L'ADN polymérase", "L'ARN polymérase", "La ligase", "L'hélicase"]
+        },
+        {
+          "question": "Quelle théorie décrit le comportement de la lumière à la fois comme une onde et comme un ensemble de particules (photons) ?",
+          "answer": "La dualité onde-corpuscule",
+          "choices": ["La dualité onde-corpuscule", "La théorie des cordes", "La relativité restreinte", "L'électrodynamique quantique"]
+        },
+        {
+          "question": "Quel est le nom du phénomène selon lequel deux particules quantiques restent corrélées quelle que soit leur distance ?",
+          "answer": "L'intrication quantique",
+          "choices": ["L'intrication quantique", "La superposition quantique", "Le tunnel quantique", "La décohérence"]
+        },
+        {
+          "question": "Quel est le nom de la réaction chimique dans laquelle un acide et une base réagissent pour former un sel et de l'eau ?",
+          "answer": "La neutralisation (réaction acido-basique)",
+          "choices": ["La neutralisation (réaction acido-basique)", "L'oxydoréduction", "La précipitation", "La saponification"]
+        },
+        {
+          "question": "Quel est le nom du cycle biochimique dans lequel le pyruvate est oxydé pour produire de l'ATP dans les mitochondries ?",
+          "answer": "Le cycle de Krebs (cycle de l'acide citrique)",
+          "choices": ["Le cycle de Krebs (cycle de l'acide citrique)", "La glycolyse", "La chaîne respiratoire", "Le cycle de Calvin"]
+        },
+        {
+          "question": "Quelle équation décrit la propagation d'une onde électromagnétique dans le vide (loi de Maxwell) ?",
+          "answer": "∇ × B = μ₀ε₀ ∂E/∂t",
+          "choices": ["∇ × B = μ₀ε₀ ∂E/∂t", "F = qE + qv × B", "E = -∇V", "∇ · E = ρ/ε₀"]
+        },
+        {
+          "question": "Quel est le nom de la particule élémentaire découverte en 2012 au CERN qui donne leur masse aux autres particules ?",
+          "answer": "Le boson de Higgs",
+          "choices": ["Le boson de Higgs", "Le graviton", "Le boson Z", "Le neutrino"]
+        },
+        {
+          "question": "Quel est le nombre d'Avogadro (nombre de molécules dans une mole) ?",
+          "answer": "6,022 × 10²³",
+          "choices": ["6,022 × 10²³", "1,38 × 10⁻²³", "6,67 × 10⁻¹¹", "9,81 × 10²³"]
+        },
+        {
+          "question": "Comment appelle-t-on la structure répétitive de l'ADN enroulée autour de protéines histones ?",
+          "answer": "Le nucléosome",
+          "choices": ["Le nucléosome", "Le chromosome", "La chromatine", "Le ribosome"]
+        },
+        {
+          "question": "Quelle est la loi de la thermodynamique qui stipule que l'entropie d'un système isolé ne peut qu'augmenter ?",
+          "answer": "Le deuxième principe de la thermodynamique",
+          "choices": ["Le deuxième principe de la thermodynamique", "Le premier principe de la thermodynamique", "Le troisième principe de la thermodynamique", "Le principe zéro de la thermodynamique"]
+        },
+        {
+          "question": "Quel astrophysicien a découvert que l'univers est en expansion en observant le décalage vers le rouge des galaxies ?",
+          "answer": "Edwin Hubble",
+          "choices": ["Edwin Hubble", "Albert Einstein", "Georges Lemaître", "Fred Hoyle"]
+        },
+        {
+          "question": "Quel est le nom du processus par lequel l'ARN messager est traduit en protéine par les ribosomes ?",
+          "answer": "La traduction",
+          "choices": ["La traduction", "La transcription", "La réplication", "La maturation"]
+        },
+        {
+          "question": "Comment appelle-t-on la force magnétique s'exerçant sur une particule chargée en mouvement dans un champ magnétique ?",
+          "answer": "La force de Lorentz",
+          "choices": ["La force de Lorentz", "La force de Coulomb", "La force de Laplace", "La force d'Ampère"]
+        },
+        {
+          "question": "Quel est le nom de la réaction chimique par laquelle un ester est formé à partir d'un acide carboxylique et d'un alcool ?",
+          "answer": "L'estérification",
+          "choices": ["L'estérification", "La saponification", "L'hydrolyse", "L'oxydation"]
+        },
+        {
+          "question": "Quelle est la constante de Planck (valeur approchée) qui lie l'énergie d'un photon à sa fréquence ?",
+          "answer": "6,626 × 10⁻³⁴ J·s",
+          "choices": ["6,626 × 10⁻³⁴ J·s", "6,022 × 10²³ J·s", "1,38 × 10⁻²³ J·s", "3 × 10⁸ J·s"]
+        },
+        {
+          "question": "Quel est le nom du phénomène astronomique par lequel une étoile massive explose en fin de vie en libérant une immense quantité d'énergie ?",
+          "answer": "Une supernova",
+          "choices": ["Une supernova", "Une nova", "Un pulsar", "Un quasar"]
+        },
+        {
+          "question": "Quel est le nom de la technique utilisée en biologie moléculaire pour amplifier un fragment d'ADN in vitro ?",
+          "answer": "La PCR (réaction en chaîne par polymérase)",
+          "choices": ["La PCR (réaction en chaîne par polymérase)", "L'électrophorèse", "Le séquençage de Sanger", "Le clonage"]
+        },
+        {
+          "question": "Comment appelle-t-on la distance moyenne entre la Terre et le Soleil, utilisée comme unité de mesure astronomique ?",
+          "answer": "L'unité astronomique (UA ≈ 150 millions de km)",
+          "choices": ["L'unité astronomique (UA ≈ 150 millions de km)", "L'année-lumière", "Le parsec", "Le mégaparsec"]
+        },
+        {
+          "question": "Quel principe stipule qu'aucun électron ne peut occuper le même état quantique dans un atome ?",
+          "answer": "Le principe d'exclusion de Pauli",
+          "choices": ["Le principe d'exclusion de Pauli", "Le principe d'incertitude d'Heisenberg", "Le principe de superposition", "Le principe de correspondance de Bohr"]
+        },
+        {
+          "question": "Quel est le nom de la réaction thermonucléaire qui fusionne des noyaux d'hydrogène pour former de l'hélium dans les étoiles ?",
+          "answer": "La fusion nucléaire (cycle proton-proton)",
+          "choices": ["La fusion nucléaire (cycle proton-proton)", "La fission nucléaire", "La réaction de Bethe", "La combustion nucléaire"]
+        },
+        {
+          "question": "Quel est le nom de la branche de la chimie qui étudie les composés contenant du carbone ?",
+          "answer": "La chimie organique",
+          "choices": ["La chimie organique", "La chimie inorganique", "La biochimie", "La chimie analytique"]
+        },
+        {
+          "question": "Comment appelle-t-on les ondes gravitationnelles détectées pour la première fois en 2015 par LIGO ?",
+          "answer": "Des perturbations de la courbure de l'espace-temps",
+          "choices": ["Des perturbations de la courbure de l'espace-temps", "Des ondes électromagnétiques", "Des ondes sonores dans l'espace", "Des rayonnements cosmiques"]
+        }
+      ]
+    }
+  ]
+}

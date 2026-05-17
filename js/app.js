@@ -52,6 +52,16 @@ let currentQSJ = [];
 let quisuisjeIndex = 0;
 let quisuisjeScore = 0;
 
+let sciencesData = null;
+let currentSciences = [];
+let sciencesIndex = 0;
+let sciencesScore = 0;
+
+let technoData = null;
+let currentTechno = [];
+let technoIndex = 0;
+let technoScore = 0;
+
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -467,6 +477,16 @@ async function route() {
 
   if (hash === '#defi-quisuisje') {
     await startDefiQSJ();
+    return;
+  }
+
+  if (hash === '#defi-sciences') {
+    await startDefiSciences();
+    return;
+  }
+
+  if (hash === '#defi-techno') {
+    await startDefiTechno();
     return;
   }
 
@@ -2360,7 +2380,7 @@ function renderQSJQuestion() {
   choicesEl.innerHTML = '';
   q.choices.forEach(choice => {
     const btn = document.createElement('button');
-    btn.className = 'ana-choice-btn qsj-choice-btn';
+    btn.className = 'defi-choice-btn qsj-choice-btn';
     btn.textContent = choice;
     btn.onclick = () => window.handleQSJAnswer(choice);
     choicesEl.appendChild(btn);
@@ -2425,6 +2445,212 @@ function endDefiQSJ(perfect, wrongQ) {
   }
 
   document.getElementById('btn-qsj-replay').onclick = () => { window.location.hash = '#defi-quisuisje'; };
+}
+
+// ─── Sciences & Nature ────────────────────────────────────────────────────────
+
+const SCI_BEST_KEY = 'quizkids_sciences_best';
+function getSciencesBest() { return parseInt(localStorage.getItem(SCI_BEST_KEY) || '0', 10); }
+function saveSciencesBest(score) {
+  const prev = getSciencesBest();
+  if (score > prev) { localStorage.setItem(SCI_BEST_KEY, score); return true; }
+  return false;
+}
+
+async function startDefiSciences() {
+  if (!sciencesData) {
+    try { const r = await fetch('./data/sciences-defi.json'); sciencesData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  currentSciences = buildDefiGame(sciencesData);
+  sciencesIndex = 0;
+  sciencesScore = 0;
+  showScreen('sciences');
+  renderSciQuestion();
+}
+
+function renderSciQuestion() {
+  const q = currentSciences[sciencesIndex];
+  const total = currentSciences.length;
+  const tier = Math.floor(sciencesIndex / 10) + 1;
+  const tierLabels = ['Très facile', 'Facile', 'Moyen', 'Difficile', 'Expert'];
+
+  document.getElementById('sci-progress-fill').style.width = `${(sciencesIndex / total) * 100}%`;
+  document.getElementById('sci-counter').textContent = `${sciencesIndex + 1} / ${total}`;
+  document.getElementById('sci-score').textContent = sciencesScore;
+  document.getElementById('sci-tier-label').textContent = `Niveau ${tier} — ${tierLabels[tier - 1]}`;
+  document.getElementById('sci-question').textContent = q.question;
+
+  document.getElementById('sci-feedback').textContent = '';
+  document.getElementById('sci-feedback').className = 'vf-feedback';
+
+  const choicesEl = document.getElementById('sci-choices');
+  choicesEl.innerHTML = '';
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'defi-choice-btn';
+    btn.textContent = choice;
+    btn.onclick = () => handleSciAnswer(choice);
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleSciAnswer(answer) {
+  const q = currentSciences[sciencesIndex];
+  const btns = document.querySelectorAll('#sci-choices .defi-choice-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = (answer === q.answer);
+  btns.forEach(b => {
+    if (b.textContent === q.answer) b.classList.add('hist-correct');
+    else if (b.textContent === answer && !correct) b.classList.add('hist-wrong');
+  });
+
+  if (correct) {
+    sciencesScore++;
+    sciencesIndex++;
+    if (sciencesIndex >= currentSciences.length) {
+      setTimeout(() => endDefiSciences(true, null), 700);
+    } else {
+      setTimeout(renderSciQuestion, 700);
+    }
+  } else {
+    const fb = document.getElementById('sci-feedback');
+    fb.textContent = `La bonne réponse était : ${q.answer}`;
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => endDefiSciences(false, q), 1800);
+  }
+}
+
+function endDefiSciences(perfect, wrongQ) {
+  const isNewBest = saveSciencesBest(sciencesScore);
+  const best = getSciencesBest();
+  showScreen('sciences-results');
+
+  const icon = perfect ? '🏆' : sciencesScore >= 40 ? '⭐' : sciencesScore >= 20 ? '👍' : '💥';
+  document.getElementById('sci-result-icon').textContent = icon;
+  document.getElementById('sci-result-title').textContent = perfect ? 'Parfait ! 🎉' : 'Série terminée !';
+  document.getElementById('sci-result-score').textContent =
+    `${sciencesScore} bonne${sciencesScore > 1 ? 's' : ''} réponse${sciencesScore > 1 ? 's' : ''} sur 50`;
+
+  const bestEl = document.getElementById('sci-result-best');
+  if (isNewBest && sciencesScore > 0) {
+    bestEl.textContent = `🏅 Nouveau record : ${sciencesScore} !`;
+  } else if (best > 0) {
+    bestEl.textContent = `Meilleur score : ${best}`;
+  } else { bestEl.textContent = ''; }
+
+  const wrongEl = document.getElementById('sci-result-wrong');
+  if (wrongQ) {
+    wrongEl.innerHTML = `<div class="vf-result-wrong-label">La question qui a stoppé la série :</div>
+      <div class="vf-result-wrong-q">${wrongQ.question}</div>
+      <div class="vf-result-wrong-a">→ <strong>${wrongQ.answer}</strong></div>`;
+  } else { wrongEl.innerHTML = ''; }
+
+  document.getElementById('btn-sci-replay').onclick = () => { window.location.hash = '#defi-sciences'; };
+}
+
+// ─── Technologie & Inventions ─────────────────────────────────────────────────
+
+const TEC_BEST_KEY = 'quizkids_techno_best';
+function getTechnoBest() { return parseInt(localStorage.getItem(TEC_BEST_KEY) || '0', 10); }
+function saveTechnoBest(score) {
+  const prev = getTechnoBest();
+  if (score > prev) { localStorage.setItem(TEC_BEST_KEY, score); return true; }
+  return false;
+}
+
+async function startDefiTechno() {
+  if (!technoData) {
+    try { const r = await fetch('./data/techno-defi.json'); technoData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  currentTechno = buildDefiGame(technoData);
+  technoIndex = 0;
+  technoScore = 0;
+  showScreen('techno');
+  renderTecQuestion();
+}
+
+function renderTecQuestion() {
+  const q = currentTechno[technoIndex];
+  const total = currentTechno.length;
+  const tier = Math.floor(technoIndex / 10) + 1;
+  const tierLabels = ['Très facile', 'Facile', 'Moyen', 'Difficile', 'Expert'];
+
+  document.getElementById('tec-progress-fill').style.width = `${(technoIndex / total) * 100}%`;
+  document.getElementById('tec-counter').textContent = `${technoIndex + 1} / ${total}`;
+  document.getElementById('tec-score').textContent = technoScore;
+  document.getElementById('tec-tier-label').textContent = `Niveau ${tier} — ${tierLabels[tier - 1]}`;
+  document.getElementById('tec-question').textContent = q.question;
+
+  document.getElementById('tec-feedback').textContent = '';
+  document.getElementById('tec-feedback').className = 'vf-feedback';
+
+  const choicesEl = document.getElementById('tec-choices');
+  choicesEl.innerHTML = '';
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'defi-choice-btn';
+    btn.textContent = choice;
+    btn.onclick = () => handleTecAnswer(choice);
+    choicesEl.appendChild(btn);
+  });
+}
+
+function handleTecAnswer(answer) {
+  const q = currentTechno[technoIndex];
+  const btns = document.querySelectorAll('#tec-choices .defi-choice-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = (answer === q.answer);
+  btns.forEach(b => {
+    if (b.textContent === q.answer) b.classList.add('hist-correct');
+    else if (b.textContent === answer && !correct) b.classList.add('hist-wrong');
+  });
+
+  if (correct) {
+    technoScore++;
+    technoIndex++;
+    if (technoIndex >= currentTechno.length) {
+      setTimeout(() => endDefiTechno(true, null), 700);
+    } else {
+      setTimeout(renderTecQuestion, 700);
+    }
+  } else {
+    const fb = document.getElementById('tec-feedback');
+    fb.textContent = `La bonne réponse était : ${q.answer}`;
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => endDefiTechno(false, q), 1800);
+  }
+}
+
+function endDefiTechno(perfect, wrongQ) {
+  const isNewBest = saveTechnoBest(technoScore);
+  const best = getTechnoBest();
+  showScreen('techno-results');
+
+  const icon = perfect ? '🏆' : technoScore >= 40 ? '⭐' : technoScore >= 20 ? '👍' : '💥';
+  document.getElementById('tec-result-icon').textContent = icon;
+  document.getElementById('tec-result-title').textContent = perfect ? 'Parfait ! 🎉' : 'Série terminée !';
+  document.getElementById('tec-result-score').textContent =
+    `${technoScore} bonne${technoScore > 1 ? 's' : ''} réponse${technoScore > 1 ? 's' : ''} sur 50`;
+
+  const bestEl = document.getElementById('tec-result-best');
+  if (isNewBest && technoScore > 0) {
+    bestEl.textContent = `🏅 Nouveau record : ${technoScore} !`;
+  } else if (best > 0) {
+    bestEl.textContent = `Meilleur score : ${best}`;
+  } else { bestEl.textContent = ''; }
+
+  const wrongEl = document.getElementById('tec-result-wrong');
+  if (wrongQ) {
+    wrongEl.innerHTML = `<div class="vf-result-wrong-label">La question qui a stoppé la série :</div>
+      <div class="vf-result-wrong-q">${wrongQ.question}</div>
+      <div class="vf-result-wrong-a">→ <strong>${wrongQ.answer}</strong></div>`;
+  } else { wrongEl.innerHTML = ''; }
+
+  document.getElementById('btn-tec-replay').onclick = () => { window.location.hash = '#defi-techno'; };
 }
 
 document.addEventListener('DOMContentLoaded', init);

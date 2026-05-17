@@ -185,11 +185,11 @@
         <div class="defi-category-section">
           <div class="defi-category-header"><span>🔬</span> Sciences &amp; Nature</div>
           <div class="revision-cards">
-            <div class="defi-placeholder-card" id="defi-sciences-card" data-defi="sciences">
+            <div class="revision-card defi-card" id="defi-sciences-card" data-defi="sciences">
               <span class="revision-card-emoji">🔬</span>
               <div style="display:flex;flex-direction:column;gap:2px">
                 <span class="revision-card-label">Sciences &amp; Nature</span>
-                <span class="revision-card-sub">Corps humain, animaux, planètes…<br>150 questions · bientôt disponible</span>
+                <span class="revision-card-sub">Corps humain, planètes, chimie…<br>150 questions · 5 niveaux</span>
               </div>
             </div>
           </div>
@@ -199,11 +199,11 @@
         <div class="defi-category-section">
           <div class="defi-category-header"><span>💡</span> Technologie</div>
           <div class="revision-cards">
-            <div class="defi-placeholder-card" id="defi-techno-card" data-defi="techno">
+            <div class="revision-card defi-card" id="defi-techno-card" data-defi="techno">
               <span class="revision-card-emoji">💡</span>
               <div style="display:flex;flex-direction:column;gap:2px">
                 <span class="revision-card-label">Technologie &amp; Inventions</span>
-                <span class="revision-card-sub">Inventeurs, grandes inventions…<br>150 questions · bientôt disponible</span>
+                <span class="revision-card-sub">Inventeurs, grandes inventions…<br>150 questions · 5 niveaux</span>
               </div>
             </div>
           </div>
@@ -867,7 +867,7 @@
         <div class="qsj-mystery-icon">❓</div>
         <ul class="qsj-clues-list" id="qsj-clues"></ul>
       </div>
-      <div class="ana-choices" id="qsj-choices"></div>
+      <div class="defi-choices" id="qsj-choices"></div>
       <p id="qsj-feedback" class="vf-feedback"></p>
     </div>
     <div class="quiz-footer">
@@ -890,7 +890,87 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=18"></script>
+  <!-- ══════════════════ SCREEN: SCIENCES & NATURE ══════════════════ -->
+  <div id="screen-sciences" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar"><div id="sci-progress-fill" class="defi-progress-fill"></div></div>
+        <span id="sci-counter" class="defi-level-label">1 / 50</span>
+      </div>
+      <span class="hist-mode-badge">🔬 Sciences</span>
+    </div>
+    <div class="qsj-game-area">
+      <div class="qsj-score-row">
+        <span id="sci-tier-label" class="qsj-level-label">Niveau 1 — Très facile</span>
+        <span class="qsj-score-box">Score : <strong id="sci-score">0</strong></span>
+      </div>
+      <div class="sci-question-card">
+        <p class="sci-question-text" id="sci-question">?</p>
+      </div>
+      <div class="defi-choices" id="sci-choices"></div>
+      <p id="sci-feedback" class="vf-feedback"></p>
+    </div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: SCIENCES RÉSULTATS ══════════════════ -->
+  <div id="screen-sciences-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="sci-result-icon">💥</div>
+      <h2 id="sci-result-title">Série terminée !</h2>
+      <div class="total-score"><span id="sci-result-score">0 bonne réponse</span></div>
+      <div id="sci-result-best" class="encouraging-msg" style="font-weight:700;margin-top:4px"></div>
+      <div id="sci-result-wrong" class="vf-result-wrong-block"></div>
+      <div class="results-actions">
+        <button id="btn-sci-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: TECHNOLOGIE ══════════════════ -->
+  <div id="screen-techno" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar"><div id="tec-progress-fill" class="defi-progress-fill"></div></div>
+        <span id="tec-counter" class="defi-level-label">1 / 50</span>
+      </div>
+      <span class="hist-mode-badge">💡 Technologie</span>
+    </div>
+    <div class="qsj-game-area">
+      <div class="qsj-score-row">
+        <span id="tec-tier-label" class="qsj-level-label">Niveau 1 — Très facile</span>
+        <span class="qsj-score-box">Score : <strong id="tec-score">0</strong></span>
+      </div>
+      <div class="sci-question-card">
+        <p class="sci-question-text" id="tec-question">?</p>
+      </div>
+      <div class="defi-choices" id="tec-choices"></div>
+      <p id="tec-feedback" class="vf-feedback"></p>
+    </div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: TECHNOLOGIE RÉSULTATS ══════════════════ -->
+  <div id="screen-techno-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="tec-result-icon">💥</div>
+      <h2 id="tec-result-title">Série terminée !</h2>
+      <div class="total-score"><span id="tec-result-score">0 bonne réponse</span></div>
+      <div id="tec-result-best" class="encouraging-msg" style="font-weight:700;margin-top:4px"></div>
+      <div id="tec-result-wrong" class="vf-result-wrong-block"></div>
+      <div class="results-actions">
+        <button id="btn-tec-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=19"></script>
   <script data-goatcounter="https://ajneb.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>

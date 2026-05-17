@@ -1722,6 +1722,62 @@ html, body {
 }
 
 /* ══════════════════════════════════════════════════════
+   BOUTONS DE CHOIX (QCM partagé : QSJ, Sciences, Techno)
+══════════════════════════════════════════════════════ */
+
+.defi-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.defi-choice-btn {
+  padding: 16px 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.defi-choice-btn:hover:not(:disabled) {
+  background: rgba(99,102,241,0.12);
+  border-color: var(--accent);
+}
+
+.defi-choice-btn:active { transform: scale(0.97); }
+.defi-choice-btn:disabled { cursor: default; }
+
+/* ══════════════════════════════════════════════════════
+   SCIENCES & NATURE / TECHNOLOGIE
+══════════════════════════════════════════════════════ */
+
+.sci-question-card {
+  background: var(--bg-card);
+  border: 2px solid rgba(99,102,241,0.22);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sci-question-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════
    QUI SUIS-JE ?
 ══════════════════════════════════════════════════════ */
 

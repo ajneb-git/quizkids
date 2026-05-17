@@ -1,0 +1,784 @@
+{
+  "tiers": [
+    {
+      "level": 1,
+      "label": "Très facile",
+      "pool": [
+        {
+          "question": "Qui a inventé le téléphone ?",
+          "answer": "Alexander Graham Bell",
+          "choices": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"]
+        },
+        {
+          "question": "Qui a inventé l'ampoule électrique ?",
+          "answer": "Thomas Edison",
+          "choices": ["Thomas Edison", "Nikola Tesla", "James Watt", "Benjamin Franklin"]
+        },
+        {
+          "question": "Qui a inventé l'avion ?",
+          "answer": "Les frères Wright",
+          "choices": ["Les frères Wright", "Louis Blériot", "Charles Lindbergh", "Alberto Santos-Dumont"]
+        },
+        {
+          "question": "Qui a inventé l'imprimerie à caractères mobiles ?",
+          "answer": "Johannes Gutenberg",
+          "choices": ["Johannes Gutenberg", "Léonard de Vinci", "Galilée", "Copernic"]
+        },
+        {
+          "question": "Quelle invention permet de communiquer sans fil à longue distance ?",
+          "answer": "La radio",
+          "choices": ["La radio", "Le télégraphe", "Le téléphone", "Le fax"]
+        },
+        {
+          "question": "Quel outil permet de se déplacer sur l'eau grâce au vent ?",
+          "answer": "Le voilier",
+          "choices": ["Le voilier", "La barque", "Le kayak", "La pirogue"]
+        },
+        {
+          "question": "Quelle invention très ancienne permet de transporter des charges lourdes en roulant ?",
+          "answer": "La roue",
+          "choices": ["La roue", "Le levier", "La poulie", "Le palan"]
+        },
+        {
+          "question": "Qui a inventé le vaccin contre la rage ?",
+          "answer": "Louis Pasteur",
+          "choices": ["Louis Pasteur", "Marie Curie", "Alexander Fleming", "Edward Jenner"]
+        },
+        {
+          "question": "Quel scientifique a découvert la pénicilline ?",
+          "answer": "Alexander Fleming",
+          "choices": ["Alexander Fleming", "Louis Pasteur", "Marie Curie", "Robert Koch"]
+        },
+        {
+          "question": "Quel objet permet de voir des choses très petites, invisibles à l'œil nu ?",
+          "answer": "Le microscope",
+          "choices": ["Le microscope", "Le télescope", "La loupe", "Les jumelles"]
+        },
+        {
+          "question": "Quel appareil permet de prendre des photos ?",
+          "answer": "Un appareil photo",
+          "choices": ["Un appareil photo", "Un projecteur", "Un scanner", "Un microscope"]
+        },
+        {
+          "question": "Quelle invention permet de conserver les aliments au froid ?",
+          "answer": "Le réfrigérateur",
+          "choices": ["Le réfrigérateur", "Le four", "Le congélateur", "Le lave-vaisselle"]
+        },
+        {
+          "question": "Quel objet a été inventé pour regarder des étoiles lointaines ?",
+          "answer": "Le télescope",
+          "choices": ["Le télescope", "Le microscope", "Les jumelles", "La loupe"]
+        },
+        {
+          "question": "Quel véhicule a été le premier à voler dans l'espace avec des humains à bord ?",
+          "answer": "La fusée Vostok",
+          "choices": ["La fusée Vostok", "Apollo 11", "La navette Columbia", "Ariane 5"]
+        },
+        {
+          "question": "Quel est le nom du premier satellite artificiel lancé dans l'espace ?",
+          "answer": "Spoutnik",
+          "choices": ["Spoutnik", "Vostok", "Apollo", "Explorer"]
+        },
+        {
+          "question": "Quel engin a été le premier à marcher sur la Lune ?",
+          "answer": "Le module lunaire Apollo",
+          "choices": ["Le module lunaire Apollo", "Une sonde Viking", "Curiosity", "Vostok"]
+        },
+        {
+          "question": "Quelle invention permet d'envoyer un message écrit très rapidement par internet ?",
+          "answer": "Le courriel (email)",
+          "choices": ["Le courriel (email)", "Le fax", "Le télégraphe", "La lettre recommandée"]
+        },
+        {
+          "question": "Quel objet permet d'écouter de la musique en se déplaçant, avec des écouteurs ?",
+          "answer": "Le baladeur (MP3 ou Walkman)",
+          "choices": ["Le baladeur (MP3 ou Walkman)", "La radio", "La chaîne hi-fi", "Le lecteur CD"]
+        },
+        {
+          "question": "Quelle invention utilise des rails pour transporter des personnes ?",
+          "answer": "Le train",
+          "choices": ["Le train", "Le tramway", "Le métro", "Le bus"]
+        },
+        {
+          "question": "Qui a inventé la machine à vapeur utilisée pour les trains ?",
+          "answer": "James Watt",
+          "choices": ["James Watt", "George Stephenson", "Richard Trevithick", "Thomas Newcomen"]
+        },
+        {
+          "question": "Quel objet permet de mesurer la température du corps ?",
+          "answer": "Le thermomètre",
+          "choices": ["Le thermomètre", "Le baromètre", "L'hygromètre", "L'altimètre"]
+        },
+        {
+          "question": "Quelle invention permet de voir à l'intérieur du corps humain sans opération ?",
+          "answer": "La radiographie (rayon X)",
+          "choices": ["La radiographie (rayon X)", "L'échographie", "Le scanner", "L'IRM"]
+        },
+        {
+          "question": "Quel Français a inventé le cinéma ?",
+          "answer": "Les frères Lumière",
+          "choices": ["Les frères Lumière", "Georges Méliès", "Louis Daguerre", "Charles Pathé"]
+        },
+        {
+          "question": "Quel inventeur américain est célèbre pour ses nombreux brevets dont le phonographe ?",
+          "answer": "Thomas Edison",
+          "choices": ["Thomas Edison", "Nikola Tesla", "Alexander Graham Bell", "Benjamin Franklin"]
+        },
+        {
+          "question": "Quel objet quotidien permet de laver le linge automatiquement ?",
+          "answer": "La machine à laver",
+          "choices": ["La machine à laver", "Le lave-vaisselle", "Le sèche-linge", "Le nettoyeur vapeur"]
+        },
+        {
+          "question": "Quel moyen de transport vole dans les airs avec des hélices ?",
+          "answer": "L'hélicoptère",
+          "choices": ["L'hélicoptère", "L'avion", "Le dirigeable", "Le planeur"]
+        },
+        {
+          "question": "Quelle invention permet de cuisiner rapidement avec des ondes ?",
+          "answer": "Le four à micro-ondes",
+          "choices": ["Le four à micro-ondes", "La plaque induction", "Le four électrique", "Le gril"]
+        },
+        {
+          "question": "Quel objet permet d'accéder à internet en dehors de chez soi ?",
+          "answer": "Le smartphone",
+          "choices": ["Le smartphone", "L'ordinateur", "La tablette", "Le GPS"]
+        },
+        {
+          "question": "Quel instrument permet de mesurer la pression atmosphérique ?",
+          "answer": "Le baromètre",
+          "choices": ["Le baromètre", "Le thermomètre", "L'hygromètre", "L'anémomètre"]
+        },
+        {
+          "question": "Quel objet inventé au XIXe siècle permettait d'envoyer des messages codés à distance par fil électrique ?",
+          "answer": "Le télégraphe",
+          "choices": ["Le télégraphe", "Le téléphone", "La radio", "Le fax"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "Facile",
+      "pool": [
+        {
+          "question": "En quelle année a été lancé le premier satellite artificiel Spoutnik ?",
+          "answer": "1957",
+          "choices": ["1957", "1961", "1969", "1950"]
+        },
+        {
+          "question": "Quel est le nom du premier ordinateur personnel commercialisé par Apple ?",
+          "answer": "Apple II",
+          "choices": ["Apple II", "Macintosh", "Apple I", "Lisa"]
+        },
+        {
+          "question": "Qui a fondé Microsoft ?",
+          "answer": "Bill Gates et Paul Allen",
+          "choices": ["Bill Gates et Paul Allen", "Steve Jobs et Steve Wozniak", "Larry Page et Sergey Brin", "Mark Zuckerberg"]
+        },
+        {
+          "question": "Qui a inventé le World Wide Web (WWW) ?",
+          "answer": "Tim Berners-Lee",
+          "choices": ["Tim Berners-Lee", "Bill Gates", "Steve Jobs", "Vint Cerf"]
+        },
+        {
+          "question": "Quel type d'énergie utilisent les panneaux solaires pour produire de l'électricité ?",
+          "answer": "L'énergie solaire",
+          "choices": ["L'énergie solaire", "L'énergie éolienne", "L'énergie nucléaire", "L'énergie hydraulique"]
+        },
+        {
+          "question": "Quel moteur utilise de l'essence ou du diesel pour faire avancer une voiture ?",
+          "answer": "Le moteur à combustion interne",
+          "choices": ["Le moteur à combustion interne", "Le moteur électrique", "Le moteur à vapeur", "Le moteur hybride"]
+        },
+        {
+          "question": "Quel système de navigation par satellite est utilisé aux États-Unis ?",
+          "answer": "GPS",
+          "choices": ["GPS", "Galileo", "GLONASS", "Beidou"]
+        },
+        {
+          "question": "Quel métal très léger est largement utilisé dans la construction des avions ?",
+          "answer": "L'aluminium",
+          "choices": ["L'aluminium", "Le titane", "L'acier", "Le magnésium"]
+        },
+        {
+          "question": "En quelle année Neil Armstrong a-t-il marché sur la Lune ?",
+          "answer": "1969",
+          "choices": ["1969", "1967", "1971", "1965"]
+        },
+        {
+          "question": "Quel réseau mondial relie des milliards d'ordinateurs entre eux ?",
+          "answer": "Internet",
+          "choices": ["Internet", "Le réseau téléphonique", "Le câble coaxial", "La fibre optique"]
+        },
+        {
+          "question": "Qui a inventé le moteur électrique à courant alternatif ?",
+          "answer": "Nikola Tesla",
+          "choices": ["Nikola Tesla", "Thomas Edison", "James Watt", "Galileo Ferraris"]
+        },
+        {
+          "question": "Quel matériau synthétique très résistant est utilisé pour fabriquer des bouteilles plastiques ?",
+          "answer": "Le PET (polyéthylène téréphtalate)",
+          "choices": ["Le PET (polyéthylène téréphtalate)", "Le polystyrène", "Le PVC", "Le polypropylène"]
+        },
+        {
+          "question": "Quelle invention permet aux aveugles de lire en touchant des points en relief ?",
+          "answer": "Le braille",
+          "choices": ["Le braille", "Le morse", "La sténographie", "L'alphabet tactile"]
+        },
+        {
+          "question": "Qui a inventé le braille ?",
+          "answer": "Louis Braille",
+          "choices": ["Louis Braille", "Louis Pasteur", "Jules Breton", "Charles Barbier"]
+        },
+        {
+          "question": "Quel type de centrale produit de l'électricité grâce à la force de l'eau ?",
+          "answer": "La centrale hydroélectrique",
+          "choices": ["La centrale hydroélectrique", "La centrale nucléaire", "La centrale thermique", "La centrale éolienne"]
+        },
+        {
+          "question": "Quel objet permet de localiser précisément sa position sur Terre ?",
+          "answer": "Le GPS",
+          "choices": ["Le GPS", "La boussole", "Le radar", "Le sonar"]
+        },
+        {
+          "question": "Quel type de communication utilise des ondes lumineuses dans des fils de verre ?",
+          "answer": "La fibre optique",
+          "choices": ["La fibre optique", "Le câble coaxial", "Le Wi-Fi", "Le Bluetooth"]
+        },
+        {
+          "question": "Quel inventeur a créé le moteur à explosion qui équipe aujourd'hui de nombreuses voitures ?",
+          "answer": "Nikolaus Otto",
+          "choices": ["Nikolaus Otto", "Karl Benz", "Gottlieb Daimler", "Rudolf Diesel"]
+        },
+        {
+          "question": "Quel carburant utilise un moteur diesel ?",
+          "answer": "Le gazole",
+          "choices": ["Le gazole", "L'essence", "Le kérosène", "Le méthanol"]
+        },
+        {
+          "question": "Quel outil informatique permet de faire des recherches sur internet ?",
+          "answer": "Un moteur de recherche",
+          "choices": ["Un moteur de recherche", "Un navigateur web", "Un antivirus", "Un système d'exploitation"]
+        },
+        {
+          "question": "Quel est le nom du premier navigateur web populaire, lancé en 1993 ?",
+          "answer": "Mosaic",
+          "choices": ["Mosaic", "Netscape", "Internet Explorer", "Firefox"]
+        },
+        {
+          "question": "Quel Français a inventé la photographie en 1839 ?",
+          "answer": "Louis Daguerre",
+          "choices": ["Louis Daguerre", "Nicéphore Niépce", "Charles Pathé", "Gabriel Lippmann"]
+        },
+        {
+          "question": "Quel ingénieur allemand a construit la première véritable automobile à moteur à essence ?",
+          "answer": "Karl Benz",
+          "choices": ["Karl Benz", "Gottlieb Daimler", "Nikolaus Otto", "Rudolf Diesel"]
+        },
+        {
+          "question": "Quel système d'exploitation est installé sur la plupart des PC dans le monde ?",
+          "answer": "Windows",
+          "choices": ["Windows", "macOS", "Linux", "Android"]
+        },
+        {
+          "question": "Quelle technologie sans fil permet de connecter des appareils sur de courtes distances (casques, claviers) ?",
+          "answer": "Le Bluetooth",
+          "choices": ["Le Bluetooth", "Le Wi-Fi", "La 4G", "Le NFC"]
+        },
+        {
+          "question": "Quel métal est le meilleur conducteur électrique couramment utilisé dans les câbles ?",
+          "answer": "Le cuivre",
+          "choices": ["Le cuivre", "L'argent", "L'or", "L'aluminium"]
+        },
+        {
+          "question": "Quel instrument médical permet d'écouter le cœur et les poumons ?",
+          "answer": "Le stéthoscope",
+          "choices": ["Le stéthoscope", "L'otoscope", "L'échographe", "Le tensiomètre"]
+        },
+        {
+          "question": "Quel type d'énergie est produit par les éoliennes ?",
+          "answer": "L'électricité",
+          "choices": ["L'électricité", "La chaleur", "Le gaz", "Le carburant"]
+        },
+        {
+          "question": "Quel objet utilise des satellites pour guider les conducteurs en voiture ?",
+          "answer": "Le GPS",
+          "choices": ["Le GPS", "Le radar de recul", "L'ordinateur de bord", "La boussole électronique"]
+        },
+        {
+          "question": "Qui a inventé le code morse utilisé pour les télégraphes ?",
+          "answer": "Samuel Morse",
+          "choices": ["Samuel Morse", "Alexander Graham Bell", "Heinrich Hertz", "Guglielmo Marconi"]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "Moyen",
+      "pool": [
+        {
+          "question": "En quelle année a été inventé le téléphone par Graham Bell ?",
+          "answer": "1876",
+          "choices": ["1876", "1886", "1866", "1896"]
+        },
+        {
+          "question": "Quel matériau synthétique, inventé en 1938, est utilisé pour les poêles antiadhésives ?",
+          "answer": "Le téflon (PTFE)",
+          "choices": ["Le téflon (PTFE)", "Le nylon", "Le polyéthylène", "Le silicone"]
+        },
+        {
+          "question": "Qui a découvert les rayons X en 1895 ?",
+          "answer": "Wilhelm Röntgen",
+          "choices": ["Wilhelm Röntgen", "Marie Curie", "Henri Becquerel", "Pierre Curie"]
+        },
+        {
+          "question": "Quel matériau, inventé dans les années 1930, est connu pour être très solide et utilisé en cordages et vêtements ?",
+          "answer": "Le nylon",
+          "choices": ["Le nylon", "Le polyester", "Le lycra", "Le téflon"]
+        },
+        {
+          "question": "Quel scientifique a inventé la dynamite en 1867 ?",
+          "answer": "Alfred Nobel",
+          "choices": ["Alfred Nobel", "Léon Foucault", "Gustave Eiffel", "Antoine Lavoisier"]
+        },
+        {
+          "question": "Quel composant électronique inventé en 1947 a remplacé les tubes à vide dans les appareils électroniques ?",
+          "answer": "Le transistor",
+          "choices": ["Le transistor", "La diode", "Le condensateur", "La résistance"]
+        },
+        {
+          "question": "En quelle année a été lancé le premier iPhone par Apple ?",
+          "answer": "2007",
+          "choices": ["2007", "2005", "2009", "2010"]
+        },
+        {
+          "question": "Quel chercheur a inventé l'échographie médicale dans les années 1950 ?",
+          "answer": "Ian Donald",
+          "choices": ["Ian Donald", "Wilhelm Röntgen", "Raymond Damadian", "Paul Langevin"]
+        },
+        {
+          "question": "Quelle technologie médicale utilise des champs magnétiques pour imager le corps humain ?",
+          "answer": "L'IRM (Imagerie par Résonance Magnétique)",
+          "choices": ["L'IRM (Imagerie par Résonance Magnétique)", "Le scanner (TDM)", "La radiographie", "La scintigraphie"]
+        },
+        {
+          "question": "Quel métal ultra-résistant et léger est utilisé dans les réacteurs d'avion et les prothèses médicales ?",
+          "answer": "Le titane",
+          "choices": ["Le titane", "L'aluminium", "L'acier inoxydable", "Le chrome"]
+        },
+        {
+          "question": "Quel ingénieur a inventé le moteur diesel en 1892 ?",
+          "answer": "Rudolf Diesel",
+          "choices": ["Rudolf Diesel", "Nikolaus Otto", "Karl Benz", "James Watt"]
+        },
+        {
+          "question": "En quelle décennie a été inventé le four à micro-ondes, à partir d'une découverte accidentelle ?",
+          "answer": "Les années 1940",
+          "choices": ["Les années 1940", "Les années 1930", "Les années 1950", "Les années 1960"]
+        },
+        {
+          "question": "Quel matériau, découvert en 1839 par Charles Goodyear, est utilisé pour les pneus ?",
+          "answer": "Le caoutchouc vulcanisé",
+          "choices": ["Le caoutchouc vulcanisé", "Le latex naturel", "Le néoprène", "Le silicone"]
+        },
+        {
+          "question": "Quel scientifique a développé la première pile électrique en 1800 ?",
+          "answer": "Alessandro Volta",
+          "choices": ["Alessandro Volta", "Michael Faraday", "André-Marie Ampère", "Georg Ohm"]
+        },
+        {
+          "question": "Quel principe physique est utilisé par les panneaux photovoltaïques pour produire de l'électricité ?",
+          "answer": "L'effet photoélectrique",
+          "choices": ["L'effet photoélectrique", "L'induction électromagnétique", "La thermoélectricité", "La piézoélectricité"]
+        },
+        {
+          "question": "Quelle invention de Guglielmo Marconi a permis la transmission sans fil de signaux en 1895 ?",
+          "answer": "La radio (radiotélégraphie)",
+          "choices": ["La radio (radiotélégraphie)", "Le téléphone sans fil", "La télévision", "Le radar"]
+        },
+        {
+          "question": "Quel procédé industriel du XIXe siècle permet de transformer le fer en acier de haute qualité ?",
+          "answer": "Le procédé Bessemer",
+          "choices": ["Le procédé Bessemer", "Le procédé Thomas", "Le procédé Martin", "La forge à la houille"]
+        },
+        {
+          "question": "Qui a inventé le moteur à réaction (turboréacteur) pour les avions ?",
+          "answer": "Frank Whittle",
+          "choices": ["Frank Whittle", "Hans von Ohain", "Werner von Braun", "Geoffrey de Havilland"]
+        },
+        {
+          "question": "Quel scientifique a découvert la radioactivité en 1896 ?",
+          "answer": "Henri Becquerel",
+          "choices": ["Henri Becquerel", "Marie Curie", "Pierre Curie", "Ernest Rutherford"]
+        },
+        {
+          "question": "Quel type de laser est utilisé dans les lecteurs de DVD et de Blu-ray ?",
+          "answer": "Un laser à semi-conducteur",
+          "choices": ["Un laser à semi-conducteur", "Un laser à gaz", "Un laser à solide", "Un laser à fibre"]
+        },
+        {
+          "question": "En quelle année a été mis au point le vaccin contre la polio par Jonas Salk ?",
+          "answer": "1955",
+          "choices": ["1955", "1945", "1963", "1949"]
+        },
+        {
+          "question": "Quelle invention a permis la conservation des aliments par stérilisation thermique, mise au point par Nicolas Appert ?",
+          "answer": "La mise en conserve (appertisation)",
+          "choices": ["La mise en conserve (appertisation)", "La pasteurisation", "La lyophilisation", "La surgélation"]
+        },
+        {
+          "question": "Quel ingénieur américain est considéré comme l'inventeur du téléviseur électronique ?",
+          "answer": "Philo Farnsworth",
+          "choices": ["Philo Farnsworth", "John Logie Baird", "Vladimir Zworykin", "Charles Francis Jenkins"]
+        },
+        {
+          "question": "Quel polymère synthétique, inventé par Wallace Carothers, est utilisé pour les bas nylon et les cordes ?",
+          "answer": "Le polyamide (nylon)",
+          "choices": ["Le polyamide (nylon)", "Le polyester", "Le polypropylène", "Le PVC"]
+        },
+        {
+          "question": "Quelle technologie de stockage utilise des disques magnétiques rotatifs pour enregistrer des données ?",
+          "answer": "Le disque dur (HDD)",
+          "choices": ["Le disque dur (HDD)", "La mémoire flash", "Le disque SSD", "La RAM"]
+        },
+        {
+          "question": "En quelle année a été lancé le premier réseau ARPANET, ancêtre d'internet ?",
+          "answer": "1969",
+          "choices": ["1969", "1975", "1983", "1965"]
+        },
+        {
+          "question": "Quel chimiste français a inventé le procédé de conservation du lait par chauffage ?",
+          "answer": "Louis Pasteur",
+          "choices": ["Louis Pasteur", "Nicolas Appert", "Charles de Gerville", "Justus von Liebig"]
+        },
+        {
+          "question": "Quel appareil inventé en 1886 par Karl Benz est considéré comme la première automobile ?",
+          "answer": "Le Benz Patent-Motorwagen",
+          "choices": ["Le Benz Patent-Motorwagen", "La Ford Model T", "La Daimler Motorkutsche", "La Cugnot fardier"]
+        },
+        {
+          "question": "Quel matériau de construction inventé au XIXe siècle associe béton et barres d'acier ?",
+          "answer": "Le béton armé",
+          "choices": ["Le béton armé", "Le béton précontraint", "Le ciment Portland", "Le béton cellulaire"]
+        },
+        {
+          "question": "Quelle technologie utilise des impulsions lumineuses pour transmettre des données à très haute vitesse ?",
+          "answer": "La fibre optique",
+          "choices": ["La fibre optique", "Le câble coaxial", "Le fil de cuivre", "Le Wi-Fi 6"]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "Difficile",
+      "pool": [
+        {
+          "question": "En quelle année le premier transistor a-t-il été inventé aux laboratoires Bell ?",
+          "answer": "1947",
+          "choices": ["1947", "1952", "1939", "1955"]
+        },
+        {
+          "question": "Qui a inventé le premier circuit intégré (puce électronique) en 1958 ?",
+          "answer": "Jack Kilby",
+          "choices": ["Jack Kilby", "Robert Noyce", "Gordon Moore", "William Shockley"]
+        },
+        {
+          "question": "Quel protocole réseau définit l'adressage logique sur internet ?",
+          "answer": "IP (Internet Protocol)",
+          "choices": ["IP (Internet Protocol)", "TCP (Transmission Control Protocol)", "HTTP", "DNS"]
+        },
+        {
+          "question": "Quel langage de programmation a été créé par Dennis Ritchie au début des années 1970 ?",
+          "answer": "Le langage C",
+          "choices": ["Le langage C", "Le langage B", "Le Fortran", "Le Pascal"]
+        },
+        {
+          "question": "Quel type de mémoire perd ses données lorsque l'alimentation est coupée ?",
+          "answer": "La RAM (mémoire vive)",
+          "choices": ["La RAM (mémoire vive)", "La ROM", "La mémoire flash", "Le disque dur"]
+        },
+        {
+          "question": "En quelle année le laser a-t-il été inventé par Theodore Maiman ?",
+          "answer": "1960",
+          "choices": ["1960", "1956", "1965", "1958"]
+        },
+        {
+          "question": "Quelle entreprise a fabriqué le premier microprocesseur commercial, l'Intel 4004, en 1971 ?",
+          "answer": "Intel",
+          "choices": ["Intel", "AMD", "Motorola", "Texas Instruments"]
+        },
+        {
+          "question": "Quel chercheur a formulé la loi empirique prédisant le doublement du nombre de transistors tous les deux ans ?",
+          "answer": "Gordon Moore",
+          "choices": ["Gordon Moore", "Robert Noyce", "Jack Kilby", "Andy Grove"]
+        },
+        {
+          "question": "Quel matériau semi-conducteur est le plus utilisé dans la fabrication des puces électroniques ?",
+          "answer": "Le silicium",
+          "choices": ["Le silicium", "Le germanium", "L'arséniure de gallium", "Le carbure de silicium"]
+        },
+        {
+          "question": "Quel scientifique a inventé le scanner (tomographie axiale) en 1971 ?",
+          "answer": "Godfrey Hounsfield",
+          "choices": ["Godfrey Hounsfield", "Raymond Damadian", "Ian Donald", "Wilhelm Röntgen"]
+        },
+        {
+          "question": "Quelle technologie de stockage utilise de la mémoire flash sans pièce mécanique mobile ?",
+          "answer": "Le SSD (Solid-State Drive)",
+          "choices": ["Le SSD (Solid-State Drive)", "Le HDD", "La carte SD", "La clé USB 3.0"]
+        },
+        {
+          "question": "En quelle année le réseau 4G LTE a-t-il été commercialisé pour la première fois dans le monde ?",
+          "answer": "2009",
+          "choices": ["2009", "2012", "2007", "2014"]
+        },
+        {
+          "question": "Quel standard de communication sans fil à courte portée est utilisé pour les paiements sans contact ?",
+          "answer": "NFC (Near Field Communication)",
+          "choices": ["NFC (Near Field Communication)", "Bluetooth", "Wi-Fi", "RFID passif longue portée"]
+        },
+        {
+          "question": "Quel mécanisme de chiffrement est utilisé dans les connexions HTTPS pour sécuriser les échanges sur le web ?",
+          "answer": "TLS (Transport Layer Security)",
+          "choices": ["TLS (Transport Layer Security)", "SSL 2.0", "AES seul", "RSA seul"]
+        },
+        {
+          "question": "Quel matériau bidimensionnel, découvert en 2004, est formé d'une seule couche d'atomes de carbone ?",
+          "answer": "Le graphène",
+          "choices": ["Le graphène", "Le fullerène", "Le nanotube de carbone", "Le diamant amorphe"]
+        },
+        {
+          "question": "En quelle année l'USB (Universal Serial Bus) a-t-il été introduit comme standard ?",
+          "answer": "1996",
+          "choices": ["1996", "2000", "1993", "1999"]
+        },
+        {
+          "question": "Quel type de réacteur nucléaire utilise de l'eau ordinaire comme modérateur et caloporteur ?",
+          "answer": "Le réacteur à eau pressurisée (REP)",
+          "choices": ["Le réacteur à eau pressurisée (REP)", "Le réacteur à eau bouillante (REB)", "Le réacteur CANDU", "Le réacteur à neutrons rapides"]
+        },
+        {
+          "question": "Qui a développé le langage Python, largement utilisé en intelligence artificielle ?",
+          "answer": "Guido van Rossum",
+          "choices": ["Guido van Rossum", "Linus Torvalds", "Bjarne Stroustrup", "James Gosling"]
+        },
+        {
+          "question": "Quel procédé utilise des micro-organismes génétiquement modifiés pour produire de l'insuline humaine synthétique ?",
+          "answer": "La bioproduction par ADN recombinant",
+          "choices": ["La bioproduction par ADN recombinant", "La synthèse chimique totale", "L'extraction pancréatique animale", "La fermentation naturelle"]
+        },
+        {
+          "question": "Quel inventeur a déposé le brevet du téléphone le 14 février 1876, quelques heures avant Elisha Gray ?",
+          "answer": "Alexander Graham Bell",
+          "choices": ["Alexander Graham Bell", "Elisha Gray", "Antonio Meucci", "Philipp Reis"]
+        },
+        {
+          "question": "Quel standard de compression vidéo est utilisé dans la diffusion HD et les Blu-ray ?",
+          "answer": "H.264 (AVC)",
+          "choices": ["H.264 (AVC)", "MPEG-2", "H.265 (HEVC)", "VP9"]
+        },
+        {
+          "question": "Quel type de batterie rechargeable équipe la majorité des smartphones actuels ?",
+          "answer": "La batterie lithium-ion (Li-ion)",
+          "choices": ["La batterie lithium-ion (Li-ion)", "La batterie NiMH", "La batterie lithium-polymère", "La batterie NiCd"]
+        },
+        {
+          "question": "Quelle technologie d'affichage utilise des cristaux liquides rétroéclairés pour former les images ?",
+          "answer": "L'écran LCD",
+          "choices": ["L'écran LCD", "L'écran OLED", "L'écran plasma", "L'écran CRT"]
+        },
+        {
+          "question": "En quelle année le premier disque dur (IBM 350) a-t-il été introduit par IBM ?",
+          "answer": "1956",
+          "choices": ["1956", "1962", "1950", "1970"]
+        },
+        {
+          "question": "Quel concept informatique décrit la capacité d'un processeur à exécuter plusieurs tâches simultanément ?",
+          "answer": "Le multithreading",
+          "choices": ["Le multithreading", "L'overclocking", "La virtualisation", "Le pipelining"]
+        },
+        {
+          "question": "Quel procédé de fabrication industrielle, dit de 'fabrication additive', construit des objets couche par couche ?",
+          "answer": "L'impression 3D",
+          "choices": ["L'impression 3D", "L'usinage CNC", "Le moulage par injection", "Le frittage conventionnel"]
+        },
+        {
+          "question": "Quel algorithme de chiffrement asymétrique est fondé sur la difficulté de factoriser de grands nombres premiers ?",
+          "answer": "RSA",
+          "choices": ["RSA", "AES", "DES", "SHA-256"]
+        },
+        {
+          "question": "Quel type de capteur utilise l'effet piézoélectrique pour détecter des vibrations et sons ultrasoniques ?",
+          "answer": "Le transducteur piézoélectrique",
+          "choices": ["Le transducteur piézoélectrique", "Le microphone électrostatique", "La cellule photoélectrique", "Le capteur capacitif"]
+        },
+        {
+          "question": "Quelle technologie de propulsion utilise l'ionisation de gaz pour propulser les sondes spatiales ?",
+          "answer": "Le moteur ionique",
+          "choices": ["Le moteur ionique", "Le moteur chimique cryogénique", "Le moteur à propergol solide", "Le moteur nucléaire thermique"]
+        },
+        {
+          "question": "Quel ingénieur américain est à l'origine du système d'exploitation UNIX dans les années 1960-1970 ?",
+          "answer": "Ken Thompson",
+          "choices": ["Ken Thompson", "Dennis Ritchie", "Linus Torvalds", "Richard Stallman"]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "Expert",
+      "pool": [
+        {
+          "question": "Quel est le nom du protocole réseau qui permet la résolution de noms de domaines en adresses IP ?",
+          "answer": "DNS (Domain Name System)",
+          "choices": ["DNS (Domain Name System)", "DHCP", "ARP", "ICMP"]
+        },
+        {
+          "question": "Quel process de gravure lithographique permet de fabriquer des puces à l'échelle du nanomètre ?",
+          "answer": "La lithographie ultraviolet extrême (EUV)",
+          "choices": ["La lithographie ultraviolet extrême (EUV)", "La lithographie UV profond (DUV)", "La lithographie par faisceau d'électrons", "La lithographie par rayons X"]
+        },
+        {
+          "question": "Quel type d'architecture processeur est utilisé dans la quasi-totalité des smartphones modernes ?",
+          "answer": "ARM (Advanced RISC Machine)",
+          "choices": ["ARM (Advanced RISC Machine)", "x86", "MIPS", "RISC-V"]
+        },
+        {
+          "question": "Quel protocole de la couche 4 du modèle OSI garantit la livraison des paquets en ordre et sans perte ?",
+          "answer": "TCP (Transmission Control Protocol)",
+          "choices": ["TCP (Transmission Control Protocol)", "UDP", "IP", "ICMP"]
+        },
+        {
+          "question": "Quel est le nom du phénomène quantique utilisé dans les ordinateurs quantiques, où un qubit peut être dans plusieurs états simultanément ?",
+          "answer": "La superposition quantique",
+          "choices": ["La superposition quantique", "L'intrication quantique", "La décoherence quantique", "L'effet tunnel quantique"]
+        },
+        {
+          "question": "En quelle année le standard Wi-Fi 802.11ac (Wi-Fi 5) a-t-il été ratifié par l'IEEE ?",
+          "answer": "2013",
+          "choices": ["2013", "2009", "2016", "2011"]
+        },
+        {
+          "question": "Quel matériau pérovskite est actuellement étudié pour améliorer le rendement des cellules solaires au-delà de 30% ?",
+          "answer": "L'iodure de plomb et méthylammonium (MAPbI3)",
+          "choices": ["L'iodure de plomb et méthylammonium (MAPbI3)", "Le tellurure de cadmium (CdTe)", "Le diséléniure de cuivre-indium-gallium (CIGS)", "Le silicium amorphe"]
+        },
+        {
+          "question": "Quel concept de mémoire cache décrit le délai entre une demande d'accès à la mémoire et la disponibilité des données ?",
+          "answer": "La latence mémoire",
+          "choices": ["La latence mémoire", "La bande passante mémoire", "La fréquence mémoire", "Le temps de cycle mémoire"]
+        },
+        {
+          "question": "Quelle technologie de fabrication des puces permet à TSMC de graver des transistors à 2 nanomètres ?",
+          "answer": "Le nœud N2 (2 nm)",
+          "choices": ["Le nœud N2 (2 nm)", "Le nœud N3 (3 nm)", "Le nœud N5 (5 nm)", "Le nœud 7 nm EUV"]
+        },
+        {
+          "question": "Quel algorithme de routage à état de lien est utilisé dans les grands réseaux IP d'entreprise ?",
+          "answer": "OSPF (Open Shortest Path First)",
+          "choices": ["OSPF (Open Shortest Path First)", "RIP (Routing Information Protocol)", "BGP", "EIGRP"]
+        },
+        {
+          "question": "Quel effet physique, prédit par John Bardeen, explique la supraconductivité à basse température ?",
+          "answer": "L'effet BCS (Bardeen-Cooper-Schrieffer)",
+          "choices": ["L'effet BCS (Bardeen-Cooper-Schrieffer)", "L'effet Meissner", "L'effet Josephson", "L'effet Hall quantique"]
+        },
+        {
+          "question": "Quel type de mémoire non volatile utilise des cellules à grille flottante pour stocker les données dans les SSD ?",
+          "answer": "La mémoire NAND Flash",
+          "choices": ["La mémoire NAND Flash", "La mémoire NOR Flash", "La mémoire DRAM", "La mémoire SRAM"]
+        },
+        {
+          "question": "Quel protocole de communication est utilisé par les robots industriels pour communiquer en temps réel sur un bus de terrain ?",
+          "answer": "EtherCAT",
+          "choices": ["EtherCAT", "Ethernet industriel classique", "Profibus", "Modbus RTU"]
+        },
+        {
+          "question": "Quel est le principe physique derrière la propulsion par réaction des fusées, selon la troisième loi de Newton ?",
+          "answer": "La conservation de la quantité de mouvement",
+          "choices": ["La conservation de la quantité de mouvement", "L'effet Magnus", "Le principe de Bernoulli", "La force de Lorentz"]
+        },
+        {
+          "question": "Quel type de transistor à effet de champ (FET) est utilisé comme cellule de base dans les mémoires DRAM ?",
+          "answer": "Le MOSFET (Metal-Oxide-Semiconductor FET)",
+          "choices": ["Le MOSFET (Metal-Oxide-Semiconductor FET)", "Le JFET", "Le BJT (transistor bipolaire)", "Le FinFET"]
+        },
+        {
+          "question": "En quelle année le protocole IPv6 a-t-il été officiellement standardisé par l'IETF ?",
+          "answer": "1998",
+          "choices": ["1998", "2004", "1994", "2011"]
+        },
+        {
+          "question": "Quelle technique d'apprentissage automatique utilise des réseaux de neurones à multiples couches cachées ?",
+          "answer": "Le deep learning (apprentissage profond)",
+          "choices": ["Le deep learning (apprentissage profond)", "Le machine learning superficiel", "L'algorithme k-NN", "Le clustering k-means"]
+        },
+        {
+          "question": "Quel composant photonique utilisé dans les télécommunications amplifie un signal optique sans le convertir en signal électrique ?",
+          "answer": "L'amplificateur à fibre dopée à l'erbium (EDFA)",
+          "choices": ["L'amplificateur à fibre dopée à l'erbium (EDFA)", "Le répéteur électronique", "Le modulateur Mach-Zehnder", "Le multiplexeur WDM"]
+        },
+        {
+          "question": "Quel chercheur a développé la théorie de l'information et introduit le concept de bit en 1948 ?",
+          "answer": "Claude Shannon",
+          "choices": ["Claude Shannon", "Alan Turing", "John von Neumann", "Norbert Wiener"]
+        },
+        {
+          "question": "Quel type de capteur utilise la variation de résistance électrique d'un matériau pour mesurer une déformation mécanique ?",
+          "answer": "La jauge de contrainte (strain gauge)",
+          "choices": ["La jauge de contrainte (strain gauge)", "Le capteur piézoélectrique", "Le capteur capacitif MEMS", "Le capteur inductif"]
+        },
+        {
+          "question": "Quel protocole de consensus est utilisé dans la blockchain Bitcoin pour valider les transactions ?",
+          "answer": "La preuve de travail (Proof of Work)",
+          "choices": ["La preuve de travail (Proof of Work)", "La preuve d'enjeu (Proof of Stake)", "La preuve d'autorité (Proof of Authority)", "Le consensus byzantin (PBFT)"]
+        },
+        {
+          "question": "Quel type d'architecture FPGA permet de reconfigurer dynamiquement les circuits logiques après fabrication ?",
+          "answer": "Le FPGA à reconfiguration partielle dynamique",
+          "choices": ["Le FPGA à reconfiguration partielle dynamique", "L'ASIC (Application-Specific Integrated Circuit)", "Le CPLD", "Le microcontrôleur"]
+        },
+        {
+          "question": "Quel standard de bus série rapide, successeur de PCI, est utilisé pour connecter les SSD NVMe aux processeurs ?",
+          "answer": "PCIe (PCI Express)",
+          "choices": ["PCIe (PCI Express)", "SATA III", "USB 4", "Thunderbolt 3"]
+        },
+        {
+          "question": "Quelle technologie de propulsion électrique utilise un plasma d'ions de xénon pour générer une poussée à très haute impulsion spécifique ?",
+          "answer": "Le propulseur à effet Hall",
+          "choices": ["Le propulseur à effet Hall", "Le propulseur ionique à grille", "Le moteur VASIMR", "Le propulseur pulsé au plasma (PPT)"]
+        },
+        {
+          "question": "Quel phénomène quantique permet à deux qubits d'être corrélés instantanément quelle que soit leur distance ?",
+          "answer": "L'intrication quantique",
+          "choices": ["L'intrication quantique", "La superposition quantique", "L'effet tunnel", "La décohérence"]
+        },
+        {
+          "question": "Quel chercheur a inventé la technologie CRISPR-Cas9 pour l'édition génomique précise ?",
+          "answer": "Jennifer Doudna et Emmanuelle Charpentier",
+          "choices": ["Jennifer Doudna et Emmanuelle Charpentier", "James Watson et Francis Crick", "Craig Venter", "Shinya Yamanaka"]
+        },
+        {
+          "question": "Quel type de liaison chimique entre atomes de carbone sp2 confère au graphène ses propriétés électriques exceptionnelles ?",
+          "answer": "La liaison π délocalisée (système π conjugué)",
+          "choices": ["La liaison π délocalisée (système π conjugué)", "La liaison σ covalente", "La liaison ionique", "La liaison métallique"]
+        },
+        {
+          "question": "Quel protocole de couche applicative permet l'envoi de messages entre serveurs de messagerie sur Internet ?",
+          "answer": "SMTP (Simple Mail Transfer Protocol)",
+          "choices": ["SMTP (Simple Mail Transfer Protocol)", "IMAP", "POP3", "HTTP"]
+        },
+        {
+          "question": "Quel type de mémoire résistive (non volatile) change d'état de résistance grâce à un filament conducteur se formant dans un oxyde métallique ?",
+          "answer": "La mémoire ReRAM (Resistive RAM)",
+          "choices": ["La mémoire ReRAM (Resistive RAM)", "La mémoire PCM (à changement de phase)", "La mémoire MRAM (magnétique)", "La mémoire FeRAM (ferroélectrique)"]
+        },
+        {
+          "question": "Quel algorithme de tri, utilisé en pratique dans de nombreux langages, combine tri par insertion et tri fusion pour des performances optimales sur des données partiellement triées ?",
+          "answer": "Timsort",
+          "choices": ["Timsort", "Quicksort", "Heapsort", "Mergesort"]
+        }
+      ]
+    }
+  ]
+}
