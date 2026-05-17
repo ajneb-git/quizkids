@@ -2824,13 +2824,60 @@ function cebGeneratePuzzle() {
   return null;
 }
 
+// Construit un puzzle complet à partir d'un enregistrement JSON {n, t, ops}
+function cebPuzzleFromRaw(raw) {
+  const falseSteps = cebFalseSolutions(raw.ops, raw.t, raw.n);
+  const r1 = cebFinalResult(falseSteps[0]);
+  const r2 = cebFinalResult(falseSteps[1]);
+  const r3 = cebFinalResult(falseSteps[2]);
+  const results = new Set([raw.t, r1, r2, r3]);
+  if (results.size < 4 || r1 <= 0 || r2 <= 0 || r3 <= 0) return null;
+  const allSolutions = [
+    { steps: cebOpsToSteps(raw.ops), valid: true,  result: raw.t },
+    { steps: falseSteps[0],          valid: false, result: r1 },
+    { steps: falseSteps[1],          valid: false, result: r2 },
+    { steps: falseSteps[2],          valid: false, result: r3 },
+  ].sort(() => Math.random() - 0.5);
+  return { numbers: raw.n, target: raw.t, solutions: allSolutions };
+}
+
 // --- Jeu ---
-function startDefiCompte() {
+async function startDefiCompte() {
   compteSession = [];
-  for (let i = 0; i < 10; i++) {
-    const p = cebGeneratePuzzle();
-    if (p) compteSession.push(p);
+
+  // Charger les puzzles pré-calculés (avec fallback sur la génération dynamique)
+  let poolData = null;
+  try {
+    const res = await fetch('data/compte-defi.json');
+    if (res.ok) poolData = await res.json();
+  } catch (_) { /* offline : génération dynamique */ }
+
+  if (poolData && poolData.tiers && poolData.tiers.length === 3) {
+    const [facile, moyen, difficile] = poolData.tiers.map(t => [...t.pool].sort(() => Math.random() - 0.5));
+    const picks = [
+      ...facile.slice(0, 4),
+      ...moyen.slice(0, 3),
+      ...difficile.slice(0, 3),
+    ].sort(() => Math.random() - 0.5);
+
+    for (const raw of picks) {
+      const p = cebPuzzleFromRaw(raw);
+      if (p) compteSession.push(p);
+      else {
+        const fallback = cebGeneratePuzzle();
+        if (fallback) compteSession.push(fallback);
+      }
+    }
   }
+
+  // Fallback dynamique si le JSON n'est pas disponible
+  if (!compteSession.length) {
+    for (let i = 0; i < 10; i++) {
+      const p = cebGeneratePuzzle();
+      if (p) compteSession.push(p);
+    }
+  }
+
   if (!compteSession.length) { showScreen('home'); return; }
   compteIndex = 0;
   compteScore = 0;
