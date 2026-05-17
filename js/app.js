@@ -65,6 +65,7 @@ let technoScore = 0;
 let compteSession = [];
 let compteIndex = 0;
 let compteScore = 0;
+let compteLevel = 3;
 
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
@@ -2724,14 +2725,25 @@ function cebOpsToSteps(ops) {
   return ops.map(o => `${o.a} ${o.op} ${o.b} = ${o.r}`);
 }
 
-// Génère un puzzle solvable ou impossible selon type ('solvable' | 'impossible')
-function cebGeneratePuzzle(type) {
-  for (let attempt = 0; attempt < 300; attempt++) {
+const CEB_LEVELS = [
+  null,
+  { ops: 2, targetMin: 100, targetMax: 600, label: '⭐ Débutant' },
+  { ops: 3, targetMin: 100, targetMax: 750, label: '⭐⭐ Facile' },
+  { ops: 4, targetMin: 100, targetMax: 900, label: '⭐⭐⭐ Moyen' },
+  { ops: 5, targetMin: 100, targetMax: 999, label: '⭐⭐⭐⭐ Difficile' },
+  { ops: 5, targetMin: 700, targetMax: 999, label: '⭐⭐⭐⭐⭐ Expert' },
+];
+
+// Génère un puzzle solvable (exactement cfg.ops opérations) ou impossible
+function cebGeneratePuzzle(type, level) {
+  const cfg = CEB_LEVELS[level];
+  const maxAttempts = level >= 4 ? 600 : 300;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const numbers = cebPickNumbers();
-    const target = 100 + Math.floor(Math.random() * 900);
+    const target = cfg.targetMin + Math.floor(Math.random() * (cfg.targetMax - cfg.targetMin + 1));
     const ops = cebSolve(numbers, target);
     if (type === 'solvable') {
-      if (!ops || ops.length < 2) continue;
+      if (!ops || ops.length !== cfg.ops) continue;
       return { numbers, target, solvable: true, ops };
     } else {
       if (ops) continue;
@@ -2741,15 +2753,26 @@ function cebGeneratePuzzle(type) {
   return null;
 }
 
-// --- Jeu ---
+// --- Sélection du niveau ---
 function startDefiCompte() {
+  showScreen('compte');
+  document.getElementById('ceb-picker').style.display = 'flex';
+  document.getElementById('ceb-game-header').style.display = 'none';
+  document.getElementById('ceb-game-area').style.display = 'none';
+  document.querySelectorAll('.ceb-star-btn').forEach(btn => {
+    btn.onclick = () => startDefiCompteWithLevel(parseInt(btn.dataset.level));
+  });
+}
+
+function startDefiCompteWithLevel(level) {
+  compteLevel = level;
   compteSession = [];
   for (let i = 0; i < 5; i++) {
-    const p = cebGeneratePuzzle('solvable');
+    const p = cebGeneratePuzzle('solvable', level);
     if (p) compteSession.push(p);
   }
   for (let i = 0; i < 5; i++) {
-    const p = cebGeneratePuzzle('impossible');
+    const p = cebGeneratePuzzle('impossible', level);
     if (p) compteSession.push(p);
   }
   compteSession.sort(() => Math.random() - 0.5);
@@ -2757,7 +2780,11 @@ function startDefiCompte() {
   if (!compteSession.length) { showScreen('home'); return; }
   compteIndex = 0;
   compteScore = 0;
-  showScreen('compte');
+
+  document.getElementById('ceb-picker').style.display = 'none';
+  document.getElementById('ceb-game-header').style.display = '';
+  document.getElementById('ceb-game-area').style.display = '';
+  document.getElementById('ceb-level-badge').textContent = CEB_LEVELS[level].label;
   renderCompteQuestion();
   document.getElementById('btn-ceb-replay').onclick = () => startDefiCompte();
 }

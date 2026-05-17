@@ -1857,6 +1857,78 @@ html, body {
    LE COMPTE EST BON
 ══════════════════════════════════════════════════════ */
 
+.ceb-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 20px 20px;
+  flex: 1;
+}
+
+.ceb-picker-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text);
+  text-align: center;
+}
+
+.ceb-picker-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.ceb-star-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.ceb-star-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+  width: 100%;
+  text-align: left;
+}
+
+.ceb-star-btn:hover,
+.ceb-star-btn:active {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.ceb-stars {
+  font-size: 1rem;
+  min-width: 88px;
+  letter-spacing: 2px;
+}
+
+.ceb-level-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ceb-level-name small {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .ceb-game-area {
   display: flex;
   flex-direction: column;

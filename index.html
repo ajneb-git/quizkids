@@ -986,14 +986,26 @@
 
   <!-- ══════════════════ SCREEN: LE COMPTE EST BON ══════════════════ -->
   <div id="screen-compte" class="screen">
-    <div class="defi-header">
+    <div id="ceb-picker" class="ceb-picker">
+      <div class="ceb-picker-title">🧮 Compte est Bon</div>
+      <p class="ceb-picker-sub">Choisis ton niveau</p>
+      <div class="ceb-star-row">
+        <button class="ceb-star-btn" data-level="1"><span class="ceb-stars">⭐</span><span class="ceb-level-name">Débutant <small>2 opérations</small></span></button>
+        <button class="ceb-star-btn" data-level="2"><span class="ceb-stars">⭐⭐</span><span class="ceb-level-name">Facile <small>3 opérations</small></span></button>
+        <button class="ceb-star-btn" data-level="3"><span class="ceb-stars">⭐⭐⭐</span><span class="ceb-level-name">Moyen <small>4 opérations</small></span></button>
+        <button class="ceb-star-btn" data-level="4"><span class="ceb-stars">⭐⭐⭐⭐</span><span class="ceb-level-name">Difficile <small>5 opérations</small></span></button>
+        <button class="ceb-star-btn" data-level="5"><span class="ceb-stars">⭐⭐⭐⭐⭐</span><span class="ceb-level-name">Expert <small>5 ops · cible 700–999</small></span></button>
+      </div>
+      <button class="btn btn-secondary btn-home" style="margin-top:8px">🏠 Accueil</button>
+    </div>
+    <div id="ceb-game-header" class="defi-header" style="display:none">
       <div class="defi-progress-wrap">
         <div class="defi-progress-bar"><div id="ceb-progress-fill" class="defi-progress-fill"></div></div>
         <span id="ceb-counter" class="defi-level-label">1 / 10</span>
       </div>
-      <span class="hist-mode-badge">🧮 Compte est bon</span>
+      <span class="hist-mode-badge" id="ceb-level-badge">🧮 Compte est bon</span>
     </div>
-    <div class="ceb-game-area">
+    <div class="ceb-game-area" id="ceb-game-area" style="display:none">
       <div class="ceb-header-row">
         <span class="ceb-score-box">Score : <strong id="ceb-score">0</strong></span>
       </div>
@@ -1011,9 +1023,6 @@
       <div id="ceb-next-wrap" style="display:none; margin-top:12px;">
         <button class="btn btn-primary" id="ceb-next-btn" style="width:100%"></button>
       </div>
-    </div>
-    <div class="quiz-footer">
-      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
     </div>
   </div>
 
