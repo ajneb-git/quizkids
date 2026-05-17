@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quizkids-v16';
+const CACHE_NAME = 'quizkids-v17';
 
 const STATIC_ASSETS = [
   '/',

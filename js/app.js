@@ -41,6 +41,12 @@ let vraiFauxData = null;
 let currentVraiFaux = [];
 let vraiFauxIndex = 0;
 let vraiFauxStreak = 0;
+
+let anagrammesData = null;
+let currentAnagrammes = [];
+let anagrammesIndex = 0;
+let anagrammesScore = 0;
+
 let franceSvg = null;   // SVG element (cached after first load)
 let worldSvg = null;
 
@@ -446,6 +452,11 @@ async function route() {
 
   if (hash === '#defi-vrai-faux') {
     await startVraiFaux();
+    return;
+  }
+
+  if (hash === '#defi-anagrammes') {
+    await startDefiAnagrammes();
     return;
   }
 
@@ -2163,6 +2174,120 @@ function showVraiFauxResults(perfect, wrongQ) {
   }
 
   document.getElementById('btn-vf-replay').onclick = () => { window.location.hash = '#defi-vrai-faux'; };
+}
+
+// ─── Anagrammes ───────────────────────────────────────────────────────────────
+
+const ANA_BEST_KEY = 'quizkids_anagrammes_best';
+function getAnagrammesBest() { return parseInt(localStorage.getItem(ANA_BEST_KEY) || '0', 10); }
+function saveAnagrammesBest(score) {
+  const prev = getAnagrammesBest();
+  if (score > prev) { localStorage.setItem(ANA_BEST_KEY, score); return true; }
+  return false;
+}
+
+async function startDefiAnagrammes() {
+  if (!anagrammesData) {
+    try { const r = await fetch('./data/anagrammes-defi.json'); anagrammesData = await r.json(); }
+    catch (e) { console.error(e); showScreen('home'); return; }
+  }
+  const hasQuestions = anagrammesData.tiers?.some(t => t.pool?.length > 0);
+  if (!hasQuestions) { alert('Questions à venir bientôt !'); showScreen('home'); return; }
+
+  currentAnagrammes = buildDefiGame(anagrammesData);
+  anagrammesIndex = 0;
+  anagrammesScore = 0;
+
+  showScreen('anagrammes');
+  renderAnaQuestion();
+}
+
+function renderAnaQuestion() {
+  const q = currentAnagrammes[anagrammesIndex];
+  const total = currentAnagrammes.length;
+  const tier = Math.floor(anagrammesIndex / 10) + 1;
+  const tierLabels = ['Très facile', 'Facile', 'Moyen', 'Difficile', 'Expert'];
+
+  document.getElementById('ana-progress-fill').style.width = `${(anagrammesIndex / total) * 100}%`;
+  document.getElementById('ana-counter').textContent = `${anagrammesIndex + 1} / ${total}`;
+  document.getElementById('ana-score').textContent = anagrammesScore;
+  document.getElementById('ana-tier-label').textContent = `Niveau ${tier} — ${tierLabels[tier - 1]}`;
+  document.getElementById('ana-hint').textContent = q.hint;
+  document.getElementById('ana-scrambled').textContent = q.scrambled.split('').join(' ');
+
+  const fb = document.getElementById('ana-feedback');
+  fb.textContent = '';
+  fb.className = 'vf-feedback';
+
+  const choicesEl = document.getElementById('ana-choices');
+  choicesEl.innerHTML = '';
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'ana-choice-btn';
+    btn.textContent = choice;
+    btn.onclick = () => window.handleAnaAnswer(choice);
+    choicesEl.appendChild(btn);
+  });
+}
+
+window.handleAnaAnswer = function(answer) {
+  const q = currentAnagrammes[anagrammesIndex];
+  const btns = document.querySelectorAll('.ana-choice-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = (answer === q.answer);
+  btns.forEach(b => {
+    if (b.textContent === q.answer) b.classList.add('hist-correct');
+    else if (b.textContent === answer && !correct) b.classList.add('hist-wrong');
+  });
+
+  if (correct) {
+    anagrammesScore++;
+    anagrammesIndex++;
+    if (anagrammesIndex >= currentAnagrammes.length) {
+      setTimeout(() => endDefiAnagrammes(true, null), 700);
+    } else {
+      setTimeout(renderAnaQuestion, 600);
+    }
+  } else {
+    const fb = document.getElementById('ana-feedback');
+    fb.textContent = `La bonne réponse était : ${q.answer}`;
+    fb.className = 'vf-feedback vf-feedback-wrong';
+    setTimeout(() => endDefiAnagrammes(false, q), 1800);
+  }
+};
+
+function endDefiAnagrammes(perfect, wrongQ) {
+  const isNewBest = saveAnagrammesBest(anagrammesScore);
+  const best = getAnagrammesBest();
+  showScreen('anagrammes-results');
+
+  const icon = perfect ? '🏆' : anagrammesScore >= 40 ? '⭐' : anagrammesScore >= 20 ? '👍' : '💥';
+  document.getElementById('ana-result-icon').textContent = icon;
+  document.getElementById('ana-result-title').textContent = perfect ? 'Parfait — 50/50 !' : 'Série terminée !';
+  document.getElementById('ana-result-score').textContent =
+    `${anagrammesScore} bonne${anagrammesScore > 1 ? 's' : ''} réponse${anagrammesScore > 1 ? 's' : ''} sur 50`;
+
+  const bestEl = document.getElementById('ana-result-best');
+  if (isNewBest && anagrammesScore > 0) {
+    bestEl.textContent = `🏆 Nouveau record : ${best} !`;
+  } else if (best > 0) {
+    bestEl.textContent = `🏆 Record : ${best}`;
+  } else {
+    bestEl.textContent = '';
+  }
+
+  const wrongEl = document.getElementById('ana-result-wrong');
+  if (wrongQ) {
+    wrongEl.innerHTML = `
+      <p class="vf-wrong-label">L'anagramme qui a stoppé la série :</p>
+      <p class="vf-wrong-statement">« ${wrongQ.scrambled.split('').join(' ')} » → <strong>${wrongQ.answer}</strong></p>
+      <p class="vf-wrong-answer">${wrongQ.hint}</p>`;
+  } else {
+    wrongEl.innerHTML = '';
+  }
+
+  document.getElementById('btn-ana-replay').onclick = () => { window.location.hash = '#defi-anagrammes'; };
 }
 
 document.addEventListener('DOMContentLoaded', init);

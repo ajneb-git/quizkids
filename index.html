@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 <body>
 
@@ -227,11 +227,11 @@
         <div class="defi-category-section">
           <div class="defi-category-header"><span>🧠</span> Langue &amp; Mots</div>
           <div class="revision-cards">
-            <div class="defi-placeholder-card" id="defi-anagrammes-card" data-defi="anagrammes">
+            <div class="revision-card defi-card" id="defi-anagrammes-card" data-defi="anagrammes">
               <span class="revision-card-emoji">🔤</span>
               <div style="display:flex;flex-direction:column;gap:2px">
                 <span class="revision-card-label">Anagrammes</span>
-                <span class="revision-card-sub">Reconstitue le mot mélangé<br>150 mots · bientôt disponible</span>
+                <span class="revision-card-sub">Reconstitue le mot mélangé · 5 niveaux<br>Une erreur = game over</span>
               </div>
             </div>
           </div>
@@ -798,7 +798,50 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=16"></script>
+  <!-- ══════════════════ SCREEN: ANAGRAMMES ══════════════════ -->
+  <div id="screen-anagrammes" class="screen">
+    <div class="defi-header">
+      <div class="defi-progress-wrap">
+        <div class="defi-progress-bar">
+          <div id="ana-progress-fill" class="defi-progress-fill"></div>
+        </div>
+        <span id="ana-counter" class="defi-level-label">1 / 50</span>
+      </div>
+      <span class="hist-mode-badge">🔤 Anagrammes</span>
+    </div>
+    <div class="ana-game-area">
+      <div class="ana-score-row">
+        <span class="ana-level-label" id="ana-tier-label">Niveau 1 — Très facile</span>
+        <span class="ana-score-box">Score : <strong id="ana-score">0</strong></span>
+      </div>
+      <div class="ana-scrambled-card">
+        <div class="ana-hint" id="ana-hint">💡 Indice…</div>
+        <div class="ana-scrambled-word" id="ana-scrambled">? ? ? ?</div>
+      </div>
+      <div class="ana-choices" id="ana-choices"></div>
+      <p id="ana-feedback" class="vf-feedback"></p>
+    </div>
+    <div class="quiz-footer">
+      <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ SCREEN: ANAGRAMMES RÉSULTATS ══════════════════ -->
+  <div id="screen-anagrammes-results" class="screen">
+    <div class="screen-content results-content">
+      <div class="defi-result-icon" id="ana-result-icon">💥</div>
+      <h2 id="ana-result-title">Série terminée !</h2>
+      <div class="total-score"><span id="ana-result-score">0 bonne réponse</span></div>
+      <div id="ana-result-best" class="encouraging-msg" style="font-weight:700;margin-top:4px"></div>
+      <div id="ana-result-wrong" class="vf-result-wrong-block"></div>
+      <div class="results-actions">
+        <button id="btn-ana-replay" class="btn btn-primary">🔁 Rejouer</button>
+        <button class="btn btn-secondary btn-home">🏠 Accueil</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=17"></script>
   <script data-goatcounter="https://ajneb.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
