@@ -2690,10 +2690,10 @@ function cebEval(op, a, b) {
   return NaN;
 }
 
-function cebSolve(numbers, target) {
+function cebSolve(numbers, target, nodeLimit = 80000) {
   let nodeCount = 0;
   function dfs(pool) {
-    if (++nodeCount > 80000) return null;
+    if (++nodeCount > nodeLimit) return null;
     for (const item of pool) {
       if (item.v === target) return item.ops;
     }
@@ -2724,99 +2724,64 @@ function cebOpsToSteps(ops) {
   return ops.map(o => `${o.a} ${o.op} ${o.b} = ${o.r}`);
 }
 
-// --- Cascade : modifie une étape et propage les changements ---
-function cebCascade(validOps, stepIdx, field, newVal) {
-  const ops = validOps.map(o => ({ ...o }));
-  ops[stepIdx][field] = newVal;
-  if (field !== 'r') {
-    const res = cebEval(ops[stepIdx].op, ops[stepIdx].a, ops[stepIdx].b);
-    ops[stepIdx].r = isFinite(res) && Number.isInteger(res) ? res : validOps[stepIdx].r + (newVal - validOps[stepIdx][field]);
-  }
-  const remap = new Map([[validOps[stepIdx].r, ops[stepIdx].r]]);
-  for (let i = stepIdx + 1; i < ops.length; i++) {
-    let changed = false;
-    if (remap.has(ops[i].a)) { ops[i].a = remap.get(ops[i].a); changed = true; }
-    if (remap.has(ops[i].b)) { ops[i].b = remap.get(ops[i].b); changed = true; }
-    if (changed) {
-      const oldR = validOps[i].r;
-      const newR = cebEval(ops[i].op, ops[i].a, ops[i].b);
-      ops[i].r = isFinite(newR) && Number.isInteger(newR) && newR > 0 ? newR : oldR + (ops[i].a - validOps[i].a || 0) + (ops[i].b - validOps[i].b || 0);
-      remap.set(oldR, ops[i].r);
+// Calcule UNE FOIS l'ensemble de toutes les valeurs atteignables avec les chiffres donnés.
+// Utilisé pour garantir que les faux résultats sont vraiment impossibles.
+function cebAllReachable(numbers, nodeLimit = 150000) {
+  const reachable = new Set(numbers);
+  let count = 0;
+  function dfs(pool) {
+    for (let i = 0; i < pool.length; i++) {
+      for (let j = 0; j < pool.length; j++) {
+        if (i === j) continue;
+        for (const op of ['+', '-', '×', '÷']) {
+          if (++count > nodeLimit) return;
+          const r = cebEval(op, pool[i], pool[j]);
+          if (!r || !isFinite(r) || r <= 0 || r > 9999 || !Number.isInteger(r)) continue;
+          if (!reachable.has(r)) {
+            reachable.add(r);
+            const newPool = pool.filter((_, k) => k !== i && k !== j).concat(r);
+            dfs(newPool);
+          }
+        }
+      }
     }
   }
-  return ops;
+  dfs([...numbers]);
+  return reachable;
 }
 
-// --- Génération de 3 fausses solutions ---
-function cebFalseSolutions(validOps, target, numbers) {
-  const computedResults = new Set(validOps.map(o => o.r));
-  const wrongFinal = (delta) => {
-    const ops = validOps.map(o => ({ ...o }));
-    ops[ops.length - 1] = { ...ops[ops.length - 1], r: target + delta };
-    return cebOpsToSteps(ops);
-  };
-
-  // Type 1 : résultat final légèrement différent
-  const d1 = (target % 3 === 0 ? -1 : 1) * (3 + Math.floor(Math.random() * 5));
-  const t1 = wrongFinal(d1);
-
-  // Type 2 : mauvais nombre (leaf input modifié + cascade)
-  let t2 = null;
-  for (let i = 0; i < validOps.length && !t2; i++) {
-    for (const field of ['a', 'b']) {
-      const val = validOps[i][field];
-      if (computedResults.has(val)) continue; // c'est un résultat intermédiaire, pas une feuille
-      const delta = (Math.random() < 0.5 ? 1 : -1) * (1 + Math.floor(Math.random() * 2));
-      const wrongVal = val + delta;
-      if (wrongVal <= 0 || numbers.includes(wrongVal)) continue;
-      const modOps = cebCascade(validOps, i, field, wrongVal);
-      if (modOps[modOps.length - 1].r !== target) { t2 = cebOpsToSteps(modOps); break; }
+// Choisit 3 résultats garantis inatteignables proches de la cible.
+function cebPickFalseResults(target, reachable) {
+  const deltas = [3,4,5,6,7,8,10,12,15,20,-3,-4,-5,-6,-7,-8,-10,-12,-15,-20,25,-25,30,-30,35,-35]
+    .sort(() => Math.random() - 0.5);
+  const picked = [];
+  for (const d of deltas) {
+    const c = target + d;
+    if (c > 0 && c <= 9999 && !reachable.has(c) && !picked.includes(c)) {
+      picked.push(c);
+      if (picked.length === 3) break;
     }
   }
-  if (!t2) t2 = wrongFinal(-(8 + Math.floor(Math.random() * 6)));
-
-  // Type 3 : erreur de calcul intermédiaire (résultat d'étape légèrement faux)
-  let t3 = null;
-  if (validOps.length >= 2) {
-    const midIdx = Math.floor((validOps.length - 1) / 2);
-    const d3 = (Math.random() < 0.5 ? 1 : -1) * (1 + Math.floor(Math.random() * 2));
-    const modOps = cebCascade(validOps, midIdx, 'r', validOps[midIdx].r + d3);
-    if (modOps[modOps.length - 1].r !== target) t3 = cebOpsToSteps(modOps);
-  }
-  if (!t3) t3 = wrongFinal(13 + Math.floor(Math.random() * 7));
-
-  return [t1, t2, t3];
+  return picked;
 }
 
-// Extrait le résultat final d'une liste d'étapes ["a op b = r", ...]
-function cebFinalResult(steps) {
-  return parseInt(steps[steps.length - 1].split(' = ')[1], 10);
-}
-
-// --- Génère un puzzle complet ---
+// --- Génère un puzzle complet (fallback dynamique) ---
 function cebGeneratePuzzle() {
-  for (let attempt = 0; attempt < 300; attempt++) {
+  for (let attempt = 0; attempt < 200; attempt++) {
     const numbers = cebPickNumbers();
     const target = 100 + Math.floor(Math.random() * 900);
     const ops = cebSolve(numbers, target);
     if (!ops || ops.length < 2) continue;
 
-    const validSteps = cebOpsToSteps(ops);
-    const falseSteps = cebFalseSolutions(ops, target, numbers);
-
-    const r1 = cebFinalResult(falseSteps[0]);
-    const r2 = cebFinalResult(falseSteps[1]);
-    const r3 = cebFinalResult(falseSteps[2]);
-
-    // Tous les résultats doivent être distincts et positifs
-    const results = new Set([target, r1, r2, r3]);
-    if (results.size < 4 || r1 <= 0 || r2 <= 0 || r3 <= 0) continue;
+    const reachable = cebAllReachable(numbers);
+    const falseResults = cebPickFalseResults(target, reachable);
+    if (falseResults.length < 3) continue;
 
     const allSolutions = [
-      { steps: validSteps, valid: true,  result: target },
-      { steps: falseSteps[0], valid: false, result: r1 },
-      { steps: falseSteps[1], valid: false, result: r2 },
-      { steps: falseSteps[2], valid: false, result: r3 }
+      { steps: cebOpsToSteps(ops), valid: true,  result: target },
+      { steps: [],                  valid: false, result: falseResults[0] },
+      { steps: [],                  valid: false, result: falseResults[1] },
+      { steps: [],                  valid: false, result: falseResults[2] },
     ].sort(() => Math.random() - 0.5);
 
     return { numbers, target, solutions: allSolutions };
@@ -2824,19 +2789,16 @@ function cebGeneratePuzzle() {
   return null;
 }
 
-// Construit un puzzle complet à partir d'un enregistrement JSON {n, t, ops}
+// Construit un puzzle à partir d'un enregistrement JSON {n, t, ops}
 function cebPuzzleFromRaw(raw) {
-  const falseSteps = cebFalseSolutions(raw.ops, raw.t, raw.n);
-  const r1 = cebFinalResult(falseSteps[0]);
-  const r2 = cebFinalResult(falseSteps[1]);
-  const r3 = cebFinalResult(falseSteps[2]);
-  const results = new Set([raw.t, r1, r2, r3]);
-  if (results.size < 4 || r1 <= 0 || r2 <= 0 || r3 <= 0) return null;
+  const reachable = cebAllReachable(raw.n);
+  const falseResults = cebPickFalseResults(raw.t, reachable);
+  if (falseResults.length < 3) return null;
   const allSolutions = [
     { steps: cebOpsToSteps(raw.ops), valid: true,  result: raw.t },
-    { steps: falseSteps[0],          valid: false, result: r1 },
-    { steps: falseSteps[1],          valid: false, result: r2 },
-    { steps: falseSteps[2],          valid: false, result: r3 },
+    { steps: [],                      valid: false, result: falseResults[0] },
+    { steps: [],                      valid: false, result: falseResults[1] },
+    { steps: [],                      valid: false, result: falseResults[2] },
   ].sort(() => Math.random() - 0.5);
   return { numbers: raw.n, target: raw.t, solutions: allSolutions };
 }
@@ -2933,16 +2895,16 @@ function handleCompteAnswer(selectedIdx) {
   const isCorrect = puzzle.solutions[selectedIdx].valid;
   const cards = document.querySelectorAll('.ceb-solution-card');
 
-  // Révéler les calculs et les badges sur toutes les cartes
+  // Révéler uniquement les calculs de la bonne réponse
   puzzle.solutions.forEach((sol, idx) => {
     const stepsEl = document.getElementById(`ceb-steps-${idx}`);
-    stepsEl.classList.remove('ceb-steps-hidden');
-
     const resultEl = document.getElementById(`ceb-result-${idx}`);
     if (sol.valid) {
+      stepsEl.classList.remove('ceb-steps-hidden');
       resultEl.textContent = `${sol.result} ✅`;
       cards[idx].classList.add(idx === selectedIdx ? 'selected-correct' : 'revealed-correct');
     } else {
+      // Garder les calculs cachés pour les mauvaises réponses
       resultEl.textContent = `${sol.result} ❌`;
       if (idx === selectedIdx) cards[idx].classList.add('selected-wrong');
       else cards[idx].classList.add('revealed-wrong');
