@@ -192,6 +192,291 @@
         "reponse": "Suisse",
         "explication": "Le drapeau suisse est rouge avec une croix blanche. C'est l'un des rares drapeaux carrés au monde !",
         "difficulte": 1
+      },
+      {
+        "id": "p_dra_011",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇨🇳"
+        },
+        "choix": [
+          "Japon",
+          "Viêt Nam",
+          "Chine",
+          "Corée du Nord"
+        ],
+        "reponse": "Chine",
+        "explication": "Le drapeau chinois est rouge avec une grande étoile jaune et quatre petites. Le rouge symbolise la révolution !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_dra_012",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇦🇺"
+        },
+        "choix": [
+          "Nouvelle-Zélande",
+          "Royaume-Uni",
+          "Australie",
+          "Canada"
+        ],
+        "reponse": "Australie",
+        "explication": "Le drapeau australien a l'Union Jack et la Croix du Sud, une constellation visible dans l'hémisphère sud !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_013",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇧🇪"
+        },
+        "choix": [
+          "Allemagne",
+          "Belgique",
+          "Pays-Bas",
+          "Luxembourg"
+        ],
+        "reponse": "Belgique",
+        "explication": "Le drapeau belge est noir, jaune et rouge. La Belgique est célèbre pour ses chocolats et ses gaufres !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_dra_014",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇱"
+        },
+        "choix": [
+          "France",
+          "Russie",
+          "Pays-Bas",
+          "Croatie"
+        ],
+        "reponse": "Pays-Bas",
+        "explication": "Le drapeau néerlandais est rouge, blanc et bleu. Les Pays-Bas sont connus pour leurs tulipes et leurs moulins à vent !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_015",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇹"
+        },
+        "choix": [
+          "Espagne",
+          "Mexique",
+          "Portugal",
+          "Brésil"
+        ],
+        "reponse": "Portugal",
+        "explication": "Le drapeau portugais est vert et rouge avec les armoiries au centre. Le Portugal est le pays du fado et des pastéis de nata !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_016",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇲🇽"
+        },
+        "choix": [
+          "Italie",
+          "Mexique",
+          "Hongrie",
+          "Bulgarie"
+        ],
+        "reponse": "Mexique",
+        "explication": "Le drapeau mexicain est vert, blanc et rouge avec un aigle sur un cactus au centre. C'est le pays des tacos !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_dra_017",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇮🇳"
+        },
+        "choix": [
+          "Pakistan",
+          "Bangladesh",
+          "Inde",
+          "Sri Lanka"
+        ],
+        "reponse": "Inde",
+        "explication": "Le drapeau indien est orange, blanc et vert avec une roue bleue appelée la roue d'Ashoka. L'Inde est le pays le plus peuplé du monde !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_018",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇦🇷"
+        },
+        "choix": [
+          "Uruguay",
+          "Argentine",
+          "Grèce",
+          "Finlande"
+        ],
+        "reponse": "Argentine",
+        "explication": "Le drapeau argentin est bleu clair et blanc avec un soleil jaune au centre. L'Argentine est connue pour le tango et le football !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_019",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇲🇦"
+        },
+        "choix": [
+          "Algérie",
+          "Tunisie",
+          "Maroc",
+          "Égypte"
+        ],
+        "reponse": "Maroc",
+        "explication": "Le drapeau marocain est rouge avec une étoile verte à cinq branches. Le Maroc est notre voisin, juste de l'autre côté de la Méditerranée !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_020",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇳🇴"
+        },
+        "choix": [
+          "Suède",
+          "Danemark",
+          "Norvège",
+          "Finlande"
+        ],
+        "reponse": "Norvège",
+        "explication": "Le drapeau norvégien est rouge avec une croix bleue et blanche. La Norvège est connue pour ses fjords et les aurores boréales !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_021",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇸🇪"
+        },
+        "choix": [
+          "Norvège",
+          "Finlande",
+          "Danemark",
+          "Suède"
+        ],
+        "reponse": "Suède",
+        "explication": "Le drapeau suédois est bleu avec une croix jaune. La Suède est le pays d'ABBA et d'IKEA !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_022",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇵🇱"
+        },
+        "choix": [
+          "Autriche",
+          "Pologne",
+          "Hongrie",
+          "Indonésie"
+        ],
+        "reponse": "Pologne",
+        "explication": "Le drapeau polonais est blanc en haut et rouge en bas. La Pologne est un grand pays d'Europe centrale !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_023",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇰🇷"
+        },
+        "choix": [
+          "Japon",
+          "Chine",
+          "Corée du Sud",
+          "Thaïlande"
+        ],
+        "reponse": "Corée du Sud",
+        "explication": "Le drapeau sud-coréen est blanc avec un symbole yin-yang rouge et bleu et quatre trigrammes noirs. La Corée du Sud est connue pour ses jeux vidéo et la K-pop !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_024",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇿🇦"
+        },
+        "choix": [
+          "Zimbabwe",
+          "Kenya",
+          "Afrique du Sud",
+          "Nigeria"
+        ],
+        "reponse": "Afrique du Sud",
+        "explication": "Le drapeau sud-africain a six couleurs dont un Y vert ! C'est le pays de Nelson Mandela et des lions.",
+        "difficulte": 2
+      },
+      {
+        "id": "p_dra_025",
+        "categorie": "drapeaux",
+        "type": "qcm",
+        "question": "À quel pays appartient ce drapeau ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🇹🇷"
+        },
+        "choix": [
+          "Pakistan",
+          "Tunisie",
+          "Turquie",
+          "Algérie"
+        ],
+        "reponse": "Turquie",
+        "explication": "Le drapeau turc est rouge avec un croissant blanc et une étoile blanche. La Turquie est entre l'Europe et l'Asie !",
+        "difficulte": 2
       }
     ],
     "geographie": [
@@ -768,6 +1053,291 @@
         "reponse": "4",
         "explication": "Un carré a 4 côtés tous égaux et 4 angles droits. C'est un rectangle particulier !",
         "difficulte": 1
+      },
+      {
+        "id": "p_log_011",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Un fermier a 3 lapins. Chaque lapin a 4 pattes. Combien de pattes en tout ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🐇"
+        },
+        "choix": [
+          "7",
+          "10",
+          "12",
+          "16"
+        ],
+        "reponse": "12",
+        "explication": "3 × 4 = 12. On multiplie le nombre de lapins par le nombre de pattes de chacun !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_012",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Il est 14h00. Dans 3 heures, quelle heure sera-t-il ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕐"
+        },
+        "choix": [
+          "16h00",
+          "17h00",
+          "18h00",
+          "11h00"
+        ],
+        "reponse": "17h00",
+        "explication": "14h + 3h = 17h. Si l'école finit à 14h et qu'on joue 3 heures, il est 17h !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_013",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "J'achète une glace à 2 euros. Je paye avec une pièce de 5 euros. Combien me rend-on ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍦"
+        },
+        "choix": [
+          "1 euro",
+          "2 euros",
+          "3 euros",
+          "4 euros"
+        ],
+        "reponse": "3 euros",
+        "explication": "5 - 2 = 3. On me rend 3 euros de monnaie !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_014",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Combien y a-t-il de côtés dans un pentagone ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⭐"
+        },
+        "choix": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "reponse": "5",
+        "explication": "Un pentagone a 5 côtés. 'Penta' veut dire cinq en grec. Le Pentagone aux États-Unis a la forme de cette figure !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_015",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Quelle suite vient après : 2, 4, 6, 8, ... ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔢"
+        },
+        "choix": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "reponse": "10",
+        "explication": "On ajoute 2 à chaque fois : 2, 4, 6, 8, 10. Ce sont les nombres pairs !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_016",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Une boîte contient 5 rangées de 4 chocolats. Combien y a-t-il de chocolats en tout ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍫"
+        },
+        "choix": [
+          "9",
+          "16",
+          "20",
+          "25"
+        ],
+        "reponse": "20",
+        "explication": "5 × 4 = 20. On multiplie le nombre de rangées par le nombre de chocolats par rangée !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_017",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Combien d'heures y a-t-il dans une journée ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🌞"
+        },
+        "choix": [
+          "12",
+          "20",
+          "24",
+          "60"
+        ],
+        "reponse": "24",
+        "explication": "Une journée dure 24 heures. 12 heures le matin (AM) et 12 heures l'après-midi et la nuit (PM) !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_018",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Tom a 12 bonbons. Il en partage équitablement avec son ami. Combien chacun en aura-t-il ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍬"
+        },
+        "choix": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "reponse": "6",
+        "explication": "12 ÷ 2 = 6. Quand on partage en 2 parts égales, chacun reçoit la moitié !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_019",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Un hexagone a combien de côtés ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔷"
+        },
+        "choix": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "reponse": "6",
+        "explication": "Un hexagone a 6 côtés. Les alvéoles des abeilles sont en forme d'hexagone !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_020",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Quelle suite vient après : 1, 3, 5, 7, ... ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔢"
+        },
+        "choix": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "reponse": "9",
+        "explication": "On ajoute 2 à chaque fois : 1, 3, 5, 7, 9. Ce sont les nombres impairs !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_021",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Une araignée a 8 pattes. Combien de pattes ont 2 araignées ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🕷️"
+        },
+        "choix": [
+          "10",
+          "12",
+          "14",
+          "16"
+        ],
+        "reponse": "16",
+        "explication": "2 × 8 = 16. Chaque araignée a 8 pattes, donc 2 araignées en ont 16 en tout !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_022",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Combien de minutes y a-t-il dans une heure ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "⏱️"
+        },
+        "choix": [
+          "24",
+          "50",
+          "60",
+          "100"
+        ],
+        "reponse": "60",
+        "explication": "Une heure dure 60 minutes. Et une minute dure 60 secondes !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_log_023",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "J'achète 3 livres à 4 euros chacun. Combien dois-je payer en tout ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "📚"
+        },
+        "choix": [
+          "7 euros",
+          "10 euros",
+          "12 euros",
+          "15 euros"
+        ],
+        "reponse": "12 euros",
+        "explication": "3 × 4 = 12 euros. On multiplie le nombre de livres par le prix de chaque livre !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_024",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Quel nombre est le plus grand ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🔍"
+        },
+        "choix": [
+          "304",
+          "340",
+          "403",
+          "430"
+        ],
+        "reponse": "430",
+        "explication": "430 est le plus grand. On compare d'abord les centaines : 4 > 3, donc 430 et 403 sont les plus grands. Puis les dizaines : 3 > 0, donc 430 gagne !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_log_025",
+        "categorie": "logique",
+        "type": "qcm",
+        "question": "Dans une classe, il y a 15 filles et 12 garçons. Combien y a-t-il d'élèves en tout ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎒"
+        },
+        "choix": [
+          "25",
+          "26",
+          "27",
+          "28"
+        ],
+        "reponse": "27",
+        "explication": "15 + 12 = 27 élèves en tout dans la classe !",
+        "difficulte": 1
       }
     ],
     "sport": [
@@ -959,6 +1529,291 @@
         ],
         "reponse": "Tir à l'arc",
         "explication": "Le tir à l'arc est un sport olympique. Il faut beaucoup de concentration pour viser le centre de la cible !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_011",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport frappe-t-on un volant (plumes) avec une raquette ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏸"
+        },
+        "choix": [
+          "Tennis",
+          "Badminton",
+          "Ping-pong",
+          "Squash"
+        ],
+        "reponse": "Badminton",
+        "explication": "Au badminton, on frappe un volant en plumes par-dessus un filet. C'est l'un des sports les plus rapides du monde !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_012",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport frappe-t-on une petite balle blanche avec une petite raquette sur une table ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏓"
+        },
+        "choix": [
+          "Tennis",
+          "Badminton",
+          "Ping-pong",
+          "Squash"
+        ],
+        "reponse": "Ping-pong",
+        "explication": "Le ping-pong (ou tennis de table) se joue sur une table avec de petites raquettes et une balle en plastique très légère !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_013",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport se bat-on en portant un kimono blanc, en essayant de projeter l'adversaire au sol ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥋"
+        },
+        "choix": [
+          "Boxe",
+          "Karaté",
+          "Judo",
+          "Lutte"
+        ],
+        "reponse": "Judo",
+        "explication": "Le judo est un sport de combat japonais. Le mot 'judo' signifie 'voie de la souplesse' en japonais. C'est sport olympique !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_014",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport monte-t-on sur un cheval pour faire des courses ou des figures ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏇"
+        },
+        "choix": [
+          "Rodéo",
+          "Équitation",
+          "Polo",
+          "Dressage"
+        ],
+        "reponse": "Équitation",
+        "explication": "L'équitation est le sport du cheval. On apprend à monter, diriger et sauter des obstacles avec son cheval !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_015",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport frappe-t-on un ballon à la main par-dessus un filet haut, à 6 contre 6 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏐"
+        },
+        "choix": [
+          "Basketball",
+          "Handball",
+          "Volleyball",
+          "Football"
+        ],
+        "reponse": "Volleyball",
+        "explication": "Au volleyball, chaque équipe de 6 joueurs frappe le ballon à la main par-dessus le filet sans le laisser toucher le sol !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_016",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport plonge-t-on dans l'eau depuis un tremplin en faisant des figures ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤽"
+        },
+        "choix": [
+          "Natation",
+          "Water-polo",
+          "Plongeon",
+          "Surf"
+        ],
+        "reponse": "Plongeon",
+        "explication": "Le plongeon est un sport olympique où les athlètes sautent d'un tremplin ou d'une plateforme et font des vrilles et des saltos avant d'entrer dans l'eau !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_017",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport se bat-on avec une épée souple en portant un masque et une veste ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤺"
+        },
+        "choix": [
+          "Judo",
+          "Escrime",
+          "Boxe",
+          "Karaté"
+        ],
+        "reponse": "Escrime",
+        "explication": "L'escrime est le sport de l'épée. Il existe trois armes : le fleuret, le sabre et l'épée. C'est l'un des plus anciens sports olympiques !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_spo_018",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport porte-t-on un ballon ovale et peut-on marquer un essai en touchant le sol dans la zone adverse ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏉"
+        },
+        "choix": [
+          "Football américain",
+          "Football",
+          "Rugby",
+          "Handball"
+        ],
+        "reponse": "Rugby",
+        "explication": "Au rugby, on court avec un ballon ovale et on marque un essai en posant le ballon derrière la ligne adverse. On peut aussi botter entre les poteaux !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_019",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de joueurs y a-t-il dans une équipe de basketball sur le terrain ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏀"
+        },
+        "choix": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "reponse": "5",
+        "explication": "Une équipe de basketball a 5 joueurs sur le terrain : le meneur, les ailiers et les pivots. Mais chaque équipe peut avoir jusqu'à 12 joueurs !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_spo_020",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport lance-t-on un ballon dans un but avec les mains, à 7 contre 7 ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🤾"
+        },
+        "choix": [
+          "Football",
+          "Volleyball",
+          "Basketball",
+          "Handball"
+        ],
+        "reponse": "Handball",
+        "explication": "Au handball, chaque équipe de 7 joueurs (dont un gardien) essaie de lancer le ballon dans le but adverse avec les mains !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_021",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport glisse-t-on sur les vagues de la mer debout sur une planche ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏄"
+        },
+        "choix": [
+          "Ski nautique",
+          "Surf",
+          "Plongeon",
+          "Voile"
+        ],
+        "reponse": "Surf",
+        "explication": "Le surf se pratique dans l'océan. Les surfeurs attendent les vagues et glissent debout sur leur planche. C'est devenu un sport olympique !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_spo_022",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Quelle couleur correspond à la ceinture de débutant en judo ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥋"
+        },
+        "choix": [
+          "Jaune",
+          "Blanche",
+          "Verte",
+          "Noire"
+        ],
+        "reponse": "Blanche",
+        "explication": "On commence le judo avec une ceinture blanche. Ensuite on passe jaune, orange, verte, bleue, marron... et enfin la ceinture noire !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_spo_023",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Combien de sets faut-il gagner pour remporter un match de tennis en Grand Chelem chez les hommes ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🎾"
+        },
+        "choix": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "reponse": "3",
+        "explication": "En Grand Chelem (Roland-Garros, Wimbledon...), les hommes jouent au meilleur des 5 sets, donc il faut en gagner 3 pour l'emporter !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_spo_024",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport saute-t-on avec une perche pour passer par-dessus une barre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏃"
+        },
+        "choix": [
+          "Saut en hauteur",
+          "Saut en longueur",
+          "Saut à la perche",
+          "Triple saut"
+        ],
+        "reponse": "Saut à la perche",
+        "explication": "Le saut à la perche est une épreuve d'athlétisme. L'athlète prend de l'élan, plante sa perche et s'envole pour passer au-dessus de la barre !",
+        "difficulte": 2
+      },
+      {
+        "id": "p_spo_025",
+        "categorie": "sport",
+        "type": "qcm",
+        "question": "Dans quel sport glisse-t-on sur la neige avec une planche fixée aux deux pieds ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🏂"
+        },
+        "choix": [
+          "Ski",
+          "Luge",
+          "Snowboard",
+          "Patinage"
+        ],
+        "reponse": "Snowboard",
+        "explication": "Le snowboard se pratique avec une seule planche large sur laquelle les deux pieds sont fixés. C'est un sport olympique depuis 1998 !",
         "difficulte": 1
       }
     ],
@@ -1152,6 +2007,291 @@
         "reponse": "Vert",
         "explication": "Les épinards sont des légumes verts très riches en fer. Popeye en mange pour être fort !",
         "difficulte": 1
+      },
+      {
+        "id": "p_gas_011",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel petit fruit rouge pousse sur un cerisier au printemps ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍒"
+        },
+        "choix": [
+          "La fraise",
+          "La framboise",
+          "La cerise",
+          "La groseille"
+        ],
+        "reponse": "La cerise",
+        "explication": "La cerise pousse sur un cerisier et se récolte au printemps. Les cerises ont un noyau dur à l'intérieur !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_012",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel fruit jaune très acide est utilisé pour faire de la limonade ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍋"
+        },
+        "choix": [
+          "L'orange",
+          "Le citron",
+          "Le pamplemousse",
+          "La clémentine"
+        ],
+        "reponse": "Le citron",
+        "explication": "Le citron est un fruit très acide. On utilise son jus pour faire de la limonade, des tartes au citron ou assaisonner les plats !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_013",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel légume rouge ressemble à une grosse boule et est très utilisé dans les salades et les sauces ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍅"
+        },
+        "choix": [
+          "La betterave",
+          "Le poivron rouge",
+          "La tomate",
+          "La cerise"
+        ],
+        "reponse": "La tomate",
+        "explication": "La tomate est un fruit qu'on cuisine comme un légume. Elle vient d'Amérique du Sud et est arrivée en Europe au 16e siècle !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_014",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "De quel animal vient l'œuf que l'on mange au petit-déjeuner ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥚"
+        },
+        "choix": [
+          "La vache",
+          "La poule",
+          "Le canard",
+          "La caille"
+        ],
+        "reponse": "La poule",
+        "explication": "Les œufs que l'on mange viennent généralement de la poule. Une poule peut pondre jusqu'à 300 œufs par an !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_015",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Comment s'appelle le long pain fin croustillant typiquement français ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🥖"
+        },
+        "choix": [
+          "Le croissant",
+          "La brioche",
+          "La baguette",
+          "Le pain de mie"
+        ],
+        "reponse": "La baguette",
+        "explication": "La baguette est le pain emblématique de la France. Elle mesure environ 65 cm ! Les Français en mangent des millions chaque jour.",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_016",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Avec quel fruit fait-on le jus d'orange ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍊"
+        },
+        "choix": [
+          "La mandarine",
+          "Le pamplemousse",
+          "L'orange",
+          "Le citron"
+        ],
+        "reponse": "L'orange",
+        "explication": "Le jus d'orange se fait en pressant des oranges. Il est riche en vitamine C et très bon pour la santé !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_017",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Comment s'appelle le petit fruit violet ou vert qui pousse en grappes sur une vigne ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍇"
+        },
+        "choix": [
+          "La mûre",
+          "Le raisin",
+          "La myrtille",
+          "La prune"
+        ],
+        "reponse": "Le raisin",
+        "explication": "Le raisin pousse en grappes sur une plante appelée la vigne. On peut le manger frais ou le transformer en jus de raisin !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_018",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel légume peut être rouge, jaune ou vert, et a une forme creuse et croquante ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🫑"
+        },
+        "choix": [
+          "L'aubergine",
+          "La courgette",
+          "Le poivron",
+          "La tomate"
+        ],
+        "reponse": "Le poivron",
+        "explication": "Le poivron peut être vert (pas encore mûr), jaune, orange ou rouge (bien mûr). Plus il est rouge, plus il est sucré !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_019",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel dessert froid est fait avec du lait, de la crème et du sucre, souvent sur un cornet ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍦"
+        },
+        "choix": [
+          "Le yaourt",
+          "La glace",
+          "Le flan",
+          "La mousse"
+        ],
+        "reponse": "La glace",
+        "explication": "La glace est un dessert congelé à base de lait et de crème. Il en existe des milliers de parfums : vanille, chocolat, fraise...",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_020",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quelle boisson chaude parfumée vient des feuilles d'un arbre et est très populaire en Angleterre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍵"
+        },
+        "choix": [
+          "Le café",
+          "Le chocolat chaud",
+          "Le thé",
+          "La tisane"
+        ],
+        "reponse": "Le thé",
+        "explication": "Le thé est une boisson chaude faite en faisant infuser des feuilles de théier dans de l'eau chaude. Il vient de Chine et est très populaire en Angleterre !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_021",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel petit fruit ovale noir ou vert est utilisé pour faire de l'huile d'olive ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🫒"
+        },
+        "choix": [
+          "Le raisin",
+          "L'olive",
+          "La figue",
+          "La câpre"
+        ],
+        "reponse": "L'olive",
+        "explication": "L'olive pousse sur un olivier. On la presse pour obtenir de l'huile d'olive, très utilisée dans la cuisine méditerranéenne !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_022",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel fruit rond et rouge ou vert pousse sur un pommier ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍎"
+        },
+        "choix": [
+          "La poire",
+          "La pomme",
+          "La pêche",
+          "La prune"
+        ],
+        "reponse": "La pomme",
+        "explication": "La pomme pousse sur un pommier. Il en existe plus de 7 000 variétés dans le monde ! La Normandie est célèbre pour ses pommes.",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_023",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel fruit à noyau, doux et velouté au toucher, est orange ou jaune quand il est mûr ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍑"
+        },
+        "choix": [
+          "L'abricot",
+          "La prune",
+          "La pêche",
+          "La mangue"
+        ],
+        "reponse": "La pêche",
+        "explication": "La pêche est un fruit d'été avec une peau douce et veloutée. Elle a un gros noyau à l'intérieur. Il en existe des blanches et des jaunes !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_024",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel légume violet allongé est utilisé dans la ratatouille ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🍆"
+        },
+        "choix": [
+          "La betterave",
+          "L'aubergine",
+          "Le poivron violet",
+          "Le chou rouge"
+        ],
+        "reponse": "L'aubergine",
+        "explication": "L'aubergine est un légume violet et brillant. Elle est l'un des ingrédients de la ratatouille, ce délicieux plat provençal !",
+        "difficulte": 1
+      },
+      {
+        "id": "p_gas_025",
+        "categorie": "gastronomie",
+        "type": "qcm",
+        "question": "Quel est le principal ingrédient pour faire du beurre ?",
+        "media": {
+          "type": "emoji",
+          "valeur": "🧈"
+        },
+        "choix": [
+          "Le lait de soja",
+          "Les œufs",
+          "La crème de lait",
+          "La farine"
+        ],
+        "reponse": "La crème de lait",
+        "explication": "Le beurre est fait en barattant (agitant longtemps) de la crème de lait de vache. Il faut environ 22 litres de lait pour faire 1 kg de beurre !",
+        "difficulte": 2
       }
     ]
   }
